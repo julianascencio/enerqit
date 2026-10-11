@@ -1,0 +1,13 @@
+EnerQit is independent of pvlib, IBM, D-Wave, and algorithm authors.
+No affiliation or endorsement is implied.
+
+pvlib-python is an external dependency under its own BSD-3-Clause license.
+NumPy, SciPy, pandas, Matplotlib, Qiskit and dimod are external dependencies
+under their respective licenses. They are not vendored in this source archive.
+
+The repository layout follows pvlib conventions. Package code and examples were
+written for this project; no pvlib source code or proprietary OEM curve library
+is bundled. The simulated-bifurcation reference implementation follows the
+published algorithm concept; it is not copied from a third-party implementation.
+
+All bundled measurement data and all validation examples are synthetic.

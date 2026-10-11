@@ -1,0 +1,24 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+build/
+dist/
+docs/_build/
+docs/sphinx/source/auto_examples/
+results/
+*.sqlite
+.ipynb_checkpoints/
+.env
+
+# Local build logs and rendered artifacts; publish reproducible sources.
+validation/*.log
+validation/*.xml
+validation/examples/
+docs/sphinx/source/sg_execution_times.rst
+!benchmarks/results/
+!benchmarks/results/**

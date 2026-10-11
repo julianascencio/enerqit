@@ -1,0 +1,12 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux",
+  "machine": "x86_64",
+  "versions": {
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "pandas": "3.0.6",
+    "pvlib": "0.16.1",
+    "enerqit": "0.1.0"
+  }
+}

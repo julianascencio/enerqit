@@ -1,0 +1,21 @@
+{
+  "synthetic": true,
+  "description": "One day of generated clear-sky weather and noisy AC data; not a real site or OEM curve.",
+  "truth": {
+    "tilt": 28.0,
+    "azimuth": 172.0,
+    "latitude": 35.0,
+    "longitude": -5.0,
+    "dc_capacity": 100000,
+    "ac_capacity": 90000,
+    "seed": 42
+  },
+  "units": {
+    "ghi": "W/m2",
+    "dni": "W/m2",
+    "dhi": "W/m2",
+    "temp_air": "degC",
+    "wind_speed": "m/s",
+    "power_ac": "W"
+  }
+}
