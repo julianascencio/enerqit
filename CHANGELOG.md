@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Disclose the AI-native, human-controlled development process in the README,
+  documentation and contribution guide, distinguishing review from validation.
 - Add a searchable GitHub Pages documentation site with a getting-started guide,
   executed example gallery, reference benchmark downloads and repository roadmap.
 - Automatically build and publish documentation from `main` with GitHub Actions.

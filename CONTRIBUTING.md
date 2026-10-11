@@ -1,5 +1,15 @@
 # Contributing
 
+EnerQit is **AI-native and human-controlled**: most code, tests, examples and
+documentation are AI-generated. Human maintainers set the direction, define
+scientific requirements, and retain control over review, acceptance and releases.
+
+For AI-assisted contributions, describe what AI generated or modified and summarize
+the human review and checks actually performed. Keep automated checks, human review
+and validation on real assets distinct; do not claim review or validation that has
+not happened. Contributors remain responsible for the accuracy and provenance of
+their contributions.
+
 Use a branch and keep physical forward models separate from inverse estimators
 and solver encodings. Follow NumPy-style docstrings, SI units, seeded randomness,
 and explicit uncertainty/identifiability statements. Use pvlib for established

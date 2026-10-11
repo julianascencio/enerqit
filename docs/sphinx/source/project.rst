@@ -5,6 +5,22 @@ Repository guide and roadmap
 inspect the code, follow development, or report an issue. This site follows
 the ``main`` branch; the package version is currently 0.1.0.
 
+.. _ai-native-development:
+
+AI-native, human-controlled development
+---------------------------------------
+
+Most of EnerQit's code, tests, examples and documentation are AI-generated.
+Human maintainers set the direction, define scientific requirements, and retain
+control over review, acceptance and releases. AI is a core part of how the
+repository is developed.
+
+Human control does not mean every line has received expert review. Automated
+checks, human review and validation on real assets are different forms of
+evidence and should be reported separately. Contributions should describe AI
+involvement and the review and checks actually performed. The current release
+remains a research implementation validated on synthetic evidence.
+
 Where the content lives
 -----------------------
 

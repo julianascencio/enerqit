@@ -4,7 +4,7 @@ EnerQit
 .. raw:: html
 
    <section class="eq-hero" aria-label="About EnerQit">
-     <p class="eq-eyebrow">OPEN ENERGY RESEARCH · VERSION 0.1.0</p>
+     <p class="eq-eyebrow">AI-NATIVE · OPEN ENERGY RESEARCH · VERSION 0.1.0</p>
      <h2>Quantum-inspired algorithms.<br>Engineering evidence.</h2>
      <p class="eq-intro">Infer PV configurations, reconstruct field response
      curves, and compare optimization methods on the same problem.</p>
@@ -20,6 +20,11 @@ EnerQit
    **Quantum-inspired is not quantum computing.** EnerQit's algorithms run on
    classical computers. The QAOA example is a classical simulation. No quantum
    hardware execution or quantum advantage is demonstrated.
+
+**AI-native, human-controlled.** Most of EnerQit's code, tests, examples and
+documentation are AI-generated. Human maintainers set the direction and scientific
+requirements, and retain control over review, acceptance and releases. Read about
+the :ref:`development process and review evidence <ai-native-development>`.
 
 Find your starting point
 ------------------------

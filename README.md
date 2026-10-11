@@ -2,6 +2,12 @@
 
 **An open-source Python toolkit for quantum-inspired algorithms in energy systems.**
 
+**AI-native, human-controlled.** Most of EnerQit's code, tests, examples and
+documentation are AI-generated. Human maintainers set the direction and scientific
+requirements, and retain control over review, acceptance and releases.
+This describes the development process; it does not imply that every line has
+received expert review or that passing automated checks proves scientific validity.
+
 **[Explore the documentation website](https://julianascencio.github.io/enerqit/)**
 — start here, worked examples, benchmark results, API reference and roadmap.
 
