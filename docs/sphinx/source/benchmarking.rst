@@ -1,6 +1,56 @@
 Benchmark protocol
 ==================
 
+Published reference results
+---------------------------
+
+The recorded synthetic reference contains three 12-bit instances and three
+seeds per heuristic. All four methods ran on a classical CPU. These are the
+recorded results, not a fresh benchmark executed in your browser.
+
+.. list-table:: Fixed-budget reference; median solver time
+   :header-rows: 1
+   :widths: 38 15 15 16 16
+
+   * - Method
+     - Runs
+     - Seconds
+     - Feasible
+     - Optimum hits
+   * - Exact QUBO enumeration
+     - 3
+     - 0.001637
+     - 3 / 3
+     - 3 / 3
+   * - Native grouped enumeration
+     - 3
+     - 0.008120
+     - 3 / 3
+     - 3 / 3
+   * - Simulated annealing
+     - 9
+     - 0.028897
+     - 9 / 9
+     - 4 / 9
+   * - Ballistic simulated bifurcation
+     - 9
+     - 0.026058
+     - 9 / 9
+     - 9 / 9
+
+**Exact enumeration is fastest on these small instances.** The budgets are
+not matched by runtime or evaluations. These results do not establish a
+quantum-inspired speedup, scaling advantage or superiority over modern native
+mixed-integer methods.
+
+Download the :download:`raw reference records <../../../benchmarks/results/reference.jsonl>`
+and :download:`recorded environment <../../../validation/environment.json>`.
+The :doc:`coupled benchmark example <auto_examples/plot_coupled_benchmark>`
+shows the comparison in code and plots.
+
+Reproduce and interpret
+-----------------------
+
 Run ``enerqit benchmark --output results/benchmark.jsonl``. The included
 reference run uses three independently seeded 12-bit synthetic instances and
 three heuristic seeds per instance: 24 records including the two exact

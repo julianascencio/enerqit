@@ -15,12 +15,12 @@ dependencies = ["numpy>=1.26,<3", "scipy>=1.12,<2", "pandas>=2.2,<4", "pvlib>=0.
 [project.urls]
 Repository = "https://github.com/julianascencio/enerqit"
 Issues = "https://github.com/julianascencio/enerqit/issues"
-Documentation = "https://github.com/julianascencio/enerqit/tree/main/docs"
+Documentation = "https://julianascencio.github.io/enerqit/"
 
 [project.optional-dependencies]
 examples = ["matplotlib>=3.8", "jupyterlab>=4"]
 test = ["pytest>=8", "pytest-cov>=5"]
-docs = ["sphinx>=7", "sphinx-gallery>=0.17", "numpydoc>=1.7", "matplotlib>=3.8"]
+docs = ["sphinx>=7", "sphinx-gallery>=0.17", "numpydoc>=1.7", "matplotlib>=3.8", "furo>=2024.8.6,<2027"]
 dev = ["pytest>=8", "pytest-cov>=5", "ruff>=0.8", "build>=1.2"]
 quantum = ["dimod>=0.12", "qiskit>=1.2,<3"]
 

@@ -1,6 +1,6 @@
 include README.md LICENSE NOTICE CHANGELOG.md CONTRIBUTING.md ROADMAP.md uv.lock
 recursive-include enerqit/data *.json *.csv
-recursive-include docs *.rst *.py *.ipynb
+recursive-include docs *.rst *.py *.ipynb *.css *.svg
 recursive-include tests *.py
 recursive-include benchmarks *.py *.md *.jsonl
 recursive-include ci *.py *.sh

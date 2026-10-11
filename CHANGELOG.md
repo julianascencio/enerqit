@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+- Add a searchable GitHub Pages documentation site with a getting-started guide,
+  executed example gallery, reference benchmark downloads and repository roadmap.
+- Automatically build and publish documentation from `main` with GitHub Actions.
+
 ## 0.1.0 — 2026-10-11
 
 First public EnerQit release, adapted from the earlier QuantumPV prototype.

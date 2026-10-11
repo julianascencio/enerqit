@@ -1,9 +1,11 @@
 Installation and first run
 ==========================
 
-Use Python 3.11 or newer in a clean environment. The repository targets
-3.11–3.13; the delivered build was tested on 3.12. From the repository root::
+Use Python 3.11 or newer in a clean environment. CI checks Python 3.11–3.13;
+the delivered local build was tested on 3.12. Clone the repository first::
 
+   git clone https://github.com/julianascencio/enerqit.git
+   cd enerqit
    python -m venv .venv
    source .venv/bin/activate
    python -m pip install -e '.[dev,docs,examples]'
@@ -26,5 +28,7 @@ For saved example figures without Sphinx::
    python ci/run_examples.py --output results/examples
 
 The dependency lock is for reproducible installation, not proof that every
-supported Python/platform combination was exercised locally. CI defines the
-target test matrix but has not been run on a remote hosting service.
+supported Python/platform combination was exercised locally. Check
+`GitHub Actions <https://github.com/julianascencio/enerqit/actions>`_ for the
+status of each commit. The documentation site deploys successful builds from
+``main`` automatically.

@@ -2,6 +2,9 @@
 
 **An open-source Python toolkit for quantum-inspired algorithms in energy systems.**
 
+**[Explore the documentation website](https://julianascencio.github.io/enerqit/)**
+— start here, worked examples, benchmark results, API reference and roadmap.
+
 > **Quantum-inspired is not quantum computing.** EnerQit's quantum-inspired
 > solvers are classical algorithms running on ordinary computers. They use ideas
 > motivated by quantum research, but do not use physical qubits or execute on a
@@ -31,7 +34,7 @@ for forward physics; it is independent of, and not endorsed by, pvlib.
 
 ## Quick start
 
-Python 3.11–3.13 are targeted; the delivered validation used Python 3.12. A clean
+CI checks Python 3.11–3.13; the delivered local validation used Python 3.12. A clean
 virtual environment is recommended. Start from the repository directory:
 
 ```bash
@@ -120,7 +123,7 @@ configurations interact. There is no established superiority claim here.
 | `docs/sphinx/source/` | Installation, methods, API, use cases, data contract, product workflow |
 | `benchmarks/` | Reproducible comparison runner and measured reference results |
 | `ci/` | Example runner and quality-check commands |
-| `.github/workflows/` | Python test matrix and docs build; no deployment workflow |
+| `.github/workflows/` | Python test matrix, docs build and automatic GitHub Pages deployment |
 | `paper/` | Methods note and primary references |
 | `validation/` | Delivered test/build report and environment details |
 
