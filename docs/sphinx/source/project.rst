@@ -5,6 +5,14 @@ Repository guide and roadmap
 inspect the code, follow development, or report an issue. This site follows
 the ``main`` branch; the package version is currently 0.1.0.
 
+Creator and contact
+-------------------
+
+EnerQit is created by `ASVA Consulting <https://asvaconsulting.com>`_. For
+project enquiries, contact
+`contacto@asvaconsulting.com <mailto:contacto@asvaconsulting.com>`_. Report
+reproducible bugs and discuss contributions through the public repository.
+
 .. _ai-native-development:
 
 AI-native, human-controlled development
@@ -12,14 +20,20 @@ AI-native, human-controlled development
 
 Most of EnerQit's code, tests, examples and documentation are AI-generated.
 Human maintainers set the direction, define scientific requirements, and retain
-control over review, acceptance and releases. AI is a core part of how the
-repository is developed.
+control over review, acceptance and releases. Developers select the papers,
+datasets and technical references that define the intended methods. The
+:doc:`research library <research/index>` connects these sources with the
+implementation.
 
 Human control does not mean every line has received expert review. Automated
 checks, human review and validation on real assets are different forms of
 evidence and should be reported separately. Contributions should describe AI
 involvement and the review and checks actually performed. The current release
 remains a research implementation validated on synthetic evidence.
+
+Validation is not yet comprehensive. AI-generated code, explanations and
+interpretations of sources may contain mistakes. Verify assumptions and
+results against the evidence required for the intended engineering use.
 
 Where the content lives
 -----------------------
@@ -37,7 +51,7 @@ Where the content lives
    * - ``enerqit/solvers/``
      - Classical baselines, simulated bifurcation and optional quantum exports.
    * - ``docs/examples/``
-     - The scripts executed to produce the :doc:`example gallery <auto_examples/index>`.
+     - The scripts executed to produce the :doc:`example gallery </gallery/index>`.
    * - ``docs/notebooks/``
      - An introductory inverse-study notebook.
    * - ``benchmarks/``
@@ -45,7 +59,7 @@ Where the content lives
    * - ``tests/`` and ``validation/``
      - Recovery/failure tests and the delivered environment and validation report.
    * - ``docs/sphinx/source/``
-     - The source of these pages. Use the source button on a page to inspect it.
+     - The source of these pages. Use the edit-page link to find the maintained source.
 
 Follow changes
 --------------
@@ -76,7 +90,7 @@ comparison against the same classical engineering objectives.
 Contribute with evidence
 ------------------------
 
-Read `CONTRIBUTING.md
+Read the :doc:`contribution guide <contributing/index>` and `CONTRIBUTING.md
 <https://github.com/julianascencio/enerqit/blob/main/CONTRIBUTING.md>`_ before
 submitting changes. Each new method or use case needs an engineering KPI,
 validity limits, a meaningful classical baseline, explanation of results,
@@ -89,9 +103,10 @@ for PV forward physics and is independent of, and not endorsed by, pvlib.
 How this site updates
 ---------------------
 
-``.github/workflows/pages.yml`` builds the Sphinx documentation and executes the
-example gallery on pushes to ``main``. GitHub Pages publishes the successful
-build. Failed builds do not replace the last successfully deployed site.
+The documentation workflow builds Sphinx and executes the example gallery for
+pull requests and pushes to ``main``. Pull-request builds validate the proposed
+content; GitHub Pages publishes successful ``main`` builds. Failed builds do
+not replace the last successfully deployed site.
 
 To preview the same content locally, follow the :doc:`installation` instructions.
 No separate copy of the documentation needs to be edited.

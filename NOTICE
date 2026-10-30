@@ -11,3 +11,8 @@ is bundled. The simulated-bifurcation reference implementation follows the
 published algorithm concept; it is not copied from a third-party implementation.
 
 All bundled measurement data and all validation examples are synthetic.
+
+EnerQit is created by ASVA Consulting (https://asvaconsulting.com).
+The documentation layout follows the sibling OrbitalPV project.
+The bundled ASVA Consulting logo identifies the project creator and comes from:
+https://asvaconsulting.com/wp-content/uploads/2022/05/ASVA-1-1-scaled.jpg

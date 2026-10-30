@@ -1,36 +1,29 @@
-/* Small, accessible additions to Furo; no external fonts or tracking. */
-.sidebar-brand-text { font-weight: 750; letter-spacing: -.04em; font-size: 1.7rem; }
-.content { max-width: 58rem; }
-.eq-hero {
-  background: #112c32;
-  border: 1px solid #21464b;
-  border-radius: 18px;
-  padding: clamp(1.3rem, 4vw, 2.6rem);
-  color: #e6f2ed;
-  margin: 1rem 0 1.5rem;
+/* Keep the same restrained PyData documentation layout as OrbitalPV. */
+html[data-theme="light"] {
+  --pst-color-primary: #2f6fdb;
 }
-.eq-eyebrow { color: #a6efcb; font-size: .7rem; font-weight: 700; letter-spacing: .14em; }
-.eq-hero h2 { color: #f4fbf7; font-size: clamp(1.8rem, 4vw, 2.7rem); line-height: 1.13; letter-spacing: -.04em; margin: 1rem 0; border: 0; }
-.eq-intro { max-width: 34rem; font-size: 1.08rem; color: #d0e3dd; }
-.eq-actions { display: flex; flex-wrap: wrap; gap: .7rem; margin: 1.5rem 0; }
-a.eq-button { display: inline-block; padding: .65rem 1rem; border: 1px solid #b5f5d4; border-radius: 7px; background: #b5f5d4; color: #112c32; font-size: .92rem; font-weight: 700; text-decoration: none; }
-a.eq-button:hover { background: #d7ffe8; color: #112c32; }
-a.eq-secondary { background: transparent; color: #e6f2ed; border-color: #6a9995; }
-a.eq-secondary:hover { background: #21464b; color: #fff; }
-.eq-meta { color: #aacac0; font-size: .77rem; margin-bottom: 0; }
-.eq-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin: 1.2rem 0 2rem; }
-a.eq-card { display: flex; flex-direction: column; gap: .7rem; border: 1px solid var(--color-background-border); border-radius: 11px; padding: 1.3rem; color: var(--color-foreground-primary); text-decoration: none; background: var(--color-background-secondary); }
-a.eq-card:hover { border-color: var(--color-brand-primary); }
-.eq-card-number { color: var(--color-brand-content); font-size: .66rem; letter-spacing: .1em; font-weight: 700; }
-.eq-card strong { font-size: 1.17rem; letter-spacing: -.02em; }
-.eq-card > span:not(.eq-card-number):not(.eq-card-link) { font-size: .89rem; line-height: 1.65; }
-.eq-card-link { color: var(--color-brand-content); margin-top: auto; padding-top: .35rem; font-size: .83rem; font-weight: 650; }
-a.eq-button:focus-visible, a.eq-card:focus-visible { outline: 3px solid #d7a72f; outline-offset: 4px; }
-@media (max-width: 540px) {
-  .eq-grid { grid-template-columns: 1fr; }
-  .eq-hero { border-radius: 10px; }
+
+.bd-page-width {
+  max-width: 92rem;
 }
-@media print {
-  .eq-hero { background: white; border-color: #555; }
-  .eq-hero h2, .eq-hero p { color: black; }
+
+div.highlight-text pre {
+  line-height: 1.45;
+}
+
+.asva-brand {
+  text-align: center;
+  margin: 1.5rem 0 2rem;
+}
+
+.asva-brand img {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  background: white;
+  border-radius: 0.25rem;
+}
+
+.asva-brand p {
+  margin-top: 0.75rem;
 }

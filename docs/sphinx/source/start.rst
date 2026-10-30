@@ -1,4 +1,4 @@
-Start here
+Quickstart
 ==========
 
 EnerQit is a research toolkit for testing energy-system hypotheses with physical
@@ -10,14 +10,14 @@ Choose a route
 
 **I want to understand the engineering applications.** Start with the
 :doc:`use-case register <use_cases>`, then open the
-:doc:`orientation example <auto_examples/plot_orientation>` or
-:doc:`inverter curves example <auto_examples/plot_inverter_curves>`.
+:doc:`orientation example </gallery/plot_orientation>` or
+:doc:`inverter curves example </gallery/plot_inverter_curves>`.
 Check the input channels and assumptions before interpreting the fitted values.
 
 **I want to evaluate quantum-inspired algorithms.** Read
 :doc:`the quantum distinction <quantum>` and
 :doc:`the benchmark protocol <benchmarking>`, then run the
-:doc:`coupled configuration example <auto_examples/plot_coupled_benchmark>`.
+:doc:`coupled configuration example </gallery/plot_coupled_benchmark>`.
 Compare feasibility, physical error and total runtime, not just QUBO energy.
 
 **I want to build a study or contribute code.** Follow :doc:`installation`,
@@ -38,10 +38,12 @@ orientation with a classical physical fit:
    observations, truth = fixed_array(seed=42)
    result = fit_orientation(observations, latitude=35, longitude=-5)
    print(result.parameters)
+   print(result.status, result.warnings)
    print(truth)
+   result.to_json("results/orientation.json")
 
 This example establishes a physical baseline. The
-:doc:`orientation gallery page <auto_examples/plot_orientation>` also compares
+:doc:`orientation gallery page </gallery/plot_orientation>` also compares
 discrete candidate selection using exact enumeration and simulated bifurcation.
 For a small candidate list, enumeration is the natural baseline.
 
@@ -56,7 +58,7 @@ What to look for in a result
 
 If a new 24-hour export arrives every day, use the
 :doc:`daily evidence workflow <workflow>` and
-:doc:`worked ingestion example <auto_examples/plot_daily_evidence>`.
+:doc:`worked ingestion example </gallery/plot_daily_evidence>`.
 More days only help if they add informative irradiance, temperature, load or
 geometry conditions. A daily refit is not automatically evidence of a physical
 change in the plant.
