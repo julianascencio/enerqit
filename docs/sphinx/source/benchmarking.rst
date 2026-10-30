@@ -45,7 +45,7 @@ mixed-integer methods.
 
 Download the :download:`raw reference records <../../../benchmarks/results/reference.jsonl>`
 and :download:`recorded environment <../../../validation/environment.json>`.
-The :doc:`coupled benchmark example <auto_examples/plot_coupled_benchmark>`
+The :doc:`coupled benchmark example <gallery/plot_coupled_benchmark>`
 shows the comparison in code and plots.
 
 Reproduce and interpret

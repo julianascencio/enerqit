@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- Align the README and documentation with OrbitalPV: ASVA Consulting branding,
+  PyData theme, User Guide, Example Gallery, API Reference, Research Library and
+  Contributing navigation, with a local `make docs` build command.
 - Disclose the AI-native, human-controlled development process in the README,
   documentation and contribution guide, distinguishing review from validation.
 - Add a searchable GitHub Pages documentation site with a getting-started guide,

@@ -3,112 +3,105 @@ EnerQit
 
 .. raw:: html
 
-   <section class="eq-hero" aria-label="About EnerQit">
-     <p class="eq-eyebrow">AI-NATIVE · OPEN ENERGY RESEARCH · VERSION 0.1.0</p>
-     <h2>Quantum-inspired algorithms.<br>Engineering evidence.</h2>
-     <p class="eq-intro">Infer PV configurations, reconstruct field response
-     curves, and compare optimization methods on the same problem.</p>
-     <div class="eq-actions">
-       <a class="eq-button" href="start.html">Start exploring <span aria-hidden="true">→</span></a>
-       <a class="eq-button eq-secondary" href="auto_examples/index.html">Browse examples</a>
-     </div>
-     <p class="eq-meta">Python · MIT licensed · Classical computers · Synthetic validation</p>
-   </section>
-
-.. important::
-
-   **Quantum-inspired is not quantum computing.** EnerQit's algorithms run on
-   classical computers. The QAOA example is a classical simulation. No quantum
-   hardware execution or quantum advantage is demonstrated.
-
-**AI-native, human-controlled.** Most of EnerQit's code, tests, examples and
-documentation are AI-generated. Human maintainers set the direction and scientific
-requirements, and retain control over review, acceptance and releases. Read about
-the :ref:`development process and review evidence <ai-native-development>`.
-
-Find your starting point
-------------------------
-
-.. raw:: html
-
-   <div class="eq-grid">
-     <a class="eq-card" href="use_cases.html">
-       <span class="eq-card-number">01 / APPLICATIONS</span>
-       <strong>What can we infer?</strong>
-       <span>Tilt, trackers, string topology, IV curves, efficiency and thermal limits.
-       See the evidence each task needs.</span>
-       <span class="eq-card-link">Explore use cases →</span>
+   <div class="asva-brand">
+     <a href="https://asvaconsulting.com">
+       <img
+         src="_static/asva-consulting.jpg"
+         alt="ASVA Consulting"
+         width="280"
+       >
      </a>
-     <a class="eq-card" href="auto_examples/index.html">
-       <span class="eq-card-number">02 / WORKED EXAMPLES</span>
-       <strong>See the code and results</strong>
-       <span>Seven runnable examples with generated plots, downloadable Python
-       scripts and notebooks.</span>
-       <span class="eq-card-link">Open the gallery →</span>
-     </a>
-     <a class="eq-card" href="benchmarking.html">
-       <span class="eq-card-number">03 / EVIDENCE</span>
-       <strong>Compare the solvers</strong>
-       <span>Exact methods, simulated annealing and simulated bifurcation.
-       Inspect results, budgets and limitations.</span>
-       <span class="eq-card-link">Read the benchmarks →</span>
-     </a>
-     <a class="eq-card" href="quantum.html">
-       <span class="eq-card-number">04 / QUANTUM ROADMAP</span>
-       <strong>Understand the distinction</strong>
-       <span>What is quantum-inspired today, what can transfer, and what a
-       future hardware experiment would need.</span>
-       <span class="eq-card-link">Explore the quantum path →</span>
-     </a>
+     <p>
+       <strong>Created by ASVA Consulting</strong><br>
+       <a href="https://asvaconsulting.com">asvaconsulting.com</a><br>
+       <a href="mailto:contacto@asvaconsulting.com">contacto@asvaconsulting.com</a>
+     </p>
    </div>
 
-Start with a physical question
-------------------------------
+**EnerQit** is an open-source Python toolkit for quantum-inspired algorithms
+in energy systems, created by **ASVA Consulting**.
 
-The first application domain is **solar PV**. EnerQit uses pvlib forward physics
-to connect observed signals to candidate configurations. Generic QUBO/Ising
-interfaces provide a common problem for classical and quantum-inspired solvers.
-Wind, storage, grids and energy markets are :doc:`planned domains <project>`.
+It combines physical PV models, configuration inference, equipment
+characterization, QUBO/Ising formulations, classical and quantum-inspired
+solvers, and reproducible benchmark studies. Solar PV is the first implemented
+application domain; wind, storage, grids and energy markets are part of the
+:doc:`research roadmap <project>`.
 
-**AC power alone cannot uniquely recover everything.** Exact equipment counts
-and complete IV curves require additional evidence and assumptions. The
-:doc:`data contract <data_contract>` and :doc:`methods <methods>` explain what
-each result actually means.
+Start here
+----------
 
-Keep up with the project
-------------------------
+* Read the :doc:`package overview <user_guide/overview>` to understand the scope.
+* Follow :doc:`installation` and run the :doc:`quickstart <start>`.
+* Explore the seven executable examples in the :doc:`gallery/index`.
+* Use the :doc:`api` for public entry points and module details.
+* Check the :doc:`research/index` for the methods, evidence and open questions.
 
-Follow the :doc:`repository guide and roadmap <project>` for where to find code,
-changes, contribution rules and current research milestones. The documentation
-is built from the same repository and deployed automatically from ``main``.
+Core modelling idea
+-------------------
+
+EnerQit starts with a physical question and the evidence needed to answer it.
+Measured signals and known system properties constrain a forward model;
+inverse fitting then estimates the unknown parameters. Discrete candidate
+configurations can also be encoded as a shared optimization problem so that
+different solvers are compared on the same engineering objective.
+
+.. list-table:: From observations to a reproducible result
+   :header-rows: 1
+   :widths: 27 73
+
+   * - Stage
+     - What to examine
+   * - Observations
+     - Sensor channels, units, timing, location and operating regimes.
+   * - Physical model
+     - Known capacities, weather inputs, model assumptions and candidate configurations.
+   * - Inference or optimization
+     - Fit parameters, enforce constraints and compare suitable classical baselines.
+   * - Evidence
+     - Physical residuals, feasibility, ambiguity, solver budget and runtime.
+   * - Reproduction
+     - Explicit seeds, provenance-bearing results and immutable evidence snapshots.
+
+The :doc:`data contract <data_contract>`, :doc:`methods <methods>` and
+:doc:`benchmark protocol <benchmarking>` explain these stages in detail.
+
+Research status
+---------------
+
+Version |release| is a research implementation with synthetic validation.
+Quantum-inspired solvers run on classical computers; the small QAOA example
+is a classical statevector simulation. Hardware execution is not implemented,
+and no quantum advantage is claimed. See :doc:`quantum` for the precise
+distinctions and :doc:`use_cases` for the evidence each inference requires.
+
+AI-assisted development
+-----------------------
+
+Most EnerQit code, tests, examples and documentation are AI-generated or
+AI-drafted. Human maintainers select the scientific references, set the scope
+and requirements, and retain control over review, acceptance and releases.
+
+AI-generated content may contain errors or imperfect interpretations of the
+selected sources. Review and validation are evolving and are not yet
+comprehensive. Automated checks demonstrate implementation behavior; field
+validation and scientific confidence require additional evidence. Trace
+important assumptions to the :doc:`cited sources <research/index>` and
+independently verify results for your application.
+
+Documentation structure
+-----------------------
+
+The documentation follows the same scientific-package format as
+`OrbitalPV <https://julianascencio.github.io/orbital-pv/>`_: a User Guide,
+executable Example Gallery, generated API Reference, Research Library and
+Contributing guide.
 
 .. toctree::
+   :maxdepth: 2
    :hidden:
-   :caption: Get started
 
-   start
-   installation
-   use_cases
-
-.. toctree::
-   :hidden:
-   :caption: Learn by doing
-
-   auto_examples/index
-   benchmarking
-   workflow
-
-.. toctree::
-   :hidden:
-   :caption: Scientific reference
-
-   data_contract
-   methods
-   quantum
-   api
-
-.. toctree::
-   :hidden:
-   :caption: Follow the project
-
-   project
+   user_guide/index
+   gallery/index
+   API Reference <api>
+   research/index
+   contributing/index

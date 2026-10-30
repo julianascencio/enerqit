@@ -1,47 +1,62 @@
 # EnerQit
 
+<p align="center">
+  <a href="https://asvaconsulting.com">
+    <img
+      src="docs/sphinx/source/_static/asva-consulting.jpg"
+      alt="ASVA Consulting"
+      width="280"
+    />
+  </a>
+</p>
+
+<p align="center">
+  <strong>Created by ASVA Consulting</strong><br>
+  <a href="https://asvaconsulting.com">asvaconsulting.com</a><br>
+  <a href="mailto:contacto@asvaconsulting.com">contacto@asvaconsulting.com</a>
+</p>
+
 **An open-source Python toolkit for quantum-inspired algorithms in energy systems.**
 
-**AI-native, human-controlled.** Most of EnerQit's code, tests, examples and
-documentation are AI-generated. Human maintainers set the direction and scientific
-requirements, and retain control over review, acceptance and releases.
-This describes the development process; it does not imply that every line has
-received expert review or that passing automated checks proves scientific validity.
+EnerQit connects physical energy models, inverse inference and reproducible solver
+comparisons. Its first application is **solar PV**: infer array configurations,
+estimate equipment response curves and compare classical and quantum-inspired
+optimization on the same explicitly defined problem.
 
-**[Explore the documentation website](https://julianascencio.github.io/enerqit/)**
-— start here, worked examples, benchmark results, API reference and roadmap.
+**[Documentation](https://julianascencio.github.io/enerqit/)** ·
+[User Guide](https://julianascencio.github.io/enerqit/user_guide/index.html) ·
+[Example Gallery](https://julianascencio.github.io/enerqit/gallery/index.html) ·
+[API Reference](https://julianascencio.github.io/enerqit/api.html) ·
+[Research Library](https://julianascencio.github.io/enerqit/research/index.html) ·
+[Contributing](https://julianascencio.github.io/enerqit/contributing/index.html)
 
-> **Quantum-inspired is not quantum computing.** EnerQit's quantum-inspired
-> solvers are classical algorithms running on ordinary computers. They use ideas
-> motivated by quantum research, but do not use physical qubits or execute on a
-> quantum processor. The optional QAOA example is also a classical simulation.
-> Exporting a model to Qiskit or dimod does not mean it has run on quantum hardware.
+The documentation follows the scientific Python format used by
+[OrbitalPV](https://github.com/julianascencio/orbital-pv): a user guide, executable
+examples with figures, API reference and research sources. EnerQit's package
+remains focused on energy inference and optimization.
 
-The first release provides PV configuration inference, equipment characterization,
-and reproducible comparisons between classical and quantum-inspired solvers.
-The long-term scope includes solar, wind, storage, grids and energy markets;
-only the implemented capabilities listed below are currently available.
-Version 0.1.0 is a research implementation validated on synthetic evidence.
+## AI-assisted development and literature basis
 
-| Approach | Where it runs in this project | Current status |
-|---|---|---|
-| Classical optimization | CPU | Exact enumeration, constrained physical fitting, simulated annealing |
-| Quantum-inspired optimization | CPU | Ballistic simulated bifurcation, implemented with NumPy |
-| Quantum-circuit simulation | CPU | Small educational QAOA statevector example |
-| Quantum hardware execution | Would require a QPU or quantum annealer | Not implemented; model export adapters are available |
+EnerQit is **AI-native and human-controlled**. Most code, tests, examples and
+documentation are AI-generated or AI-drafted. Human maintainers choose the
+scientific direction and source literature, define requirements, and retain
+control over review, acceptance and releases.
 
-**No quantum advantage or superiority over classical methods is claimed.**
-The exact classical solver is faster on the supplied small benchmark.
+Assumptions and methods should be traceable to the selected papers, public
+technical documentation or explicitly stated engineering assumptions. The
+[research library](https://julianascencio.github.io/enerqit/research/index.html)
+connects the implemented methods to their sources.
 
-The layout follows [pvlib-python](https://github.com/pvlib/pvlib-python): a flat
-scientific package, independent tests, Sphinx documentation with an executable
-example gallery, benchmarks, CI, and a methods note. EnerQit depends on pvlib
-for forward physics; it is independent of, and not endorsed by, pvlib.
+Validation is still developing. AI-generated implementations, explanations and
+source interpretations may contain mistakes; human control does not mean every
+line has received expert review. Automated checks, human review and validation on
+real assets provide different evidence. Version 0.1.0 is a research implementation
+validated on synthetic examples; verify assumptions and results for your use case.
 
-## Quick start
+## Install from source
 
-CI checks Python 3.11–3.13; the delivered local validation used Python 3.12. A clean
-virtual environment is recommended. Start from the repository directory:
+Use Python 3.11 or newer in a clean environment. The CI matrix covers Python
+3.11–3.13. From a checkout:
 
 ```bash
 git clone https://github.com/julianascencio/enerqit.git
@@ -49,124 +64,164 @@ cd enerqit
 python -m venv .venv
 # Linux/macOS:
 source .venv/bin/activate
-# Windows PowerShell instead: .venv\Scripts\Activate.ps1
+# Windows PowerShell: .venv\Scripts\Activate.ps1
 python -m pip install --upgrade pip
-python -m pip install -e '.[dev,docs,examples]'
-enerqit demo --output results/demo
-enerqit benchmark --output results/benchmark.jsonl
-python -m pytest -q
-python docs/examples/plot_orientation.py
+python -m pip install -e ".[examples]"
 ```
 
-The CLI writes a CSV and a provenance-bearing JSON report. Examples produce
-Matplotlib figures and print estimates; in a noninteractive environment use the
-gallery build or `python ci/run_examples.py --output results/examples` to save figures.
+Optional extras support development, documentation and local model export:
+
+```bash
+python -m pip install -e ".[dev,docs]"
+python -m pip install -e ".[quantum]"
+```
+
+## Quickstart
+
+Recover the orientation of a synthetic fixed PV array with the public solar API:
 
 ```python
 from enerqit.datasets import fixed_array
 from enerqit.solar import fit_orientation
 
-frame, truth = fixed_array(seed=42)  # synthetic, not an OEM dataset
-result = fit_orientation(frame, latitude=35, longitude=-5)
+observations, truth = fixed_array(seed=42)
+result = fit_orientation(
+    observations,
+    latitude=truth["latitude"],
+    longitude=truth["longitude"],
+)
 print(result.parameters)
+print(result.status, result.warnings)
 result.to_json("results/orientation.json")
 ```
 
-## Implemented scientific scope
+The observations above are **synthetic**. A fit is conditional on its inputs,
+known capacities and forward-model assumptions; `status="estimated"` does not
+establish a globally unique or unbiased answer. See the
+[data contract](https://julianascencio.github.io/enerqit/data_contract.html) and
+[physical inference guide](https://julianascencio.github.io/enerqit/methods.html).
 
-| Inference | Required evidence | Implemented estimator / comparison |
-|---|---|---|
-| Fixed tilt and azimuth | AC, GHI/DNI/DHI, weather, location, known capacities | Bounded physical least squares; candidate scan versus bSB |
-| Tracker GCR and rotation limit | Above plus known axis and backtracking mode, low-sun coverage | Differential evolution; candidate scan versus bSB |
-| IV reference parameters | Measured IV sweeps at known effective irradiance and cell temperature | Five-parameter De Soto fit via pvlib |
-| Conditional operational IV reconstruction | Confirmed MPP voltage/current across G/T conditions | Selected parameter fit, with other parameters fixed |
-| Uniform modules/string and parallel strings | Array DC V/I, known module physics, confirmed MPPT | Integer enumeration; ranked alternatives |
-| Effective inverter efficiency | Synchronized actual DC input and AC output | Nonnegative loss model; coverage/rank checks |
-| Effective thermal limiting envelope | Defined thermal sensor, independently available AC, command limits | Piecewise fit; refuse an unexcited knee |
-| Coupled configuration hypotheses | Forward templates and explicit inventory equalities | Exact QUBO, native feasible enumeration, SA and bSB |
-| Daily evidence for an offline study | Timestamped numeric batches for a named asset | Idempotent SQLite ingestion, late corrections and immutable snapshots |
-
-**AC power alone does not uniquely reveal full IV curves, exact module/inverter
-counts, or unrestricted tracker settings.** Every fit is conditional on its
-stated data and modeling assumptions. Model-derived field curves are not
-manufacturer-certified curves. `status="estimated"` means a fit passed local
-checks; it is not proof of a globally unique or unbiased answer.
-
-## The quantum component
-
-`enerqit.solvers.simulated_bifurcation` is a transparent NumPy implementation
-of ballistic simulated bifurcation, a classical oscillator algorithm inspired by
-quantum optimization research. It runs on a normal CPU, not a quantum device.
-The same QUBO can be exported to a dimod BQM or a Qiskit Pauli operator:
+Run the command-line demonstrations or a complete plotted example:
 
 ```bash
-python -m pip install -e '.[quantum]'
-python docs/examples/plot_quantum_bridge.py
+enerqit demo --output results/demo
+enerqit benchmark --output results/benchmark.jsonl
+python docs/examples/plot_orientation.py
 ```
 
-The built-in small QAOA statevector example is also classical simulation. No
-credentials, network execution, paid job or hardware advantage is implied.
+The demo writes observations and a JSON result with provenance. The
+[example gallery](https://julianascencio.github.io/enerqit/gallery/index.html)
+contains seven executed studies with downloadable scripts and notebooks.
 
-The transferable investment is the physical model, binary encoding, constraint
-tests, datasets, and benchmark harness. bSB trajectories do not automatically
-transfer to a QPU. See `docs/sphinx/source/quantum.rst` for the migration steps.
+## Main capabilities
 
-For low-dimensional continuous fits, ordinary constrained optimization is the
-appropriate baseline and often the best tool. For single-candidate selection,
-direct enumeration is simpler. The quantum-inspired research target is **coupled
-discrete inverse problems with physical and inventory constraints**, where many
-configurations interact. There is no established superiority claim here.
+| Capability | Evidence and current implementation |
+|---|---|
+| Fixed-array tilt and azimuth | AC power, irradiance, weather, location and known capacities; bounded physical least squares |
+| Tracker geometry | Known axis and backtracking mode, with low-sun coverage; differential evolution for GCR and rotation limit |
+| IV reference parameters | Measured IV sweeps at known effective irradiance and cell temperature; De Soto single-diode fitting through pvlib |
+| Operational IV reconstruction | Confirmed MPP voltage/current over informative conditions; selected parameters fitted while others remain fixed |
+| Uniform string topology | Array DC voltage/current and known module physics at MPPT; integer candidate enumeration |
+| Effective inverter and thermal curves | Synchronized converter input/output or independently available AC and thermal evidence; explicit coverage checks |
+| Coupled configuration selection | Forward templates, one-hot choices and inventory equalities; common QUBO/Ising encodings |
+| Solver benchmarking | Exact QUBO and native feasible enumeration, simulated annealing, and ballistic simulated bifurcation |
+| Local evidence studies | Idempotent SQLite ingestion, late corrections, immutable snapshots and structured result records |
+
+**AC power alone cannot uniquely reveal full IV curves, exact equipment counts or
+unrestricted tracker settings.** Model-derived equipment curves are conditional
+field estimates, not manufacturer-certified specifications. The
+[use-case register](https://julianascencio.github.io/enerqit/use_cases.html)
+sets out the evidence and limits for each application.
+
+### What “quantum-inspired” means here
+
+| Approach | Execution in EnerQit | Current status |
+|---|---|---|
+| Classical optimization | CPU | Physical fitting, exact enumeration and simulated annealing |
+| Quantum-inspired optimization | CPU | NumPy ballistic simulated-bifurcation reference solver |
+| Quantum-circuit simulation | CPU | Small educational QAOA statevector example |
+| Quantum hardware execution | Not implemented | Local dimod and Qiskit model export adapters are available |
+
+Quantum-inspired algorithms run on ordinary computers. Exporting a model to a
+quantum SDK does not execute it on physical qubits. **No quantum advantage or
+superiority over classical methods is claimed**; exact enumeration is fastest on
+the supplied small [reference benchmark](https://julianascencio.github.io/enerqit/benchmarking.html).
+Read the [quantum guide](https://julianascencio.github.io/enerqit/quantum.html)
+for the encoding conventions, limitations and future hardware research path.
 
 ## Repository map
 
 | Path | Purpose |
 |---|---|
-| `enerqit/` | Public APIs, generic optimization, and initial solar inference modules |
-| `enerqit/solar/` | Public entry point for the first energy-domain application |
-| `tests/` | Physical recovery, invalid data, identifiability, QUBO conventions and audit tests |
-| `docs/examples/` | Seven executable worked examples |
-| `docs/notebooks/` | Self-contained introductory notebook |
-| `docs/sphinx/source/` | Installation, methods, API, use cases, data contract, product workflow |
-| `benchmarks/` | Reproducible comparison runner and measured reference results |
-| `ci/` | Example runner and quality-check commands |
-| `.github/workflows/` | Python test matrix, docs build and automatic GitHub Pages deployment |
+| `enerqit/` | Physical models, inverse estimators, QUBO encodings and evidence utilities |
+| `enerqit/solar/` | Public entry point for the initial solar application |
+| `enerqit/solvers/` | Classical baselines, simulated bifurcation and optional quantum exports |
+| `docs/examples/` | Seven executable gallery examples |
+| `docs/notebooks/` | Introductory inverse-study notebook |
+| `docs/sphinx/source/` | User guide, gallery configuration, API, research and contributor documentation |
+| `tests/` | Recovery, invalid-data, identifiability, encoding and audit checks |
+| `benchmarks/` | Reproducible runner and recorded reference results |
 | `paper/` | Methods note and primary references |
-| `validation/` | Delivered test/build report and environment details |
+| `validation/` | Recorded validation evidence and environment details |
+| `ci/` and `.github/workflows/` | Quality checks, example runner and documentation deployment |
 
-## Daily study workflow
+## Documentation
+
+Read the published site at **https://julianascencio.github.io/enerqit/**.
+The Sphinx documentation uses the PyData theme and executes the examples during
+the build, following OrbitalPV's documentation format.
 
 ```bash
-enerqit ingest results/demo/synthetic_observations.csv \
-  --store results/study.sqlite --asset demo-plant
+python -m pip install -e ".[docs]"
+make docs
 ```
 
-Ingest each new batch, review its coverage, select physically valid operating
-regimes, and fit a separately versioned current-evidence model. Keep the initial
-reference immutable. Do not interpret every daily refit as a physical change.
-Seasonal coverage matters more than a daily delivery schedule. The worked daily
-example demonstrates this locally; no recurring task is installed.
+Without `make`, run the equivalent command from the repository root:
 
-The initial applications support reproducible inverse-engineering studies,
-equipment characterization and solver evaluations using authorized data exports.
-Future energy-domain contributions should follow the same evidence requirements;
-see `ROADMAP.md` and `CONTRIBUTING.md`.
+```bash
+python -m sphinx -W --keep-going -b html docs/sphinx/source docs/_build/html
+```
+
+Open `docs/_build/html/index.html` to review the site. To save all example figures
+without building documentation:
+
+```bash
+python ci/run_examples.py --output results/examples
+```
 
 ## Development and reproducibility
 
 ```bash
+python -m pip install -e ".[dev,docs,examples,quantum]"
 python -m ruff check .
 python -m pytest --cov=enerqit --cov-report=term-missing
-python -m sphinx -W --keep-going -b html docs/sphinx/source docs/_build/html
+make docs
 python -m build
 ```
 
-`uv.lock` records a dependency solution. To use it: `uv sync --extra dev --extra
-docs --extra examples --extra quantum`. The validation report records the actual
-environment used for this delivery. Synthetic seeds are explicit; elapsed times
-depend on the host and are not deterministic. No real plant validation or
-large-scale speedup test has been performed.
+`uv.lock` records a dependency solution. To use it, run
+`uv sync --extra dev --extra docs --extra examples --extra quantum`.
+Synthetic seeds are explicit; elapsed times depend on the host. The recorded
+results do not establish real-plant performance or a large-scale speedup.
+Follow [CONTRIBUTING.md](CONTRIBUTING.md) for scientific and documentation changes.
 
-EnerQit is released under the **MIT license**. See `LICENSE`, `NOTICE`,
-`CONTRIBUTING.md`, and `CHANGELOG.md`. Third-party dependencies retain their
-own licenses. The earlier QuantumPV work supplies the initial solar application;
-EnerQit is the broader energy-algorithms project.
+## Research and roadmap
+
+The [methods note](paper/README.md) and
+[research library](https://julianascencio.github.io/enerqit/research/index.html)
+describe the current evidence base: pvlib forward physics, De Soto parameter
+translation, simulated bifurcation, and QUBO/Ising model conventions.
+
+[ROADMAP.md](ROADMAP.md) tracks held-out field validation, stronger classical
+baselines and future wind, storage, grid and market applications. Those additional
+energy domains are planned, not implemented. The initial solar application grew
+from the earlier QuantumPV work.
+
+## Creator and license
+
+Created by **[ASVA Consulting](https://asvaconsulting.com)**.
+Contact: **[contacto@asvaconsulting.com](mailto:contacto@asvaconsulting.com)**.
+
+EnerQit is released under the [MIT license](LICENSE). See [NOTICE](NOTICE) for
+attribution; dependencies retain their own licenses. EnerQit uses pvlib for
+forward PV physics and is independent of, and not endorsed by, pvlib.
