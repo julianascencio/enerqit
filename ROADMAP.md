@@ -13,6 +13,10 @@ hardware experiments will be a separate, explicitly labeled execution path.
 - Reproducible benchmarks, synthetic evidence, tests and executable examples.
 - Local classical QAOA simulation and optional dimod/Qiskit model exports.
 
+- Duration-aware battery portfolio selection and registered external agent studies.
+- Industrial batch scheduling with deadlines, scenario-specific grid ceilings,
+  native MILP, conservative QUBO and independently evaluated rebound overload.
+
 ## Next research milestones — not implemented yet
 
 | Domain | Candidate problem | Required classical baseline |

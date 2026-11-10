@@ -21,6 +21,7 @@ your measurements.
    /use_cases
    /data_contract
    /methods
+   /batch_flexibility
    /quantum
 
 .. toctree::

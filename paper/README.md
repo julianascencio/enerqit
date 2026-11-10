@@ -57,3 +57,24 @@ advantage. The complete agent trace, solver budgets and environment are in
 This contribution was AI-generated and checked with physical accounting tests,
 independent exact oracles and runnable examples; human and field review remain
 separate from these implementation checks.
+
+## Industrial batch flexibility (second 10 November 2026 run)
+
+[The batch scheduling study](../docs/sphinx/source/batch_flexibility.rst) is
+motivated by the IEA's 5 November Spain energy-policy review. Its scheduling
+formulation is an independent engineering interpretation, not an IEA algorithm
+or empirical reproduction. All site inputs are synthetic. The native binary
+start-time model uses SciPy/HiGHS MILP, compared against actual-start enumeration
+and the existing exact/SA/bSB backends. Conservative upper rounding of demand and
+lower rounding of headroom preserves the direction of physical feasibility.
+Per-job cost shifting yields a nonnegative objective and a bounded sufficient
+penalty even with negative energy prices; exhaustive state tests check this.
+
+Every job's energy and completion deadline are preserved. One common schedule
+meets all declared scenarios, without suggesting a calibrated risk probability.
+The study retains failed/inferior solver outcomes, deterministic sensitivities
+and 4/8/16-job resource measurements. The complete result is in
+`benchmarks/results/flexibility-engineer-20261110.json`. Native MILP remains the
+recommendation; no hardware, field-validation or quantum-advantage claim is made.
+This AI-generated implementation has automated accounting/oracle checks and
+requires separate human and field review before operational use.

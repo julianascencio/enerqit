@@ -111,7 +111,7 @@ python docs/examples/plot_orientation.py
 
 The demo writes observations and a JSON result with provenance. The
 [example gallery](https://julianascencio.github.io/enerqit/gallery/index.html)
-contains eight executed studies with downloadable scripts and notebooks.
+contains nine executed studies with downloadable scripts and notebooks.
 
 ## Battery portfolio engineer
 
@@ -134,6 +134,25 @@ key. [Read the study](docs/sphinx/source/battery_portfolio.rst) for source facts
 assumptions, exact certificates and stochastic outcomes. The optional agent is
 pinned to an immutable revision from [energy-agents PR #19](https://github.com/julianascencio/energy-agents/pull/19).
 
+## Industrial flexibility engineer
+
+The new [step-by-step example](docs/examples/plot_batch_flexibility.py) schedules
+noninterruptible jobs against deadlines and grid headroom in multiple scenarios.
+It uses the same Quantum ML Engineer and compares native MILP, actual-start
+exhaustive enumeration, exact QUBO, annealing and simulated bifurcation.
+
+```bash
+python -m pip install -e ".[dev,docs]" -r requirements/agent-study.txt
+python -m enerqit.flexibility_study --output results/flexibility-engineer.json
+python docs/examples/plot_batch_flexibility.py
+```
+
+For the synthetic 9 MWh workload, price-only planning costs €105 but exceeds the
+grid ceiling by 5 MW; nominal-only planning costs €390 and fails the stress case.
+The €525 shared schedule meets both scenarios and every deadline. These are
+assumed energy charges, not observed market savings. [Read the study](docs/sphinx/source/batch_flexibility.rst)
+for dated news context, assumptions, sensitivity and retained solver outcomes.
+
 ## Main capabilities
 
 | Capability | Evidence and current implementation |
@@ -146,6 +165,7 @@ pinned to an immutable revision from [energy-agents PR #19](https://github.com/j
 | Effective inverter and thermal curves | Synchronized converter input/output or independently available AC and thermal evidence; explicit coverage checks |
 | Coupled configuration selection | Forward templates, one-hot choices and inventory equalities; common QUBO/Ising encodings |
 | Solver benchmarking | Exact QUBO and native feasible enumeration, simulated annealing, and ballistic simulated bifurcation |
+| Industrial batch flexibility | Fixed work and release/deadline windows, shared-scenario grid ceilings, native MILP and conservative QUBO; explicit rebound/feasibility checks |
 | Battery availability portfolios | Duration, SOC, SOH, export headroom and reserves; native MILP, cost-cover QUBO, independent feasibility and agent-led sensitivity |
 | Local evidence studies | Idempotent SQLite ingestion, late corrections, immutable snapshots and structured result records |
 
@@ -178,7 +198,7 @@ for the encoding conventions, limitations and future hardware research path.
 | `enerqit/` | Physical models, inverse estimators, QUBO encodings and evidence utilities |
 | `enerqit/solar/` | Public entry point for the initial solar application |
 | `enerqit/solvers/` | Classical baselines, simulated bifurcation and optional quantum exports |
-| `docs/examples/` | Eight executable gallery examples |
+| `docs/examples/` | Nine executable gallery examples |
 | `docs/notebooks/` | Introductory inverse-study notebook |
 | `docs/sphinx/source/` | User guide, gallery configuration, API, research and contributor documentation |
 | `tests/` | Recovery, invalid-data, identifiability, encoding and audit checks |

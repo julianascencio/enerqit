@@ -47,6 +47,10 @@ a feature-completeness claim for every possible PV inverse problem.
      - Piecewise constrained fit
      - Discrete cooling-state/threshold hypotheses
      - Single-state classical fit; QI extension proposed
+   * - Industrial batch scheduling
+     - Native MILP and actual-start enumeration
+     - One-hot starts and conservative capacity-slack QUBO
+     - Synthetic deadlines and scenario ceilings; no plant dispatch
    * - Battery availability portfolio
      - MILP and native subset enumeration
      - Conservative cost-cover QUBO via exact, SA and bSB

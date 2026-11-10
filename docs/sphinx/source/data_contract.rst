@@ -49,3 +49,13 @@ uploads are rejected. Identical canonical batches are no-ops. Original batch
 payloads remain in SQLite, and analyses preserve evidence hashes and results.
 The store is local, lacks authentication/encryption and is not a production
 multi-tenant database. Apply client data governance in the deployment environment.
+
+Batch scheduling contract
+--------------------------
+
+``BatchProblem`` uses fixed-duration UTC slots. Profiles are incremental AC MW,
+prices EUR/MWh, and each scenario supplies baseline MW and AC import ceilings.
+Release slots are inclusive; completion deadlines are exclusive boundaries.
+Every job runs once and finishes inside the complete horizon. Inputs are explicit
+assumptions or caller-validated forecasts, never inferred from news. See
+:doc:`batch_flexibility` for assumptions and independent accounting.

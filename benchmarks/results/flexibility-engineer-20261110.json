@@ -1,0 +1,4051 @@
+{
+  "success": true,
+  "role": {
+    "id": "career_quantum_ml_engineer",
+    "title": "Quantum Machine Learning Engineer",
+    "mandate": "Design and evaluate classical, quantum-inspired and hybrid energy research workflows.",
+    "inputs": [
+      "load_case",
+      "experiment_budget",
+      "research_context"
+    ],
+    "tool": "prepare_data",
+    "output": "quantum_ml_research_handoff",
+    "acceptance": "Chronological held-out benchmarks, feasible schedules, provenance and limitations.",
+    "technology": "cross_technology",
+    "authority": "local_bounded_research_only"
+  },
+  "mode": "scripted_tool_workflow",
+  "classification": "mixed",
+  "reports": {
+    "inspect_evidence": {
+      "sources": [
+        {
+          "id": "iea_spain",
+          "url": "https://www.iea.org/news/accelerating-electrification-can-unlock-the-full-benefits-of-spains-renewables-leadership",
+          "published_on": "2026-11-05",
+          "retrieved_on": "2026-11-10",
+          "response_sha256": "d7ebcf76c6fed9479a5b4e3413e6915b2b39438fe0433e9b0c2b2a0e8cd7c33d",
+          "response_bytes": 233130,
+          "redistribution": "URL, factual metadata and independently authored summary only; no source page bundled"
+        },
+        {
+          "id": "iea_renewables",
+          "url": "https://www.iea.org/news/energy-security-concerns-spur-faster-renewables-growth-across-a-widening-constellation-of-countries",
+          "published_on": "2026-11-06",
+          "retrieved_on": "2026-11-10",
+          "response_sha256": "0b5f3db7d3d369ceaaf2164c2f7298c480707fc7c6beadc5456e29807338fddd",
+          "response_bytes": 232592,
+          "redistribution": "URL, factual metadata and independently authored summary only; no source page bundled"
+        },
+        {
+          "id": "ember_grid",
+          "url": "https://ember-energy.org/latest-insights/building-a-grid-for-the-age-of-power/",
+          "published_on": "2026-11-05",
+          "retrieved_on": "2026-11-10",
+          "response_sha256": "56bc6c44cef70f68783bee54746ed3d1110511af688afa19dfe5fcb000a93277",
+          "response_bytes": 95129,
+          "redistribution": "URL, factual metadata and independently authored summary only; no source page bundled"
+        },
+        {
+          "id": "ember_flexibility",
+          "url": "https://ember-energy.org/latest-insights/data-centres-for-grids-the-potential-impact-of-flexibility/",
+          "published_on": "2026-10-29",
+          "retrieved_on": "2026-11-10",
+          "response_sha256": "aa1fc58bf46fae7fd154c4bcc39d5fd1256ec32426ff2b0391a00066824481ce",
+          "response_bytes": 139137,
+          "redistribution": "URL, factual metadata and independently authored summary only; no source page bundled"
+        },
+        {
+          "id": "banque_france",
+          "url": "https://www.banque-france.fr/en/publications-and-statistics/publications/data-centres-and-energy-environmental-cost-faulty-price-signal",
+          "published_on": "2026-11-04",
+          "retrieved_on": "2026-11-10",
+          "acquisition": "Read with browser search/open; source response not archived",
+          "response_sha256": null,
+          "redistribution": "Link and factual publication date only"
+        }
+      ],
+      "selection": {
+        "as_of": "2026-11-10",
+        "initial_window_hours": 72,
+        "extended_window_days": 7,
+        "selected_source_id": "iea_spain",
+        "selection_rationale": "The last 72 hours included the already-implemented GB margin case. Within seven days, Spain electrification provides a clear industrial decision: schedule fixed-work jobs without moving overload into cheaper hours. It fits native and QUBO optimization, adds deadlines and shared-scenario constraints, and needs no speculative hardware claim.",
+        "candidates": [
+          {
+            "source_id": "iea_spain",
+            "business_impact": "Industrial energy procurement and usable grid headroom",
+            "technical_importance": "Preserve work/deadlines and avoid rebound overload",
+            "evidence": "Primary policy review; no site workload or tariff dataset",
+            "tractability": "High for a bounded synthetic scheduling prototype",
+            "novelty": "New intertemporal job scheduling, distinct from existing battery cover",
+            "method_fit": "Native MILP and conservative QUBO; no ML needed",
+            "decision": "selected"
+          },
+          {
+            "source_id": "iea_renewables",
+            "business_impact": "Broad global renewable investment and integration",
+            "technical_importance": "System-level bottlenecks",
+            "evidence": "Primary forecast; broad geographic scope",
+            "tractability": "Medium without local system observations",
+            "novelty": "Potential multi-region integration scenario",
+            "method_fit": "Capacity planning and stochastic optimization",
+            "decision": "backlog: choose a data-supported regional bottleneck"
+          },
+          {
+            "source_id": "ember_grid",
+            "business_impact": "Grid upgrade cost and speed",
+            "technical_importance": "Different transmission and demand solutions",
+            "evidence": "Primary explanatory guide, not calibrated network topology",
+            "tractability": "Medium; requires network models",
+            "novelty": "Network-aware constraint analysis remains unimplemented",
+            "method_fit": "Power-flow-constrained optimization",
+            "decision": "backlog: obtain open topology and actual line ratings"
+          },
+          {
+            "source_id": "banque_france",
+            "business_impact": "Data-centre siting and price-signal quality",
+            "technical_importance": "Spatial demand/renewable alignment",
+            "evidence": "Primary economic commentary; not job-level measurements",
+            "tractability": "Medium; migration and service constraints unknown",
+            "novelty": "Spatial scheduling would extend this temporal model",
+            "method_fit": "Location-aware scheduling and tariff scenarios",
+            "decision": "backlog: geographic scheduling only with validated latency and energy costs"
+          }
+        ],
+        "age_correction": "Ember data-centre flexibility report is dated 2026-10-29 (12 days old), despite search freshness labels. It is background only, not this run's fresh news trigger.",
+        "excluded_prior_case": "GB margin/battery availability already implemented in merged EnerQit PR #2"
+      },
+      "repository_awareness": {
+        "enerqit_base_commit": "b1e3236941ae3e68f83fc8b0516849cd480d3b0e",
+        "energy_agents_commit": "832f4117f95ac3137c63eace389e56cdc2c075fe",
+        "role_id": "career_quantum_ml_engineer",
+        "energy_data_insights_commit": "b5ae10d43619155519a56ab3a30cb6660db8ca55",
+        "inspected": [
+          "data-retrieval/src/energy_data_retrieval/sources/ree/README.md",
+          "docs/ree-adjustment-bess.md",
+          "docs/thermal-counterfactual.md",
+          "methods/README.md"
+        ],
+        "reuse_decision": "REE connector supplies regional daily/monthly/yearly generation, not hourly site tariffs or job deadlines. Existing REE BESS screen is a separate forced-cycle economic calculation; thermal counterfactual methods analyze published HVAC forecasts. None supplies this job scheduler's required site inputs. No new network connector or artificial observed data is introduced."
+      },
+      "input_classification": "synthetic",
+      "case_sha256": "9916401d0b2e35b52ae6f36726c0b1b7914e2b50fae765658e386f012429eae4"
+    },
+    "benchmark_methods": {
+      "native_milp": {
+        "status": "optimal",
+        "physical": {
+          "feasible": true,
+          "starts": [
+            1,
+            3,
+            4,
+            1
+          ],
+          "job_ids": [
+            "Batch-A",
+            "Batch-B",
+            "Batch-C",
+            "Batch-D"
+          ],
+          "incremental_mw": [
+            0.0,
+            3.0,
+            1.0,
+            1.0,
+            4.0,
+            0.0
+          ],
+          "work_energy_mwh": 9.0,
+          "energy_charge_eur": 525.0,
+          "all_jobs_completed": true,
+          "scenarios": [
+            {
+              "name": "nominal",
+              "grid_import_mw": [
+                4.0,
+                7.0,
+                5.0,
+                5.0,
+                8.0,
+                4.0
+              ],
+              "max_violation_mw": 0.0,
+              "violation_mw": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "feasible": true
+            },
+            {
+              "name": "higher_midday_load",
+              "grid_import_mw": [
+                4.0,
+                7.0,
+                6.0,
+                6.0,
+                8.0,
+                4.0
+              ],
+              "max_violation_mw": 0.0,
+              "violation_mw": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "feasible": true
+            }
+          ],
+          "max_violation_mw": 0.0,
+          "selection_counts": [
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        "bits": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0
+        ],
+        "grid_enforced": true,
+        "mip_gap": 0.0,
+        "construction_s": 0.00043826500041177496,
+        "solver_s": 0.002169209998100996
+      },
+      "native_enumeration": {
+        "status": "optimal",
+        "physical": {
+          "feasible": true,
+          "starts": [
+            1,
+            3,
+            4,
+            1
+          ],
+          "job_ids": [
+            "Batch-A",
+            "Batch-B",
+            "Batch-C",
+            "Batch-D"
+          ],
+          "incremental_mw": [
+            0.0,
+            3.0,
+            1.0,
+            1.0,
+            4.0,
+            0.0
+          ],
+          "work_energy_mwh": 9.0,
+          "energy_charge_eur": 525.0,
+          "all_jobs_completed": true,
+          "scenarios": [
+            {
+              "name": "nominal",
+              "grid_import_mw": [
+                4.0,
+                7.0,
+                5.0,
+                5.0,
+                8.0,
+                4.0
+              ],
+              "max_violation_mw": 0.0,
+              "violation_mw": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "feasible": true
+            },
+            {
+              "name": "higher_midday_load",
+              "grid_import_mw": [
+                4.0,
+                7.0,
+                6.0,
+                6.0,
+                8.0,
+                4.0
+              ],
+              "max_violation_mw": 0.0,
+              "violation_mw": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "feasible": true
+            }
+          ],
+          "max_violation_mw": 0.0
+        },
+        "combinations": 144,
+        "solver_s": 0.003686121999635361
+      },
+      "price_only": {
+        "status": "optimal",
+        "physical": {
+          "feasible": false,
+          "starts": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "job_ids": [
+            "Batch-A",
+            "Batch-B",
+            "Batch-C",
+            "Batch-D"
+          ],
+          "incremental_mw": [
+            0.0,
+            0.0,
+            6.0,
+            3.0,
+            0.0,
+            0.0
+          ],
+          "work_energy_mwh": 9.0,
+          "energy_charge_eur": 105.0,
+          "all_jobs_completed": true,
+          "scenarios": [
+            {
+              "name": "nominal",
+              "grid_import_mw": [
+                4.0,
+                4.0,
+                10.0,
+                7.0,
+                4.0,
+                4.0
+              ],
+              "max_violation_mw": 4.0,
+              "violation_mw": [
+                0.0,
+                0.0,
+                4.0,
+                1.0,
+                0.0,
+                0.0
+              ],
+              "feasible": false
+            },
+            {
+              "name": "higher_midday_load",
+              "grid_import_mw": [
+                4.0,
+                4.0,
+                11.0,
+                8.0,
+                4.0,
+                4.0
+              ],
+              "max_violation_mw": 5.0,
+              "violation_mw": [
+                0.0,
+                0.0,
+                5.0,
+                2.0,
+                0.0,
+                0.0
+              ],
+              "feasible": false
+            }
+          ],
+          "max_violation_mw": 5.0,
+          "selection_counts": [
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        "bits": [
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "grid_enforced": false,
+        "mip_gap": 0.0,
+        "construction_s": 0.0001422300010744948,
+        "solver_s": 0.0009466320007049944
+      },
+      "nominal_only": {
+        "status": "optimal",
+        "physical": {
+          "feasible": true,
+          "starts": [
+            1,
+            2,
+            4,
+            1
+          ],
+          "job_ids": [
+            "Batch-A",
+            "Batch-B",
+            "Batch-C",
+            "Batch-D"
+          ],
+          "incremental_mw": [
+            0.0,
+            3.0,
+            2.0,
+            2.0,
+            2.0,
+            0.0
+          ],
+          "work_energy_mwh": 9.0,
+          "energy_charge_eur": 390.0,
+          "all_jobs_completed": true,
+          "scenarios": [
+            {
+              "name": "nominal",
+              "grid_import_mw": [
+                4.0,
+                7.0,
+                6.0,
+                6.0,
+                6.0,
+                4.0
+              ],
+              "max_violation_mw": 0.0,
+              "violation_mw": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "feasible": true
+            }
+          ],
+          "max_violation_mw": 0.0,
+          "selection_counts": [
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        "bits": [
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0
+        ],
+        "grid_enforced": true,
+        "mip_gap": 0.0,
+        "construction_s": 0.00014928000018699095,
+        "solver_s": 0.002169400999264326,
+        "evaluated_on_all_scenarios": {
+          "feasible": false,
+          "starts": [
+            1,
+            2,
+            4,
+            1
+          ],
+          "job_ids": [
+            "Batch-A",
+            "Batch-B",
+            "Batch-C",
+            "Batch-D"
+          ],
+          "incremental_mw": [
+            0.0,
+            3.0,
+            2.0,
+            2.0,
+            2.0,
+            0.0
+          ],
+          "work_energy_mwh": 9.0,
+          "energy_charge_eur": 390.0,
+          "all_jobs_completed": true,
+          "scenarios": [
+            {
+              "name": "nominal",
+              "grid_import_mw": [
+                4.0,
+                7.0,
+                6.0,
+                6.0,
+                6.0,
+                4.0
+              ],
+              "max_violation_mw": 0.0,
+              "violation_mw": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "feasible": true
+            },
+            {
+              "name": "higher_midday_load",
+              "grid_import_mw": [
+                4.0,
+                7.0,
+                7.0,
+                7.0,
+                6.0,
+                4.0
+              ],
+              "max_violation_mw": 1.0,
+              "violation_mw": [
+                0.0,
+                0.0,
+                1.0,
+                1.0,
+                0.0,
+                0.0
+              ],
+              "feasible": false
+            }
+          ],
+          "max_violation_mw": 1.0
+        }
+      },
+      "earliest_start": {
+        "feasible": false,
+        "starts": [
+          0,
+          1,
+          2,
+          0
+        ],
+        "job_ids": [
+          "Batch-A",
+          "Batch-B",
+          "Batch-C",
+          "Batch-D"
+        ],
+        "incremental_mw": [
+          3.0,
+          2.0,
+          4.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "work_energy_mwh": 9.0,
+        "energy_charge_eur": 460.0,
+        "all_jobs_completed": true,
+        "scenarios": [
+          {
+            "name": "nominal",
+            "grid_import_mw": [
+              7.0,
+              6.0,
+              8.0,
+              4.0,
+              4.0,
+              4.0
+            ],
+            "max_violation_mw": 2.0,
+            "violation_mw": [
+              0.0,
+              0.0,
+              2.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "feasible": false
+          },
+          {
+            "name": "higher_midday_load",
+            "grid_import_mw": [
+              7.0,
+              6.0,
+              9.0,
+              5.0,
+              4.0,
+              4.0
+            ],
+            "max_violation_mw": 3.0,
+            "violation_mw": [
+              0.0,
+              0.0,
+              3.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "feasible": false
+          }
+        ],
+        "max_violation_mw": 3.0
+      },
+      "records": [
+        {
+          "x": [
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          "energy": 525.0,
+          "method": "exact",
+          "seed": null,
+          "elapsed_s": 0.0313902859998052,
+          "feasible": true,
+          "metadata": {
+            "certified": true,
+            "evaluations": 65536
+          },
+          "physical": {
+            "feasible": true,
+            "starts": [
+              1,
+              3,
+              4,
+              1
+            ],
+            "job_ids": [
+              "Batch-A",
+              "Batch-B",
+              "Batch-C",
+              "Batch-D"
+            ],
+            "incremental_mw": [
+              0.0,
+              3.0,
+              1.0,
+              1.0,
+              4.0,
+              0.0
+            ],
+            "work_energy_mwh": 9.0,
+            "energy_charge_eur": 525.0,
+            "all_jobs_completed": true,
+            "scenarios": [
+              {
+                "name": "nominal",
+                "grid_import_mw": [
+                  4.0,
+                  7.0,
+                  5.0,
+                  5.0,
+                  8.0,
+                  4.0
+                ],
+                "max_violation_mw": 0.0,
+                "violation_mw": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "feasible": true
+              },
+              {
+                "name": "higher_midday_load",
+                "grid_import_mw": [
+                  4.0,
+                  7.0,
+                  6.0,
+                  6.0,
+                  8.0,
+                  4.0
+                ],
+                "max_violation_mw": 0.0,
+                "violation_mw": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "feasible": true
+              }
+            ],
+            "max_violation_mw": 0.0,
+            "selection_counts": [
+              1,
+              1,
+              1,
+              1
+            ]
+          },
+          "encoded_feasible": true,
+          "physical_feasible": true,
+          "construction_s": 0.0004401070000312757,
+          "total_s": 0.031830392999836477,
+          "native_cost_gap_eur": 0.0,
+          "qubo_energy_gap_eur": 0.0
+        },
+        {
+          "x": [
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          "energy": 525.0,
+          "method": "simulated_annealing",
+          "seed": 0,
+          "elapsed_s": 0.030996498000604333,
+          "feasible": true,
+          "metadata": {
+            "reads": 32,
+            "sweeps": 150,
+            "local_polish": true,
+            "raw_best_energy": 525.0,
+            "certified": false
+          },
+          "physical": {
+            "feasible": true,
+            "starts": [
+              1,
+              3,
+              4,
+              1
+            ],
+            "job_ids": [
+              "Batch-A",
+              "Batch-B",
+              "Batch-C",
+              "Batch-D"
+            ],
+            "incremental_mw": [
+              0.0,
+              3.0,
+              1.0,
+              1.0,
+              4.0,
+              0.0
+            ],
+            "work_energy_mwh": 9.0,
+            "energy_charge_eur": 525.0,
+            "all_jobs_completed": true,
+            "scenarios": [
+              {
+                "name": "nominal",
+                "grid_import_mw": [
+                  4.0,
+                  7.0,
+                  5.0,
+                  5.0,
+                  8.0,
+                  4.0
+                ],
+                "max_violation_mw": 0.0,
+                "violation_mw": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "feasible": true
+              },
+              {
+                "name": "higher_midday_load",
+                "grid_import_mw": [
+                  4.0,
+                  7.0,
+                  6.0,
+                  6.0,
+                  8.0,
+                  4.0
+                ],
+                "max_violation_mw": 0.0,
+                "violation_mw": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "feasible": true
+              }
+            ],
+            "max_violation_mw": 0.0,
+            "selection_counts": [
+              1,
+              1,
+              1,
+              1
+            ]
+          },
+          "encoded_feasible": true,
+          "physical_feasible": true,
+          "construction_s": 0.0004401070000312757,
+          "total_s": 0.03143660500063561,
+          "native_cost_gap_eur": 0.0,
+          "qubo_energy_gap_eur": 0.0
+        },
+        {
+          "x": [
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          "energy": 525.0,
+          "method": "ballistic_simulated_bifurcation",
+          "seed": 0,
+          "elapsed_s": 0.02320028100075433,
+          "feasible": true,
+          "metadata": {
+            "agents": 64,
+            "steps": 800,
+            "dt": 0.1,
+            "coupling": 0.5,
+            "local_polish": true,
+            "raw_best_energy": 1656.0,
+            "coefficient_scale": 56538.5,
+            "certified": false,
+            "implementation": "NumPy reference; classical hardware"
+          },
+          "physical": {
+            "feasible": true,
+            "starts": [
+              1,
+              3,
+              4,
+              1
+            ],
+            "job_ids": [
+              "Batch-A",
+              "Batch-B",
+              "Batch-C",
+              "Batch-D"
+            ],
+            "incremental_mw": [
+              0.0,
+              3.0,
+              1.0,
+              1.0,
+              4.0,
+              0.0
+            ],
+            "work_energy_mwh": 9.0,
+            "energy_charge_eur": 525.0,
+            "all_jobs_completed": true,
+            "scenarios": [
+              {
+                "name": "nominal",
+                "grid_import_mw": [
+                  4.0,
+                  7.0,
+                  5.0,
+                  5.0,
+                  8.0,
+                  4.0
+                ],
+                "max_violation_mw": 0.0,
+                "violation_mw": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "feasible": true
+              },
+              {
+                "name": "higher_midday_load",
+                "grid_import_mw": [
+                  4.0,
+                  7.0,
+                  6.0,
+                  6.0,
+                  8.0,
+                  4.0
+                ],
+                "max_violation_mw": 0.0,
+                "violation_mw": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "feasible": true
+              }
+            ],
+            "max_violation_mw": 0.0,
+            "selection_counts": [
+              1,
+              1,
+              1,
+              1
+            ]
+          },
+          "encoded_feasible": true,
+          "physical_feasible": true,
+          "construction_s": 0.0004401070000312757,
+          "total_s": 0.023640388000785606,
+          "native_cost_gap_eur": 0.0,
+          "qubo_energy_gap_eur": 0.0
+        },
+        {
+          "x": [
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          "energy": 525.0,
+          "method": "simulated_annealing",
+          "seed": 1,
+          "elapsed_s": 0.030682786000397755,
+          "feasible": true,
+          "metadata": {
+            "reads": 32,
+            "sweeps": 150,
+            "local_polish": true,
+            "raw_best_energy": 525.0,
+            "certified": false
+          },
+          "physical": {
+            "feasible": true,
+            "starts": [
+              1,
+              3,
+              4,
+              1
+            ],
+            "job_ids": [
+              "Batch-A",
+              "Batch-B",
+              "Batch-C",
+              "Batch-D"
+            ],
+            "incremental_mw": [
+              0.0,
+              3.0,
+              1.0,
+              1.0,
+              4.0,
+              0.0
+            ],
+            "work_energy_mwh": 9.0,
+            "energy_charge_eur": 525.0,
+            "all_jobs_completed": true,
+            "scenarios": [
+              {
+                "name": "nominal",
+                "grid_import_mw": [
+                  4.0,
+                  7.0,
+                  5.0,
+                  5.0,
+                  8.0,
+                  4.0
+                ],
+                "max_violation_mw": 0.0,
+                "violation_mw": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "feasible": true
+              },
+              {
+                "name": "higher_midday_load",
+                "grid_import_mw": [
+                  4.0,
+                  7.0,
+                  6.0,
+                  6.0,
+                  8.0,
+                  4.0
+                ],
+                "max_violation_mw": 0.0,
+                "violation_mw": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "feasible": true
+              }
+            ],
+            "max_violation_mw": 0.0,
+            "selection_counts": [
+              1,
+              1,
+              1,
+              1
+            ]
+          },
+          "encoded_feasible": true,
+          "physical_feasible": true,
+          "construction_s": 0.0004401070000312757,
+          "total_s": 0.03112289300042903,
+          "native_cost_gap_eur": 0.0,
+          "qubo_energy_gap_eur": 0.0
+        },
+        {
+          "x": [
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          "energy": 525.0,
+          "method": "ballistic_simulated_bifurcation",
+          "seed": 1,
+          "elapsed_s": 0.022676461998344166,
+          "feasible": true,
+          "metadata": {
+            "agents": 64,
+            "steps": 800,
+            "dt": 0.1,
+            "coupling": 0.5,
+            "local_polish": true,
+            "raw_best_energy": 645.0,
+            "coefficient_scale": 56538.5,
+            "certified": false,
+            "implementation": "NumPy reference; classical hardware"
+          },
+          "physical": {
+            "feasible": true,
+            "starts": [
+              1,
+              3,
+              4,
+              1
+            ],
+            "job_ids": [
+              "Batch-A",
+              "Batch-B",
+              "Batch-C",
+              "Batch-D"
+            ],
+            "incremental_mw": [
+              0.0,
+              3.0,
+              1.0,
+              1.0,
+              4.0,
+              0.0
+            ],
+            "work_energy_mwh": 9.0,
+            "energy_charge_eur": 525.0,
+            "all_jobs_completed": true,
+            "scenarios": [
+              {
+                "name": "nominal",
+                "grid_import_mw": [
+                  4.0,
+                  7.0,
+                  5.0,
+                  5.0,
+                  8.0,
+                  4.0
+                ],
+                "max_violation_mw": 0.0,
+                "violation_mw": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "feasible": true
+              },
+              {
+                "name": "higher_midday_load",
+                "grid_import_mw": [
+                  4.0,
+                  7.0,
+                  6.0,
+                  6.0,
+                  8.0,
+                  4.0
+                ],
+                "max_violation_mw": 0.0,
+                "violation_mw": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "feasible": true
+              }
+            ],
+            "max_violation_mw": 0.0,
+            "selection_counts": [
+              1,
+              1,
+              1,
+              1
+            ]
+          },
+          "encoded_feasible": true,
+          "physical_feasible": true,
+          "construction_s": 0.0004401070000312757,
+          "total_s": 0.023116568998375442,
+          "native_cost_gap_eur": 0.0,
+          "qubo_energy_gap_eur": 0.0
+        },
+        {
+          "x": [
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          "energy": 525.0,
+          "method": "simulated_annealing",
+          "seed": 2,
+          "elapsed_s": 0.03128893699977198,
+          "feasible": true,
+          "metadata": {
+            "reads": 32,
+            "sweeps": 150,
+            "local_polish": true,
+            "raw_best_energy": 525.0,
+            "certified": false
+          },
+          "physical": {
+            "feasible": true,
+            "starts": [
+              1,
+              3,
+              4,
+              1
+            ],
+            "job_ids": [
+              "Batch-A",
+              "Batch-B",
+              "Batch-C",
+              "Batch-D"
+            ],
+            "incremental_mw": [
+              0.0,
+              3.0,
+              1.0,
+              1.0,
+              4.0,
+              0.0
+            ],
+            "work_energy_mwh": 9.0,
+            "energy_charge_eur": 525.0,
+            "all_jobs_completed": true,
+            "scenarios": [
+              {
+                "name": "nominal",
+                "grid_import_mw": [
+                  4.0,
+                  7.0,
+                  5.0,
+                  5.0,
+                  8.0,
+                  4.0
+                ],
+                "max_violation_mw": 0.0,
+                "violation_mw": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "feasible": true
+              },
+              {
+                "name": "higher_midday_load",
+                "grid_import_mw": [
+                  4.0,
+                  7.0,
+                  6.0,
+                  6.0,
+                  8.0,
+                  4.0
+                ],
+                "max_violation_mw": 0.0,
+                "violation_mw": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "feasible": true
+              }
+            ],
+            "max_violation_mw": 0.0,
+            "selection_counts": [
+              1,
+              1,
+              1,
+              1
+            ]
+          },
+          "encoded_feasible": true,
+          "physical_feasible": true,
+          "construction_s": 0.0004401070000312757,
+          "total_s": 0.03172904399980325,
+          "native_cost_gap_eur": 0.0,
+          "qubo_energy_gap_eur": 0.0
+        },
+        {
+          "x": [
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          "energy": 525.0,
+          "method": "ballistic_simulated_bifurcation",
+          "seed": 2,
+          "elapsed_s": 0.022407075000955956,
+          "feasible": true,
+          "metadata": {
+            "agents": 64,
+            "steps": 800,
+            "dt": 0.1,
+            "coupling": 0.5,
+            "local_polish": true,
+            "raw_best_energy": 1736.0,
+            "coefficient_scale": 56538.5,
+            "certified": false,
+            "implementation": "NumPy reference; classical hardware"
+          },
+          "physical": {
+            "feasible": true,
+            "starts": [
+              1,
+              3,
+              4,
+              1
+            ],
+            "job_ids": [
+              "Batch-A",
+              "Batch-B",
+              "Batch-C",
+              "Batch-D"
+            ],
+            "incremental_mw": [
+              0.0,
+              3.0,
+              1.0,
+              1.0,
+              4.0,
+              0.0
+            ],
+            "work_energy_mwh": 9.0,
+            "energy_charge_eur": 525.0,
+            "all_jobs_completed": true,
+            "scenarios": [
+              {
+                "name": "nominal",
+                "grid_import_mw": [
+                  4.0,
+                  7.0,
+                  5.0,
+                  5.0,
+                  8.0,
+                  4.0
+                ],
+                "max_violation_mw": 0.0,
+                "violation_mw": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "feasible": true
+              },
+              {
+                "name": "higher_midday_load",
+                "grid_import_mw": [
+                  4.0,
+                  7.0,
+                  6.0,
+                  6.0,
+                  8.0,
+                  4.0
+                ],
+                "max_violation_mw": 0.0,
+                "violation_mw": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "feasible": true
+              }
+            ],
+            "max_violation_mw": 0.0,
+            "selection_counts": [
+              1,
+              1,
+              1,
+              1
+            ]
+          },
+          "encoded_feasible": true,
+          "physical_feasible": true,
+          "construction_s": 0.0004401070000312757,
+          "total_s": 0.02284718200098723,
+          "native_cost_gap_eur": 0.0,
+          "qubo_energy_gap_eur": 0.0
+        }
+      ],
+      "environment": {
+        "python": "3.12.14",
+        "platform": "Linux",
+        "machine": "x86_64",
+        "versions": {
+          "numpy": "2.3.5",
+          "scipy": "1.17.0",
+          "pandas": "2.2.3",
+          "pvlib": "0.16.1",
+          "enerqit": "0.1.0",
+          "energy-agents": "0.1.0"
+        },
+        "agent_source_revision": "832f4117f95ac3137c63eace389e56cdc2c075fe"
+      },
+      "economic_comparison": {
+        "robust_minus_nominal_eur": 135.0,
+        "robust_minus_price_only_eur": 420.0,
+        "interpretation": "Synthetic cost of respecting constraints, not realized savings",
+        "work_energy_mwh": 9.0
+      },
+      "qubo": {
+        "variables": 16,
+        "states": 65536,
+        "dense_matrix_bytes": 2048,
+        "kind": "deadline_constrained_batch_schedule",
+        "choice_bits": 14,
+        "slack_bits": 2,
+        "active_capacity_slots": [
+          2,
+          3
+        ],
+        "step_mw": 1.0,
+        "penalty_eur": 816.0,
+        "economic_offset_eur": 105.0,
+        "shifted_costs_eur": [
+          225.0,
+          95.0,
+          0.0,
+          40.0,
+          0.0,
+          135.0,
+          280.0,
+          0.0,
+          10.0,
+          140.0,
+          220.0,
+          90.0,
+          50.0,
+          0.0
+        ],
+        "capacity_units": [
+          4.0,
+          4.0,
+          1.0,
+          1.0,
+          4.0,
+          4.0
+        ],
+        "profile_units": [
+          [
+            2.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            2.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            2.0,
+            2.0,
+            1.0,
+            0.0,
+            0.0,
+            2.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            2.0,
+            1.0,
+            0.0,
+            0.0,
+            2.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            2.0,
+            1.0,
+            0.0,
+            0.0,
+            2.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            2.0,
+            0.0,
+            0.0,
+            0.0,
+            2.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "slack_weights": {
+          "2": [
+            1
+          ],
+          "3": [
+            1
+          ]
+        },
+        "rounding": "profile ceiling; headroom floor",
+        "options": [
+          {
+            "job_id": "Batch-A",
+            "start_slot": 0
+          },
+          {
+            "job_id": "Batch-A",
+            "start_slot": 1
+          },
+          {
+            "job_id": "Batch-A",
+            "start_slot": 2
+          },
+          {
+            "job_id": "Batch-B",
+            "start_slot": 1
+          },
+          {
+            "job_id": "Batch-B",
+            "start_slot": 2
+          },
+          {
+            "job_id": "Batch-B",
+            "start_slot": 3
+          },
+          {
+            "job_id": "Batch-B",
+            "start_slot": 4
+          },
+          {
+            "job_id": "Batch-C",
+            "start_slot": 2
+          },
+          {
+            "job_id": "Batch-C",
+            "start_slot": 3
+          },
+          {
+            "job_id": "Batch-C",
+            "start_slot": 4
+          },
+          {
+            "job_id": "Batch-C",
+            "start_slot": 5
+          },
+          {
+            "job_id": "Batch-D",
+            "start_slot": 0
+          },
+          {
+            "job_id": "Batch-D",
+            "start_slot": 1
+          },
+          {
+            "job_id": "Batch-D",
+            "start_slot": 2
+          }
+        ],
+        "convention": "full symmetric x.T @ Q @ x + offset",
+        "sha256": "5649c74c74176e9287af1b4602a888ceab1c9dcb6fbb285f42243477b460b46c"
+      },
+      "budgets": {
+        "seeds": [
+          0,
+          1,
+          2
+        ],
+        "sa_reads": 32,
+        "sa_sweeps": 150,
+        "bsb_agents": 64,
+        "bsb_steps": 800,
+        "shared_one_bit_polish": true,
+        "equal_runtime": false
+      },
+      "quantum_advantage_established": false
+    },
+    "assess_sensitivity": {
+      "baseline_margin": [
+        {
+          "extra_baseline_mw": 0,
+          "status": "optimal",
+          "physical": {
+            "feasible": true,
+            "starts": [
+              1,
+              3,
+              4,
+              1
+            ],
+            "job_ids": [
+              "Batch-A",
+              "Batch-B",
+              "Batch-C",
+              "Batch-D"
+            ],
+            "incremental_mw": [
+              0.0,
+              3.0,
+              1.0,
+              1.0,
+              4.0,
+              0.0
+            ],
+            "work_energy_mwh": 9.0,
+            "energy_charge_eur": 525.0,
+            "all_jobs_completed": true,
+            "scenarios": [
+              {
+                "name": "nominal",
+                "grid_import_mw": [
+                  4.0,
+                  7.0,
+                  5.0,
+                  5.0,
+                  8.0,
+                  4.0
+                ],
+                "max_violation_mw": 0.0,
+                "violation_mw": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "feasible": true
+              },
+              {
+                "name": "higher_midday_load",
+                "grid_import_mw": [
+                  4.0,
+                  7.0,
+                  6.0,
+                  6.0,
+                  8.0,
+                  4.0
+                ],
+                "max_violation_mw": 0.0,
+                "violation_mw": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "feasible": true
+              }
+            ],
+            "max_violation_mw": 0.0,
+            "selection_counts": [
+              1,
+              1,
+              1,
+              1
+            ]
+          },
+          "bits": [
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0
+          ],
+          "grid_enforced": true,
+          "mip_gap": 0.0,
+          "construction_s": 0.0001701399996818509,
+          "solver_s": 0.0012311610007600393
+        },
+        {
+          "extra_baseline_mw": 0.25,
+          "status": "optimal",
+          "physical": {
+            "feasible": true,
+            "starts": [
+              0,
+              4,
+              4,
+              1
+            ],
+            "job_ids": [
+              "Batch-A",
+              "Batch-B",
+              "Batch-C",
+              "Batch-D"
+            ],
+            "incremental_mw": [
+              2.0,
+              2.0,
+              0.0,
+              0.0,
+              3.0,
+              2.0
+            ],
+            "work_energy_mwh": 9.0,
+            "energy_charge_eur": 800.0,
+            "all_jobs_completed": true,
+            "scenarios": [
+              {
+                "name": "nominal",
+                "grid_import_mw": [
+                  6.25,
+                  6.25,
+                  4.25,
+                  4.25,
+                  7.25,
+                  6.25
+                ],
+                "max_violation_mw": 0.0,
+                "violation_mw": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "feasible": true
+              },
+              {
+                "name": "higher_midday_load",
+                "grid_import_mw": [
+                  6.25,
+                  6.25,
+                  5.25,
+                  5.25,
+                  7.25,
+                  6.25
+                ],
+                "max_violation_mw": 0.0,
+                "violation_mw": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "feasible": true
+              }
+            ],
+            "max_violation_mw": 0.0,
+            "selection_counts": [
+              1,
+              1,
+              1,
+              1
+            ]
+          },
+          "bits": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0
+          ],
+          "grid_enforced": true,
+          "mip_gap": 0.0,
+          "construction_s": 0.0001073079984053038,
+          "solver_s": 0.000806176001788117
+        },
+        {
+          "extra_baseline_mw": 0.5,
+          "status": "optimal",
+          "physical": {
+            "feasible": true,
+            "starts": [
+              0,
+              4,
+              4,
+              1
+            ],
+            "job_ids": [
+              "Batch-A",
+              "Batch-B",
+              "Batch-C",
+              "Batch-D"
+            ],
+            "incremental_mw": [
+              2.0,
+              2.0,
+              0.0,
+              0.0,
+              3.0,
+              2.0
+            ],
+            "work_energy_mwh": 9.0,
+            "energy_charge_eur": 800.0,
+            "all_jobs_completed": true,
+            "scenarios": [
+              {
+                "name": "nominal",
+                "grid_import_mw": [
+                  6.5,
+                  6.5,
+                  4.5,
+                  4.5,
+                  7.5,
+                  6.5
+                ],
+                "max_violation_mw": 0.0,
+                "violation_mw": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "feasible": true
+              },
+              {
+                "name": "higher_midday_load",
+                "grid_import_mw": [
+                  6.5,
+                  6.5,
+                  5.5,
+                  5.5,
+                  7.5,
+                  6.5
+                ],
+                "max_violation_mw": 0.0,
+                "violation_mw": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "feasible": true
+              }
+            ],
+            "max_violation_mw": 0.0,
+            "selection_counts": [
+              1,
+              1,
+              1,
+              1
+            ]
+          },
+          "bits": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0
+          ],
+          "grid_enforced": true,
+          "mip_gap": 0.0,
+          "construction_s": 0.0001278890013054479,
+          "solver_s": 0.0007759510008327197
+        },
+        {
+          "extra_baseline_mw": 1,
+          "status": "optimal",
+          "physical": {
+            "feasible": true,
+            "starts": [
+              0,
+              4,
+              4,
+              1
+            ],
+            "job_ids": [
+              "Batch-A",
+              "Batch-B",
+              "Batch-C",
+              "Batch-D"
+            ],
+            "incremental_mw": [
+              2.0,
+              2.0,
+              0.0,
+              0.0,
+              3.0,
+              2.0
+            ],
+            "work_energy_mwh": 9.0,
+            "energy_charge_eur": 800.0,
+            "all_jobs_completed": true,
+            "scenarios": [
+              {
+                "name": "nominal",
+                "grid_import_mw": [
+                  7.0,
+                  7.0,
+                  5.0,
+                  5.0,
+                  8.0,
+                  7.0
+                ],
+                "max_violation_mw": 0.0,
+                "violation_mw": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "feasible": true
+              },
+              {
+                "name": "higher_midday_load",
+                "grid_import_mw": [
+                  7.0,
+                  7.0,
+                  6.0,
+                  6.0,
+                  8.0,
+                  7.0
+                ],
+                "max_violation_mw": 0.0,
+                "violation_mw": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "feasible": true
+              }
+            ],
+            "max_violation_mw": 0.0,
+            "selection_counts": [
+              1,
+              1,
+              1,
+              1
+            ]
+          },
+          "bits": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0
+          ],
+          "grid_enforced": true,
+          "mip_gap": 0.0,
+          "construction_s": 0.00012744699779432267,
+          "solver_s": 0.000829630000225734
+        },
+        {
+          "extra_baseline_mw": 1.25,
+          "status": "infeasible",
+          "physical": null,
+          "construction_s": 0.00012391299969749525,
+          "solver_s": 0.0007111459999578074
+        }
+      ],
+      "deadline": [
+        {
+          "batch_c_deadline_slot": 4,
+          "status": "infeasible",
+          "physical": null,
+          "construction_s": 0.0001354790001641959,
+          "solver_s": 0.0007082209995132871
+        },
+        {
+          "batch_c_deadline_slot": 5,
+          "status": "optimal",
+          "physical": {
+            "feasible": true,
+            "starts": [
+              1,
+              3,
+              4,
+              1
+            ],
+            "job_ids": [
+              "Batch-A",
+              "Batch-B",
+              "Batch-C",
+              "Batch-D"
+            ],
+            "incremental_mw": [
+              0.0,
+              3.0,
+              1.0,
+              1.0,
+              4.0,
+              0.0
+            ],
+            "work_energy_mwh": 9.0,
+            "energy_charge_eur": 525.0,
+            "all_jobs_completed": true,
+            "scenarios": [
+              {
+                "name": "nominal",
+                "grid_import_mw": [
+                  4.0,
+                  7.0,
+                  5.0,
+                  5.0,
+                  8.0,
+                  4.0
+                ],
+                "max_violation_mw": 0.0,
+                "violation_mw": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "feasible": true
+              },
+              {
+                "name": "higher_midday_load",
+                "grid_import_mw": [
+                  4.0,
+                  7.0,
+                  6.0,
+                  6.0,
+                  8.0,
+                  4.0
+                ],
+                "max_violation_mw": 0.0,
+                "violation_mw": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "feasible": true
+              }
+            ],
+            "max_violation_mw": 0.0,
+            "selection_counts": [
+              1,
+              1,
+              1,
+              1
+            ]
+          },
+          "bits": [
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            0
+          ],
+          "grid_enforced": true,
+          "mip_gap": 0.0,
+          "construction_s": 0.000135169000714086,
+          "solver_s": 0.0007738380008959211
+        },
+        {
+          "batch_c_deadline_slot": 6,
+          "status": "optimal",
+          "physical": {
+            "feasible": true,
+            "starts": [
+              1,
+              3,
+              4,
+              1
+            ],
+            "job_ids": [
+              "Batch-A",
+              "Batch-B",
+              "Batch-C",
+              "Batch-D"
+            ],
+            "incremental_mw": [
+              0.0,
+              3.0,
+              1.0,
+              1.0,
+              4.0,
+              0.0
+            ],
+            "work_energy_mwh": 9.0,
+            "energy_charge_eur": 525.0,
+            "all_jobs_completed": true,
+            "scenarios": [
+              {
+                "name": "nominal",
+                "grid_import_mw": [
+                  4.0,
+                  7.0,
+                  5.0,
+                  5.0,
+                  8.0,
+                  4.0
+                ],
+                "max_violation_mw": 0.0,
+                "violation_mw": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "feasible": true
+              },
+              {
+                "name": "higher_midday_load",
+                "grid_import_mw": [
+                  4.0,
+                  7.0,
+                  6.0,
+                  6.0,
+                  8.0,
+                  4.0
+                ],
+                "max_violation_mw": 0.0,
+                "violation_mw": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "feasible": true
+              }
+            ],
+            "max_violation_mw": 0.0,
+            "selection_counts": [
+              1,
+              1,
+              1,
+              1
+            ]
+          },
+          "bits": [
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0
+          ],
+          "grid_enforced": true,
+          "mip_gap": 0.0,
+          "construction_s": 0.00016487300308654085,
+          "solver_s": 0.0007761209999443963
+        }
+      ],
+      "discretization": [
+        {
+          "step_mw": 0.5,
+          "encoded_variables": 18,
+          "encoded_feasible": true,
+          "physical": {
+            "feasible": true,
+            "starts": [
+              1,
+              3,
+              4,
+              1
+            ],
+            "job_ids": [
+              "Batch-A",
+              "Batch-B",
+              "Batch-C",
+              "Batch-D"
+            ],
+            "incremental_mw": [
+              0.0,
+              3.0,
+              1.0,
+              1.0,
+              4.0,
+              0.0
+            ],
+            "work_energy_mwh": 9.0,
+            "energy_charge_eur": 525.0,
+            "all_jobs_completed": true,
+            "scenarios": [
+              {
+                "name": "nominal",
+                "grid_import_mw": [
+                  4.0,
+                  7.0,
+                  5.0,
+                  5.0,
+                  8.0,
+                  4.0
+                ],
+                "max_violation_mw": 0.0,
+                "violation_mw": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "feasible": true
+              },
+              {
+                "name": "higher_midday_load",
+                "grid_import_mw": [
+                  4.0,
+                  7.0,
+                  6.0,
+                  6.0,
+                  8.0,
+                  4.0
+                ],
+                "max_violation_mw": 0.0,
+                "violation_mw": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "feasible": true
+              }
+            ],
+            "max_violation_mw": 0.0,
+            "selection_counts": [
+              1,
+              1,
+              1,
+              1
+            ]
+          }
+        },
+        {
+          "step_mw": 1,
+          "encoded_variables": 16,
+          "encoded_feasible": true,
+          "physical": {
+            "feasible": true,
+            "starts": [
+              1,
+              3,
+              4,
+              1
+            ],
+            "job_ids": [
+              "Batch-A",
+              "Batch-B",
+              "Batch-C",
+              "Batch-D"
+            ],
+            "incremental_mw": [
+              0.0,
+              3.0,
+              1.0,
+              1.0,
+              4.0,
+              0.0
+            ],
+            "work_energy_mwh": 9.0,
+            "energy_charge_eur": 525.0,
+            "all_jobs_completed": true,
+            "scenarios": [
+              {
+                "name": "nominal",
+                "grid_import_mw": [
+                  4.0,
+                  7.0,
+                  5.0,
+                  5.0,
+                  8.0,
+                  4.0
+                ],
+                "max_violation_mw": 0.0,
+                "violation_mw": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "feasible": true
+              },
+              {
+                "name": "higher_midday_load",
+                "grid_import_mw": [
+                  4.0,
+                  7.0,
+                  6.0,
+                  6.0,
+                  8.0,
+                  4.0
+                ],
+                "max_violation_mw": 0.0,
+                "violation_mw": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "feasible": true
+              }
+            ],
+            "max_violation_mw": 0.0,
+            "selection_counts": [
+              1,
+              1,
+              1,
+              1
+            ]
+          }
+        },
+        {
+          "step_mw": 2,
+          "encoded_variables": 16,
+          "encoded_feasible": true,
+          "physical": {
+            "feasible": true,
+            "starts": [
+              0,
+              4,
+              4,
+              1
+            ],
+            "job_ids": [
+              "Batch-A",
+              "Batch-B",
+              "Batch-C",
+              "Batch-D"
+            ],
+            "incremental_mw": [
+              2.0,
+              2.0,
+              0.0,
+              0.0,
+              3.0,
+              2.0
+            ],
+            "work_energy_mwh": 9.0,
+            "energy_charge_eur": 800.0,
+            "all_jobs_completed": true,
+            "scenarios": [
+              {
+                "name": "nominal",
+                "grid_import_mw": [
+                  6.0,
+                  6.0,
+                  4.0,
+                  4.0,
+                  7.0,
+                  6.0
+                ],
+                "max_violation_mw": 0.0,
+                "violation_mw": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "feasible": true
+              },
+              {
+                "name": "higher_midday_load",
+                "grid_import_mw": [
+                  6.0,
+                  6.0,
+                  5.0,
+                  5.0,
+                  7.0,
+                  6.0
+                ],
+                "max_violation_mw": 0.0,
+                "violation_mw": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "feasible": true
+              }
+            ],
+            "max_violation_mw": 0.0,
+            "selection_counts": [
+              1,
+              1,
+              1,
+              1
+            ]
+          }
+        }
+      ],
+      "scaling": [
+        {
+          "cohorts": 1,
+          "jobs": 4,
+          "choice_bits": 14,
+          "qubo_variables": 16,
+          "dense_matrix_bytes": 2048,
+          "native_combinations": 144,
+          "encoded_states": 65536,
+          "native_milp": {
+            "status": "optimal",
+            "physical": {
+              "feasible": true,
+              "starts": [
+                1,
+                3,
+                4,
+                1
+              ],
+              "job_ids": [
+                "Batch-A-cohort-0",
+                "Batch-B-cohort-0",
+                "Batch-C-cohort-0",
+                "Batch-D-cohort-0"
+              ],
+              "incremental_mw": [
+                0.0,
+                3.0,
+                1.0,
+                1.0,
+                4.0,
+                0.0
+              ],
+              "work_energy_mwh": 9.0,
+              "energy_charge_eur": 525.0,
+              "all_jobs_completed": true,
+              "scenarios": [
+                {
+                  "name": "nominal",
+                  "grid_import_mw": [
+                    4.0,
+                    7.0,
+                    5.0,
+                    5.0,
+                    8.0,
+                    4.0
+                  ],
+                  "max_violation_mw": 0.0,
+                  "violation_mw": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "feasible": true
+                },
+                {
+                  "name": "higher_midday_load",
+                  "grid_import_mw": [
+                    4.0,
+                    7.0,
+                    6.0,
+                    6.0,
+                    8.0,
+                    4.0
+                  ],
+                  "max_violation_mw": 0.0,
+                  "violation_mw": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "feasible": true
+                }
+              ],
+              "max_violation_mw": 0.0,
+              "selection_counts": [
+                1,
+                1,
+                1,
+                1
+              ]
+            },
+            "bits": [
+              0,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              1,
+              0
+            ],
+            "grid_enforced": true,
+            "mip_gap": 0.0,
+            "construction_s": 0.00018399100008537062,
+            "solver_s": 0.001426136997906724
+          },
+          "heuristics": [
+            {
+              "x": [
+                0,
+                1,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0
+              ],
+              "energy": 525.0,
+              "method": "simulated_annealing",
+              "seed": 0,
+              "elapsed_s": 0.03133885100032785,
+              "feasible": true,
+              "metadata": {
+                "reads": 32,
+                "sweeps": 150,
+                "local_polish": true,
+                "raw_best_energy": 525.0,
+                "certified": false
+              },
+              "physical": {
+                "feasible": true,
+                "starts": [
+                  1,
+                  3,
+                  4,
+                  1
+                ],
+                "job_ids": [
+                  "Batch-A-cohort-0",
+                  "Batch-B-cohort-0",
+                  "Batch-C-cohort-0",
+                  "Batch-D-cohort-0"
+                ],
+                "incremental_mw": [
+                  0.0,
+                  3.0,
+                  1.0,
+                  1.0,
+                  4.0,
+                  0.0
+                ],
+                "work_energy_mwh": 9.0,
+                "energy_charge_eur": 525.0,
+                "all_jobs_completed": true,
+                "scenarios": [
+                  {
+                    "name": "nominal",
+                    "grid_import_mw": [
+                      4.0,
+                      7.0,
+                      5.0,
+                      5.0,
+                      8.0,
+                      4.0
+                    ],
+                    "max_violation_mw": 0.0,
+                    "violation_mw": [
+                      0.0,
+                      0.0,
+                      0.0,
+                      0.0,
+                      0.0,
+                      0.0
+                    ],
+                    "feasible": true
+                  },
+                  {
+                    "name": "higher_midday_load",
+                    "grid_import_mw": [
+                      4.0,
+                      7.0,
+                      6.0,
+                      6.0,
+                      8.0,
+                      4.0
+                    ],
+                    "max_violation_mw": 0.0,
+                    "violation_mw": [
+                      0.0,
+                      0.0,
+                      0.0,
+                      0.0,
+                      0.0,
+                      0.0
+                    ],
+                    "feasible": true
+                  }
+                ],
+                "max_violation_mw": 0.0,
+                "selection_counts": [
+                  1,
+                  1,
+                  1,
+                  1
+                ]
+              },
+              "encoded_feasible": true,
+              "physical_feasible": true,
+              "construction_s": 0.0003070819984714035,
+              "total_s": 0.03164593299879925,
+              "native_cost_gap_eur": 0.0
+            },
+            {
+              "x": [
+                0,
+                1,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0
+              ],
+              "energy": 525.0,
+              "method": "ballistic_simulated_bifurcation",
+              "seed": 0,
+              "elapsed_s": 0.023926039000798482,
+              "feasible": true,
+              "metadata": {
+                "agents": 64,
+                "steps": 800,
+                "dt": 0.1,
+                "coupling": 0.5,
+                "local_polish": true,
+                "raw_best_energy": 1656.0,
+                "coefficient_scale": 56538.5,
+                "certified": false,
+                "implementation": "NumPy reference; classical hardware"
+              },
+              "physical": {
+                "feasible": true,
+                "starts": [
+                  1,
+                  3,
+                  4,
+                  1
+                ],
+                "job_ids": [
+                  "Batch-A-cohort-0",
+                  "Batch-B-cohort-0",
+                  "Batch-C-cohort-0",
+                  "Batch-D-cohort-0"
+                ],
+                "incremental_mw": [
+                  0.0,
+                  3.0,
+                  1.0,
+                  1.0,
+                  4.0,
+                  0.0
+                ],
+                "work_energy_mwh": 9.0,
+                "energy_charge_eur": 525.0,
+                "all_jobs_completed": true,
+                "scenarios": [
+                  {
+                    "name": "nominal",
+                    "grid_import_mw": [
+                      4.0,
+                      7.0,
+                      5.0,
+                      5.0,
+                      8.0,
+                      4.0
+                    ],
+                    "max_violation_mw": 0.0,
+                    "violation_mw": [
+                      0.0,
+                      0.0,
+                      0.0,
+                      0.0,
+                      0.0,
+                      0.0
+                    ],
+                    "feasible": true
+                  },
+                  {
+                    "name": "higher_midday_load",
+                    "grid_import_mw": [
+                      4.0,
+                      7.0,
+                      6.0,
+                      6.0,
+                      8.0,
+                      4.0
+                    ],
+                    "max_violation_mw": 0.0,
+                    "violation_mw": [
+                      0.0,
+                      0.0,
+                      0.0,
+                      0.0,
+                      0.0,
+                      0.0
+                    ],
+                    "feasible": true
+                  }
+                ],
+                "max_violation_mw": 0.0,
+                "selection_counts": [
+                  1,
+                  1,
+                  1,
+                  1
+                ]
+              },
+              "encoded_feasible": true,
+              "physical_feasible": true,
+              "construction_s": 0.0003070819984714035,
+              "total_s": 0.024233120999269886,
+              "native_cost_gap_eur": 0.0
+            }
+          ]
+        },
+        {
+          "cohorts": 2,
+          "jobs": 8,
+          "choice_bits": 28,
+          "qubo_variables": 32,
+          "dense_matrix_bytes": 8192,
+          "native_combinations": 20736,
+          "encoded_states": 4294967296,
+          "native_milp": {
+            "status": "optimal",
+            "physical": {
+              "feasible": true,
+              "starts": [
+                1,
+                3,
+                4,
+                1,
+                1,
+                3,
+                4,
+                1
+              ],
+              "job_ids": [
+                "Batch-A-cohort-0",
+                "Batch-B-cohort-0",
+                "Batch-C-cohort-0",
+                "Batch-D-cohort-0",
+                "Batch-A-cohort-1",
+                "Batch-B-cohort-1",
+                "Batch-C-cohort-1",
+                "Batch-D-cohort-1"
+              ],
+              "incremental_mw": [
+                0.0,
+                6.0,
+                2.0,
+                2.0,
+                8.0,
+                0.0
+              ],
+              "work_energy_mwh": 18.0,
+              "energy_charge_eur": 1050.0,
+              "all_jobs_completed": true,
+              "scenarios": [
+                {
+                  "name": "nominal",
+                  "grid_import_mw": [
+                    8.0,
+                    14.0,
+                    10.0,
+                    10.0,
+                    16.0,
+                    8.0
+                  ],
+                  "max_violation_mw": 0.0,
+                  "violation_mw": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "feasible": true
+                },
+                {
+                  "name": "higher_midday_load",
+                  "grid_import_mw": [
+                    8.0,
+                    14.0,
+                    12.0,
+                    12.0,
+                    16.0,
+                    8.0
+                  ],
+                  "max_violation_mw": 0.0,
+                  "violation_mw": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "feasible": true
+                }
+              ],
+              "max_violation_mw": 0.0,
+              "selection_counts": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+              ]
+            },
+            "bits": [
+              0,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              1,
+              0
+            ],
+            "grid_enforced": true,
+            "mip_gap": 0.0,
+            "construction_s": 0.00017164299788419157,
+            "solver_s": 0.00234799300233135
+          },
+          "heuristics": [
+            {
+              "x": [
+                0,
+                1,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                1,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0
+              ],
+              "energy": 1130.0,
+              "method": "simulated_annealing",
+              "seed": 0,
+              "elapsed_s": 0.0680450860018027,
+              "feasible": true,
+              "metadata": {
+                "reads": 32,
+                "sweeps": 150,
+                "local_polish": true,
+                "raw_best_energy": 1130.0,
+                "certified": false
+              },
+              "physical": {
+                "feasible": true,
+                "starts": [
+                  1,
+                  3,
+                  4,
+                  1,
+                  0,
+                  3,
+                  4,
+                  2
+                ],
+                "job_ids": [
+                  "Batch-A-cohort-0",
+                  "Batch-B-cohort-0",
+                  "Batch-C-cohort-0",
+                  "Batch-D-cohort-0",
+                  "Batch-A-cohort-1",
+                  "Batch-B-cohort-1",
+                  "Batch-C-cohort-1",
+                  "Batch-D-cohort-1"
+                ],
+                "incremental_mw": [
+                  2.0,
+                  4.0,
+                  2.0,
+                  2.0,
+                  8.0,
+                  0.0
+                ],
+                "work_energy_mwh": 18.0,
+                "energy_charge_eur": 1130.0,
+                "all_jobs_completed": true,
+                "scenarios": [
+                  {
+                    "name": "nominal",
+                    "grid_import_mw": [
+                      10.0,
+                      12.0,
+                      10.0,
+                      10.0,
+                      16.0,
+                      8.0
+                    ],
+                    "max_violation_mw": 0.0,
+                    "violation_mw": [
+                      0.0,
+                      0.0,
+                      0.0,
+                      0.0,
+                      0.0,
+                      0.0
+                    ],
+                    "feasible": true
+                  },
+                  {
+                    "name": "higher_midday_load",
+                    "grid_import_mw": [
+                      10.0,
+                      12.0,
+                      12.0,
+                      12.0,
+                      16.0,
+                      8.0
+                    ],
+                    "max_violation_mw": 0.0,
+                    "violation_mw": [
+                      0.0,
+                      0.0,
+                      0.0,
+                      0.0,
+                      0.0,
+                      0.0
+                    ],
+                    "feasible": true
+                  }
+                ],
+                "max_violation_mw": 0.0,
+                "selection_counts": [
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1
+                ]
+              },
+              "encoded_feasible": true,
+              "physical_feasible": true,
+              "construction_s": 0.0004443040015758015,
+              "total_s": 0.0684893900033785,
+              "native_cost_gap_eur": 80.0
+            },
+            {
+              "x": [
+                0,
+                1,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                1,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "energy": 1050.0,
+              "method": "ballistic_simulated_bifurcation",
+              "seed": 0,
+              "elapsed_s": 0.041271058998972876,
+              "feasible": true,
+              "metadata": {
+                "agents": 64,
+                "steps": 800,
+                "dt": 0.1,
+                "coupling": 0.5,
+                "local_polish": true,
+                "raw_best_energy": 6648.0,
+                "coefficient_scale": 462858.0,
+                "certified": false,
+                "implementation": "NumPy reference; classical hardware"
+              },
+              "physical": {
+                "feasible": true,
+                "starts": [
+                  1,
+                  3,
+                  4,
+                  1,
+                  1,
+                  3,
+                  4,
+                  1
+                ],
+                "job_ids": [
+                  "Batch-A-cohort-0",
+                  "Batch-B-cohort-0",
+                  "Batch-C-cohort-0",
+                  "Batch-D-cohort-0",
+                  "Batch-A-cohort-1",
+                  "Batch-B-cohort-1",
+                  "Batch-C-cohort-1",
+                  "Batch-D-cohort-1"
+                ],
+                "incremental_mw": [
+                  0.0,
+                  6.0,
+                  2.0,
+                  2.0,
+                  8.0,
+                  0.0
+                ],
+                "work_energy_mwh": 18.0,
+                "energy_charge_eur": 1050.0,
+                "all_jobs_completed": true,
+                "scenarios": [
+                  {
+                    "name": "nominal",
+                    "grid_import_mw": [
+                      8.0,
+                      14.0,
+                      10.0,
+                      10.0,
+                      16.0,
+                      8.0
+                    ],
+                    "max_violation_mw": 0.0,
+                    "violation_mw": [
+                      0.0,
+                      0.0,
+                      0.0,
+                      0.0,
+                      0.0,
+                      0.0
+                    ],
+                    "feasible": true
+                  },
+                  {
+                    "name": "higher_midday_load",
+                    "grid_import_mw": [
+                      8.0,
+                      14.0,
+                      12.0,
+                      12.0,
+                      16.0,
+                      8.0
+                    ],
+                    "max_violation_mw": 0.0,
+                    "violation_mw": [
+                      0.0,
+                      0.0,
+                      0.0,
+                      0.0,
+                      0.0,
+                      0.0
+                    ],
+                    "feasible": true
+                  }
+                ],
+                "max_violation_mw": 0.0,
+                "selection_counts": [
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1
+                ]
+              },
+              "encoded_feasible": true,
+              "physical_feasible": true,
+              "construction_s": 0.0004443040015758015,
+              "total_s": 0.04171536300054868,
+              "native_cost_gap_eur": 0.0
+            }
+          ]
+        },
+        {
+          "cohorts": 4,
+          "jobs": 16,
+          "choice_bits": 56,
+          "qubo_variables": 62,
+          "dense_matrix_bytes": 30752,
+          "native_combinations": 429981696,
+          "encoded_states": 4611686018427387904,
+          "native_milp": {
+            "status": "optimal",
+            "physical": {
+              "feasible": true,
+              "starts": [
+                1,
+                3,
+                4,
+                1,
+                1,
+                3,
+                4,
+                1,
+                1,
+                3,
+                4,
+                1,
+                1,
+                3,
+                4,
+                1
+              ],
+              "job_ids": [
+                "Batch-A-cohort-0",
+                "Batch-B-cohort-0",
+                "Batch-C-cohort-0",
+                "Batch-D-cohort-0",
+                "Batch-A-cohort-1",
+                "Batch-B-cohort-1",
+                "Batch-C-cohort-1",
+                "Batch-D-cohort-1",
+                "Batch-A-cohort-2",
+                "Batch-B-cohort-2",
+                "Batch-C-cohort-2",
+                "Batch-D-cohort-2",
+                "Batch-A-cohort-3",
+                "Batch-B-cohort-3",
+                "Batch-C-cohort-3",
+                "Batch-D-cohort-3"
+              ],
+              "incremental_mw": [
+                0.0,
+                12.0,
+                4.0,
+                4.0,
+                16.0,
+                0.0
+              ],
+              "work_energy_mwh": 36.0,
+              "energy_charge_eur": 2100.0,
+              "all_jobs_completed": true,
+              "scenarios": [
+                {
+                  "name": "nominal",
+                  "grid_import_mw": [
+                    16.0,
+                    28.0,
+                    20.0,
+                    20.0,
+                    32.0,
+                    16.0
+                  ],
+                  "max_violation_mw": 0.0,
+                  "violation_mw": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "feasible": true
+                },
+                {
+                  "name": "higher_midday_load",
+                  "grid_import_mw": [
+                    16.0,
+                    28.0,
+                    24.0,
+                    24.0,
+                    32.0,
+                    16.0
+                  ],
+                  "max_violation_mw": 0.0,
+                  "violation_mw": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "feasible": true
+                }
+              ],
+              "max_violation_mw": 0.0,
+              "selection_counts": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+              ]
+            },
+            "bits": [
+              0,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              1,
+              0
+            ],
+            "grid_enforced": true,
+            "mip_gap": 0.0,
+            "construction_s": 0.00020944800053257495,
+            "solver_s": 0.0021469880011864007
+          },
+          "heuristics": [
+            {
+              "x": [
+                1,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                1,
+                0,
+                1,
+                0,
+                0,
+                1,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                1,
+                0,
+                1,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                1,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                1,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "energy": 2400.0,
+              "method": "simulated_annealing",
+              "seed": 0,
+              "elapsed_s": 0.125141189997521,
+              "feasible": true,
+              "metadata": {
+                "reads": 32,
+                "sweeps": 150,
+                "local_polish": true,
+                "raw_best_energy": 2520.0,
+                "certified": false
+              },
+              "physical": {
+                "feasible": true,
+                "starts": [
+                  0,
+                  3,
+                  4,
+                  0,
+                  0,
+                  1,
+                  4,
+                  2,
+                  1,
+                  3,
+                  3,
+                  1,
+                  0,
+                  4,
+                  4,
+                  1
+                ],
+                "job_ids": [
+                  "Batch-A-cohort-0",
+                  "Batch-B-cohort-0",
+                  "Batch-C-cohort-0",
+                  "Batch-D-cohort-0",
+                  "Batch-A-cohort-1",
+                  "Batch-B-cohort-1",
+                  "Batch-C-cohort-1",
+                  "Batch-D-cohort-1",
+                  "Batch-A-cohort-2",
+                  "Batch-B-cohort-2",
+                  "Batch-C-cohort-2",
+                  "Batch-D-cohort-2",
+                  "Batch-A-cohort-3",
+                  "Batch-B-cohort-3",
+                  "Batch-C-cohort-3",
+                  "Batch-D-cohort-3"
+                ],
+                "incremental_mw": [
+                  7.0,
+                  8.0,
+                  4.0,
+                  4.0,
+                  11.0,
+                  2.0
+                ],
+                "work_energy_mwh": 36.0,
+                "energy_charge_eur": 2400.0,
+                "all_jobs_completed": true,
+                "scenarios": [
+                  {
+                    "name": "nominal",
+                    "grid_import_mw": [
+                      23.0,
+                      24.0,
+                      20.0,
+                      20.0,
+                      27.0,
+                      18.0
+                    ],
+                    "max_violation_mw": 0.0,
+                    "violation_mw": [
+                      0.0,
+                      0.0,
+                      0.0,
+                      0.0,
+                      0.0,
+                      0.0
+                    ],
+                    "feasible": true
+                  },
+                  {
+                    "name": "higher_midday_load",
+                    "grid_import_mw": [
+                      23.0,
+                      24.0,
+                      24.0,
+                      24.0,
+                      27.0,
+                      18.0
+                    ],
+                    "max_violation_mw": 0.0,
+                    "violation_mw": [
+                      0.0,
+                      0.0,
+                      0.0,
+                      0.0,
+                      0.0,
+                      0.0
+                    ],
+                    "feasible": true
+                  }
+                ],
+                "max_violation_mw": 0.0,
+                "selection_counts": [
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1
+                ]
+              },
+              "encoded_feasible": true,
+              "physical_feasible": true,
+              "construction_s": 0.0006394100018951576,
+              "total_s": 0.12578059999941615,
+              "native_cost_gap_eur": 300.0
+            },
+            {
+              "x": [
+                0,
+                1,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                1,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                1,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                1,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "energy": 2300.0,
+              "method": "ballistic_simulated_bifurcation",
+              "seed": 0,
+              "elapsed_s": 0.0776102739982889,
+              "feasible": true,
+              "metadata": {
+                "agents": 64,
+                "steps": 800,
+                "dt": 0.1,
+                "coupling": 0.5,
+                "local_polish": true,
+                "raw_best_energy": 83835.0,
+                "coefficient_scale": 3762503.0,
+                "certified": false,
+                "implementation": "NumPy reference; classical hardware"
+              },
+              "physical": {
+                "feasible": true,
+                "starts": [
+                  1,
+                  3,
+                  5,
+                  1,
+                  0,
+                  3,
+                  4,
+                  1,
+                  0,
+                  3,
+                  4,
+                  1,
+                  1,
+                  3,
+                  2,
+                  1
+                ],
+                "job_ids": [
+                  "Batch-A-cohort-0",
+                  "Batch-B-cohort-0",
+                  "Batch-C-cohort-0",
+                  "Batch-D-cohort-0",
+                  "Batch-A-cohort-1",
+                  "Batch-B-cohort-1",
+                  "Batch-C-cohort-1",
+                  "Batch-D-cohort-1",
+                  "Batch-A-cohort-2",
+                  "Batch-B-cohort-2",
+                  "Batch-C-cohort-2",
+                  "Batch-D-cohort-2",
+                  "Batch-A-cohort-3",
+                  "Batch-B-cohort-3",
+                  "Batch-C-cohort-3",
+                  "Batch-D-cohort-3"
+                ],
+                "incremental_mw": [
+                  4.0,
+                  10.0,
+                  4.0,
+                  4.0,
+                  12.0,
+                  2.0
+                ],
+                "work_energy_mwh": 36.0,
+                "energy_charge_eur": 2300.0,
+                "all_jobs_completed": true,
+                "scenarios": [
+                  {
+                    "name": "nominal",
+                    "grid_import_mw": [
+                      20.0,
+                      26.0,
+                      20.0,
+                      20.0,
+                      28.0,
+                      18.0
+                    ],
+                    "max_violation_mw": 0.0,
+                    "violation_mw": [
+                      0.0,
+                      0.0,
+                      0.0,
+                      0.0,
+                      0.0,
+                      0.0
+                    ],
+                    "feasible": true
+                  },
+                  {
+                    "name": "higher_midday_load",
+                    "grid_import_mw": [
+                      20.0,
+                      26.0,
+                      24.0,
+                      24.0,
+                      28.0,
+                      18.0
+                    ],
+                    "max_violation_mw": 0.0,
+                    "violation_mw": [
+                      0.0,
+                      0.0,
+                      0.0,
+                      0.0,
+                      0.0,
+                      0.0
+                    ],
+                    "feasible": true
+                  }
+                ],
+                "max_violation_mw": 0.0,
+                "selection_counts": [
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1
+                ]
+              },
+              "encoded_feasible": true,
+              "physical_feasible": true,
+              "construction_s": 0.0006394100018951576,
+              "total_s": 0.07824968400018406,
+              "native_cost_gap_eur": 200.0
+            }
+          ]
+        }
+      ],
+      "interpretation": "Deterministic assumptions, not calibrated risk bounds"
+    },
+    "prepare_handoff": {
+      "recommended_method": "native_milp",
+      "schedule": {
+        "feasible": true,
+        "starts": [
+          1,
+          3,
+          4,
+          1
+        ],
+        "job_ids": [
+          "Batch-A",
+          "Batch-B",
+          "Batch-C",
+          "Batch-D"
+        ],
+        "incremental_mw": [
+          0.0,
+          3.0,
+          1.0,
+          1.0,
+          4.0,
+          0.0
+        ],
+        "work_energy_mwh": 9.0,
+        "energy_charge_eur": 525.0,
+        "all_jobs_completed": true,
+        "scenarios": [
+          {
+            "name": "nominal",
+            "grid_import_mw": [
+              4.0,
+              7.0,
+              5.0,
+              5.0,
+              8.0,
+              4.0
+            ],
+            "max_violation_mw": 0.0,
+            "violation_mw": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "feasible": true
+          },
+          {
+            "name": "higher_midday_load",
+            "grid_import_mw": [
+              4.0,
+              7.0,
+              6.0,
+              6.0,
+              8.0,
+              4.0
+            ],
+            "max_violation_mw": 0.0,
+            "violation_mw": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "feasible": true
+          }
+        ],
+        "max_violation_mw": 0.0,
+        "selection_counts": [
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "economic_comparison": {
+        "robust_minus_nominal_eur": 135.0,
+        "robust_minus_price_only_eur": 420.0,
+        "interpretation": "Synthetic cost of respecting constraints, not realized savings",
+        "work_energy_mwh": 9.0
+      },
+      "reason": "Certifies the stated native model without MW quantization or slack bits",
+      "next_evidence": [
+        "Metered job profiles and validated release/deadline constraints",
+        "Contracted site import ceilings and baseline forecasts",
+        "Actual supply tariff, taxes, demand charges and uncertainty data"
+      ],
+      "limitations": [
+        "Synthetic jobs, prices and limits; no observed Spanish site",
+        "Robust only to supplied baseline scenarios; no calibrated probability",
+        "No ramp, thermal, production precedence, staffing or network power flow",
+        "Cheap energy is not proof of renewable absorption or avoided emissions",
+        "No quantum hardware or advantage; no equipment commands"
+      ],
+      "execution_authorized": false
+    }
+  },
+  "trace": [
+    {
+      "step": 0,
+      "tool": "inspect_evidence",
+      "status": "completed"
+    },
+    {
+      "step": 1,
+      "tool": "benchmark_methods",
+      "status": "completed"
+    },
+    {
+      "step": 2,
+      "tool": "assess_sensitivity",
+      "status": "completed"
+    },
+    {
+      "step": 3,
+      "tool": "prepare_handoff",
+      "status": "completed"
+    },
+    {
+      "step": 4,
+      "tool": "finish",
+      "status": "completed"
+    }
+  ],
+  "human_review_required": true,
+  "execution_authorized": false,
+  "validation": "registered_tool_execution_and_protocol_only"
+}

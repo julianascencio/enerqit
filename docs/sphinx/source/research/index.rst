@@ -19,6 +19,11 @@ to independently checked physical optimization and an agent-led runnable example
 
    /battery_portfolio
 
+The :doc:`batch flexibility study </batch_flexibility>` extends this workflow to
+industrial deadlines, rebound overload and shared-scenario feasibility. A
+`persistent research ledger <https://github.com/julianascencio/enerqit/blob/main/research/news-ledger.json>`_
+records dated candidate selection and deferred cases.
+
 Sources and their role
 ----------------------
 

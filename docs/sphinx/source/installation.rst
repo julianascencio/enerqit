@@ -50,7 +50,7 @@ Optional dependencies
      - dimod and Qiskit model export adapters; this does not enable hardware
        execution.
 
-The battery portfolio gallery additionally uses the optional ``energy-agents``
+The battery and batch-flexibility galleries additionally use the optional ``energy-agents``
 integration pinned in ``requirements/agent-study.txt``. Install it before
 building the full gallery or documentation. Core numerical APIs work without it.
 

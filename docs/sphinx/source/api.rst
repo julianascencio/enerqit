@@ -63,6 +63,15 @@ Forward physics and inference
 .. automodule:: enerqit.thermal
    :members:
 
+Industrial batch flexibility
+----------------------------
+
+.. automodule:: enerqit.flexibility
+   :members:
+
+.. automodule:: enerqit.flexibility_study
+   :members:
+
 Battery availability portfolios
 -------------------------------
 
