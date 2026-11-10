@@ -2,8 +2,9 @@ Example Gallery
 ===============
 
 All numerical examples run locally on deterministic synthetic data. The battery
-study also includes a frozen factual news-evidence manifest. Install its optional
-agent dependency with ``python -m pip install -r requirements/agent-study.txt``. None downloads a
+and batch-flexibility studies also include frozen factual news-evidence
+manifests. Install their optional agent dependency with
+``python -m pip install -r requirements/agent-study.txt``. None downloads a
 plant dataset, connects to an operational platform, or uses quantum hardware.
 Run an individual file from the repository root after installing the package.
 

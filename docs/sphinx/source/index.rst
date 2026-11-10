@@ -24,7 +24,8 @@ in energy systems, created by **ASVA Consulting**.
 It combines physical PV models, configuration inference, equipment
 characterization, QUBO/Ising formulations, classical and quantum-inspired
 solvers, and reproducible benchmark studies. Solar PV and a synthetic battery
-availability-portfolio study are implemented;
+availability-portfolio study are implemented, along with deadline-constrained
+industrial batch flexibility;
 wind, broader grid operation and energy markets remain part of the
 :doc:`research roadmap <project>`.
 
@@ -33,7 +34,7 @@ Start here
 
 * Read the :doc:`package overview <user_guide/overview>` to understand the scope.
 * Follow :doc:`installation` and run the :doc:`quickstart <start>`.
-* Explore the eight executable examples in the :doc:`gallery/index`.
+* Explore the nine executable examples in the :doc:`gallery/index`.
 * Use the :doc:`api` for public entry points and module details.
 * Check the :doc:`research/index` for the methods, evidence and open questions.
 

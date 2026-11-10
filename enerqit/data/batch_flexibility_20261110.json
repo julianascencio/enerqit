@@ -1,0 +1,218 @@
+{
+  "id": "spain-industrial-batch-flexibility-2026-11-10",
+  "objective": "Schedule noninterruptible industrial batches at minimum incremental energy cost while meeting deadlines and every supplied grid-load scenario. Quantify the cost of robust feasibility and expose rebound overload.",
+  "classification": "mixed",
+  "input_classification": "synthetic",
+  "sources": [
+    {
+      "id": "iea_spain",
+      "url": "https://www.iea.org/news/accelerating-electrification-can-unlock-the-full-benefits-of-spains-renewables-leadership",
+      "published_on": "2026-11-05",
+      "retrieved_on": "2026-11-10",
+      "response_sha256": "d7ebcf76c6fed9479a5b4e3413e6915b2b39438fe0433e9b0c2b2a0e8cd7c33d",
+      "response_bytes": 233130,
+      "redistribution": "URL, factual metadata and independently authored summary only; no source page bundled"
+    },
+    {
+      "id": "iea_renewables",
+      "url": "https://www.iea.org/news/energy-security-concerns-spur-faster-renewables-growth-across-a-widening-constellation-of-countries",
+      "published_on": "2026-11-06",
+      "retrieved_on": "2026-11-10",
+      "response_sha256": "0b5f3db7d3d369ceaaf2164c2f7298c480707fc7c6beadc5456e29807338fddd",
+      "response_bytes": 232592,
+      "redistribution": "URL, factual metadata and independently authored summary only; no source page bundled"
+    },
+    {
+      "id": "ember_grid",
+      "url": "https://ember-energy.org/latest-insights/building-a-grid-for-the-age-of-power/",
+      "published_on": "2026-11-05",
+      "retrieved_on": "2026-11-10",
+      "response_sha256": "56bc6c44cef70f68783bee54746ed3d1110511af688afa19dfe5fcb000a93277",
+      "response_bytes": 95129,
+      "redistribution": "URL, factual metadata and independently authored summary only; no source page bundled"
+    },
+    {
+      "id": "ember_flexibility",
+      "url": "https://ember-energy.org/latest-insights/data-centres-for-grids-the-potential-impact-of-flexibility/",
+      "published_on": "2026-10-29",
+      "retrieved_on": "2026-11-10",
+      "response_sha256": "aa1fc58bf46fae7fd154c4bcc39d5fd1256ec32426ff2b0391a00066824481ce",
+      "response_bytes": 139137,
+      "redistribution": "URL, factual metadata and independently authored summary only; no source page bundled"
+    },
+    {
+      "id": "banque_france",
+      "url": "https://www.banque-france.fr/en/publications-and-statistics/publications/data-centres-and-energy-environmental-cost-faulty-price-signal",
+      "published_on": "2026-11-04",
+      "retrieved_on": "2026-11-10",
+      "acquisition": "Read with browser search/open; source response not archived",
+      "response_sha256": null,
+      "redistribution": "Link and factual publication date only"
+    }
+  ],
+  "selection": {
+    "as_of": "2026-11-10",
+    "initial_window_hours": 72,
+    "extended_window_days": 7,
+    "selected_source_id": "iea_spain",
+    "selection_rationale": "The last 72 hours included the already-implemented GB margin case. Within seven days, Spain electrification provides a clear industrial decision: schedule fixed-work jobs without moving overload into cheaper hours. It fits native and QUBO optimization, adds deadlines and shared-scenario constraints, and needs no speculative hardware claim.",
+    "candidates": [
+      {
+        "source_id": "iea_spain",
+        "business_impact": "Industrial energy procurement and usable grid headroom",
+        "technical_importance": "Preserve work/deadlines and avoid rebound overload",
+        "evidence": "Primary policy review; no site workload or tariff dataset",
+        "tractability": "High for a bounded synthetic scheduling prototype",
+        "novelty": "New intertemporal job scheduling, distinct from existing battery cover",
+        "method_fit": "Native MILP and conservative QUBO; no ML needed",
+        "decision": "selected"
+      },
+      {
+        "source_id": "iea_renewables",
+        "business_impact": "Broad global renewable investment and integration",
+        "technical_importance": "System-level bottlenecks",
+        "evidence": "Primary forecast; broad geographic scope",
+        "tractability": "Medium without local system observations",
+        "novelty": "Potential multi-region integration scenario",
+        "method_fit": "Capacity planning and stochastic optimization",
+        "decision": "backlog: choose a data-supported regional bottleneck"
+      },
+      {
+        "source_id": "ember_grid",
+        "business_impact": "Grid upgrade cost and speed",
+        "technical_importance": "Different transmission and demand solutions",
+        "evidence": "Primary explanatory guide, not calibrated network topology",
+        "tractability": "Medium; requires network models",
+        "novelty": "Network-aware constraint analysis remains unimplemented",
+        "method_fit": "Power-flow-constrained optimization",
+        "decision": "backlog: obtain open topology and actual line ratings"
+      },
+      {
+        "source_id": "banque_france",
+        "business_impact": "Data-centre siting and price-signal quality",
+        "technical_importance": "Spatial demand/renewable alignment",
+        "evidence": "Primary economic commentary; not job-level measurements",
+        "tractability": "Medium; migration and service constraints unknown",
+        "novelty": "Spatial scheduling would extend this temporal model",
+        "method_fit": "Location-aware scheduling and tariff scenarios",
+        "decision": "backlog: geographic scheduling only with validated latency and energy costs"
+      }
+    ],
+    "age_correction": "Ember data-centre flexibility report is dated 2026-10-29 (12 days old), despite search freshness labels. It is background only, not this run's fresh news trigger.",
+    "excluded_prior_case": "GB margin/battery availability already implemented in merged EnerQit PR #2"
+  },
+  "step_mw": 1.0,
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "problem": {
+    "start_utc": "2026-11-10T09:00:00Z",
+    "step_hours": 1.0,
+    "prices_eur_mwh": [
+      100,
+      60,
+      10,
+      15,
+      80,
+      120
+    ],
+    "jobs": [
+      {
+        "id": "Batch-A",
+        "profile_mw": [
+          2,
+          1
+        ],
+        "release_slot": 0,
+        "deadline_slot": 4
+      },
+      {
+        "id": "Batch-B",
+        "profile_mw": [
+          1,
+          2
+        ],
+        "release_slot": 1,
+        "deadline_slot": 6
+      },
+      {
+        "id": "Batch-C",
+        "profile_mw": [
+          2
+        ],
+        "release_slot": 2,
+        "deadline_slot": 6
+      },
+      {
+        "id": "Batch-D",
+        "profile_mw": [
+          1
+        ],
+        "release_slot": 0,
+        "deadline_slot": 3
+      }
+    ],
+    "scenarios": [
+      {
+        "name": "nominal",
+        "baseline_mw": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "import_limit_mw": [
+          8,
+          8,
+          6,
+          6,
+          8,
+          8
+        ]
+      },
+      {
+        "name": "higher_midday_load",
+        "baseline_mw": [
+          4,
+          4,
+          5,
+          5,
+          4,
+          4
+        ],
+        "import_limit_mw": [
+          8,
+          8,
+          6,
+          6,
+          8,
+          8
+        ]
+      }
+    ]
+  },
+  "assumptions": {
+    "data": "All jobs, prices, baseline loads, limits and timestamps are engineered assumptions; no measured Spanish site or market-price series",
+    "price": "Incremental energy charge only; no taxes, demand charge, production value or renewable-content claim",
+    "time": "Six one-hour UTC intervals; release inclusive, completion deadline exclusive; complete work stays inside horizon",
+    "uncertainty": "Same advance schedule across two declared deterministic load scenarios; no calibrated probabilities",
+    "physics": "Fixed AC profiles, no interruption, migration, ramp, process precedence or thermal dynamics"
+  },
+  "repository_awareness": {
+    "enerqit_base_commit": "b1e3236941ae3e68f83fc8b0516849cd480d3b0e",
+    "energy_agents_commit": "832f4117f95ac3137c63eace389e56cdc2c075fe",
+    "role_id": "career_quantum_ml_engineer",
+    "energy_data_insights_commit": "b5ae10d43619155519a56ab3a30cb6660db8ca55",
+    "inspected": [
+      "data-retrieval/src/energy_data_retrieval/sources/ree/README.md",
+      "docs/ree-adjustment-bess.md",
+      "docs/thermal-counterfactual.md",
+      "methods/README.md"
+    ],
+    "reuse_decision": "REE connector supplies regional daily/monthly/yearly generation, not hourly site tariffs or job deadlines. Existing REE BESS screen is a separate forced-cycle economic calculation; thermal counterfactual methods analyze published HVAC forecasts. None supplies this job scheduler's required site inputs. No new network connector or artificial observed data is introduced."
+  }
+}
