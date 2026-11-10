@@ -13,6 +13,7 @@ cd enerqit
 python -m venv .venv
 source .venv/bin/activate
 python -m pip install -e ".[dev,docs,examples,quantum]"
+python -m pip install -r requirements/agent-study.txt
 ```
 
 On Windows PowerShell, activate with `.venv\Scripts\Activate.ps1`. The optional

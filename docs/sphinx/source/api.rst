@@ -63,6 +63,15 @@ Forward physics and inference
 .. automodule:: enerqit.thermal
    :members:
 
+Battery availability portfolios
+-------------------------------
+
+.. automodule:: enerqit.storage
+   :members:
+
+.. automodule:: enerqit.storage_study
+   :members:
+
 Optimization
 ------------
 

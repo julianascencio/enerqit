@@ -1,0 +1,1428 @@
+{
+  "success": true,
+  "role": {
+    "id": "career_quantum_ml_engineer",
+    "title": "Quantum Machine Learning Engineer",
+    "mandate": "Design and evaluate classical, quantum-inspired and hybrid energy research workflows.",
+    "inputs": [
+      "load_case",
+      "experiment_budget",
+      "research_context"
+    ],
+    "tool": "prepare_data",
+    "output": "quantum_ml_research_handoff",
+    "acceptance": "Chronological held-out benchmarks, feasible schedules, provenance and limitations.",
+    "technology": "cross_technology",
+    "authority": "local_bounded_research_only"
+  },
+  "mode": "scripted_tool_workflow",
+  "classification": "mixed",
+  "reports": {
+    "inspect_evidence": {
+      "evidence": {
+        "retrieved_at_utc": "2026-11-10",
+        "source": "Elexon Insights Solution SYSWARN",
+        "url": "https://data.elexon.co.uk/bmrs/api/v1/system/warnings?publishDateTimeFrom=2026-11-08T00%3A00%3A00Z&publishDateTimeTo=2026-11-10T00%3A00%3A00Z&format=json",
+        "raw_response_sha256": "48bc8cb8ccc60823107e21c09e8b49b7961e7fef458071fd1072608a47edf3a9",
+        "events": [
+          {
+            "published_at": "2026-11-08T19:17:00Z",
+            "message_issued_at": "2026-11-08T19:15:00Z",
+            "event_start_utc": "2026-11-09T06:00:00Z",
+            "event_end_utc": "2026-11-09T11:00:00Z",
+            "indicated_margin_shortfall_mw": 1388,
+            "contingency_mw": 808,
+            "status": "notice",
+            "source_record_sha256": "c91aec023369181b48e3b203790a9785770b8d5dfd44e3c19ab454749ab4c1a7"
+          },
+          {
+            "published_at": "2026-11-09T04:20:00Z",
+            "message_issued_at": "2026-11-09T04:15:00Z",
+            "event_start_utc": "2026-11-09T08:00:00Z",
+            "event_end_utc": "2026-11-09T11:00:00Z",
+            "indicated_margin_shortfall_mw": 500,
+            "contingency_mw": 0,
+            "status": "notice",
+            "source_record_sha256": "cc869e1b35fd508ed2e329b9a839ab1769d6d23c95a10490487985bfd5f35f5e"
+          },
+          {
+            "published_at": "2026-11-09T08:24:00Z",
+            "message_issued_at": "2026-11-09T08:24:00Z",
+            "event_start_utc": "2026-11-09T08:00:00Z",
+            "event_end_utc": "2026-11-09T11:00:00Z",
+            "indicated_margin_shortfall_mw": 200,
+            "contingency_mw": 0,
+            "status": "notice",
+            "source_record_sha256": "ffd026ce427312b53b1073eae59e1b2790c5d68fb78ecdc63f343442825d285f"
+          },
+          {
+            "published_at": "2026-11-09T09:11:00Z",
+            "message_issued_at": "2026-11-09T09:11:00Z",
+            "event_start_utc": "2026-11-09T08:00:00Z",
+            "event_end_utc": "2026-11-09T11:00:00Z",
+            "indicated_margin_shortfall_mw": null,
+            "contingency_mw": null,
+            "status": "cancelled",
+            "source_record_sha256": "8efc208e7b5be769866600d23db786651d6e69beccadf3ef7136b33bfb02680c"
+          }
+        ],
+        "interpretation": "Sequential revisions and cancellation, not additive deficits or measured outages. Factual metadata only; warning text is not redistributed. All asset offers, fees, requested MW and duration are constructed assumptions, not inferred from notices."
+      },
+      "news_selection": {
+        "selected": "Duration-aware portfolio availability after GB margin notices and GC0166 implementation deadline",
+        "criteria": [
+          "Publication recency",
+          "Primary-source evidence",
+          "Economic decision with testable physical constraints",
+          "Fit to EnerQit QUBO methods without forcing a quantum claim"
+        ],
+        "shortlist": [
+          {
+            "topic": "GB electricity margin notice",
+            "event_date": "2026-11-09",
+            "source": "https://www.neso.energy/news/energy-explained-blog-electricity-margin-notice-240626",
+            "role": "Primary explanation of EMN; actual November events from Elexon snapshot",
+            "decision": "selected; latest operational motivation"
+          },
+          {
+            "topic": "GC0166 MDO/MDB energy availability",
+            "event_date": "2026-11-05",
+            "source": "https://www.neso.energy/news/gc0166-goes-live-enabling-smarter-use-limited-duration-assets",
+            "role": "Primary NESO rollout and implementation deadline",
+            "decision": "selected as context; not a compliance implementation"
+          },
+          {
+            "topic": "NSW solar emergency backstop phase-in",
+            "event_date": "2026-11-02",
+            "source": "https://www.endeavourenergy.com.au/our-network/resilience-and-emergency-planning/nsw-emergency-backstop-mechanism",
+            "role": "Primary network operator rollout information",
+            "decision": "backlog: PV fleet flexibility and curtailment scenarios"
+          }
+        ]
+      },
+      "repository_awareness": {
+        "energy_agents_role": "career_quantum_ml_engineer",
+        "energy_agents_commit": "f5c40e7766646f29875da5e2df1df8aa3a5d3027",
+        "energy_data_insights_commit": "b5ae10d43619155519a56ab3a30cb6660db8ca55",
+        "inspected": [
+          "docs/uk-low-wind-margin-2026.md",
+          "data-retrieval/src/energy_data_retrieval/sources/elexon/client.py"
+        ],
+        "reuse_decision": "EDI already has single-battery margin-relief sensitivity and B1610 generation retrieval. Here EnerQit adds multi-asset cost-cover optimization and common QUBO solver evaluation. B1610 does not supply battery SOC or the SYSWARN event stream; no live plant SOC is fabricated."
+      },
+      "input_classification": "synthetic",
+      "case_sha256": "c6d2f0464c21761d60f18c7a9b60000b4f36b22e422dbb7aad4534fa4c5e5bdf"
+    },
+    "benchmark_methods": {
+      "capacities": [
+        {
+          "id": "Fictional-A",
+          "effective_capacity_dc_mwh": 142.5,
+          "available_dc_mwh": 39.875,
+          "available_ac_mwh": 37.88125,
+          "power_only_mw": 120,
+          "deliverable_mw": 12.627083333333333,
+          "energy_limit_mw": 12.627083333333333
+        },
+        {
+          "id": "Fictional-B",
+          "effective_capacity_dc_mwh": 300,
+          "available_dc_mwh": 190.00000000000003,
+          "available_ac_mwh": 180.50000000000003,
+          "power_only_mw": 100,
+          "deliverable_mw": 60.16666666666668,
+          "energy_limit_mw": 60.16666666666668
+        },
+        {
+          "id": "Fictional-C",
+          "effective_capacity_dc_mwh": 427.5,
+          "available_dc_mwh": 312.0,
+          "available_ac_mwh": 296.4,
+          "power_only_mw": 80,
+          "deliverable_mw": 80,
+          "energy_limit_mw": 98.8
+        },
+        {
+          "id": "Fictional-D",
+          "effective_capacity_dc_mwh": 450.0,
+          "available_dc_mwh": 317.5,
+          "available_ac_mwh": 301.625,
+          "power_only_mw": 80,
+          "deliverable_mw": 80,
+          "energy_limit_mw": 100.54166666666667
+        },
+        {
+          "id": "Fictional-E",
+          "effective_capacity_dc_mwh": 200,
+          "available_dc_mwh": 100.0,
+          "available_ac_mwh": 90.0,
+          "power_only_mw": 70,
+          "deliverable_mw": 30.0,
+          "energy_limit_mw": 30.0
+        },
+        {
+          "id": "Fictional-F",
+          "effective_capacity_dc_mwh": 400,
+          "available_dc_mwh": 320.0,
+          "available_ac_mwh": 304.0,
+          "power_only_mw": 55,
+          "deliverable_mw": 55,
+          "energy_limit_mw": 101.33333333333333
+        },
+        {
+          "id": "Fictional-G",
+          "effective_capacity_dc_mwh": 300,
+          "available_dc_mwh": 29.999999999999993,
+          "available_ac_mwh": 28.499999999999993,
+          "power_only_mw": 150,
+          "deliverable_mw": 9.499999999999998,
+          "energy_limit_mw": 9.499999999999998
+        },
+        {
+          "id": "Fictional-H",
+          "effective_capacity_dc_mwh": 570.0,
+          "available_dc_mwh": 377.5,
+          "available_ac_mwh": 358.625,
+          "power_only_mw": 90,
+          "deliverable_mw": 90,
+          "energy_limit_mw": 119.54166666666667
+        }
+      ],
+      "native_milp": {
+        "status": "optimal",
+        "selected": [
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1
+        ],
+        "cost_gbp": 25000.0,
+        "elapsed_s": 0.002793883999402169,
+        "optimal": true,
+        "mip_gap": 0.0,
+        "physical": {
+          "selected_ids": [
+            "Fictional-B",
+            "Fictional-E",
+            "Fictional-H"
+          ],
+          "selected": [
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1
+          ],
+          "feasible": true,
+          "target_mw": 180.0,
+          "duration_hours": 3.0,
+          "sustained_capacity_mw": 180.16666666666669,
+          "delivered_mw": 180.0,
+          "shortfall_mw": 0.0,
+          "block_shortfall_equivalent_mwh": 0.0,
+          "reservation_cost_gbp": 25000.0,
+          "dispatch_mw": [
+            0.0,
+            60.111008325624425,
+            0.0,
+            0.0,
+            29.97224791859389,
+            0.0,
+            0.0,
+            89.91674375578167
+          ],
+          "ending_soc": [
+            0.45,
+            0.16725254394079558,
+            0.9,
+            0.85,
+            0.10046253469010186,
+            0.9,
+            0.3,
+            0.35184629498181896
+          ],
+          "scheduled_ac_mwh": [
+            0.0,
+            180.33302497687328,
+            0.0,
+            0.0,
+            89.91674375578167,
+            0.0,
+            0.0,
+            269.750231267345
+          ]
+        }
+      },
+      "native_enumeration": {
+        "selected": [
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1
+        ],
+        "cost_gbp": 25000.0,
+        "status": "optimal",
+        "elapsed_s": 0.0007321060002141166,
+        "evaluations": 256
+      },
+      "power_only_baseline": {
+        "status": "optimal",
+        "selected": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "cost_gbp": 7000.0,
+        "elapsed_s": 0.0009139230023720302,
+        "optimal": true,
+        "mip_gap": 0.0,
+        "physical": {
+          "selected_ids": [
+            "Fictional-A",
+            "Fictional-G"
+          ],
+          "selected": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "feasible": false,
+          "target_mw": 180.0,
+          "duration_hours": 3.0,
+          "sustained_capacity_mw": 22.12708333333333,
+          "delivered_mw": 22.12708333333333,
+          "shortfall_mw": 157.87291666666667,
+          "block_shortfall_equivalent_mwh": 473.61875,
+          "reservation_cost_gbp": 7000.0,
+          "dispatch_mw": [
+            12.627083333333333,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            9.499999999999998,
+            0.0
+          ],
+          "ending_soc": [
+            0.17017543859649126,
+            0.8,
+            0.9,
+            0.85,
+            0.6,
+            0.9,
+            0.2,
+            0.85
+          ],
+          "scheduled_ac_mwh": [
+            37.88125,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            28.499999999999993,
+            0.0
+          ]
+        }
+      },
+      "records": [
+        {
+          "x": [
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "energy": 25000.0,
+          "method": "exact",
+          "seed": null,
+          "elapsed_s": 0.007533236999734072,
+          "feasible": true,
+          "metadata": {
+            "certified": true,
+            "evaluations": 16384
+          },
+          "physical": {
+            "selected_ids": [
+              "Fictional-B",
+              "Fictional-E",
+              "Fictional-H"
+            ],
+            "selected": [
+              0,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              1
+            ],
+            "feasible": true,
+            "target_mw": 180.0,
+            "duration_hours": 3.0,
+            "sustained_capacity_mw": 180.16666666666669,
+            "delivered_mw": 180.0,
+            "shortfall_mw": 0.0,
+            "block_shortfall_equivalent_mwh": 0.0,
+            "reservation_cost_gbp": 25000.0,
+            "dispatch_mw": [
+              0.0,
+              60.111008325624425,
+              0.0,
+              0.0,
+              29.97224791859389,
+              0.0,
+              0.0,
+              89.91674375578167
+            ],
+            "ending_soc": [
+              0.45,
+              0.16725254394079558,
+              0.9,
+              0.85,
+              0.10046253469010186,
+              0.9,
+              0.3,
+              0.35184629498181896
+            ],
+            "scheduled_ac_mwh": [
+              0.0,
+              180.33302497687328,
+              0.0,
+              0.0,
+              89.91674375578167,
+              0.0,
+              0.0,
+              269.750231267345
+            ]
+          },
+          "encoded_feasible": true,
+          "physical_feasible": true,
+          "construction_s": 0.0002767669975582976,
+          "total_s": 0.00781000399729237,
+          "qubo_energy_gap_gbp": 0.0,
+          "native_cost_gap_gbp": 0.0
+        },
+        {
+          "x": [
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "energy": 25000.0,
+          "method": "simulated_annealing",
+          "seed": 0,
+          "elapsed_s": 0.026875072999246186,
+          "feasible": true,
+          "metadata": {
+            "reads": 32,
+            "sweeps": 150,
+            "local_polish": true,
+            "raw_best_energy": 30000.0,
+            "certified": false
+          },
+          "physical": {
+            "selected_ids": [
+              "Fictional-B",
+              "Fictional-E",
+              "Fictional-H"
+            ],
+            "selected": [
+              0,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              1
+            ],
+            "feasible": true,
+            "target_mw": 180.0,
+            "duration_hours": 3.0,
+            "sustained_capacity_mw": 180.16666666666669,
+            "delivered_mw": 180.0,
+            "shortfall_mw": 0.0,
+            "block_shortfall_equivalent_mwh": 0.0,
+            "reservation_cost_gbp": 25000.0,
+            "dispatch_mw": [
+              0.0,
+              60.111008325624425,
+              0.0,
+              0.0,
+              29.97224791859389,
+              0.0,
+              0.0,
+              89.91674375578167
+            ],
+            "ending_soc": [
+              0.45,
+              0.16725254394079558,
+              0.9,
+              0.85,
+              0.10046253469010186,
+              0.9,
+              0.3,
+              0.35184629498181896
+            ],
+            "scheduled_ac_mwh": [
+              0.0,
+              180.33302497687328,
+              0.0,
+              0.0,
+              89.91674375578167,
+              0.0,
+              0.0,
+              269.750231267345
+            ]
+          },
+          "encoded_feasible": true,
+          "physical_feasible": true,
+          "construction_s": 0.0002767669975582976,
+          "total_s": 0.027151839996804483,
+          "qubo_energy_gap_gbp": 0.0,
+          "native_cost_gap_gbp": 0.0
+        },
+        {
+          "x": [
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "energy": 25000.0,
+          "method": "ballistic_simulated_bifurcation",
+          "seed": 0,
+          "elapsed_s": 0.017109555999923032,
+          "feasible": true,
+          "metadata": {
+            "agents": 64,
+            "steps": 800,
+            "dt": 0.1,
+            "coupling": 0.5,
+            "local_polish": true,
+            "raw_best_energy": 27000.0,
+            "coefficient_scale": 142819304.0,
+            "certified": false,
+            "implementation": "NumPy reference; classical hardware"
+          },
+          "physical": {
+            "selected_ids": [
+              "Fictional-B",
+              "Fictional-E",
+              "Fictional-H"
+            ],
+            "selected": [
+              0,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              1
+            ],
+            "feasible": true,
+            "target_mw": 180.0,
+            "duration_hours": 3.0,
+            "sustained_capacity_mw": 180.16666666666669,
+            "delivered_mw": 180.0,
+            "shortfall_mw": 0.0,
+            "block_shortfall_equivalent_mwh": 0.0,
+            "reservation_cost_gbp": 25000.0,
+            "dispatch_mw": [
+              0.0,
+              60.111008325624425,
+              0.0,
+              0.0,
+              29.97224791859389,
+              0.0,
+              0.0,
+              89.91674375578167
+            ],
+            "ending_soc": [
+              0.45,
+              0.16725254394079558,
+              0.9,
+              0.85,
+              0.10046253469010186,
+              0.9,
+              0.3,
+              0.35184629498181896
+            ],
+            "scheduled_ac_mwh": [
+              0.0,
+              180.33302497687328,
+              0.0,
+              0.0,
+              89.91674375578167,
+              0.0,
+              0.0,
+              269.750231267345
+            ]
+          },
+          "encoded_feasible": true,
+          "physical_feasible": true,
+          "construction_s": 0.0002767669975582976,
+          "total_s": 0.01738632299748133,
+          "qubo_energy_gap_gbp": 0.0,
+          "native_cost_gap_gbp": 0.0
+        },
+        {
+          "x": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "energy": 27000.0,
+          "method": "simulated_annealing",
+          "seed": 1,
+          "elapsed_s": 0.02723534200049471,
+          "feasible": true,
+          "metadata": {
+            "reads": 32,
+            "sweeps": 150,
+            "local_polish": true,
+            "raw_best_energy": 30000.0,
+            "certified": false
+          },
+          "physical": {
+            "selected_ids": [
+              "Fictional-A",
+              "Fictional-D",
+              "Fictional-H"
+            ],
+            "selected": [
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "feasible": true,
+            "target_mw": 180.0,
+            "duration_hours": 3.0,
+            "sustained_capacity_mw": 182.62708333333333,
+            "delivered_mw": 180.0,
+            "shortfall_mw": 0.0,
+            "block_shortfall_equivalent_mwh": 0.0,
+            "reservation_cost_gbp": 27000.0,
+            "dispatch_mw": [
+              12.445443241578353,
+              0.0,
+              0.0,
+              78.84920318043372,
+              0.0,
+              0.0,
+              0.0,
+              88.70535357798792
+            ],
+            "ending_soc": [
+              0.17420070378773733,
+              0.8,
+              0.9,
+              0.2966722583829212,
+              0.6,
+              0.9,
+              0.3,
+              0.35855759790588404
+            ],
+            "scheduled_ac_mwh": [
+              37.33632972473506,
+              0.0,
+              0.0,
+              236.54760954130114,
+              0.0,
+              0.0,
+              0.0,
+              266.11606073396376
+            ]
+          },
+          "encoded_feasible": true,
+          "physical_feasible": true,
+          "construction_s": 0.0002767669975582976,
+          "total_s": 0.02751210899805301,
+          "qubo_energy_gap_gbp": 2000.0,
+          "native_cost_gap_gbp": 2000.0
+        },
+        {
+          "x": [
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "energy": 25000.0,
+          "method": "ballistic_simulated_bifurcation",
+          "seed": 1,
+          "elapsed_s": 0.0171053900012339,
+          "feasible": true,
+          "metadata": {
+            "agents": 64,
+            "steps": 800,
+            "dt": 0.1,
+            "coupling": 0.5,
+            "local_polish": true,
+            "raw_best_energy": 27000.0,
+            "coefficient_scale": 142819304.0,
+            "certified": false,
+            "implementation": "NumPy reference; classical hardware"
+          },
+          "physical": {
+            "selected_ids": [
+              "Fictional-B",
+              "Fictional-E",
+              "Fictional-H"
+            ],
+            "selected": [
+              0,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              1
+            ],
+            "feasible": true,
+            "target_mw": 180.0,
+            "duration_hours": 3.0,
+            "sustained_capacity_mw": 180.16666666666669,
+            "delivered_mw": 180.0,
+            "shortfall_mw": 0.0,
+            "block_shortfall_equivalent_mwh": 0.0,
+            "reservation_cost_gbp": 25000.0,
+            "dispatch_mw": [
+              0.0,
+              60.111008325624425,
+              0.0,
+              0.0,
+              29.97224791859389,
+              0.0,
+              0.0,
+              89.91674375578167
+            ],
+            "ending_soc": [
+              0.45,
+              0.16725254394079558,
+              0.9,
+              0.85,
+              0.10046253469010186,
+              0.9,
+              0.3,
+              0.35184629498181896
+            ],
+            "scheduled_ac_mwh": [
+              0.0,
+              180.33302497687328,
+              0.0,
+              0.0,
+              89.91674375578167,
+              0.0,
+              0.0,
+              269.750231267345
+            ]
+          },
+          "encoded_feasible": true,
+          "physical_feasible": true,
+          "construction_s": 0.0002767669975582976,
+          "total_s": 0.017382156998792198,
+          "qubo_energy_gap_gbp": 0.0,
+          "native_cost_gap_gbp": 0.0
+        },
+        {
+          "x": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          "energy": 28000.0,
+          "method": "simulated_annealing",
+          "seed": 2,
+          "elapsed_s": 0.026860291000048164,
+          "feasible": true,
+          "metadata": {
+            "reads": 32,
+            "sweeps": 150,
+            "local_polish": true,
+            "raw_best_energy": 38000.0,
+            "certified": false
+          },
+          "physical": {
+            "selected_ids": [
+              "Fictional-D",
+              "Fictional-E",
+              "Fictional-H"
+            ],
+            "selected": [
+              0,
+              0,
+              0,
+              1,
+              1,
+              0,
+              0,
+              1
+            ],
+            "feasible": true,
+            "target_mw": 180.0,
+            "duration_hours": 3.0,
+            "sustained_capacity_mw": 200.0,
+            "delivered_mw": 180.0,
+            "shortfall_mw": 0.0,
+            "block_shortfall_equivalent_mwh": 0.0,
+            "reservation_cost_gbp": 28000.0,
+            "dispatch_mw": [
+              0.0,
+              0.0,
+              0.0,
+              72.0,
+              27.0,
+              0.0,
+              0.0,
+              81.0
+            ],
+            "ending_soc": [
+              0.45,
+              0.8,
+              0.9,
+              0.3447368421052631,
+              0.14999999999999997,
+              0.9,
+              0.3,
+              0.4012465373961218
+            ],
+            "scheduled_ac_mwh": [
+              0.0,
+              0.0,
+              0.0,
+              216.0,
+              81.0,
+              0.0,
+              0.0,
+              243.0
+            ]
+          },
+          "encoded_feasible": true,
+          "physical_feasible": true,
+          "construction_s": 0.0002767669975582976,
+          "total_s": 0.027137057997606462,
+          "qubo_energy_gap_gbp": 3000.0,
+          "native_cost_gap_gbp": 3000.0
+        },
+        {
+          "x": [
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "energy": 25000.0,
+          "method": "ballistic_simulated_bifurcation",
+          "seed": 2,
+          "elapsed_s": 0.017057349003152922,
+          "feasible": true,
+          "metadata": {
+            "agents": 64,
+            "steps": 800,
+            "dt": 0.1,
+            "coupling": 0.5,
+            "local_polish": true,
+            "raw_best_energy": 30000.0,
+            "coefficient_scale": 142819304.0,
+            "certified": false,
+            "implementation": "NumPy reference; classical hardware"
+          },
+          "physical": {
+            "selected_ids": [
+              "Fictional-B",
+              "Fictional-E",
+              "Fictional-H"
+            ],
+            "selected": [
+              0,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              1
+            ],
+            "feasible": true,
+            "target_mw": 180.0,
+            "duration_hours": 3.0,
+            "sustained_capacity_mw": 180.16666666666669,
+            "delivered_mw": 180.0,
+            "shortfall_mw": 0.0,
+            "block_shortfall_equivalent_mwh": 0.0,
+            "reservation_cost_gbp": 25000.0,
+            "dispatch_mw": [
+              0.0,
+              60.111008325624425,
+              0.0,
+              0.0,
+              29.97224791859389,
+              0.0,
+              0.0,
+              89.91674375578167
+            ],
+            "ending_soc": [
+              0.45,
+              0.16725254394079558,
+              0.9,
+              0.85,
+              0.10046253469010186,
+              0.9,
+              0.3,
+              0.35184629498181896
+            ],
+            "scheduled_ac_mwh": [
+              0.0,
+              180.33302497687328,
+              0.0,
+              0.0,
+              89.91674375578167,
+              0.0,
+              0.0,
+              269.750231267345
+            ]
+          },
+          "encoded_feasible": true,
+          "physical_feasible": true,
+          "construction_s": 0.0002767669975582976,
+          "total_s": 0.01733411600071122,
+          "qubo_energy_gap_gbp": 0.0,
+          "native_cost_gap_gbp": 0.0
+        }
+      ],
+      "environment": {
+        "python": "3.12.14",
+        "platform": "Linux",
+        "machine": "x86_64",
+        "versions": {
+          "numpy": "2.3.5",
+          "scipy": "1.17.0",
+          "pandas": "2.2.3",
+          "pvlib": "0.16.1",
+          "enerqit": "0.1.0"
+        }
+      },
+      "qubo": {
+        "variables": 14,
+        "states": 16384,
+        "dense_matrix_bytes": 1568,
+        "sha256": "ad0dfda6d89ba53c175befc7ad204c681972afac182c76fd1e7a97f7ccc66810",
+        "kind": "duration_aware_battery_cover",
+        "asset_count": 8,
+        "capacity_units": [
+          2,
+          12,
+          16,
+          16,
+          6,
+          11,
+          1,
+          18
+        ],
+        "target_units": 36,
+        "slack_weights": [
+          1,
+          2,
+          4,
+          8,
+          16,
+          15
+        ],
+        "penalty_gbp": 62001.0,
+        "step_mw": 5.0,
+        "convention": "full symmetric x.T @ Q @ x + offset",
+        "discretization": "capacity floor; target ceiling"
+      },
+      "budgets": {
+        "seeds": [
+          0,
+          1,
+          2
+        ],
+        "sa_reads": 32,
+        "sa_sweeps": 150,
+        "bsb_agents": 64,
+        "bsb_steps": 800,
+        "shared_one_bit_polish": true,
+        "equal_runtime": false
+      },
+      "quantum_hardware_used": false,
+      "quantum_advantage_established": false
+    },
+    "assess_sensitivity": {
+      "duration": [
+        {
+          "duration_hours": 1,
+          "status": "optimal",
+          "selected": [
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            1,
+            0
+          ],
+          "cost_gbp": 16000.0,
+          "elapsed_s": 0.0015257119994203094,
+          "optimal": true,
+          "mip_gap": 0.0
+        },
+        {
+          "duration_hours": 2,
+          "status": "optimal",
+          "selected": [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "cost_gbp": 20000.0,
+          "elapsed_s": 0.0011541960011527408,
+          "optimal": true,
+          "mip_gap": 0.0
+        },
+        {
+          "duration_hours": 3,
+          "status": "optimal",
+          "selected": [
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1
+          ],
+          "cost_gbp": 25000.0,
+          "elapsed_s": 0.00099336000130279,
+          "optimal": true,
+          "mip_gap": 0.0
+        },
+        {
+          "duration_hours": 4,
+          "status": "optimal",
+          "selected": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ],
+          "cost_gbp": 27000.0,
+          "elapsed_s": 0.0016919549998419825,
+          "optimal": true,
+          "mip_gap": 0.0
+        },
+        {
+          "duration_hours": 5,
+          "status": "optimal",
+          "selected": [
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            1
+          ],
+          "cost_gbp": 31000.0,
+          "elapsed_s": 0.0012465510008041747,
+          "optimal": true,
+          "mip_gap": 0.0
+        },
+        {
+          "duration_hours": 6,
+          "status": "optimal",
+          "selected": [
+            0,
+            1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            0
+          ],
+          "cost_gbp": 38000.0,
+          "elapsed_s": 0.0015838969993637875,
+          "optimal": true,
+          "mip_gap": 0.0
+        },
+        {
+          "duration_hours": 8,
+          "status": "optimal",
+          "selected": [
+            0,
+            1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            1
+          ],
+          "cost_gbp": 50000.0,
+          "elapsed_s": 0.0007421310001518577,
+          "optimal": true,
+          "mip_gap": 0.0
+        },
+        {
+          "duration_hours": 12,
+          "status": "infeasible",
+          "selected": null,
+          "cost_gbp": null,
+          "elapsed_s": 0.0006451369990827516,
+          "optimal": false
+        }
+      ],
+      "soc_buffer": [
+        {
+          "withheld_soc_fraction": 0.0,
+          "status": "optimal",
+          "selected": [
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1
+          ],
+          "cost_gbp": 25000.0,
+          "elapsed_s": 0.0009717380016809329,
+          "optimal": true,
+          "mip_gap": 0.0
+        },
+        {
+          "withheld_soc_fraction": 0.05,
+          "status": "optimal",
+          "selected": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0
+          ],
+          "cost_gbp": 26000.0,
+          "elapsed_s": 0.0012862889998359606,
+          "optimal": true,
+          "mip_gap": 0.0
+        },
+        {
+          "withheld_soc_fraction": 0.1,
+          "status": "optimal",
+          "selected": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0
+          ],
+          "cost_gbp": 26000.0,
+          "elapsed_s": 0.0009942409997165669,
+          "optimal": true,
+          "mip_gap": 0.0
+        }
+      ],
+      "discretization": [
+        {
+          "step_mw": 1.0,
+          "status": "optimal",
+          "selected": [
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1
+          ],
+          "cost_gbp": 25000.0,
+          "elapsed_s": 0.0010968919996230397,
+          "optimal": true,
+          "mip_gap": 0.0
+        },
+        {
+          "step_mw": 5.0,
+          "status": "optimal",
+          "selected": [
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1
+          ],
+          "cost_gbp": 25000.0,
+          "elapsed_s": 0.0009445180003240239,
+          "optimal": true,
+          "mip_gap": 0.0
+        },
+        {
+          "step_mw": 10.0,
+          "status": "optimal",
+          "selected": [
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1
+          ],
+          "cost_gbp": 25000.0,
+          "elapsed_s": 0.000980660999630345,
+          "optimal": true,
+          "mip_gap": 0.0
+        },
+        {
+          "step_mw": 20.0,
+          "status": "optimal",
+          "selected": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0
+          ],
+          "cost_gbp": 26000.0,
+          "elapsed_s": 0.0011109420011052862,
+          "optimal": true,
+          "mip_gap": 0.0
+        }
+      ],
+      "assumptions": "Fixed synthetic fees; deterministic SOC buffer, not a confidence interval"
+    },
+    "prepare_handoff": {
+      "recommended_method": "native_milp",
+      "portfolio": {
+        "selected_ids": [
+          "Fictional-B",
+          "Fictional-E",
+          "Fictional-H"
+        ],
+        "selected": [
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1
+        ],
+        "feasible": true,
+        "target_mw": 180.0,
+        "duration_hours": 3.0,
+        "sustained_capacity_mw": 180.16666666666669,
+        "delivered_mw": 180.0,
+        "shortfall_mw": 0.0,
+        "block_shortfall_equivalent_mwh": 0.0,
+        "reservation_cost_gbp": 25000.0,
+        "dispatch_mw": [
+          0.0,
+          60.111008325624425,
+          0.0,
+          0.0,
+          29.97224791859389,
+          0.0,
+          0.0,
+          89.91674375578167
+        ],
+        "ending_soc": [
+          0.45,
+          0.16725254394079558,
+          0.9,
+          0.85,
+          0.10046253469010186,
+          0.9,
+          0.3,
+          0.35184629498181896
+        ],
+        "scheduled_ac_mwh": [
+          0.0,
+          180.33302497687328,
+          0.0,
+          0.0,
+          89.91674375578167,
+          0.0,
+          0.0,
+          269.750231267345
+        ]
+      },
+      "reason": "Native MILP avoids capacity quantization and certifies this small model; independent subset enumeration agrees.",
+      "next_evidence": [
+        "Validated asset-level SOC, usable energy and export headroom",
+        "Actual availability fees and service qualification",
+        "Network, ramp, recharge and degradation constraints"
+      ],
+      "limitations": [
+        "Synthetic portfolio; not a GB dispatch recommendation",
+        "Single constant-power block, no intertemporal operation",
+        "News motivation is not causal or field validation",
+        "No hardware execution or quantum advantage"
+      ],
+      "execution_authorized": false
+    }
+  },
+  "trace": [
+    {
+      "step": 0,
+      "tool": "inspect_evidence",
+      "status": "completed"
+    },
+    {
+      "step": 1,
+      "tool": "benchmark_methods",
+      "status": "completed"
+    },
+    {
+      "step": 2,
+      "tool": "assess_sensitivity",
+      "status": "completed"
+    },
+    {
+      "step": 3,
+      "tool": "prepare_handoff",
+      "status": "completed"
+    },
+    {
+      "step": 4,
+      "tool": "finish",
+      "status": "completed"
+    }
+  ],
+  "human_review_required": true,
+  "execution_authorized": false,
+  "validation": "registered_tool_execution_and_protocol_only"
+}

@@ -83,7 +83,8 @@ characterization, synthetic configuration benchmarks, local evidence storage,
 classical and quantum-inspired CPU solvers, and quantum model export examples.
 
 **Planned:** validation on real held-out assets, stronger native optimization
-baselines at scale, and separate storage, wind, grid and market applications.
+baselines at scale, and broader storage, wind, grid and market applications beyond the delivered
+battery availability-portfolio study.
 Future quantum hardware experiments require an explicitly labeled backend and
 comparison against the same classical engineering objectives.
 

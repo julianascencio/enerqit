@@ -111,7 +111,28 @@ python docs/examples/plot_orientation.py
 
 The demo writes observations and a JSON result with provenance. The
 [example gallery](https://julianascencio.github.io/enerqit/gallery/index.html)
-contains seven executed studies with downloadable scripts and notebooks.
+contains eight executed studies with downloadable scripts and notebooks.
+
+## Battery portfolio engineer
+
+Run the Quantum ML Engineer from `energy-agents` on a news-motivated, offline
+battery availability study. Eight fictional offers must sustain a synthetic
+180 MW for three hours. EnerQit owns the physics, native MILP, conservative QUBO,
+solver benchmarks and sensitivity analysis.
+
+```bash
+python -m pip install -e ".[dev,docs]"
+python -m pip install -r requirements/agent-study.txt
+python -m enerqit.storage_study --output results/battery-engineer.json
+python docs/examples/plot_battery_portfolio.py
+```
+
+The power-only £7,000 selection supplies just 22.13 MW over the full block;
+the feasible optimum costs £25,000. These are **synthetic fees and assets**, not
+observed market costs. The default agent workflow is scripted and needs no API
+key. [Read the study](docs/sphinx/source/battery_portfolio.rst) for source facts,
+assumptions, exact certificates and stochastic outcomes. The optional agent is
+pinned to an immutable revision from [energy-agents PR #19](https://github.com/julianascencio/energy-agents/pull/19).
 
 ## Main capabilities
 
@@ -125,6 +146,7 @@ contains seven executed studies with downloadable scripts and notebooks.
 | Effective inverter and thermal curves | Synchronized converter input/output or independently available AC and thermal evidence; explicit coverage checks |
 | Coupled configuration selection | Forward templates, one-hot choices and inventory equalities; common QUBO/Ising encodings |
 | Solver benchmarking | Exact QUBO and native feasible enumeration, simulated annealing, and ballistic simulated bifurcation |
+| Battery availability portfolios | Duration, SOC, SOH, export headroom and reserves; native MILP, cost-cover QUBO, independent feasibility and agent-led sensitivity |
 | Local evidence studies | Idempotent SQLite ingestion, late corrections, immutable snapshots and structured result records |
 
 **AC power alone cannot uniquely reveal full IV curves, exact equipment counts or
@@ -156,7 +178,7 @@ for the encoding conventions, limitations and future hardware research path.
 | `enerqit/` | Physical models, inverse estimators, QUBO encodings and evidence utilities |
 | `enerqit/solar/` | Public entry point for the initial solar application |
 | `enerqit/solvers/` | Classical baselines, simulated bifurcation and optional quantum exports |
-| `docs/examples/` | Seven executable gallery examples |
+| `docs/examples/` | Eight executable gallery examples |
 | `docs/notebooks/` | Introductory inverse-study notebook |
 | `docs/sphinx/source/` | User guide, gallery configuration, API, research and contributor documentation |
 | `tests/` | Recovery, invalid-data, identifiability, encoding and audit checks |
@@ -173,6 +195,7 @@ the build, following OrbitalPV's documentation format.
 
 ```bash
 python -m pip install -e ".[docs]"
+python -m pip install -r requirements/agent-study.txt
 make docs
 ```
 
@@ -193,6 +216,7 @@ python ci/run_examples.py --output results/examples
 
 ```bash
 python -m pip install -e ".[dev,docs,examples,quantum]"
+python -m pip install -r requirements/agent-study.txt
 python -m ruff check .
 python -m pytest --cov=enerqit --cov-report=term-missing
 make docs
@@ -213,7 +237,7 @@ describe the current evidence base: pvlib forward physics, De Soto parameter
 translation, simulated bifurcation, and QUBO/Ising model conventions.
 
 [ROADMAP.md](ROADMAP.md) tracks held-out field validation, stronger classical
-baselines and future wind, storage, grid and market applications. Those additional
+baselines and future wind, intertemporal storage, grid and market applications. Those additional
 energy domains are planned, not implemented. The initial solar application grew
 from the earlier QuantumPV work.
 

@@ -44,7 +44,9 @@ What is implemented
        simulation.
      - :doc:`/gallery/plot_quantum_bridge`
 
-Wind, storage, grids and energy markets are future application domains, as
+A synthetic :doc:`battery availability-portfolio study </battery_portfolio>` is
+also implemented. Wind, broader grid operation and energy markets remain future
+application domains, as
 described in the :doc:`/project`. They are not implemented applications in
 version 0.1.0.
 

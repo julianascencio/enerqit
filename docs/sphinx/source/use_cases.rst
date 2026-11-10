@@ -47,6 +47,10 @@ a feature-completeness claim for every possible PV inverse problem.
      - Piecewise constrained fit
      - Discrete cooling-state/threshold hypotheses
      - Single-state classical fit; QI extension proposed
+   * - Battery availability portfolio
+     - MILP and native subset enumeration
+     - Conservative cost-cover QUBO via exact, SA and bSB
+     - Synthetic duration/SOC sensitivity; no operational dispatch
    * - Repeated evidence batches
      - Versioned batch calibration and temporal validation
      - Re-solve selected coupled hypotheses as evidence improves

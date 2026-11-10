@@ -11,6 +11,14 @@ does not establish validity at the others.
 Use the :doc:`/methods` and :doc:`/quantum` guides for the implemented assumptions
 and conventions, and the :doc:`/api` for callable behavior.
 
+A dated :doc:`battery portfolio study </battery_portfolio>` connects energy news
+to independently checked physical optimization and an agent-led runnable example.
+
+.. toctree::
+   :hidden:
+
+   /battery_portfolio
+
 Sources and their role
 ----------------------
 
@@ -100,6 +108,7 @@ Planned research
 
 The `roadmap <https://github.com/julianascencio/enerqit/blob/main/ROADMAP.md>`_
 tracks validation on held-out field data, stronger optimization baselines,
-scaling studies and future wind, storage, grid and market applications. These
-future domains and hardware experiments remain research directions; consult the
+scaling studies and future wind, intertemporal storage, grid and market
+applications. Beyond the delivered battery availability study, these domains
+and hardware experiments remain research directions; consult the
 :doc:`/use_cases` register for what the package currently implements.

@@ -37,3 +37,23 @@ Primary references:
 The delivered synthetic experiments verify implementation behavior; they do
 not establish a field performance result, novelty, patentability, OEM agreement,
 or quantum-inspired advantage.
+
+## Battery availability portfolio study (10 November 2026)
+
+The [duration-aware portfolio study](../docs/sphinx/source/battery_portfolio.rst)
+adds a fixed-fee binary cover model constrained by AC power, DC usable energy,
+SOC, SOH, efficiency and export headroom. It compares SciPy/HiGHS MILP, native
+subset enumeration, conservative QUBO exact enumeration and the existing SA/bSB
+solvers. [SciPy MILP documentation](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.milp.html)
+defines the classical solver interface; Goto et al. (2021), cited above, motivates
+the existing classical bSB method. The algebraic penalty bound and rounding
+limits are derived in the study and exhaustively tested on small instances.
+
+Official Elexon SYSWARN metadata and NESO's GC0166 update motivate the problem;
+all battery offers and fees are synthetic. The numerical result does not
+validate Grid Code compliance, reconstruct dispatch, or establish quantum
+advantage. The complete agent trace, solver budgets and environment are in
+[the recorded benchmark](../benchmarks/results/battery-engineer-20261110.json).
+This contribution was AI-generated and checked with physical accounting tests,
+independent exact oracles and runnable examples; human and field review remain
+separate from these implementation checks.
