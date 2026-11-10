@@ -1,0 +1,123 @@
+{
+  "study_id": "network-curtailment-20261110",
+  "as_of_utc": "2026-11-10",
+  "classification": "mixed",
+  "data_classification": "All numerical network, load and cost inputs are synthetic; primary publications supply context only.",
+  "input_license": "MIT, authored synthetic fixture; source articles not redistributed",
+  "seed": null,
+  "seed_reason": "Deterministic LP; no stochastic algorithm",
+  "agent_revision": "832f4117f95ac3137c63eace389e56cdc2c075fe",
+  "enerqit_base_revision": "2847f95124c6f45b98d403e444877ca18451ab32",
+  "edi_revision": "b5ae10d43619155519a56ab3a30cb6660db8ca55",
+  "edi_inspection": "docs/ree-adjustment-bess.md provides aggregate restriction costs, not licensed bus topology, reactance and line ratings. No connector reused.",
+  "sources": [
+    {
+      "id": "iea_renewables",
+      "url": "https://www.iea.org/news/energy-security-concerns-spur-faster-renewables-growth-across-a-widening-constellation-of-countries",
+      "published_on": "2026-11-06",
+      "retrieved_on": "2026-11-10",
+      "response_sha256": "0b5f3db7d3d369ceaaf2164c2f7298c480707fc7c6beadc5456e29807338fddd",
+      "response_bytes": 232592,
+      "redistribution": "URL, factual metadata and independently authored summary only; no source page bundled"
+    },
+    {
+      "id": "ember_grid",
+      "url": "https://ember-energy.org/latest-insights/building-a-grid-for-the-age-of-power/",
+      "published_on": "2026-11-05",
+      "retrieved_on": "2026-11-10",
+      "response_sha256": "56bc6c44cef70f68783bee54746ed3d1110511af688afa19dfe5fcb000a93277",
+      "response_bytes": 95129,
+      "redistribution": "URL, factual metadata and independently authored summary only; no source page bundled"
+    },
+    {
+      "id": "banque_france",
+      "url": "https://www.banque-france.fr/en/publications-and-statistics/publications/data-centres-and-energy-environmental-cost-faulty-price-signal",
+      "published_on": "2026-11-04",
+      "retrieved_on": "2026-11-10",
+      "acquisition": "Read with browser search/open; source response not archived",
+      "response_sha256": null,
+      "redistribution": "Link and factual publication date only"
+    }
+  ],
+  "selection": {
+    "initial_window_hours": 72,
+    "extended_window_days": 7,
+    "source_age_days": 5,
+    "reason": "Advance documented network-model backlog; grid guide motivates upgrade screening, but does not calibrate a grid. Prior battery and batch-scheduling studies already merged.",
+    "candidates": [
+      {
+        "source_id": "ember_grid",
+        "business_impact": "Curtailment and upgrade prioritization",
+        "technical_importance": "Passive-network constraints change feasible dispatch",
+        "evidence": "Primary guide, no calibrated topology",
+        "tractability": "High for independently verifiable synthetic network",
+        "novelty": "First nodal power-flow model in EnerQit",
+        "method_fit": "Convex LP; no quantum method needed",
+        "decision": "selected backlog advancement"
+      },
+      {
+        "source_id": "iea_renewables",
+        "business_impact": "Global PV, wind, storage and hydro investment",
+        "technical_importance": "Renewable integration",
+        "evidence": "Primary outlook dated 6 November",
+        "tractability": "Needs local observations",
+        "novelty": "Regional integration still open",
+        "method_fit": "Planning optimization",
+        "decision": "defer pending regional dataset"
+      },
+      {
+        "source_id": "banque_france",
+        "business_impact": "Data-center location and energy costs",
+        "technical_importance": "Spatial demand alignment",
+        "evidence": "Primary commentary dated 4 November",
+        "tractability": "Needs workload and network data",
+        "novelty": "Temporal scheduling already implemented; spatial migration unresolved",
+        "method_fit": "Location-aware scheduling",
+        "decision": "defer pending latency/service constraints"
+      }
+    ]
+  },
+  "inputs": {
+    "demand_mw": [
+      0,
+      0,
+      150
+    ],
+    "renewable_mw": [
+      150,
+      0,
+      0
+    ],
+    "firm_capacity_mw": [
+      0,
+      0,
+      150
+    ],
+    "firm_cost_eur_mwh": [
+      100,
+      100,
+      100
+    ],
+    "hours": 1,
+    "lines": [
+      {
+        "source": 0,
+        "target": 1,
+        "susceptance_mw_rad": 1000,
+        "limit_mw": 40
+      },
+      {
+        "source": 0,
+        "target": 2,
+        "susceptance_mw_rad": 1000,
+        "limit_mw": 100
+      },
+      {
+        "source": 1,
+        "target": 2,
+        "susceptance_mw_rad": 1000,
+        "limit_mw": 100
+      }
+    ]
+  }
+}

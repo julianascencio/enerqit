@@ -11,59 +11,51 @@
     {
       "id": "spain-industrial-batch-flexibility-2026-11-10",
       "fixture": "enerqit/data/batch_flexibility_20261110.json",
-      "status": "proposed; see branch/PR checks"
+      "status": "merged in PR #3 before this run"
+    },
+    {
+      "id": "network-curtailment-20261110",
+      "fixture": "enerqit/data/network_research_20261110.json",
+      "status": "proposed; see PR checks"
     }
   ],
   "latest_selection": {
-    "as_of": "2026-11-10",
     "initial_window_hours": 72,
     "extended_window_days": 7,
-    "selected_source_id": "iea_spain",
-    "selection_rationale": "The last 72 hours included the already-implemented GB margin case. Within seven days, Spain electrification provides a clear industrial decision: schedule fixed-work jobs without moving overload into cheaper hours. It fits native and QUBO optimization, adds deadlines and shared-scenario constraints, and needs no speculative hardware claim.",
+    "source_age_days": 5,
+    "reason": "Advance documented network-model backlog; grid guide motivates upgrade screening, but does not calibrate a grid. Prior battery and batch-scheduling studies already merged.",
     "candidates": [
       {
-        "source_id": "iea_spain",
-        "business_impact": "Industrial energy procurement and usable grid headroom",
-        "technical_importance": "Preserve work/deadlines and avoid rebound overload",
-        "evidence": "Primary policy review; no site workload or tariff dataset",
-        "tractability": "High for a bounded synthetic scheduling prototype",
-        "novelty": "New intertemporal job scheduling, distinct from existing battery cover",
-        "method_fit": "Native MILP and conservative QUBO; no ML needed",
-        "decision": "selected"
+        "source_id": "ember_grid",
+        "business_impact": "Curtailment and upgrade prioritization",
+        "technical_importance": "Passive-network constraints change feasible dispatch",
+        "evidence": "Primary guide, no calibrated topology",
+        "tractability": "High for independently verifiable synthetic network",
+        "novelty": "First nodal power-flow model in EnerQit",
+        "method_fit": "Convex LP; no quantum method needed",
+        "decision": "selected backlog advancement"
       },
       {
         "source_id": "iea_renewables",
-        "business_impact": "Broad global renewable investment and integration",
-        "technical_importance": "System-level bottlenecks",
-        "evidence": "Primary forecast; broad geographic scope",
-        "tractability": "Medium without local system observations",
-        "novelty": "Potential multi-region integration scenario",
-        "method_fit": "Capacity planning and stochastic optimization",
-        "decision": "backlog: choose a data-supported regional bottleneck"
-      },
-      {
-        "source_id": "ember_grid",
-        "business_impact": "Grid upgrade cost and speed",
-        "technical_importance": "Different transmission and demand solutions",
-        "evidence": "Primary explanatory guide, not calibrated network topology",
-        "tractability": "Medium; requires network models",
-        "novelty": "Network-aware constraint analysis remains unimplemented",
-        "method_fit": "Power-flow-constrained optimization",
-        "decision": "backlog: obtain open topology and actual line ratings"
+        "business_impact": "Global PV, wind, storage and hydro investment",
+        "technical_importance": "Renewable integration",
+        "evidence": "Primary outlook dated 6 November",
+        "tractability": "Needs local observations",
+        "novelty": "Regional integration still open",
+        "method_fit": "Planning optimization",
+        "decision": "defer pending regional dataset"
       },
       {
         "source_id": "banque_france",
-        "business_impact": "Data-centre siting and price-signal quality",
-        "technical_importance": "Spatial demand/renewable alignment",
-        "evidence": "Primary economic commentary; not job-level measurements",
-        "tractability": "Medium; migration and service constraints unknown",
-        "novelty": "Spatial scheduling would extend this temporal model",
-        "method_fit": "Location-aware scheduling and tariff scenarios",
-        "decision": "backlog: geographic scheduling only with validated latency and energy costs"
+        "business_impact": "Data-center location and energy costs",
+        "technical_importance": "Spatial demand alignment",
+        "evidence": "Primary commentary dated 4 November",
+        "tractability": "Needs workload and network data",
+        "novelty": "Temporal scheduling already implemented; spatial migration unresolved",
+        "method_fit": "Location-aware scheduling",
+        "decision": "defer pending latency/service constraints"
       }
-    ],
-    "age_correction": "Ember data-centre flexibility report is dated 2026-10-29 (12 days old), despite search freshness labels. It is background only, not this run's fresh news trigger.",
-    "excluded_prior_case": "GB margin/battery availability already implemented in merged EnerQit PR #2"
+    ]
   },
   "sources": [
     {
@@ -111,5 +103,63 @@
       "response_sha256": null,
       "redistribution": "Link and factual publication date only"
     }
+  ],
+  "selection_history": [
+    {
+      "as_of": "2026-11-10",
+      "initial_window_hours": 72,
+      "extended_window_days": 7,
+      "selected_source_id": "iea_spain",
+      "selection_rationale": "The last 72 hours included the already-implemented GB margin case. Within seven days, Spain electrification provides a clear industrial decision: schedule fixed-work jobs without moving overload into cheaper hours. It fits native and QUBO optimization, adds deadlines and shared-scenario constraints, and needs no speculative hardware claim.",
+      "candidates": [
+        {
+          "source_id": "iea_spain",
+          "business_impact": "Industrial energy procurement and usable grid headroom",
+          "technical_importance": "Preserve work/deadlines and avoid rebound overload",
+          "evidence": "Primary policy review; no site workload or tariff dataset",
+          "tractability": "High for a bounded synthetic scheduling prototype",
+          "novelty": "New intertemporal job scheduling, distinct from existing battery cover",
+          "method_fit": "Native MILP and conservative QUBO; no ML needed",
+          "decision": "selected"
+        },
+        {
+          "source_id": "iea_renewables",
+          "business_impact": "Broad global renewable investment and integration",
+          "technical_importance": "System-level bottlenecks",
+          "evidence": "Primary forecast; broad geographic scope",
+          "tractability": "Medium without local system observations",
+          "novelty": "Potential multi-region integration scenario",
+          "method_fit": "Capacity planning and stochastic optimization",
+          "decision": "backlog: choose a data-supported regional bottleneck"
+        },
+        {
+          "source_id": "ember_grid",
+          "business_impact": "Grid upgrade cost and speed",
+          "technical_importance": "Different transmission and demand solutions",
+          "evidence": "Primary explanatory guide, not calibrated network topology",
+          "tractability": "Medium; requires network models",
+          "novelty": "Network-aware constraint analysis remains unimplemented",
+          "method_fit": "Power-flow-constrained optimization",
+          "decision": "backlog: obtain open topology and actual line ratings"
+        },
+        {
+          "source_id": "banque_france",
+          "business_impact": "Data-centre siting and price-signal quality",
+          "technical_importance": "Spatial demand/renewable alignment",
+          "evidence": "Primary economic commentary; not job-level measurements",
+          "tractability": "Medium; migration and service constraints unknown",
+          "novelty": "Spatial scheduling would extend this temporal model",
+          "method_fit": "Location-aware scheduling and tariff scenarios",
+          "decision": "backlog: geographic scheduling only with validated latency and energy costs"
+        }
+      ],
+      "age_correction": "Ember data-centre flexibility report is dated 2026-10-29 (12 days old), despite search freshness labels. It is background only, not this run's fresh news trigger.",
+      "excluded_prior_case": "GB margin/battery availability already implemented in merged EnerQit PR #2"
+    }
+  ],
+  "backlog": [
+    "Calibrate network screening on openly licensed hourly topology, ratings and outages",
+    "AC voltage/reactive-power and N-1 validation before operational use",
+    "Spatial workloads with validated latency and service constraints"
   ]
 }

@@ -51,6 +51,10 @@ a feature-completeness claim for every possible PV inverse problem.
      - Native MILP and actual-start enumeration
      - One-hot starts and conservative capacity-slack QUBO
      - Synthetic deadlines and scenario ceilings; no plant dispatch
+   * - Network curtailment and rating upgrades
+     - DC LP, transport and copperplate relaxations
+     - None: continuous convex problem
+     - Synthetic connected grids; physical feasibility and one-interval cost
    * - Battery availability portfolio
      - MILP and native subset enumeration
      - Conservative cost-cover QUBO via exact, SA and bSB

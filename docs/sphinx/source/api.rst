@@ -119,3 +119,12 @@ Evidence and reproducibility
 
 .. automodule:: enerqit.benchmarking
    :members:
+
+Network dispatch
+----------------
+
+.. automodule:: enerqit.network
+   :members:
+
+.. automodule:: enerqit.network_study
+   :members:

@@ -78,3 +78,14 @@ and 4/8/16-job resource measurements. The complete result is in
 recommendation; no hardware, field-validation or quantum-advantage claim is made.
 This AI-generated implementation has automated accounting/oracle checks and
 requires separate human and field review before operational use.
+
+## Network curtailment screening (10 November 2026)
+
+The [study](../docs/sphinx/source/network_curtailment.rst) uses standard lossless
+DC nodal/angle constraints, as documented in [PyPSA's power-flow reference](https://docs.pypsa.org/latest/user-guide/optimization/power-flow/).
+Ember's [5 November grid guide](https://ember-energy.org/latest-insights/building-a-grid-for-the-age-of-power/)
+is context, not calibration. The independently authored synthetic triangle has an
+analytic 120 MW renewable transfer limit, allowing an objective and physical
+feasibility reference independent of LP assembly. Classical LP solves this convex
+problem; quantum-inspired methods are not needed. The AI-generated implementation
+is checked automatically; field validation and human scientific review remain open.
