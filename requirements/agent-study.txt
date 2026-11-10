@@ -1,0 +1,3 @@
+# Reproducible optional agent orchestration; numerical methods stay in EnerQit.
+# energy-agents PR #19, immutable tested revision.
+energy-agents[quantum] @ git+https://github.com/julianascencio/energy-agents.git@f5c40e7766646f29875da5e2df1df8aa3a5d3027

@@ -1,0 +1,211 @@
+{
+  "id": "gb-duration-aware-battery-portfolio-2026-11-10",
+  "objective": "Select a minimum-cost battery portfolio that sustains a synthetic 180 MW availability block for three hours; quantify physical and encoding feasibility.",
+  "classification": "mixed",
+  "input_classification": "synthetic",
+  "target_mw": 180.0,
+  "duration_hours": 3.0,
+  "step_mw": 5.0,
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "offers": [
+    {
+      "id": "Fictional-A",
+      "power_mw": 120,
+      "energy_mwh": 150,
+      "start_soc": 0.45,
+      "minimum_soc": 0.1,
+      "state_of_health": 0.95,
+      "discharge_efficiency": 0.95,
+      "reserved_dc_mwh": 10,
+      "export_limit_mw": 120,
+      "reservation_cost_gbp": 4000,
+      "available": true
+    },
+    {
+      "id": "Fictional-B",
+      "power_mw": 100,
+      "energy_mwh": 300,
+      "start_soc": 0.8,
+      "minimum_soc": 0.1,
+      "state_of_health": 1,
+      "discharge_efficiency": 0.95,
+      "reserved_dc_mwh": 20,
+      "export_limit_mw": 100,
+      "reservation_cost_gbp": 8000,
+      "available": true
+    },
+    {
+      "id": "Fictional-C",
+      "power_mw": 90,
+      "energy_mwh": 450,
+      "start_soc": 0.9,
+      "minimum_soc": 0.1,
+      "state_of_health": 0.95,
+      "discharge_efficiency": 0.95,
+      "reserved_dc_mwh": 30,
+      "export_limit_mw": 80,
+      "reservation_cost_gbp": 10000,
+      "available": true
+    },
+    {
+      "id": "Fictional-D",
+      "power_mw": 80,
+      "energy_mwh": 500,
+      "start_soc": 0.85,
+      "minimum_soc": 0.1,
+      "state_of_health": 0.9,
+      "discharge_efficiency": 0.95,
+      "reserved_dc_mwh": 20,
+      "export_limit_mw": 80,
+      "reservation_cost_gbp": 11000,
+      "available": true
+    },
+    {
+      "id": "Fictional-E",
+      "power_mw": 70,
+      "energy_mwh": 200,
+      "start_soc": 0.6,
+      "minimum_soc": 0.1,
+      "state_of_health": 1,
+      "discharge_efficiency": 0.9,
+      "reserved_dc_mwh": 0,
+      "export_limit_mw": 70,
+      "reservation_cost_gbp": 5000,
+      "available": true
+    },
+    {
+      "id": "Fictional-F",
+      "power_mw": 60,
+      "energy_mwh": 400,
+      "start_soc": 0.9,
+      "minimum_soc": 0.1,
+      "state_of_health": 1,
+      "discharge_efficiency": 0.95,
+      "reserved_dc_mwh": 0,
+      "export_limit_mw": 55,
+      "reservation_cost_gbp": 9000,
+      "available": true
+    },
+    {
+      "id": "Fictional-G",
+      "power_mw": 150,
+      "energy_mwh": 300,
+      "start_soc": 0.3,
+      "minimum_soc": 0.1,
+      "state_of_health": 1,
+      "discharge_efficiency": 0.95,
+      "reserved_dc_mwh": 30,
+      "export_limit_mw": 150,
+      "reservation_cost_gbp": 3000,
+      "available": true
+    },
+    {
+      "id": "Fictional-H",
+      "power_mw": 100,
+      "energy_mwh": 600,
+      "start_soc": 0.85,
+      "minimum_soc": 0.1,
+      "state_of_health": 0.95,
+      "discharge_efficiency": 0.95,
+      "reserved_dc_mwh": 50,
+      "export_limit_mw": 90,
+      "reservation_cost_gbp": 12000,
+      "available": true
+    }
+  ],
+  "evidence": {
+    "retrieved_at_utc": "2026-11-10",
+    "source": "Elexon Insights Solution SYSWARN",
+    "url": "https://data.elexon.co.uk/bmrs/api/v1/system/warnings?publishDateTimeFrom=2026-11-08T00%3A00%3A00Z&publishDateTimeTo=2026-11-10T00%3A00%3A00Z&format=json",
+    "raw_response_sha256": "48bc8cb8ccc60823107e21c09e8b49b7961e7fef458071fd1072608a47edf3a9",
+    "events": [
+      {
+        "published_at": "2026-11-08T19:17:00Z",
+        "message_issued_at": "2026-11-08T19:15:00Z",
+        "event_start_utc": "2026-11-09T06:00:00Z",
+        "event_end_utc": "2026-11-09T11:00:00Z",
+        "indicated_margin_shortfall_mw": 1388,
+        "contingency_mw": 808,
+        "status": "notice",
+        "source_record_sha256": "c91aec023369181b48e3b203790a9785770b8d5dfd44e3c19ab454749ab4c1a7"
+      },
+      {
+        "published_at": "2026-11-09T04:20:00Z",
+        "message_issued_at": "2026-11-09T04:15:00Z",
+        "event_start_utc": "2026-11-09T08:00:00Z",
+        "event_end_utc": "2026-11-09T11:00:00Z",
+        "indicated_margin_shortfall_mw": 500,
+        "contingency_mw": 0,
+        "status": "notice",
+        "source_record_sha256": "cc869e1b35fd508ed2e329b9a839ab1769d6d23c95a10490487985bfd5f35f5e"
+      },
+      {
+        "published_at": "2026-11-09T08:24:00Z",
+        "message_issued_at": "2026-11-09T08:24:00Z",
+        "event_start_utc": "2026-11-09T08:00:00Z",
+        "event_end_utc": "2026-11-09T11:00:00Z",
+        "indicated_margin_shortfall_mw": 200,
+        "contingency_mw": 0,
+        "status": "notice",
+        "source_record_sha256": "ffd026ce427312b53b1073eae59e1b2790c5d68fb78ecdc63f343442825d285f"
+      },
+      {
+        "published_at": "2026-11-09T09:11:00Z",
+        "message_issued_at": "2026-11-09T09:11:00Z",
+        "event_start_utc": "2026-11-09T08:00:00Z",
+        "event_end_utc": "2026-11-09T11:00:00Z",
+        "indicated_margin_shortfall_mw": null,
+        "contingency_mw": null,
+        "status": "cancelled",
+        "source_record_sha256": "8efc208e7b5be769866600d23db786651d6e69beccadf3ef7136b33bfb02680c"
+      }
+    ],
+    "interpretation": "Sequential revisions and cancellation, not additive deficits or measured outages. Factual metadata only; warning text is not redistributed. All asset offers, fees, requested MW and duration are constructed assumptions, not inferred from notices."
+  },
+  "news_selection": {
+    "selected": "Duration-aware portfolio availability after GB margin notices and GC0166 implementation deadline",
+    "criteria": [
+      "Publication recency",
+      "Primary-source evidence",
+      "Economic decision with testable physical constraints",
+      "Fit to EnerQit QUBO methods without forcing a quantum claim"
+    ],
+    "shortlist": [
+      {
+        "topic": "GB electricity margin notice",
+        "event_date": "2026-11-09",
+        "source": "https://www.neso.energy/news/energy-explained-blog-electricity-margin-notice-240626",
+        "role": "Primary explanation of EMN; actual November events from Elexon snapshot",
+        "decision": "selected; latest operational motivation"
+      },
+      {
+        "topic": "GC0166 MDO/MDB energy availability",
+        "event_date": "2026-11-05",
+        "source": "https://www.neso.energy/news/gc0166-goes-live-enabling-smarter-use-limited-duration-assets",
+        "role": "Primary NESO rollout and implementation deadline",
+        "decision": "selected as context; not a compliance implementation"
+      },
+      {
+        "topic": "NSW solar emergency backstop phase-in",
+        "event_date": "2026-11-02",
+        "source": "https://www.endeavourenergy.com.au/our-network/resilience-and-emergency-planning/nsw-emergency-backstop-mechanism",
+        "role": "Primary network operator rollout information",
+        "decision": "backlog: PV fleet flexibility and curtailment scenarios"
+      }
+    ]
+  },
+  "repository_awareness": {
+    "energy_agents_role": "career_quantum_ml_engineer",
+    "energy_agents_commit": "f5c40e7766646f29875da5e2df1df8aa3a5d3027",
+    "energy_data_insights_commit": "b5ae10d43619155519a56ab3a30cb6660db8ca55",
+    "inspected": [
+      "docs/uk-low-wind-margin-2026.md",
+      "data-retrieval/src/energy_data_retrieval/sources/elexon/client.py"
+    ],
+    "reuse_decision": "EDI already has single-battery margin-relief sensitivity and B1610 generation retrieval. Here EnerQit adds multi-asset cost-cover optimization and common QUBO solver evaluation. B1610 does not supply battery SOC or the SYSWARN event stream; no live plant SOC is fabricated."
+  }
+}

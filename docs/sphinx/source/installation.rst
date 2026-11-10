@@ -50,11 +50,16 @@ Optional dependencies
      - dimod and Qiskit model export adapters; this does not enable hardware
        execution.
 
+The battery portfolio gallery additionally uses the optional ``energy-agents``
+integration pinned in ``requirements/agent-study.txt``. Install it before
+building the full gallery or documentation. Core numerical APIs work without it.
+
 Combine extras for a development checkout:
 
 .. code-block:: bash
 
    python -m pip install -e '.[dev,docs,examples,quantum]'
+   python -m pip install -r requirements/agent-study.txt
    python -m pytest -q
 
 The NumPy QAOA statevector example runs without the optional quantum SDKs.
