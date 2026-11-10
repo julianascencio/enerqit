@@ -117,3 +117,13 @@ scaling studies and future wind, intertemporal storage, grid and market
 applications. Beyond the delivered battery availability study, these domains
 and hardware experiments remain research directions; consult the
 :doc:`/use_cases` register for what the package currently implements.
+
+Network physics and curtailment
+-------------------------------
+
+The :doc:`network study </network_curtailment>` advances the Ember grid guide
+backlog with DC nodal constraints, independent analytic references and upgrade
+sensitivity. See `PyPSA's technical power-flow formulation
+<https://docs.pypsa.org/latest/user-guide/optimization/power-flow/>`_ for background
+on nodal and Kirchhoff cycle constraints. No PyPSA runtime or field validation is
+claimed. Numerical data are synthetic, and classical LP is used without QUBO.

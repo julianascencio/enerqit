@@ -111,7 +111,7 @@ python docs/examples/plot_orientation.py
 
 The demo writes observations and a JSON result with provenance. The
 [example gallery](https://julianascencio.github.io/enerqit/gallery/index.html)
-contains nine executed studies with downloadable scripts and notebooks.
+contains ten executed studies with downloadable scripts and notebooks.
 
 ## Battery portfolio engineer
 
@@ -133,6 +133,23 @@ observed market costs. The default agent workflow is scripted and needs no API
 key. [Read the study](docs/sphinx/source/battery_portfolio.rst) for source facts,
 assumptions, exact certificates and stochastic outcomes. The optional agent is
 pinned to an immutable revision from [energy-agents PR #19](https://github.com/julianascencio/energy-agents/pull/19).
+
+## Network curtailment engineer
+
+The [step-by-step grid example](docs/examples/plot_network_curtailment.py) invokes
+the existing Quantum ML Engineer to compare copperplate, transport and DC dispatch.
+All network values are synthetic. In the one-hour triangle, the DC-feasible
+optimum curtails 30 MWh at a €3,000 firm-generation cost; relaxed models overload
+a line. A 10 MW bottleneck rating increase removes that cost in this scenario.
+Classical LP is appropriate; no quantum advantage or realized savings are claimed.
+
+```bash
+python -m pip install -e '.[dev,docs]' -r requirements/agent-study.txt
+python -m enerqit.network_study --output results/network-engineer.json
+python docs/examples/plot_network_curtailment.py
+```
+
+[Equations, evidence, limitations and validation](docs/sphinx/source/network_curtailment.rst).
 
 ## Industrial flexibility engineer
 
@@ -198,7 +215,7 @@ for the encoding conventions, limitations and future hardware research path.
 | `enerqit/` | Physical models, inverse estimators, QUBO encodings and evidence utilities |
 | `enerqit/solar/` | Public entry point for the initial solar application |
 | `enerqit/solvers/` | Classical baselines, simulated bifurcation and optional quantum exports |
-| `docs/examples/` | Nine executable gallery examples |
+| `docs/examples/` | Ten executable gallery examples |
 | `docs/notebooks/` | Introductory inverse-study notebook |
 | `docs/sphinx/source/` | User guide, gallery configuration, API, research and contributor documentation |
 | `tests/` | Recovery, invalid-data, identifiability, encoding and audit checks |
@@ -257,8 +274,9 @@ describe the current evidence base: pvlib forward physics, De Soto parameter
 translation, simulated bifurcation, and QUBO/Ising model conventions.
 
 [ROADMAP.md](ROADMAP.md) tracks held-out field validation, stronger classical
-baselines and future wind, intertemporal storage, grid and market applications. Those additional
-energy domains are planned, not implemented. The initial solar application grew
+baselines and future wind, intertemporal storage, discrete grid expansion and market
+applications. Synthetic single-interval DC grid screening is implemented; those
+additional capabilities remain planned. The initial solar application grew
 from the earlier QuantumPV work.
 
 ## Creator and license

@@ -1,0 +1,1489 @@
+{
+  "success": true,
+  "role": {
+    "id": "career_quantum_ml_engineer",
+    "title": "Quantum Machine Learning Engineer",
+    "mandate": "Design and evaluate classical, quantum-inspired and hybrid energy research workflows.",
+    "inputs": [
+      "load_case",
+      "experiment_budget",
+      "research_context"
+    ],
+    "tool": "prepare_data",
+    "output": "quantum_ml_research_handoff",
+    "acceptance": "Chronological held-out benchmarks, feasible schedules, provenance and limitations.",
+    "technology": "cross_technology",
+    "authority": "local_bounded_research_only"
+  },
+  "mode": "scripted_tool_workflow",
+  "classification": "mixed",
+  "reports": {
+    "inspect_evidence": {
+      "study_id": "network-curtailment-20261110",
+      "as_of_utc": "2026-11-10",
+      "classification": "mixed",
+      "data_classification": "All numerical network, load and cost inputs are synthetic; primary publications supply context only.",
+      "input_license": "MIT, authored synthetic fixture; source articles not redistributed",
+      "seed": null,
+      "seed_reason": "Deterministic LP; no stochastic algorithm",
+      "agent_revision": "832f4117f95ac3137c63eace389e56cdc2c075fe",
+      "enerqit_base_revision": "2847f95124c6f45b98d403e444877ca18451ab32",
+      "edi_revision": "b5ae10d43619155519a56ab3a30cb6660db8ca55",
+      "edi_inspection": "docs/ree-adjustment-bess.md provides aggregate restriction costs, not licensed bus topology, reactance and line ratings. No connector reused.",
+      "sources": [
+        {
+          "id": "iea_renewables",
+          "url": "https://www.iea.org/news/energy-security-concerns-spur-faster-renewables-growth-across-a-widening-constellation-of-countries",
+          "published_on": "2026-11-06",
+          "retrieved_on": "2026-11-10",
+          "response_sha256": "0b5f3db7d3d369ceaaf2164c2f7298c480707fc7c6beadc5456e29807338fddd",
+          "response_bytes": 232592,
+          "redistribution": "URL, factual metadata and independently authored summary only; no source page bundled"
+        },
+        {
+          "id": "ember_grid",
+          "url": "https://ember-energy.org/latest-insights/building-a-grid-for-the-age-of-power/",
+          "published_on": "2026-11-05",
+          "retrieved_on": "2026-11-10",
+          "response_sha256": "56bc6c44cef70f68783bee54746ed3d1110511af688afa19dfe5fcb000a93277",
+          "response_bytes": 95129,
+          "redistribution": "URL, factual metadata and independently authored summary only; no source page bundled"
+        },
+        {
+          "id": "banque_france",
+          "url": "https://www.banque-france.fr/en/publications-and-statistics/publications/data-centres-and-energy-environmental-cost-faulty-price-signal",
+          "published_on": "2026-11-04",
+          "retrieved_on": "2026-11-10",
+          "acquisition": "Read with browser search/open; source response not archived",
+          "response_sha256": null,
+          "redistribution": "Link and factual publication date only"
+        }
+      ],
+      "selection": {
+        "initial_window_hours": 72,
+        "extended_window_days": 7,
+        "source_age_days": 5,
+        "reason": "Advance documented network-model backlog; grid guide motivates upgrade screening, but does not calibrate a grid. Prior battery and batch-scheduling studies already merged.",
+        "candidates": [
+          {
+            "source_id": "ember_grid",
+            "business_impact": "Curtailment and upgrade prioritization",
+            "technical_importance": "Passive-network constraints change feasible dispatch",
+            "evidence": "Primary guide, no calibrated topology",
+            "tractability": "High for independently verifiable synthetic network",
+            "novelty": "First nodal power-flow model in EnerQit",
+            "method_fit": "Convex LP; no quantum method needed",
+            "decision": "selected backlog advancement"
+          },
+          {
+            "source_id": "iea_renewables",
+            "business_impact": "Global PV, wind, storage and hydro investment",
+            "technical_importance": "Renewable integration",
+            "evidence": "Primary outlook dated 6 November",
+            "tractability": "Needs local observations",
+            "novelty": "Regional integration still open",
+            "method_fit": "Planning optimization",
+            "decision": "defer pending regional dataset"
+          },
+          {
+            "source_id": "banque_france",
+            "business_impact": "Data-center location and energy costs",
+            "technical_importance": "Spatial demand alignment",
+            "evidence": "Primary commentary dated 4 November",
+            "tractability": "Needs workload and network data",
+            "novelty": "Temporal scheduling already implemented; spatial migration unresolved",
+            "method_fit": "Location-aware scheduling",
+            "decision": "defer pending latency/service constraints"
+          }
+        ]
+      },
+      "inputs": {
+        "demand_mw": [
+          0,
+          0,
+          150
+        ],
+        "renewable_mw": [
+          150,
+          0,
+          0
+        ],
+        "firm_capacity_mw": [
+          0,
+          0,
+          150
+        ],
+        "firm_cost_eur_mwh": [
+          100,
+          100,
+          100
+        ],
+        "hours": 1,
+        "lines": [
+          {
+            "source": 0,
+            "target": 1,
+            "susceptance_mw_rad": 1000,
+            "limit_mw": 40
+          },
+          {
+            "source": 0,
+            "target": 2,
+            "susceptance_mw_rad": 1000,
+            "limit_mw": 100
+          },
+          {
+            "source": 1,
+            "target": 2,
+            "susceptance_mw_rad": 1000,
+            "limit_mw": 100
+          }
+        ]
+      }
+    },
+    "benchmark_methods": {
+      "copperplate": {
+        "model": "copperplate",
+        "status": "optimal",
+        "physical": {
+          "dc_feasible": false,
+          "renewable_mw": [
+            150.0,
+            0.0,
+            0.0
+          ],
+          "firm_mw": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "angles_rad": [
+            0.0,
+            -0.05,
+            -0.1
+          ],
+          "line_flows_mw": [
+            50.0,
+            100.0,
+            50.00000000000001
+          ],
+          "max_overload_mw": 10.0,
+          "balance_residual_mw": 5.551115123125783e-15,
+          "generation_bounds_met": true,
+          "curtailed_mwh": 0.0,
+          "firm_energy_cost_eur": 0.0
+        },
+        "construction_s": 0.00012079800217179582,
+        "solver_s": 0.002315325997187756,
+        "resources": {
+          "buses": 3,
+          "lines": 3,
+          "lp_variables": 6,
+          "constraint_matrix_bytes": 48
+        }
+      },
+      "transport": {
+        "model": "transport",
+        "status": "optimal",
+        "physical": {
+          "dc_feasible": false,
+          "renewable_mw": [
+            140.0,
+            0.0,
+            0.0
+          ],
+          "firm_mw": [
+            0.0,
+            0.0,
+            10.0
+          ],
+          "angles_rad": [
+            0.0,
+            -0.04666666666666667,
+            -0.09333333333333334
+          ],
+          "line_flows_mw": [
+            46.66666666666667,
+            93.33333333333334,
+            46.666666666666664
+          ],
+          "max_overload_mw": 6.666666666666671,
+          "balance_residual_mw": 5.218048215738236e-15,
+          "generation_bounds_met": true,
+          "curtailed_mwh": 10.0,
+          "firm_energy_cost_eur": 1000.0
+        },
+        "construction_s": 8.642699685879052e-05,
+        "solver_s": 0.001021432995912619,
+        "resources": {
+          "buses": 3,
+          "lines": 3,
+          "lp_variables": 9,
+          "constraint_matrix_bytes": 216
+        }
+      },
+      "dc": {
+        "model": "dc",
+        "status": "optimal",
+        "physical": {
+          "dc_feasible": true,
+          "renewable_mw": [
+            120.0,
+            0.0,
+            0.0
+          ],
+          "firm_mw": [
+            0.0,
+            0.0,
+            30.0
+          ],
+          "angles_rad": [
+            0.0,
+            -0.04,
+            -0.08
+          ],
+          "line_flows_mw": [
+            40.0,
+            80.0,
+            40.0
+          ],
+          "max_overload_mw": 0.0,
+          "balance_residual_mw": 1.6653345369377348e-15,
+          "generation_bounds_met": true,
+          "curtailed_mwh": 30.0,
+          "firm_energy_cost_eur": 3000.0
+        },
+        "construction_s": 9.914599650073797e-05,
+        "solver_s": 0.0009529720045975409,
+        "resources": {
+          "buses": 3,
+          "lines": 3,
+          "lp_variables": 9,
+          "constraint_matrix_bytes": 648
+        }
+      }
+    },
+    "assess_sensitivity": {
+      "upgrades": [
+        {
+          "line_index": 0,
+          "added_rating_mw": 10,
+          "model": "dc",
+          "status": "optimal",
+          "physical": {
+            "dc_feasible": true,
+            "renewable_mw": [
+              150.0,
+              0.0,
+              0.0
+            ],
+            "firm_mw": [
+              0.0,
+              0.0,
+              -0.0
+            ],
+            "angles_rad": [
+              0.0,
+              -0.05,
+              -0.1
+            ],
+            "line_flows_mw": [
+              50.0,
+              100.0,
+              50.00000000000001
+            ],
+            "max_overload_mw": 0.0,
+            "balance_residual_mw": 5.551115123125783e-15,
+            "generation_bounds_met": true,
+            "curtailed_mwh": 0.0,
+            "firm_energy_cost_eur": 0.0
+          },
+          "construction_s": 6.362300337059423e-05,
+          "solver_s": 0.0009610030028852634,
+          "resources": {
+            "buses": 3,
+            "lines": 3,
+            "lp_variables": 9,
+            "constraint_matrix_bytes": 648
+          }
+        },
+        {
+          "line_index": 1,
+          "added_rating_mw": 10,
+          "model": "dc",
+          "status": "optimal",
+          "physical": {
+            "dc_feasible": true,
+            "renewable_mw": [
+              120.0,
+              0.0,
+              0.0
+            ],
+            "firm_mw": [
+              0.0,
+              0.0,
+              30.0
+            ],
+            "angles_rad": [
+              0.0,
+              -0.04,
+              -0.08
+            ],
+            "line_flows_mw": [
+              40.0,
+              80.0,
+              40.0
+            ],
+            "max_overload_mw": 0.0,
+            "balance_residual_mw": 1.6653345369377348e-15,
+            "generation_bounds_met": true,
+            "curtailed_mwh": 30.0,
+            "firm_energy_cost_eur": 3000.0
+          },
+          "construction_s": 8.388300193473697e-05,
+          "solver_s": 0.0008811860025161877,
+          "resources": {
+            "buses": 3,
+            "lines": 3,
+            "lp_variables": 9,
+            "constraint_matrix_bytes": 648
+          }
+        },
+        {
+          "line_index": 2,
+          "added_rating_mw": 10,
+          "model": "dc",
+          "status": "optimal",
+          "physical": {
+            "dc_feasible": true,
+            "renewable_mw": [
+              120.0,
+              0.0,
+              0.0
+            ],
+            "firm_mw": [
+              0.0,
+              0.0,
+              30.0
+            ],
+            "angles_rad": [
+              0.0,
+              -0.04,
+              -0.08
+            ],
+            "line_flows_mw": [
+              40.0,
+              80.0,
+              40.0
+            ],
+            "max_overload_mw": 0.0,
+            "balance_residual_mw": 1.6653345369377348e-15,
+            "generation_bounds_met": true,
+            "curtailed_mwh": 30.0,
+            "firm_energy_cost_eur": 3000.0
+          },
+          "construction_s": 8.191099914256483e-05,
+          "solver_s": 0.0008711920017958619,
+          "resources": {
+            "buses": 3,
+            "lines": 3,
+            "lp_variables": 9,
+            "constraint_matrix_bytes": 648
+          }
+        }
+      ],
+      "renewable_availability": [
+        {
+          "available_mw": 50,
+          "model": "dc",
+          "status": "optimal",
+          "physical": {
+            "dc_feasible": true,
+            "renewable_mw": [
+              50.0,
+              0.0,
+              0.0
+            ],
+            "firm_mw": [
+              0.0,
+              0.0,
+              100.0
+            ],
+            "angles_rad": [
+              0.0,
+              -0.016666666666666666,
+              -0.03333333333333333
+            ],
+            "line_flows_mw": [
+              16.666666666666668,
+              33.333333333333336,
+              16.666666666666664
+            ],
+            "max_overload_mw": 0.0,
+            "balance_residual_mw": 2.831068712794149e-15,
+            "generation_bounds_met": true,
+            "curtailed_mwh": 0.0,
+            "firm_energy_cost_eur": 10000.0
+          },
+          "construction_s": 8.265100041171536e-05,
+          "solver_s": 0.0009106300058192573,
+          "resources": {
+            "buses": 3,
+            "lines": 3,
+            "lp_variables": 9,
+            "constraint_matrix_bytes": 648
+          }
+        },
+        {
+          "available_mw": 100,
+          "model": "dc",
+          "status": "optimal",
+          "physical": {
+            "dc_feasible": true,
+            "renewable_mw": [
+              100.0,
+              0.0,
+              0.0
+            ],
+            "firm_mw": [
+              0.0,
+              0.0,
+              50.00000000000003
+            ],
+            "angles_rad": [
+              0.0,
+              -0.033333333333333326,
+              -0.06666666666666665
+            ],
+            "line_flows_mw": [
+              33.33333333333333,
+              66.66666666666666,
+              33.33333333333332
+            ],
+            "max_overload_mw": 0.0,
+            "balance_residual_mw": 1.4210854715202004e-14,
+            "generation_bounds_met": true,
+            "curtailed_mwh": 0.0,
+            "firm_energy_cost_eur": 5000.000000000003
+          },
+          "construction_s": 0.00010747799387900159,
+          "solver_s": 0.0008312429999932647,
+          "resources": {
+            "buses": 3,
+            "lines": 3,
+            "lp_variables": 9,
+            "constraint_matrix_bytes": 648
+          }
+        },
+        {
+          "available_mw": 150,
+          "model": "dc",
+          "status": "optimal",
+          "physical": {
+            "dc_feasible": true,
+            "renewable_mw": [
+              120.0,
+              0.0,
+              0.0
+            ],
+            "firm_mw": [
+              0.0,
+              0.0,
+              30.0
+            ],
+            "angles_rad": [
+              0.0,
+              -0.04,
+              -0.08
+            ],
+            "line_flows_mw": [
+              40.0,
+              80.0,
+              40.0
+            ],
+            "max_overload_mw": 0.0,
+            "balance_residual_mw": 1.6653345369377348e-15,
+            "generation_bounds_met": true,
+            "curtailed_mwh": 30.0,
+            "firm_energy_cost_eur": 3000.0
+          },
+          "construction_s": 8.431400055997074e-05,
+          "solver_s": 0.0008265460055554286,
+          "resources": {
+            "buses": 3,
+            "lines": 3,
+            "lp_variables": 9,
+            "constraint_matrix_bytes": 648
+          }
+        },
+        {
+          "available_mw": 200,
+          "model": "dc",
+          "status": "optimal",
+          "physical": {
+            "dc_feasible": true,
+            "renewable_mw": [
+              120.0,
+              0.0,
+              0.0
+            ],
+            "firm_mw": [
+              0.0,
+              0.0,
+              30.0
+            ],
+            "angles_rad": [
+              0.0,
+              -0.04,
+              -0.08
+            ],
+            "line_flows_mw": [
+              40.0,
+              80.0,
+              40.0
+            ],
+            "max_overload_mw": 0.0,
+            "balance_residual_mw": 1.6653345369377348e-15,
+            "generation_bounds_met": true,
+            "curtailed_mwh": 80.0,
+            "firm_energy_cost_eur": 3000.0
+          },
+          "construction_s": 8.36629988043569e-05,
+          "solver_s": 0.0008436409989371896,
+          "resources": {
+            "buses": 3,
+            "lines": 3,
+            "lp_variables": 9,
+            "constraint_matrix_bytes": 648
+          }
+        }
+      ],
+      "physical_scaling": [
+        {
+          "scale": 0.1,
+          "model": "dc",
+          "status": "optimal",
+          "physical": {
+            "dc_feasible": true,
+            "renewable_mw": [
+              12.0,
+              0.0,
+              0.0
+            ],
+            "firm_mw": [
+              0.0,
+              0.0,
+              3.0
+            ],
+            "angles_rad": [
+              0.0,
+              -0.04,
+              -0.08
+            ],
+            "line_flows_mw": [
+              4.0,
+              8.0,
+              4.0
+            ],
+            "max_overload_mw": 0.0,
+            "balance_residual_mw": 1.6653345369377348e-16,
+            "generation_bounds_met": true,
+            "curtailed_mwh": 3.0,
+            "firm_energy_cost_eur": 300.0
+          },
+          "construction_s": 8.263099880423397e-05,
+          "solver_s": 0.0008876459978637286,
+          "resources": {
+            "buses": 3,
+            "lines": 3,
+            "lp_variables": 9,
+            "constraint_matrix_bytes": 648
+          }
+        },
+        {
+          "scale": 1,
+          "model": "dc",
+          "status": "optimal",
+          "physical": {
+            "dc_feasible": true,
+            "renewable_mw": [
+              120.0,
+              0.0,
+              0.0
+            ],
+            "firm_mw": [
+              0.0,
+              0.0,
+              30.0
+            ],
+            "angles_rad": [
+              0.0,
+              -0.04,
+              -0.08
+            ],
+            "line_flows_mw": [
+              40.0,
+              80.0,
+              40.0
+            ],
+            "max_overload_mw": 0.0,
+            "balance_residual_mw": 1.6653345369377348e-15,
+            "generation_bounds_met": true,
+            "curtailed_mwh": 30.0,
+            "firm_energy_cost_eur": 3000.0
+          },
+          "construction_s": 8.162000449374318e-05,
+          "solver_s": 0.0008579630011809058,
+          "resources": {
+            "buses": 3,
+            "lines": 3,
+            "lp_variables": 9,
+            "constraint_matrix_bytes": 648
+          }
+        },
+        {
+          "scale": 10,
+          "model": "dc",
+          "status": "optimal",
+          "physical": {
+            "dc_feasible": true,
+            "renewable_mw": [
+              1200.0,
+              0.0,
+              0.0
+            ],
+            "firm_mw": [
+              0.0,
+              0.0,
+              300.0
+            ],
+            "angles_rad": [
+              0.0,
+              -0.04,
+              -0.08
+            ],
+            "line_flows_mw": [
+              400.0,
+              800.0,
+              400.0
+            ],
+            "max_overload_mw": 0.0,
+            "balance_residual_mw": 1.6653345369377348e-14,
+            "generation_bounds_met": true,
+            "curtailed_mwh": 300.0,
+            "firm_energy_cost_eur": 30000.0
+          },
+          "construction_s": 8.030799654079601e-05,
+          "solver_s": 0.0008467959996778518,
+          "resources": {
+            "buses": 3,
+            "lines": 3,
+            "lp_variables": 9,
+            "constraint_matrix_bytes": 648
+          }
+        }
+      ],
+      "firm_cost_range": [
+        {
+          "cost_eur_mwh": 50,
+          "model": "dc",
+          "status": "optimal",
+          "physical": {
+            "dc_feasible": true,
+            "renewable_mw": [
+              120.0,
+              0.0,
+              0.0
+            ],
+            "firm_mw": [
+              0.0,
+              0.0,
+              30.0
+            ],
+            "angles_rad": [
+              0.0,
+              -0.04,
+              -0.08
+            ],
+            "line_flows_mw": [
+              40.0,
+              80.0,
+              40.0
+            ],
+            "max_overload_mw": 0.0,
+            "balance_residual_mw": 1.6653345369377348e-15,
+            "generation_bounds_met": true,
+            "curtailed_mwh": 30.0,
+            "firm_energy_cost_eur": 1500.0
+          },
+          "construction_s": 8.369299757760018e-05,
+          "solver_s": 0.0008651729949633591,
+          "resources": {
+            "buses": 3,
+            "lines": 3,
+            "lp_variables": 9,
+            "constraint_matrix_bytes": 648
+          }
+        },
+        {
+          "cost_eur_mwh": 100,
+          "model": "dc",
+          "status": "optimal",
+          "physical": {
+            "dc_feasible": true,
+            "renewable_mw": [
+              120.0,
+              0.0,
+              0.0
+            ],
+            "firm_mw": [
+              0.0,
+              0.0,
+              30.0
+            ],
+            "angles_rad": [
+              0.0,
+              -0.04,
+              -0.08
+            ],
+            "line_flows_mw": [
+              40.0,
+              80.0,
+              40.0
+            ],
+            "max_overload_mw": 0.0,
+            "balance_residual_mw": 1.6653345369377348e-15,
+            "generation_bounds_met": true,
+            "curtailed_mwh": 30.0,
+            "firm_energy_cost_eur": 3000.0
+          },
+          "construction_s": 7.996700151124969e-05,
+          "solver_s": 0.0009314899944001809,
+          "resources": {
+            "buses": 3,
+            "lines": 3,
+            "lp_variables": 9,
+            "constraint_matrix_bytes": 648
+          }
+        },
+        {
+          "cost_eur_mwh": 200,
+          "model": "dc",
+          "status": "optimal",
+          "physical": {
+            "dc_feasible": true,
+            "renewable_mw": [
+              120.0,
+              0.0,
+              0.0
+            ],
+            "firm_mw": [
+              0.0,
+              0.0,
+              30.0
+            ],
+            "angles_rad": [
+              0.0,
+              -0.04,
+              -0.08
+            ],
+            "line_flows_mw": [
+              40.0,
+              80.0,
+              40.0
+            ],
+            "max_overload_mw": 0.0,
+            "balance_residual_mw": 1.6653345369377348e-15,
+            "generation_bounds_met": true,
+            "curtailed_mwh": 30.0,
+            "firm_energy_cost_eur": 6000.0
+          },
+          "construction_s": 8.104999869829044e-05,
+          "solver_s": 0.0008617269995738752,
+          "resources": {
+            "buses": 3,
+            "lines": 3,
+            "lp_variables": 9,
+            "constraint_matrix_bytes": 648
+          }
+        }
+      ],
+      "size_scaling": [
+        {
+          "model": "dc",
+          "status": "optimal",
+          "physical": {
+            "dc_feasible": true,
+            "renewable_mw": [
+              40.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "firm_mw": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              110.0
+            ],
+            "angles_rad": [
+              0.0,
+              -0.03999999999999997,
+              -0.07999999999999995,
+              -0.11999999999999993,
+              -0.15999999999999992
+            ],
+            "line_flows_mw": [
+              39.99999999999997,
+              39.99999999999997,
+              39.999999999999986,
+              39.999999999999986
+            ],
+            "max_overload_mw": 0.0,
+            "balance_residual_mw": 2.842170943040401e-14,
+            "generation_bounds_met": true,
+            "curtailed_mwh": 110.0,
+            "firm_energy_cost_eur": 11000.0
+          },
+          "construction_s": 9.228599810739979e-05,
+          "solver_s": 0.0008824179967632517,
+          "resources": {
+            "buses": 5,
+            "lines": 4,
+            "lp_variables": 15,
+            "constraint_matrix_bytes": 1560
+          }
+        },
+        {
+          "model": "dc",
+          "status": "optimal",
+          "physical": {
+            "dc_feasible": true,
+            "renewable_mw": [
+              40.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "firm_mw": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              110.0
+            ],
+            "angles_rad": [
+              0.0,
+              -0.03999999999999997,
+              -0.07999999999999995,
+              -0.11999999999999993,
+              -0.15999999999999992,
+              -0.1999999999999999,
+              -0.23999999999999988,
+              -0.2799999999999998,
+              -0.31999999999999973,
+              -0.3599999999999997,
+              -0.39999999999999963,
+              -0.4399999999999996,
+              -0.4799999999999996,
+              -0.5199999999999997,
+              -0.5599999999999997,
+              -0.5999999999999998,
+              -0.6399999999999998,
+              -0.6799999999999997,
+              -0.7199999999999998,
+              -0.7599999999999998
+            ],
+            "line_flows_mw": [
+              39.99999999999997,
+              39.99999999999997,
+              39.999999999999986,
+              39.999999999999986,
+              39.999999999999964,
+              39.99999999999999,
+              39.999999999999915,
+              39.999999999999886,
+              39.999999999999986,
+              39.999999999999915,
+              39.99999999999996,
+              40.0,
+              40.000000000000064,
+              40.000000000000064,
+              39.999999999999986,
+              40.0,
+              39.99999999999994,
+              39.99999999999998,
+              40.000000000000014
+            ],
+            "max_overload_mw": 6.394884621840902e-14,
+            "balance_residual_mw": 1.1368683772161603e-13,
+            "generation_bounds_met": true,
+            "curtailed_mwh": 110.0,
+            "firm_energy_cost_eur": 11000.0
+          },
+          "construction_s": 7.70639962865971e-05,
+          "solver_s": 0.0011022410035366192,
+          "resources": {
+            "buses": 20,
+            "lines": 19,
+            "lp_variables": 60,
+            "constraint_matrix_bytes": 27840
+          }
+        },
+        {
+          "model": "dc",
+          "status": "optimal",
+          "physical": {
+            "dc_feasible": true,
+            "renewable_mw": [
+              40.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "firm_mw": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              110.0
+            ],
+            "angles_rad": [
+              0.0,
+              -0.03999999999999941,
+              -0.07999999999999882,
+              -0.11999999999999823,
+              -0.15999999999999767,
+              -0.1999999999999971,
+              -0.23999999999999652,
+              -0.2799999999999959,
+              -0.3199999999999953,
+              -0.3599999999999947,
+              -0.3999999999999941,
+              -0.43999999999999345,
+              -0.4799999999999929,
+              -0.5199999999999924,
+              -0.559999999999992,
+              -0.5999999999999914,
+              -0.6399999999999909,
+              -0.6799999999999904,
+              -0.7199999999999899,
+              -0.7599999999999895,
+              -0.7999999999999888,
+              -0.8399999999999883,
+              -0.8799999999999878,
+              -0.9199999999999873,
+              -0.9599999999999868,
+              -0.9999999999999862,
+              -1.0399999999999856,
+              -1.0799999999999852,
+              -1.1199999999999846,
+              -1.159999999999984,
+              -1.199999999999983,
+              -1.2399999999999824,
+              -1.2799999999999816,
+              -1.3199999999999807,
+              -1.3599999999999797,
+              -1.3999999999999786,
+              -1.4399999999999775,
+              -1.4799999999999764,
+              -1.5199999999999751,
+              -1.5599999999999736,
+              -1.5999999999999723,
+              -1.6399999999999708,
+              -1.6799999999999695,
+              -1.7199999999999684,
+              -1.7599999999999676,
+              -1.7999999999999667,
+              -1.8399999999999657,
+              -1.8799999999999648,
+              -1.9199999999999637,
+              -1.9599999999999627,
+              -1.9999999999999616,
+              -2.0399999999999605,
+              -2.0799999999999597,
+              -2.1199999999999584,
+              -2.1599999999999566,
+              -2.199999999999955,
+              -2.239999999999953,
+              -2.279999999999952,
+              -2.3199999999999505,
+              -2.3599999999999492,
+              -2.3999999999999475,
+              -2.439999999999946,
+              -2.479999999999945,
+              -2.5199999999999436,
+              -2.5599999999999428,
+              -2.599999999999942,
+              -2.6399999999999415,
+              -2.6799999999999415,
+              -2.719999999999941,
+              -2.7599999999999407,
+              -2.7999999999999408,
+              -2.8399999999999403,
+              -2.8799999999999395,
+              -2.9199999999999386,
+              -2.9599999999999382,
+              -2.9999999999999374,
+              -3.0399999999999365,
+              -3.0799999999999352,
+              -3.1199999999999344,
+              -3.1599999999999335,
+              -3.1999999999999327,
+              -3.2399999999999323,
+              -3.279999999999932,
+              -3.319999999999932,
+              -3.359999999999932,
+              -3.399999999999932,
+              -3.4399999999999324,
+              -3.479999999999933,
+              -3.519999999999933,
+              -3.559999999999933,
+              -3.599999999999933,
+              -3.6399999999999335,
+              -3.679999999999933,
+              -3.719999999999933,
+              -3.7599999999999327,
+              -3.7999999999999328,
+              -3.839999999999933,
+              -3.879999999999933,
+              -3.919999999999933,
+              -3.959999999999932
+            ],
+            "line_flows_mw": [
+              39.99999999999941,
+              39.99999999999941,
+              39.99999999999941,
+              39.99999999999943,
+              39.99999999999943,
+              39.99999999999942,
+              39.99999999999939,
+              39.999999999999375,
+              39.999999999999424,
+              39.99999999999937,
+              39.99999999999936,
+              39.99999999999943,
+              39.9999999999995,
+              39.99999999999957,
+              39.9999999999995,
+              39.99999999999943,
+              39.999999999999424,
+              39.99999999999953,
+              39.99999999999958,
+              39.99999999999943,
+              39.99999999999946,
+              39.9999999999995,
+              39.99999999999944,
+              39.99999999999943,
+              39.99999999999949,
+              39.99999999999936,
+              39.99999999999952,
+              39.99999999999932,
+              39.99999999999929,
+              39.999999999999226,
+              39.999999999999275,
+              39.99999999999909,
+              39.999999999999076,
+              39.999999999999,
+              39.999999999998835,
+              39.99999999999886,
+              39.999999999998835,
+              39.99999999999879,
+              39.999999999998415,
+              39.999999999998636,
+              39.999999999998565,
+              39.99999999999862,
+              39.99999999999891,
+              39.99999999999909,
+              39.99999999999921,
+              39.99999999999886,
+              39.99999999999915,
+              39.99999999999909,
+              39.99999999999898,
+              39.99999999999888,
+              39.999999999998934,
+              39.99999999999909,
+              39.99999999999851,
+              39.99999999999846,
+              39.99999999999808,
+              39.99999999999818,
+              39.99999999999866,
+              39.99999999999875,
+              39.99999999999882,
+              39.999999999998636,
+              39.999999999998835,
+              39.99999999999858,
+              39.99999999999864,
+              39.99999999999909,
+              39.99999999999903,
+              39.999999999999716,
+              40.0000000000002,
+              40.0,
+              39.99999999999975,
+              39.99999999999987,
+              39.99999999999947,
+              39.99999999999909,
+              39.99999999999911,
+              39.99999999999963,
+              39.99999999999923,
+              39.99999999999909,
+              39.99999999999889,
+              39.999999999998956,
+              39.99999999999901,
+              39.99999999999909,
+              39.99999999999957,
+              39.999999999999616,
+              40.00000000000011,
+              40.0,
+              39.99999999999986,
+              40.000000000000654,
+              40.00000000000068,
+              40.000000000000455,
+              40.00000000000019,
+              39.99999999999988,
+              40.000000000000355,
+              39.999999999999545,
+              40.00000000000005,
+              39.999999999999574,
+              40.00000000000007,
+              40.0,
+              40.00000000000014,
+              40.00000000000017,
+              39.99999999999932
+            ],
+            "max_overload_mw": 6.821210263296962e-13,
+            "balance_residual_mw": 9.094947017729282e-13,
+            "generation_bounds_met": true,
+            "curtailed_mwh": 110.0,
+            "firm_energy_cost_eur": 11000.0
+          },
+          "construction_s": 0.0005928220052737743,
+          "solver_s": 0.00246696899557719,
+          "resources": {
+            "buses": 100,
+            "lines": 99,
+            "lp_variables": 300,
+            "constraint_matrix_bytes": 715200
+          }
+        }
+      ]
+    },
+    "prepare_handoff": {
+      "recommended_method": "classical DC linear programming",
+      "baseline": {
+        "dc_feasible": true,
+        "renewable_mw": [
+          120.0,
+          0.0,
+          0.0
+        ],
+        "firm_mw": [
+          0.0,
+          0.0,
+          30.0
+        ],
+        "angles_rad": [
+          0.0,
+          -0.04,
+          -0.08
+        ],
+        "line_flows_mw": [
+          40.0,
+          80.0,
+          40.0
+        ],
+        "max_overload_mw": 0.0,
+        "balance_residual_mw": 1.6653345369377348e-15,
+        "generation_bounds_met": true,
+        "curtailed_mwh": 30.0,
+        "firm_energy_cost_eur": 3000.0
+      },
+      "interpretation": "Upgrade value is avoided modeled firm energy cost in one hour, not annual revenue or investment NPV",
+      "next_evidence": [
+        "Licensed topology, reactance and line ratings",
+        "Hourly generation, demand, outages and marginal costs",
+        "AC power-flow, voltage and contingency validation"
+      ],
+      "quantum_method_used": false,
+      "quantum_advantage_claimed": false,
+      "execution_authorized": false
+    }
+  },
+  "trace": [
+    {
+      "step": 0,
+      "tool": "inspect_evidence",
+      "status": "completed"
+    },
+    {
+      "step": 1,
+      "tool": "benchmark_methods",
+      "status": "completed"
+    },
+    {
+      "step": 2,
+      "tool": "assess_sensitivity",
+      "status": "completed"
+    },
+    {
+      "step": 3,
+      "tool": "prepare_handoff",
+      "status": "completed"
+    },
+    {
+      "step": 4,
+      "tool": "finish",
+      "status": "completed"
+    }
+  ],
+  "human_review_required": true,
+  "execution_authorized": false,
+  "validation": "registered_tool_execution_and_protocol_only",
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Linux",
+    "machine": "x86_64",
+    "versions": {
+      "numpy": "2.3.5",
+      "scipy": "1.17.0",
+      "pandas": "2.2.3",
+      "pvlib": "0.16.1",
+      "enerqit": "0.1.0"
+    }
+  },
+  "agent_source": {
+    "url": "https://github.com/julianascencio/energy-agents.git",
+    "vcs_info": {
+      "commit_id": "832f4117f95ac3137c63eace389e56cdc2c075fe",
+      "requested_revision": "832f4117f95ac3137c63eace389e56cdc2c075fe",
+      "vcs": "git"
+    }
+  },
+  "evidence_sha256": "b10838db4ff89fb7cdcb750520fc10a269e6322f05ebf6f94ba4fb9eb045be29",
+  "agent_revision": "832f4117f95ac3137c63eace389e56cdc2c075fe",
+  "input_sha256": "b431e2c5cbbf3375c520841977013cc5e32065bcf78381c1f59563656430115a"
+}
