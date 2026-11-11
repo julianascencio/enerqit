@@ -34,7 +34,7 @@ Start here
 
 * Read the :doc:`package overview <user_guide/overview>` to understand the scope.
 * Follow :doc:`installation` and run the :doc:`quickstart <start>`.
-* Explore the ten executable examples in the :doc:`gallery/index`.
+* Explore the eleven executable examples in the :doc:`gallery/index`.
 * Use the :doc:`api` for public entry points and module details.
 * Check the :doc:`research/index` for the methods, evidence and open questions.
 

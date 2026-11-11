@@ -21,6 +21,7 @@ your measurements.
    /use_cases
    /data_contract
    /methods
+   /preventive_security
    /network_curtailment
    /batch_flexibility
    /quantum
