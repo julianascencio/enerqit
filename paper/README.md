@@ -89,3 +89,7 @@ analytic 120 MW renewable transfer limit, allowing an objective and physical
 feasibility reference independent of LP assembly. Classical LP solves this convex
 problem; quantum-inspired methods are not needed. The AI-generated implementation
 is checked automatically; field validation and human scientific review remain open.
+
+## Preventive security (11 November 2026)
+
+[Study](../docs/sphinx/source/preventive_security.rst): explicit post-outage topology constraints with common injections. [PyPSA documentation](https://docs.pypsa.org/latest/user-guide/optimization/contingencies/) provides methodological context; this implementation uses reduced nodal solves, not BODF. Synthetic radial-cut references validate the LP; no operational certification or quantum advantage is claimed.

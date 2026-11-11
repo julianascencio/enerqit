@@ -128,3 +128,12 @@ Network dispatch
 
 .. automodule:: enerqit.network_study
    :members:
+
+Preventive outage screening
+---------------------------
+
+.. automodule:: enerqit.contingency
+   :members:
+
+.. automodule:: enerqit.contingency_study
+   :members:

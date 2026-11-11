@@ -127,3 +127,8 @@ sensitivity. See `PyPSA's technical power-flow formulation
 <https://docs.pypsa.org/latest/user-guide/optimization/power-flow/>`_ for background
 on nodal and Kirchhoff cycle constraints. No PyPSA runtime or field validation is
 claimed. Numerical data are synthetic, and classical LP is used without QUBO.
+
+The :doc:`preventive security study </preventive_security>` adds shared-injection
+outage constraints with independent radial-cut references. Ember (10 November
+2026) supplies motivation; PyPSA contingency documentation supplies technical
+context. All numerical inputs are synthetic, with no field validation claim.

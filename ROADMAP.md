@@ -18,7 +18,7 @@ hardware experiments will be a separate, explicitly labeled execution path.
   native MILP, conservative QUBO and independently evaluated rebound overload.
 
 - Single-interval DC network dispatch, independently audited relaxations and line-rating screening.
-  Real topology calibration, AC power flow and N-1 validation remain outstanding.
+  Preventive connected line-outage DC screening is implemented; real topology calibration, AC power flow and operational N-1 validation remain outstanding.
 
 ## Next research milestones — not implemented yet
 

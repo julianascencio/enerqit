@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_on": "2026-11-10",
+  "updated_on": "2026-11-11",
   "implemented": [
     {
       "id": "gb-duration-aware-battery-portfolio-2026-11-10",
@@ -17,45 +17,50 @@
       "id": "network-curtailment-20261110",
       "fixture": "enerqit/data/network_research_20261110.json",
       "status": "proposed; see PR checks"
+    },
+    {
+      "id": "preventive-contingency-20261111",
+      "status": "proposed",
+      "fixture": "enerqit/data/contingency_20261111.json"
     }
   ],
   "latest_selection": {
-    "initial_window_hours": 72,
-    "extended_window_days": 7,
-    "source_age_days": 5,
-    "reason": "Advance documented network-model backlog; grid guide motivates upgrade screening, but does not calibrate a grid. Prior battery and batch-scheduling studies already merged.",
+    "as_of": "2026-11-11",
     "candidates": [
       {
-        "source_id": "ember_grid",
-        "business_impact": "Curtailment and upgrade prioritization",
-        "technical_importance": "Passive-network constraints change feasible dispatch",
-        "evidence": "Primary guide, no calibrated topology",
-        "tractability": "High for independently verifiable synthetic network",
-        "novelty": "First nodal power-flow model in EnerQit",
-        "method_fit": "Convex LP; no quantum method needed",
-        "decision": "selected backlog advancement"
+        "case": "T\u00fcrkiye interconnection report",
+        "date": "2026-11-10",
+        "impact": "Secure transfer and regional electricity value",
+        "evidence": "Primary analysis, historical trade totals not topology",
+        "tractability": "High synthetic security extension",
+        "novelty": "Preventive shared-injection constraints absent from merged PR4",
+        "fit": "Continuous convex optimization",
+        "decision": "selected"
       },
       {
-        "source_id": "iea_renewables",
-        "business_impact": "Global PV, wind, storage and hydro investment",
-        "technical_importance": "Renewable integration",
-        "evidence": "Primary outlook dated 6 November",
-        "tractability": "Needs local observations",
-        "novelty": "Regional integration still open",
-        "method_fit": "Planning optimization",
-        "decision": "defer pending regional dataset"
+        "case": "Japan electrotech report",
+        "date": "2026-11-10",
+        "url": "https://ember-energy.org/latest-insights/japan-and-the-electrotech-revolution/",
+        "impact": "PV, wind, storage and electrification deployment",
+        "evidence": "Primary macro report",
+        "tractability": "Needs local operating data",
+        "novelty": "Broad planning, no bounded new calibrated case",
+        "fit": "Capacity planning",
+        "decision": "defer"
       },
       {
-        "source_id": "banque_france",
-        "business_impact": "Data-center location and energy costs",
-        "technical_importance": "Spatial demand alignment",
-        "evidence": "Primary commentary dated 4 November",
-        "tractability": "Needs workload and network data",
-        "novelty": "Temporal scheduling already implemented; spatial migration unresolved",
-        "method_fit": "Location-aware scheduling",
-        "decision": "defer pending latency/service constraints"
+        "case": "Grid modernisation guide",
+        "date": "2026-11-05",
+        "url": "https://ember-energy.org/latest-insights/building-a-grid-for-the-age-of-power/",
+        "impact": "Network upgrade value",
+        "evidence": "Guide, no measured topology",
+        "tractability": "High synthetic",
+        "novelty": "Base-case screening already merged; security backlog unresolved",
+        "fit": "Security-constrained optimization",
+        "decision": "background backlog"
       }
-    ]
+    ],
+    "selected": "Preventive outage security, distinct from base-case network screening"
   },
   "sources": [
     {
@@ -155,6 +160,44 @@
       ],
       "age_correction": "Ember data-centre flexibility report is dated 2026-10-29 (12 days old), despite search freshness labels. It is background only, not this run's fresh news trigger.",
       "excluded_prior_case": "GB margin/battery availability already implemented in merged EnerQit PR #2"
+    },
+    {
+      "initial_window_hours": 72,
+      "extended_window_days": 7,
+      "source_age_days": 5,
+      "reason": "Advance documented network-model backlog; grid guide motivates upgrade screening, but does not calibrate a grid. Prior battery and batch-scheduling studies already merged.",
+      "candidates": [
+        {
+          "source_id": "ember_grid",
+          "business_impact": "Curtailment and upgrade prioritization",
+          "technical_importance": "Passive-network constraints change feasible dispatch",
+          "evidence": "Primary guide, no calibrated topology",
+          "tractability": "High for independently verifiable synthetic network",
+          "novelty": "First nodal power-flow model in EnerQit",
+          "method_fit": "Convex LP; no quantum method needed",
+          "decision": "selected backlog advancement"
+        },
+        {
+          "source_id": "iea_renewables",
+          "business_impact": "Global PV, wind, storage and hydro investment",
+          "technical_importance": "Renewable integration",
+          "evidence": "Primary outlook dated 6 November",
+          "tractability": "Needs local observations",
+          "novelty": "Regional integration still open",
+          "method_fit": "Planning optimization",
+          "decision": "defer pending regional dataset"
+        },
+        {
+          "source_id": "banque_france",
+          "business_impact": "Data-center location and energy costs",
+          "technical_importance": "Spatial demand alignment",
+          "evidence": "Primary commentary dated 4 November",
+          "tractability": "Needs workload and network data",
+          "novelty": "Temporal scheduling already implemented; spatial migration unresolved",
+          "method_fit": "Location-aware scheduling",
+          "decision": "defer pending latency/service constraints"
+        }
+      ]
     }
   ],
   "backlog": [

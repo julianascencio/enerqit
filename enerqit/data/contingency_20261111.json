@@ -1,0 +1,65 @@
+{
+  "as_of_utc": "2026-11-11",
+  "agent_revision": "700d9b84c62f191e3328a39c6b08e06714c8a8d3",
+  "enerqit_base": "2aeaee888d1039e178992946c5bf9093bd467def",
+  "data_classification": "Synthetic numerical inputs reused from network_research_20261110.json, MIT; news context only. No Turkish topology or trading calibration.",
+  "seed": null,
+  "seed_reason": "Deterministic LP",
+  "edi_inspection": {
+    "path": "docs/ree-adjustment-bess.md",
+    "blob_sha": "81aa7f0bbe859d2ce76ee2ee298c0f1e226ee37a",
+    "finding": "Aggregate cost screen, not licensed topology. No connector reused; Git clone unavailable, connector file read succeeded.",
+    "commit": "db3164722083849db824d4f661c9d276aa23f1ce"
+  },
+  "sources": [
+    {
+      "url": "https://ember-energy.org/latest-insights/turkiye-generated-500-million-in-exports-through-interconnections-in-20-months/",
+      "published": "2026-11-10",
+      "event_period": "January 2025\u2013August 2026, not a new outage",
+      "role": "Motivation only",
+      "response_sha256": null,
+      "retrieval_note": "Browser read; raw HTTP unavailable: HTTPError"
+    },
+    {
+      "url": "https://docs.pypsa.org/latest/user-guide/optimization/contingencies/",
+      "retrieved": "2026-11-11",
+      "role": "Technical background; own explicit-topology LP, no PyPSA runtime",
+      "response_sha256": null,
+      "retrieval_note": "Browser read; raw HTTP unavailable: HTTPError"
+    }
+  ],
+  "candidates": [
+    {
+      "case": "T\u00fcrkiye interconnection report",
+      "date": "2026-11-10",
+      "impact": "Secure transfer and regional electricity value",
+      "evidence": "Primary analysis, historical trade totals not topology",
+      "tractability": "High synthetic security extension",
+      "novelty": "Preventive shared-injection constraints absent from merged PR4",
+      "fit": "Continuous convex optimization",
+      "decision": "selected"
+    },
+    {
+      "case": "Japan electrotech report",
+      "date": "2026-11-10",
+      "url": "https://ember-energy.org/latest-insights/japan-and-the-electrotech-revolution/",
+      "impact": "PV, wind, storage and electrification deployment",
+      "evidence": "Primary macro report",
+      "tractability": "Needs local operating data",
+      "novelty": "Broad planning, no bounded new calibrated case",
+      "fit": "Capacity planning",
+      "decision": "defer"
+    },
+    {
+      "case": "Grid modernisation guide",
+      "date": "2026-11-05",
+      "url": "https://ember-energy.org/latest-insights/building-a-grid-for-the-age-of-power/",
+      "impact": "Network upgrade value",
+      "evidence": "Guide, no measured topology",
+      "tractability": "High synthetic",
+      "novelty": "Base-case screening already merged; security backlog unresolved",
+      "fit": "Security-constrained optimization",
+      "decision": "background backlog"
+    }
+  ]
+}
