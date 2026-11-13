@@ -32,6 +32,7 @@ your measurements.
    :maxdepth: 1
 
    /benchmarking
+   /validation_lab
    /workflow
 
 .. toctree::

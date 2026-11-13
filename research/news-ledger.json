@@ -250,5 +250,25 @@
     "Calibrate network screening on openly licensed hourly topology, ratings and outages",
     "AC voltage/reactive-power and N-1 validation before operational use",
     "Spatial workloads with validated latency and service constraints"
+  ],
+  "paper_assessments": [
+    {
+      "id": "jrc-quantum-readiness-20261113",
+      "date": "2026-11-13",
+      "status": "implemented on PR branch; review pending",
+      "motivation": "User-provided Alex G. Lee outlook and original JRC publication",
+      "source": "https://publications.jrc.ec.europa.eu/repository/handle/JRC148269",
+      "secondary_source_sha256": "af03d9699c71a391553574254f8a8f45792678e424421426ac02e9ac5b7771f9",
+      "delivered": [
+        "matched-budget scaling",
+        "chronological historical holdouts",
+        "unified experiment records",
+        "boundary-aware decomposition",
+        "registered-agent workflow evaluation"
+      ],
+      "protocol": "docs/sphinx/source/validation_lab.rst",
+      "raw_third_party_data_redistributed": false,
+      "quantum_advantage_claimed": false
+    }
   ]
 }

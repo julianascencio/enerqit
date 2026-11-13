@@ -6,6 +6,7 @@ from time import perf_counter
 
 import numpy as np
 from scipy.optimize import Bounds, LinearConstraint, milp
+from scipy.sparse import coo_matrix
 
 
 @dataclass(frozen=True)
@@ -27,8 +28,13 @@ class FirmingCase:
     def __post_init__(self) -> None:
         for key in ("renewable_mw", "demand_mw"):
             a = np.asarray(getattr(self, key), float)
-            if a.ndim != 1 or not 1 <= len(a) <= 168 or not np.isfinite(a).all() or (a < 0).any():
-                raise ValueError("Profiles must have 1..168 finite nonnegative intervals")
+            if (
+                a.ndim != 1
+                or not 1 <= len(a) <= 87840
+                or not np.isfinite(a).all()
+                or (a < 0).any()
+            ):
+                raise ValueError("Profiles must have 1..87840 finite nonnegative intervals")
             object.__setattr__(self, key, tuple(float(v) for v in a))
         if len(self.renewable_mw) != len(self.demand_mw):
             raise ValueError("Profiles must align")
@@ -95,16 +101,37 @@ def audit_firming(
     }
 
 
-def minimum_storage(case: FirmingCase, *, exclusive: bool = True) -> dict:
+def minimum_storage(
+    case: FirmingCase,
+    *,
+    exclusive: bool = True,
+    time_limit_s=30.0,
+    net_balance_modes=False,
+    allow_incomplete=False,
+) -> dict:
     """Minimize usable DC capacity; fixed AC power, no backup or unserved load.
 
     Binary modes forbid simultaneous charge/discharge. exclusive=False gives a
     labeled LP lower bound, audited by the same physical evaluator. A finite
     max_energy_mwh is a search bound; infeasibility does not imply no larger
     battery can work. No stochastic solver or quantum algorithm is used.
+
+    ``net_balance_modes=True`` fixes charge mode on renewable surplus and
+    discharge mode on deficit, yielding a physical LP for this restricted model.
+    With free curtailment, no grid charging, no export value and fixed demand,
+    charging during a deficit or discharging during a surplus cannot reduce the
+    minimum capacity. This reduction is not valid for arbitrary market dispatch.
+    ``allow_incomplete=True`` retains timeout/failure metadata without accepting
+    an unproven solution; the default preserves the original exception behavior.
     """
     if type(exclusive) is not bool:
         raise ValueError("exclusive must be boolean")
+    if type(net_balance_modes) is not bool or type(allow_incomplete) is not bool:
+        raise ValueError("Mode and incomplete flags must be boolean")
+    if net_balance_modes and not exclusive:
+        raise ValueError("Net-balance modes describe physical operation, not the relaxation")
+    if isinstance(time_limit_s, bool) or not np.isfinite(time_limit_s) or time_limit_s <= 0:
+        raise ValueError("time_limit_s must be finite and positive")
     start = perf_counter()
     n = len(case.demand_mw)
     # Variables c[n], d[n], s[n+1], E, mode[n]. Spill is eliminated.
@@ -115,15 +142,19 @@ def minimum_storage(case: FirmingCase, *, exclusive: bool = True) -> dict:
     upper[: 2 * n] = case.power_mw
     upper[2 * n : cap + 1] = case.max_energy_mwh
     upper[cap + 1 :] = 1
-    rows = []
+    if net_balance_modes:
+        mode = (np.asarray(case.renewable_mw) >= case.demand_mw).astype(float)
+        lower[cap + 1 :] = mode
+        upper[cap + 1 :] = mode
+    row_indices, column_indices, coefficients = [], [], []
     lo = []
     hi = []
 
     def add(values, low, high):
-        row = np.zeros(size)
         for j, v in values.items():
-            row[j] = v
-        rows.append(row)
+            row_indices.append(len(lo))
+            column_indices.append(j)
+            coefficients.append(v)
         lo.append(low)
         hi.append(high)
 
@@ -144,11 +175,13 @@ def minimum_storage(case: FirmingCase, *, exclusive: bool = True) -> dict:
     for t in range(n + 1):
         add({2 * n + t: 1, cap: -1}, -np.inf, 0)
     add({2 * n: 1, 3 * n: -1}, 0, 0)
-    matrix = np.array(rows)
+    matrix = coo_matrix(
+        (coefficients, (row_indices, column_indices)), shape=(len(lo), size)
+    ).tocsc()
     objective = np.zeros(size)
     objective[cap] = 1
     integer = np.zeros(size)
-    integer[cap + 1 :] = int(exclusive)
+    integer[cap + 1 :] = int(exclusive and not net_balance_modes)
     construction = perf_counter() - start
     start = perf_counter()
     result = milp(
@@ -156,19 +189,32 @@ def minimum_storage(case: FirmingCase, *, exclusive: bool = True) -> dict:
         integrality=integer,
         bounds=Bounds(lower, upper),
         constraints=LinearConstraint(matrix, lo, hi),
-        options={"time_limit": 30, "mip_rel_gap": 1e-9},
+        options={"time_limit": time_limit_s, "mip_rel_gap": 1e-9},
     )
     info = {
-        "method": "MILP" if exclusive else "LP relaxation",
+        "method": "physical net-balance LP"
+        if net_balance_modes
+        else "MILP"
+        if exclusive
+        else "LP relaxation",
         "construction_s": construction,
         "solver_s": perf_counter() - start,
         "variables": size,
-        "binary_variables": n if exclusive else 0,
-        "matrix_bytes": matrix.nbytes,
+        "binary_variables": n if exclusive and not net_balance_modes else 0,
+        "matrix_bytes": matrix.data.nbytes + matrix.indices.nbytes + matrix.indptr.nbytes,
+        "matrix_nnz": matrix.nnz,
+        "time_limit_s": time_limit_s,
     }
     if result.status == 2:
         return {"status": "infeasible", "audit": None, **info}
     if not result.success:
+        if allow_incomplete:
+            return {
+                "status": "timeout" if result.status == 1 else "failed",
+                "audit": None,
+                "message": result.message,
+                **info,
+            }
         raise RuntimeError(f"Solver did not prove optimality: {result.message}")
     x = result.x
     audit = audit_firming(case, x[:n], x[n : 2 * n], x[2 * n : cap], x[cap])

@@ -136,3 +136,13 @@ context. All numerical inputs are synthetic, with no field validation claim.
 The :doc:`renewable firming study </renewable_firming>` connects Ember’s
 13 November article to a synthetic chronological mechanism test, with analytic
 cyclic deficit references. No global results are claimed replicated.
+
+Application evaluation and readiness
+------------------------------------
+
+The :doc:`validation lab </validation_lab>` implements the assessment inspired by
+the JRC quantum outlook and the supplied Alex G. Lee interpretation. It adds
+matched budgets, sparse chronological holdouts, shared records, block conditioning
+and measured agent/script comparisons. Historical national profiles are distinguished
+from synthetic gallery fixtures and co-located field validation. The JRC does not
+endorse this implementation or establish its performance.

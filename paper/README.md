@@ -97,3 +97,19 @@ is checked automatically; field validation and human scientific review remain op
 ## Chronological firming (13 November 2026)
 
 [Study](../docs/sphinx/source/renewable_firming.rst) implements standard storage balances and binary charge/discharge modes. [PyPSA storage documentation](https://docs.pypsa.org/latest/user-guide/optimization/storage/) provides technical context; [Ember](https://ember-energy.org/latest-insights/harnessing-the-winds/) motivates complementarity. Synthetic deficit-block lower bounds validate results independently; no field or global-cost replication claimed.
+
+## Application readiness validation lab (2026-11-13)
+
+JRC148269, *Outlook Report on Quantum* (2026-10-30), DOI
+[10.2760/3778089](https://doi.org/10.2760/3778089), motivates independent application
+evaluation. The user-supplied Alex G. Lee outlook is a secondary interpretation;
+its agentic workflow proposals are not measured JRC acceleration results.
+
+[The validation lab](../docs/sphinx/source/validation_lab.rst) implements classical
+MILP binary-product linearization, constrained block conditioning, deadline-based
+benchmarking, sparse cyclic storage sizing and chronological holdouts. Historical
+inputs come from [OPSD version 2020-10-06](https://doi.org/10.25832/time_series/2020-10-06),
+with source hashes and provider attribution. The configured 2018/2019 German
+aggregate-shape scenario is not co-located asset validation. See the protocol for
+the proof scope of fixed net-balance modes, assumed costs/calendar degradation,
+benchmark limits and pending human review. No quantum advantage is claimed.

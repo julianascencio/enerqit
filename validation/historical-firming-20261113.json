@@ -1,0 +1,281 @@
+{
+  "provenance": {
+    "source_sha256": "6a7f2bc571314cbf9c321cc03437691cd4be95c3a6f075e60ff99e8035c704c8",
+    "slice_sha256": "db4b6fc09e4d43b5a9e15e3fe5ac5015ab4ee817e42a1d08dd8dff3671df1395",
+    "columns": {
+      "utc_timestamp": "timestamp",
+      "DE_solar_generation_actual": "solar_mw",
+      "DE_wind_generation_actual": "wind_mw",
+      "DE_load_actual_entsoe_transparency": "demand_mw"
+    },
+    "start": "2018-01-01T00:00:00+00:00",
+    "last_interval_start": "2019-12-31T23:00:00+00:00",
+    "intervals": 17520,
+    "synthetic": false,
+    "source": "https://doi.org/10.25832/time_series/2020-10-06"
+  },
+  "frozen_parameters": {
+    "training_means_mw": {
+      "solar_mw": 4706.846232876713,
+      "wind_mw": 12393.20684931507,
+      "demand_mw": 56951.5098173516
+    },
+    "renewable_multiple": 1.7,
+    "wind_share": 0.5,
+    "power_mw": 3.0,
+    "split_at": "2019-01-01T00:00:00+00:00",
+    "max_energy_mwh": 10000.0,
+    "hours": 1.0,
+    "charge_efficiency": 0.9,
+    "discharge_efficiency": 0.9,
+    "initial_soc_fraction": 0.5,
+    "reserve_fraction": 0.0,
+    "annual_capacity_fade": 0.02,
+    "aging_years": 10,
+    "cost_assumptions": {
+      "energy_eur_per_mwh": 200000,
+      "power_eur_per_mw": 150000,
+      "renewable_capex_eur": 4000000,
+      "other_initial_eur": 250000,
+      "annual_opex_eur": 100000,
+      "years": 20,
+      "discount_rate": 0.06,
+      "replacement_years": [
+        10
+      ],
+      "replacement_energy_fraction": 0.7
+    },
+    "time_limit_s": 30.0,
+    "sizing_model": "physical net-balance LP"
+  },
+  "training_intervals": 8760,
+  "holdout_intervals": 8760,
+  "input_sha256": "eaba53c383c935d3c0f1f27f409792a1dad137401e6a19857f2f5da1bce53c5a",
+  "training": {
+    "status": "optimal",
+    "capacity_mwh": 75.9872280573865,
+    "audit": {
+      "feasible": true,
+      "max_energy_residual_mwh": 6.994405055138486e-15,
+      "cycle_residual_mwh": 0.0,
+      "simultaneous_mw": 0.0,
+      "spill_mwh": 5830.5047957846,
+      "shortfall_mwh": 1.2878587085651816e-14,
+      "conversion_loss_mwh": 301.4952042153984
+    },
+    "method": "physical net-balance LP",
+    "construction_s": 0.2599651900018216,
+    "solver_s": 0.8763542640008382,
+    "variables": 35042,
+    "binary_variables": 0,
+    "matrix_bytes": 1401660,
+    "matrix_nnz": 105124,
+    "time_limit_s": 30.0
+  },
+  "holdout": {
+    "physical_feasible": true,
+    "full_load_served": false,
+    "unserved_mwh": 9.281757428977345,
+    "served_mwh": 8602.863338864247,
+    "shortfall_hours": 16.0,
+    "spill_mwh": 7173.041474912881,
+    "capacity_mwh": 75.9872280573865,
+    "initial_energy_mwh": 37.99361402869325,
+    "final_energy_mwh": 73.62268360124534,
+    "max_balance_residual_mw": 4.440892098500626e-16,
+    "max_energy_residual_mwh": 7.105427357601002e-15
+  },
+  "aged_holdout": {
+    "physical_feasible": true,
+    "full_load_served": false,
+    "unserved_mwh": 21.79187473581755,
+    "served_mwh": 8590.353221557405,
+    "shortfall_hours": 28.0,
+    "spill_mwh": 7196.208358814437,
+    "capacity_mwh": 62.08709771645293,
+    "initial_energy_mwh": 31.043548858226465,
+    "final_energy_mwh": 59.7225532603118,
+    "max_balance_residual_mw": 4.440892098500626e-16,
+    "max_energy_residual_mwh": 3.552713678800501e-15
+  },
+  "interpretation": "Observed aggregate profiles; hypothetical scaled assets; no site validation",
+  "aging_assumption": {
+    "years": 10,
+    "annual_capacity_fade": 0.02,
+    "capacity_retention": 0.8170728068875467,
+    "model": "calendar-only sensitivity"
+  },
+  "economics": {
+    "assumptions": {
+      "energy_eur_per_mwh": 200000,
+      "power_eur_per_mw": 150000,
+      "renewable_capex_eur": 4000000,
+      "other_initial_eur": 250000,
+      "annual_opex_eur": 100000,
+      "years": 20,
+      "discount_rate": 0.06,
+      "replacement_years": [
+        10
+      ],
+      "replacement_energy_fraction": 0.7
+    },
+    "cashflows": [
+      {
+        "year": 0,
+        "capital_eur": 19897445.6114773,
+        "opex_eur": 0.0,
+        "replacement_eur": 0.0,
+        "present_eur": 19897445.6114773
+      },
+      {
+        "year": 1,
+        "capital_eur": 0.0,
+        "opex_eur": 100000,
+        "replacement_eur": 0,
+        "present_eur": 94339.62264150943
+      },
+      {
+        "year": 2,
+        "capital_eur": 0.0,
+        "opex_eur": 100000,
+        "replacement_eur": 0,
+        "present_eur": 88999.64400142398
+      },
+      {
+        "year": 3,
+        "capital_eur": 0.0,
+        "opex_eur": 100000,
+        "replacement_eur": 0,
+        "present_eur": 83961.92830323018
+      },
+      {
+        "year": 4,
+        "capital_eur": 0.0,
+        "opex_eur": 100000,
+        "replacement_eur": 0,
+        "present_eur": 79209.36632380204
+      },
+      {
+        "year": 5,
+        "capital_eur": 0.0,
+        "opex_eur": 100000,
+        "replacement_eur": 0,
+        "present_eur": 74725.8172866057
+      },
+      {
+        "year": 6,
+        "capital_eur": 0.0,
+        "opex_eur": 100000,
+        "replacement_eur": 0,
+        "present_eur": 70496.05404396764
+      },
+      {
+        "year": 7,
+        "capital_eur": 0.0,
+        "opex_eur": 100000,
+        "replacement_eur": 0,
+        "present_eur": 66505.71136223362
+      },
+      {
+        "year": 8,
+        "capital_eur": 0.0,
+        "opex_eur": 100000,
+        "replacement_eur": 0,
+        "present_eur": 62741.23713418265
+      },
+      {
+        "year": 9,
+        "capital_eur": 0.0,
+        "opex_eur": 100000,
+        "replacement_eur": 0,
+        "present_eur": 59189.846353002504
+      },
+      {
+        "year": 10,
+        "capital_eur": 0.0,
+        "opex_eur": 100000,
+        "replacement_eur": 10638211.92803411,
+        "present_eur": 5996161.454021865
+      },
+      {
+        "year": 11,
+        "capital_eur": 0.0,
+        "opex_eur": 100000,
+        "replacement_eur": 0,
+        "present_eur": 52678.75253916206
+      },
+      {
+        "year": 12,
+        "capital_eur": 0.0,
+        "opex_eur": 100000,
+        "replacement_eur": 0,
+        "present_eur": 49696.93635770006
+      },
+      {
+        "year": 13,
+        "capital_eur": 0.0,
+        "opex_eur": 100000,
+        "replacement_eur": 0,
+        "present_eur": 46883.902224245336
+      },
+      {
+        "year": 14,
+        "capital_eur": 0.0,
+        "opex_eur": 100000,
+        "replacement_eur": 0,
+        "present_eur": 44230.09643796729
+      },
+      {
+        "year": 15,
+        "capital_eur": 0.0,
+        "opex_eur": 100000,
+        "replacement_eur": 0,
+        "present_eur": 41726.506073554054
+      },
+      {
+        "year": 16,
+        "capital_eur": 0.0,
+        "opex_eur": 100000,
+        "replacement_eur": 0,
+        "present_eur": 39364.6283712774
+      },
+      {
+        "year": 17,
+        "capital_eur": 0.0,
+        "opex_eur": 100000,
+        "replacement_eur": 0,
+        "present_eur": 37136.44185969567
+      },
+      {
+        "year": 18,
+        "capital_eur": 0.0,
+        "opex_eur": 100000,
+        "replacement_eur": 0,
+        "present_eur": 35034.37911292043
+      },
+      {
+        "year": 19,
+        "capital_eur": 0.0,
+        "opex_eur": 100000,
+        "replacement_eur": 0,
+        "present_eur": 33051.301049924936
+      },
+      {
+        "year": 20,
+        "capital_eur": 0.0,
+        "opex_eur": 100000,
+        "replacement_eur": 0,
+        "present_eur": 31180.472688608428
+      }
+    ],
+    "net_present_cost_eur": 26984759.709664177,
+    "excluded": [
+      "tax",
+      "inflation",
+      "salvage",
+      "revenue",
+      "unconfigured costs"
+    ]
+  },
+  "cost_basis": "Illustrative user-editable assumptions; no market quote or achieved savings"
+}
