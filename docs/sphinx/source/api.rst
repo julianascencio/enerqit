@@ -120,6 +120,12 @@ Evidence and reproducibility
 .. automodule:: enerqit.benchmarking
    :members:
 
+.. automodule:: enerqit.lineage
+   :members:
+
+.. automodule:: enerqit.lineage_study
+   :members:
+
 Network dispatch
 ----------------
 

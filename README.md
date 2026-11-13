@@ -111,7 +111,25 @@ python docs/examples/plot_orientation.py
 
 The demo writes observations and a JSON result with provenance. The
 [example gallery](https://julianascencio.github.io/enerqit/gallery/index.html)
-contains twelve executed studies with downloadable scripts and notebooks.
+contains executable studies with downloadable scripts and notebooks.
+
+## Adaptive experiment evidence
+
+The [Genesis-inspired evidence study](docs/sphinx/source/adaptation_evidence.rst)
+adds local experiment lineage, currentness checks, exact recommendation scope,
+effect-witness grades and explicit outcome classification. It applies the
+user-supplied Genesis AiX v0.3 research proposal to a synthetic PV solver example.
+
+```bash
+python -m enerqit.lineage_study --output results/adaptation-evidence.json
+python docs/examples/plot_adaptation_evidence.py
+```
+
+The study is entirely classical and offline. Increasing annealing reads uses
+more compute; it does not establish quantum advantage or architecture value.
+The evidence layer is advisory, with no hardware-control or production-security
+claim. [Recorded results](benchmarks/results/adaptation-evidence-20261113.json)
+retain improvements, regressions and inconclusive comparisons.
 
 ## Battery portfolio engineer
 
