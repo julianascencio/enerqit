@@ -20,6 +20,8 @@ hardware experiments will be a separate, explicitly labeled execution path.
 - Single-interval DC network dispatch, independently audited relaxations and line-rating screening.
   Preventive connected line-outage DC screening is implemented; real topology calibration, AC power flow and operational N-1 validation remain outstanding.
 
+- Cyclic chronological renewable firming with losses, MILP mode exclusivity and LP lower bounds. Multi-year field calibration remains open.
+
 ## Next research milestones — not implemented yet
 
 | Domain | Candidate problem | Required classical baseline |

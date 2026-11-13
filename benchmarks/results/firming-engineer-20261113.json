@@ -1,0 +1,1092 @@
+{
+  "success": true,
+  "role": {
+    "id": "career_quantum_ml_engineer",
+    "title": "Quantum Machine Learning Engineer",
+    "mandate": "Design and evaluate classical, quantum-inspired and hybrid energy research workflows.",
+    "inputs": [
+      "load_case",
+      "experiment_budget",
+      "research_context"
+    ],
+    "tool": "prepare_data",
+    "output": "quantum_ml_research_handoff",
+    "acceptance": "Chronological held-out benchmarks, feasible schedules, provenance and limitations.",
+    "technology": "cross_technology",
+    "authority": "local_bounded_research_only"
+  },
+  "mode": "scripted_tool_workflow",
+  "classification": "mixed",
+  "reports": {
+    "inspect_evidence": {
+      "as_of_utc": "2026-11-13",
+      "classification": "All numerical inputs synthetic, authored MIT fixture; primary sources context only",
+      "agent_revision": "e077b5f240852c7fe28c4de2ed530a52f65e8347",
+      "enerqit_base": "581d84ec721ac80a5905c5e3fac55c5c18f39bfe",
+      "edi_inspection": {
+        "commit": "53f47b87fe9a6213e85a7fe60d4cf2599ec26658",
+        "path": "docs/ree-adjustment-bess.md",
+        "blob": "81aa7f0bbe859d2ce76ee2ee298c0f1e226ee37a",
+        "finding": "Existing one-cycle economics screen does not supply co-located chronological weather; no code or connector reused"
+      },
+      "seed": null,
+      "seed_reason": "Deterministic optimization, no random samples",
+      "inputs": {
+        "demand_mw": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "power_mw": 2,
+        "max_energy_mwh": 10,
+        "profiles": {
+          "solar_only": [
+            0,
+            3,
+            3,
+            0
+          ],
+          "complementary_mix": [
+            0.75,
+            2.25,
+            2.25,
+            0.75
+          ],
+          "coincident_mix": [
+            0,
+            3,
+            3,
+            0
+          ]
+        }
+      },
+      "sources": [
+        {
+          "url": "https://ember-energy.org/latest-insights/harnessing-the-winds/",
+          "published_on_page": "2026-11-13",
+          "listing_date": "2026-11-12",
+          "date_note": "Index and article differ; article date used. Current analysis of historical 2015\u20132024 modeled weather, not a new physical event.",
+          "retrieval": "Primary page indexed text retrieved via web search; direct HTTP 403; no raw response hash claimed.",
+          "response_sha256": null
+        },
+        {
+          "url": "https://docs.pypsa.org/latest/user-guide/optimization/storage/",
+          "retrieved": "2026-11-13",
+          "role": "Storage energy-balance context, not a runtime dependency"
+        }
+      ],
+      "candidates": [
+        {
+          "title": "Harnessing the winds",
+          "date": "2026-11-13 article / 12 listing",
+          "business": "Firm renewable supply and storage capacity",
+          "technical": "Chronological deficits and efficiency",
+          "evidence": "Primary model report, not measured local data",
+          "tractability": "High bounded synthetic mechanism test",
+          "novelty": "First cyclic storage sizing; existing storage only availability portfolio",
+          "fit": "MILP with LP bound",
+          "decision": "selected"
+        },
+        {
+          "title": "Japan electrotech revolution",
+          "date": "2026-11-11 article",
+          "url": "https://ember-energy.org/latest-insights/japan-and-the-electrotech-revolution/",
+          "business": "Electrification and fuel substitution",
+          "technical": "Grid integration",
+          "evidence": "Macro scenario",
+          "tractability": "Needs local demand constraints",
+          "novelty": "Broad planning overlaps flexibility work",
+          "fit": "Capacity planning",
+          "decision": "defer"
+        },
+        {
+          "title": "Renewables 2026",
+          "date": "2026-11-06",
+          "url": "https://www.iea.org/reports/renewables-2026",
+          "business": "PV/wind/hydro deployment",
+          "technical": "System integration",
+          "evidence": "Primary global outlook",
+          "tractability": "Needs regional profiles",
+          "novelty": "No narrow new calibrated case",
+          "fit": "Planning optimization",
+          "decision": "background"
+        }
+      ]
+    },
+    "benchmark_methods": {
+      "solar_only": {
+        "physical": {
+          "status": "optimal",
+          "capacity_mwh": 2.2222222222222223,
+          "charge_mw": [
+            0.0,
+            0.469135802469136,
+            2.0,
+            0.0
+          ],
+          "discharge_mw": [
+            1.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "energy_mwh": [
+            1.1111111111111112,
+            -0.0,
+            0.4222222222222224,
+            2.2222222222222223,
+            1.1111111111111112
+          ],
+          "audit": {
+            "feasible": true,
+            "max_energy_residual_mwh": 2.220446049250313e-16,
+            "cycle_residual_mwh": 0.0,
+            "simultaneous_mw": 0.0,
+            "spill_mwh": 1.530864197530864,
+            "shortfall_mwh": 0.0,
+            "conversion_loss_mwh": 0.4691358024691359
+          },
+          "method": "MILP",
+          "construction_s": 0.0001850019998528296,
+          "solver_s": 0.014625009000155842,
+          "variables": 18,
+          "binary_variables": 4,
+          "matrix_bytes": 3168
+        },
+        "lp_lower_bound": {
+          "status": "optimal",
+          "capacity_mwh": 2.2222222222222223,
+          "charge_mw": [
+            0.0,
+            0.46913580246913583,
+            2.0,
+            0.0
+          ],
+          "discharge_mw": [
+            1.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "energy_mwh": [
+            1.1111111111111112,
+            0.0,
+            0.4222222222222223,
+            2.2222222222222223,
+            1.1111111111111112
+          ],
+          "audit": {
+            "feasible": true,
+            "max_energy_residual_mwh": 0.0,
+            "cycle_residual_mwh": 0.0,
+            "simultaneous_mw": 0.0,
+            "spill_mwh": 1.5308641975308643,
+            "shortfall_mwh": 0.0,
+            "conversion_loss_mwh": 0.46913580246913583
+          },
+          "method": "LP relaxation",
+          "construction_s": 0.0003007849991263356,
+          "solver_s": 0.0025632159995438997,
+          "variables": 18,
+          "binary_variables": 0,
+          "matrix_bytes": 3168
+        },
+        "no_storage_shortfall_mwh": 2.0
+      },
+      "complementary_mix": {
+        "physical": {
+          "status": "optimal",
+          "capacity_mwh": 0.5555555555555556,
+          "charge_mw": [
+            0.0,
+            1.1111111110745296e-06,
+            0.6172828395061729,
+            0.0
+          ],
+          "discharge_mw": [
+            0.25,
+            0.0,
+            0.0,
+            0.25
+          ],
+          "energy_mwh": [
+            0.2777777777777778,
+            -0.0,
+            9.999999999670766e-07,
+            0.5555555555555556,
+            0.2777777777777778
+          ],
+          "audit": {
+            "feasible": true,
+            "max_energy_residual_mwh": 0.0,
+            "cycle_residual_mwh": 0.0,
+            "simultaneous_mw": 0.0,
+            "spill_mwh": 1.882716049382716,
+            "shortfall_mwh": 0.0,
+            "conversion_loss_mwh": 0.11728395061728396
+          },
+          "method": "MILP",
+          "construction_s": 9.277599929191638e-05,
+          "solver_s": 0.0039040209994709585,
+          "variables": 18,
+          "binary_variables": 4,
+          "matrix_bytes": 3168
+        },
+        "lp_lower_bound": {
+          "status": "optimal",
+          "capacity_mwh": 0.5555555555555556,
+          "charge_mw": [
+            0.0,
+            0.0,
+            0.6172839506172839,
+            0.0
+          ],
+          "discharge_mw": [
+            0.25,
+            0.0,
+            0.0,
+            0.25
+          ],
+          "energy_mwh": [
+            0.2777777777777778,
+            0.0,
+            -0.0,
+            0.5555555555555556,
+            0.2777777777777778
+          ],
+          "audit": {
+            "feasible": true,
+            "max_energy_residual_mwh": 0.0,
+            "cycle_residual_mwh": 0.0,
+            "simultaneous_mw": 0.0,
+            "spill_mwh": 1.882716049382716,
+            "shortfall_mwh": 0.0,
+            "conversion_loss_mwh": 0.11728395061728396
+          },
+          "method": "LP relaxation",
+          "construction_s": 0.00011217800056328997,
+          "solver_s": 0.0022345899997162633,
+          "variables": 18,
+          "binary_variables": 0,
+          "matrix_bytes": 3168
+        },
+        "no_storage_shortfall_mwh": 0.5
+      },
+      "coincident_mix": {
+        "physical": {
+          "status": "optimal",
+          "capacity_mwh": 2.2222222222222223,
+          "charge_mw": [
+            0.0,
+            0.469135802469136,
+            2.0,
+            0.0
+          ],
+          "discharge_mw": [
+            1.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "energy_mwh": [
+            1.1111111111111112,
+            -0.0,
+            0.4222222222222224,
+            2.2222222222222223,
+            1.1111111111111112
+          ],
+          "audit": {
+            "feasible": true,
+            "max_energy_residual_mwh": 2.220446049250313e-16,
+            "cycle_residual_mwh": 0.0,
+            "simultaneous_mw": 0.0,
+            "spill_mwh": 1.530864197530864,
+            "shortfall_mwh": 0.0,
+            "conversion_loss_mwh": 0.4691358024691359
+          },
+          "method": "MILP",
+          "construction_s": 0.00010985299923049752,
+          "solver_s": 0.003955564001444145,
+          "variables": 18,
+          "binary_variables": 4,
+          "matrix_bytes": 3168
+        },
+        "lp_lower_bound": {
+          "status": "optimal",
+          "capacity_mwh": 2.2222222222222223,
+          "charge_mw": [
+            0.0,
+            0.46913580246913583,
+            2.0,
+            0.0
+          ],
+          "discharge_mw": [
+            1.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "energy_mwh": [
+            1.1111111111111112,
+            0.0,
+            0.4222222222222223,
+            2.2222222222222223,
+            1.1111111111111112
+          ],
+          "audit": {
+            "feasible": true,
+            "max_energy_residual_mwh": 0.0,
+            "cycle_residual_mwh": 0.0,
+            "simultaneous_mw": 0.0,
+            "spill_mwh": 1.5308641975308643,
+            "shortfall_mwh": 0.0,
+            "conversion_loss_mwh": 0.46913580246913583
+          },
+          "method": "LP relaxation",
+          "construction_s": 0.00032453399944643024,
+          "solver_s": 0.0022454030004155356,
+          "variables": 18,
+          "binary_variables": 0,
+          "matrix_bytes": 3168
+        },
+        "no_storage_shortfall_mwh": 2.0
+      }
+    },
+    "assess_sensitivity": {
+      "efficiency": [
+        {
+          "eta": 0.8,
+          "status": "optimal",
+          "capacity_mwh": 0.625,
+          "charge_mw": [
+            0.0,
+            0.0,
+            0.7812499999999999,
+            0.0
+          ],
+          "discharge_mw": [
+            0.25,
+            0.0,
+            0.0,
+            0.25
+          ],
+          "energy_mwh": [
+            0.3125,
+            -0.0,
+            -0.0,
+            0.625,
+            0.3125
+          ],
+          "audit": {
+            "feasible": true,
+            "max_energy_residual_mwh": 0.0,
+            "cycle_residual_mwh": 0.0,
+            "simultaneous_mw": 0.0,
+            "spill_mwh": 1.71875,
+            "shortfall_mwh": 0.0,
+            "conversion_loss_mwh": 0.28124999999999994
+          },
+          "method": "MILP",
+          "construction_s": 6.0399999711080454e-05,
+          "solver_s": 0.002402120999249746,
+          "variables": 18,
+          "binary_variables": 4,
+          "matrix_bytes": 3168
+        },
+        {
+          "eta": 0.9,
+          "status": "optimal",
+          "capacity_mwh": 0.5555555555555556,
+          "charge_mw": [
+            0.0,
+            1.1111111110745296e-06,
+            0.6172828395061729,
+            0.0
+          ],
+          "discharge_mw": [
+            0.25,
+            0.0,
+            0.0,
+            0.25
+          ],
+          "energy_mwh": [
+            0.2777777777777778,
+            -0.0,
+            9.999999999670766e-07,
+            0.5555555555555556,
+            0.2777777777777778
+          ],
+          "audit": {
+            "feasible": true,
+            "max_energy_residual_mwh": 0.0,
+            "cycle_residual_mwh": 0.0,
+            "simultaneous_mw": 0.0,
+            "spill_mwh": 1.882716049382716,
+            "shortfall_mwh": 0.0,
+            "conversion_loss_mwh": 0.11728395061728396
+          },
+          "method": "MILP",
+          "construction_s": 0.00010217099952569697,
+          "solver_s": 0.004145327000514953,
+          "variables": 18,
+          "binary_variables": 4,
+          "matrix_bytes": 3168
+        },
+        {
+          "eta": 1,
+          "status": "optimal",
+          "capacity_mwh": 0.5,
+          "charge_mw": [
+            0.0,
+            0.0,
+            0.5,
+            0.0
+          ],
+          "discharge_mw": [
+            0.25,
+            0.0,
+            0.0,
+            0.25
+          ],
+          "energy_mwh": [
+            0.25,
+            -0.0,
+            -0.0,
+            0.5,
+            0.25
+          ],
+          "audit": {
+            "feasible": true,
+            "max_energy_residual_mwh": 0.0,
+            "cycle_residual_mwh": 0.0,
+            "simultaneous_mw": 0.0,
+            "spill_mwh": 2.0,
+            "shortfall_mwh": 0.0,
+            "conversion_loss_mwh": 0.0
+          },
+          "method": "MILP",
+          "construction_s": 0.00011913799971807748,
+          "solver_s": 0.0033611580001888797,
+          "variables": 18,
+          "binary_variables": 4,
+          "matrix_bytes": 3168
+        }
+      ],
+      "power": [
+        {
+          "power_mw": 0.2,
+          "status": "infeasible",
+          "audit": null,
+          "method": "MILP",
+          "construction_s": 0.00013133899847161956,
+          "solver_s": 0.004052121999848168,
+          "variables": 18,
+          "binary_variables": 4,
+          "matrix_bytes": 3168
+        },
+        {
+          "power_mw": 0.5,
+          "status": "optimal",
+          "capacity_mwh": 0.5555555555555556,
+          "charge_mw": [
+            0.0,
+            0.117283950617284,
+            0.5,
+            0.0
+          ],
+          "discharge_mw": [
+            0.25,
+            0.0,
+            0.0,
+            0.25
+          ],
+          "energy_mwh": [
+            0.2777777777777778,
+            -0.0,
+            0.1055555555555556,
+            0.5555555555555556,
+            0.2777777777777778
+          ],
+          "audit": {
+            "feasible": true,
+            "max_energy_residual_mwh": 5.551115123125783e-17,
+            "cycle_residual_mwh": 0.0,
+            "simultaneous_mw": 0.0,
+            "spill_mwh": 1.882716049382716,
+            "shortfall_mwh": 0.0,
+            "conversion_loss_mwh": 0.11728395061728397
+          },
+          "method": "MILP",
+          "construction_s": 0.0001309180006501265,
+          "solver_s": 0.0036740110008395277,
+          "variables": 18,
+          "binary_variables": 4,
+          "matrix_bytes": 3168
+        },
+        {
+          "power_mw": 2,
+          "status": "optimal",
+          "capacity_mwh": 0.5555555555555556,
+          "charge_mw": [
+            0.0,
+            1.1111111110745296e-06,
+            0.6172828395061729,
+            0.0
+          ],
+          "discharge_mw": [
+            0.25,
+            0.0,
+            0.0,
+            0.25
+          ],
+          "energy_mwh": [
+            0.2777777777777778,
+            -0.0,
+            9.999999999670766e-07,
+            0.5555555555555556,
+            0.2777777777777778
+          ],
+          "audit": {
+            "feasible": true,
+            "max_energy_residual_mwh": 0.0,
+            "cycle_residual_mwh": 0.0,
+            "simultaneous_mw": 0.0,
+            "spill_mwh": 1.882716049382716,
+            "shortfall_mwh": 0.0,
+            "conversion_loss_mwh": 0.11728395061728396
+          },
+          "method": "MILP",
+          "construction_s": 0.00011784799971792381,
+          "solver_s": 0.0036016680005559465,
+          "variables": 18,
+          "binary_variables": 4,
+          "matrix_bytes": 3168
+        }
+      ],
+      "lull": {
+        "status": "infeasible",
+        "audit": null,
+        "method": "MILP",
+        "construction_s": 0.00020964599934814032,
+        "solver_s": 0.004326066000430728,
+        "variables": 18,
+        "binary_variables": 4,
+        "matrix_bytes": 3168
+      },
+      "scaling": [
+        {
+          "intervals": 4,
+          "status": "optimal",
+          "capacity_mwh": 0.5555555555555556,
+          "charge_mw": [
+            0.0,
+            1.1111111110745296e-06,
+            0.6172828395061729,
+            0.0
+          ],
+          "discharge_mw": [
+            0.25,
+            0.0,
+            0.0,
+            0.25
+          ],
+          "energy_mwh": [
+            0.2777777777777778,
+            -0.0,
+            9.999999999670766e-07,
+            0.5555555555555556,
+            0.2777777777777778
+          ],
+          "audit": {
+            "feasible": true,
+            "max_energy_residual_mwh": 0.0,
+            "cycle_residual_mwh": 0.0,
+            "simultaneous_mw": 0.0,
+            "spill_mwh": 1.882716049382716,
+            "shortfall_mwh": 0.0,
+            "conversion_loss_mwh": 0.11728395061728396
+          },
+          "method": "MILP",
+          "construction_s": 0.0001668620006967103,
+          "solver_s": 0.005149815999175189,
+          "variables": 18,
+          "binary_variables": 4,
+          "matrix_bytes": 3168
+        },
+        {
+          "intervals": 24,
+          "status": "optimal",
+          "capacity_mwh": 0.5555555555555556,
+          "charge_mw": [
+            0.0,
+            0.6172839506172839,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.617283950617284,
+            0.0,
+            0.0,
+            0.0,
+            0.617283950617284,
+            0.0,
+            0.0,
+            0.6172839506172839,
+            0.0,
+            0.0,
+            0.0,
+            0.6172839506172839,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.617283950617284,
+            0.0
+          ],
+          "discharge_mw": [
+            0.25,
+            0.0,
+            0.0,
+            0.25,
+            0.25,
+            0.0,
+            0.0,
+            0.2500000000000001,
+            0.25,
+            0.0,
+            0.0,
+            0.2500000000000001,
+            0.25,
+            0.0,
+            0.0,
+            0.25,
+            0.25,
+            0.0,
+            0.0,
+            0.25,
+            0.25,
+            0.0,
+            0.0,
+            0.2500000000000001
+          ],
+          "energy_mwh": [
+            0.2777777777777778,
+            0.0,
+            0.5555555555555556,
+            0.5555555555555556,
+            0.2777777777777778,
+            -0.0,
+            -0.0,
+            0.5555555555555557,
+            0.2777777777777778,
+            -0.0,
+            -0.0,
+            0.5555555555555557,
+            0.2777777777777778,
+            0.0,
+            0.5555555555555556,
+            0.5555555555555556,
+            0.2777777777777778,
+            -0.0,
+            0.5555555555555556,
+            0.5555555555555556,
+            0.2777777777777778,
+            -0.0,
+            -0.0,
+            0.5555555555555557,
+            0.2777777777777778
+          ],
+          "audit": {
+            "feasible": true,
+            "max_energy_residual_mwh": 0.0,
+            "cycle_residual_mwh": 0.0,
+            "simultaneous_mw": 0.0,
+            "spill_mwh": 11.296296296296296,
+            "shortfall_mwh": 0.0,
+            "conversion_loss_mwh": 0.7037037037037038
+          },
+          "method": "MILP",
+          "construction_s": 0.0009543950000079349,
+          "solver_s": 0.008059958001467749,
+          "variables": 98,
+          "binary_variables": 24,
+          "matrix_bytes": 95648
+        },
+        {
+          "intervals": 96,
+          "status": "optimal",
+          "capacity_mwh": 0.5555555555555557,
+          "charge_mw": [
+            0.0,
+            0.0,
+            0.617283950617284,
+            0.0,
+            0.0,
+            0.0,
+            0.617283950617284,
+            0.0,
+            0.0,
+            0.0,
+            0.617283950617284,
+            0.0,
+            0.0,
+            0.0,
+            0.617283950617284,
+            0.0,
+            0.0,
+            0.0,
+            0.617283950617284,
+            0.0,
+            0.0,
+            0.0,
+            0.617283950617284,
+            0.0,
+            0.0,
+            0.0,
+            0.617283950617284,
+            0.0,
+            0.0,
+            0.0,
+            0.617283950617284,
+            0.0,
+            0.0,
+            0.0,
+            0.617283950617284,
+            0.0,
+            0.0,
+            0.0,
+            0.617283950617284,
+            0.0,
+            0.0,
+            0.0,
+            0.617283950617284,
+            0.0,
+            0.0,
+            0.0,
+            0.617283950617284,
+            0.0,
+            0.0,
+            0.0,
+            0.617283950617284,
+            0.0,
+            0.0,
+            0.0,
+            0.617283950617284,
+            0.0,
+            0.0,
+            0.6172839506172839,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.617283950617284,
+            0.0,
+            0.0,
+            0.0,
+            0.617283950617284,
+            0.0,
+            0.0,
+            0.0,
+            0.617283950617284,
+            0.0,
+            0.0,
+            0.0,
+            0.617283950617284,
+            0.0,
+            0.0,
+            0.0,
+            0.617283950617284,
+            0.0,
+            0.0,
+            0.0,
+            0.617283950617284,
+            0.0,
+            0.0,
+            0.0,
+            0.617283950617284,
+            0.0,
+            0.0,
+            0.0,
+            0.617283950617284,
+            0.0,
+            0.0,
+            0.0,
+            0.617283950617284,
+            0.0
+          ],
+          "discharge_mw": [
+            0.25,
+            0.0,
+            0.0,
+            0.2500000000000001,
+            0.25,
+            0.0,
+            0.0,
+            0.2500000000000001,
+            0.25,
+            0.0,
+            0.0,
+            0.2500000000000001,
+            0.25,
+            0.0,
+            0.0,
+            0.2500000000000001,
+            0.25,
+            0.0,
+            0.0,
+            0.2500000000000001,
+            0.25,
+            0.0,
+            0.0,
+            0.2500000000000001,
+            0.25,
+            0.0,
+            0.0,
+            0.2500000000000001,
+            0.25,
+            0.0,
+            0.0,
+            0.2500000000000001,
+            0.25,
+            0.0,
+            0.0,
+            0.2500000000000001,
+            0.25,
+            0.0,
+            0.0,
+            0.2500000000000001,
+            0.25,
+            0.0,
+            0.0,
+            0.2500000000000001,
+            0.25,
+            0.0,
+            0.0,
+            0.2500000000000001,
+            0.25,
+            0.0,
+            0.0,
+            0.2500000000000001,
+            0.25,
+            0.0,
+            0.0,
+            0.2500000000000001,
+            0.25,
+            0.0,
+            0.0,
+            0.25,
+            0.25,
+            0.0,
+            0.0,
+            0.2500000000000001,
+            0.25,
+            0.0,
+            0.0,
+            0.2500000000000001,
+            0.25,
+            0.0,
+            0.0,
+            0.2500000000000001,
+            0.25,
+            0.0,
+            0.0,
+            0.2500000000000001,
+            0.25,
+            0.0,
+            0.0,
+            0.2500000000000001,
+            0.25,
+            0.0,
+            0.0,
+            0.2500000000000001,
+            0.25,
+            0.0,
+            0.0,
+            0.2500000000000001,
+            0.25,
+            0.0,
+            0.0,
+            0.2500000000000001,
+            0.25,
+            0.0,
+            0.0,
+            0.2500000000000001
+          ],
+          "energy_mwh": [
+            0.2777777777777778,
+            -0.0,
+            -0.0,
+            0.5555555555555557,
+            0.2777777777777778,
+            -0.0,
+            0.0,
+            0.5555555555555557,
+            0.2777777777777778,
+            -0.0,
+            -0.0,
+            0.5555555555555557,
+            0.2777777777777778,
+            -0.0,
+            -0.0,
+            0.5555555555555557,
+            0.2777777777777778,
+            -0.0,
+            -0.0,
+            0.5555555555555557,
+            0.2777777777777778,
+            -0.0,
+            -0.0,
+            0.5555555555555557,
+            0.2777777777777778,
+            -0.0,
+            0.0,
+            0.5555555555555557,
+            0.2777777777777778,
+            -0.0,
+            -0.0,
+            0.5555555555555557,
+            0.2777777777777778,
+            -0.0,
+            -0.0,
+            0.5555555555555557,
+            0.2777777777777778,
+            -0.0,
+            -0.0,
+            0.5555555555555557,
+            0.2777777777777778,
+            -0.0,
+            -0.0,
+            0.5555555555555557,
+            0.2777777777777778,
+            -0.0,
+            0.0,
+            0.5555555555555557,
+            0.2777777777777778,
+            -0.0,
+            0.0,
+            0.5555555555555557,
+            0.2777777777777778,
+            -0.0,
+            -0.0,
+            0.5555555555555557,
+            0.2777777777777778,
+            -0.0,
+            0.5555555555555556,
+            0.5555555555555556,
+            0.2777777777777778,
+            -0.0,
+            -0.0,
+            0.5555555555555557,
+            0.2777777777777778,
+            -0.0,
+            0.0,
+            0.5555555555555557,
+            0.2777777777777778,
+            -0.0,
+            -0.0,
+            0.5555555555555557,
+            0.2777777777777778,
+            -0.0,
+            -0.0,
+            0.5555555555555557,
+            0.2777777777777778,
+            -0.0,
+            -0.0,
+            0.5555555555555557,
+            0.2777777777777778,
+            -0.0,
+            -0.0,
+            0.5555555555555557,
+            0.2777777777777778,
+            -0.0,
+            -0.0,
+            0.5555555555555557,
+            0.2777777777777778,
+            -0.0,
+            -0.0,
+            0.5555555555555557,
+            0.2777777777777778,
+            -0.0,
+            -0.0,
+            0.5555555555555557,
+            0.2777777777777778
+          ],
+          "audit": {
+            "feasible": true,
+            "max_energy_residual_mwh": 0.0,
+            "cycle_residual_mwh": 0.0,
+            "simultaneous_mw": 0.0,
+            "spill_mwh": 45.18518518518518,
+            "shortfall_mwh": 0.0,
+            "conversion_loss_mwh": 2.8148148148148158
+          },
+          "method": "MILP",
+          "construction_s": 0.013428577998638502,
+          "solver_s": 0.03412792200106196,
+          "variables": 386,
+          "binary_variables": 96,
+          "matrix_bytes": 1488416
+        }
+      ]
+    },
+    "prepare_handoff": {
+      "method": "classical MILP; LP lower bound",
+      "quantum_used": false,
+      "capacity_reduction_mwh": 1.6666666666666667,
+      "next_action": "Licensed chronological multi-year co-located wind, solar and demand; evaluate lulls, reserve and lifecycle costs",
+      "limits": "Synthetic periodic four-hour horizon, not annual reliability or replicated global economics"
+    }
+  },
+  "trace": [
+    {
+      "step": 0,
+      "tool": "inspect_evidence",
+      "status": "completed"
+    },
+    {
+      "step": 1,
+      "tool": "benchmark_methods",
+      "status": "completed"
+    },
+    {
+      "step": 2,
+      "tool": "assess_sensitivity",
+      "status": "completed"
+    },
+    {
+      "step": 3,
+      "tool": "prepare_handoff",
+      "status": "completed"
+    },
+    {
+      "step": 4,
+      "tool": "finish",
+      "status": "completed"
+    }
+  ],
+  "human_review_required": true,
+  "execution_authorized": false,
+  "validation": "registered_tool_execution_and_protocol_only",
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Linux",
+    "machine": "x86_64",
+    "versions": {
+      "numpy": "2.3.5",
+      "scipy": "1.17.0",
+      "pandas": "2.2.3",
+      "pvlib": "0.16.1",
+      "enerqit": "0.1.0"
+    }
+  },
+  "fixture_sha256": "ec8c46b603ad5bf5214cdb562e36e7e1694d7aab5a8627c343184c841474c64c",
+  "agent_install": {
+    "url": "https://github.com/julianascencio/energy-agents.git",
+    "vcs_info": {
+      "commit_id": "e077b5f240852c7fe28c4de2ed530a52f65e8347",
+      "requested_revision": "e077b5f240852c7fe28c4de2ed530a52f65e8347",
+      "vcs": "git"
+    }
+  }
+}

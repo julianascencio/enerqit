@@ -51,6 +51,10 @@ a feature-completeness claim for every possible PV inverse problem.
      - Native MILP and actual-start enumeration
      - One-hot starts and conservative capacity-slack QUBO
      - Synthetic deadlines and scenario ceilings; no plant dispatch
+   * - Cyclic renewable firming
+     - MILP and LP capacity lower bound
+     - None used
+     - Synthetic chronological profiles, losses and mode exclusivity
    * - Preventive line-outage screening
      - Classical security-constrained LP and 70% margin heuristic
      - None; convex continuous problem

@@ -137,3 +137,12 @@ Preventive outage screening
 
 .. automodule:: enerqit.contingency_study
    :members:
+
+Chronological storage sizing
+----------------------------
+
+.. automodule:: enerqit.storage_sizing
+   :members:
+
+.. automodule:: enerqit.firming_study
+   :members:

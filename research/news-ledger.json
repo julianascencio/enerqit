@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_on": "2026-11-11",
+  "updated_on": "2026-11-13",
   "implemented": [
     {
       "id": "gb-duration-aware-battery-portfolio-2026-11-10",
@@ -22,45 +22,53 @@
       "id": "preventive-contingency-20261111",
       "status": "proposed",
       "fixture": "enerqit/data/contingency_20261111.json"
+    },
+    {
+      "id": "renewable-firming-20261113",
+      "status": "proposed",
+      "fixture": "enerqit/data/firming_20261113.json"
     }
   ],
   "latest_selection": {
-    "as_of": "2026-11-11",
+    "as_of": "2026-11-13",
     "candidates": [
       {
-        "case": "T\u00fcrkiye interconnection report",
-        "date": "2026-11-10",
-        "impact": "Secure transfer and regional electricity value",
-        "evidence": "Primary analysis, historical trade totals not topology",
-        "tractability": "High synthetic security extension",
-        "novelty": "Preventive shared-injection constraints absent from merged PR4",
-        "fit": "Continuous convex optimization",
+        "title": "Harnessing the winds",
+        "date": "2026-11-13 article / 12 listing",
+        "business": "Firm renewable supply and storage capacity",
+        "technical": "Chronological deficits and efficiency",
+        "evidence": "Primary model report, not measured local data",
+        "tractability": "High bounded synthetic mechanism test",
+        "novelty": "First cyclic storage sizing; existing storage only availability portfolio",
+        "fit": "MILP with LP bound",
         "decision": "selected"
       },
       {
-        "case": "Japan electrotech report",
-        "date": "2026-11-10",
+        "title": "Japan electrotech revolution",
+        "date": "2026-11-11 article",
         "url": "https://ember-energy.org/latest-insights/japan-and-the-electrotech-revolution/",
-        "impact": "PV, wind, storage and electrification deployment",
-        "evidence": "Primary macro report",
-        "tractability": "Needs local operating data",
-        "novelty": "Broad planning, no bounded new calibrated case",
+        "business": "Electrification and fuel substitution",
+        "technical": "Grid integration",
+        "evidence": "Macro scenario",
+        "tractability": "Needs local demand constraints",
+        "novelty": "Broad planning overlaps flexibility work",
         "fit": "Capacity planning",
         "decision": "defer"
       },
       {
-        "case": "Grid modernisation guide",
-        "date": "2026-11-05",
-        "url": "https://ember-energy.org/latest-insights/building-a-grid-for-the-age-of-power/",
-        "impact": "Network upgrade value",
-        "evidence": "Guide, no measured topology",
-        "tractability": "High synthetic",
-        "novelty": "Base-case screening already merged; security backlog unresolved",
-        "fit": "Security-constrained optimization",
-        "decision": "background backlog"
+        "title": "Renewables 2026",
+        "date": "2026-11-06",
+        "url": "https://www.iea.org/reports/renewables-2026",
+        "business": "PV/wind/hydro deployment",
+        "technical": "System integration",
+        "evidence": "Primary global outlook",
+        "tractability": "Needs regional profiles",
+        "novelty": "No narrow new calibrated case",
+        "fit": "Planning optimization",
+        "decision": "background"
       }
     ],
-    "selected": "Preventive outage security, distinct from base-case network screening"
+    "selected": "chronological renewable firming"
   },
   "sources": [
     {
@@ -198,6 +206,44 @@
           "decision": "defer pending latency/service constraints"
         }
       ]
+    },
+    {
+      "as_of": "2026-11-11",
+      "candidates": [
+        {
+          "case": "T\u00fcrkiye interconnection report",
+          "date": "2026-11-10",
+          "impact": "Secure transfer and regional electricity value",
+          "evidence": "Primary analysis, historical trade totals not topology",
+          "tractability": "High synthetic security extension",
+          "novelty": "Preventive shared-injection constraints absent from merged PR4",
+          "fit": "Continuous convex optimization",
+          "decision": "selected"
+        },
+        {
+          "case": "Japan electrotech report",
+          "date": "2026-11-10",
+          "url": "https://ember-energy.org/latest-insights/japan-and-the-electrotech-revolution/",
+          "impact": "PV, wind, storage and electrification deployment",
+          "evidence": "Primary macro report",
+          "tractability": "Needs local operating data",
+          "novelty": "Broad planning, no bounded new calibrated case",
+          "fit": "Capacity planning",
+          "decision": "defer"
+        },
+        {
+          "case": "Grid modernisation guide",
+          "date": "2026-11-05",
+          "url": "https://ember-energy.org/latest-insights/building-a-grid-for-the-age-of-power/",
+          "impact": "Network upgrade value",
+          "evidence": "Guide, no measured topology",
+          "tractability": "High synthetic",
+          "novelty": "Base-case screening already merged; security backlog unresolved",
+          "fit": "Security-constrained optimization",
+          "decision": "background backlog"
+        }
+      ],
+      "selected": "Preventive outage security, distinct from base-case network screening"
     }
   ],
   "backlog": [
