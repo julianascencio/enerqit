@@ -1,0 +1,1460 @@
+{
+  "schema_version": "1.0",
+  "study": "genesis-inspired-adaptation-evidence",
+  "source": {
+    "author": "Genesis AiX, LLC",
+    "title": "Hybrid Quantum-Classical Intelligence Architecture",
+    "version": "0.3",
+    "date": "2026-11",
+    "provided_on": "2026-11-13",
+    "status": "conceptual research proposal; not empirical validation",
+    "sha256": "2f3b9a0f8fef410301cd3764ffa5ef45f534706c9d72a98ec031c05435e01c5a",
+    "sections": [
+      "3.5",
+      "5",
+      "6.2",
+      "6.3",
+      "6.4",
+      "7.1",
+      "9.3",
+      "10.1"
+    ],
+    "public_url": null,
+    "pdf_redistributed": false
+  },
+  "execution_kind": "classical",
+  "data_kind": "synthetic",
+  "quantum_hardware_used": false,
+  "quantum_advantage_established": false,
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Linux",
+    "machine": "x86_64",
+    "versions": {
+      "numpy": "2.3.5",
+      "scipy": "1.17.0",
+      "pandas": "2.2.3",
+      "pvlib": "0.16.1",
+      "enerqit": "0.1.0"
+    }
+  },
+  "workload_id": "d2810ed3cbbd87b7def660f87e31c3eb0326f4128d43cea1560525875d774225",
+  "comparison_protocol": {
+    "metric": "QUBO energy",
+    "unit": "synthetic objective units",
+    "materiality": 1e-06,
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "baseline_reads": 1,
+    "adapted_reads": 16,
+    "sweeps": 80,
+    "equal_compute": false,
+    "statistical_significance": "NOT_TESTED"
+  },
+  "exact_reference": {
+    "x": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      1,
+      0,
+      0,
+      1,
+      0
+    ],
+    "energy": 2.409087286991962e-06,
+    "method": "exact",
+    "seed": null,
+    "elapsed_s": 0.0025479670002823696,
+    "feasible": true,
+    "metadata": {
+      "certified": true,
+      "evaluations": 4096
+    }
+  },
+  "negative_controls": {
+    "current": {
+      "status": "ELIGIBLE_FOR_SIMULATION",
+      "reasons": [],
+      "recommendation_digest": "9a5379742196c7b347f78c6e501dc9392e1bef2e030d1d82b9cd413a7e166a9a",
+      "checked_at_s": 1001,
+      "atomic_enforcement": "NOT_ESTABLISHED"
+    },
+    "stale": {
+      "status": "HOLD_REVALIDATE",
+      "reasons": [
+        "stale_or_future_evidence"
+      ],
+      "recommendation_digest": "9a5379742196c7b347f78c6e501dc9392e1bef2e030d1d82b9cd413a7e166a9a",
+      "checked_at_s": 1040,
+      "atomic_enforcement": "NOT_ESTABLISHED"
+    },
+    "expired": {
+      "status": "HOLD_REVALIDATE",
+      "reasons": [
+        "stale_or_future_evidence",
+        "outside_recommendation_window",
+        "outside_authority_window"
+      ],
+      "recommendation_digest": "9a5379742196c7b347f78c6e501dc9392e1bef2e030d1d82b9cd413a7e166a9a",
+      "checked_at_s": 1100,
+      "atomic_enforcement": "NOT_ESTABLISHED"
+    },
+    "unknown_state": {
+      "status": "HOLD_REVALIDATE",
+      "reasons": [
+        "unknown_context:workload_id",
+        "unknown_context:provider",
+        "unknown_context:control_stack",
+        "unknown_context:calibration_id",
+        "unknown_context:model_version",
+        "unknown_context:boundary_id"
+      ],
+      "recommendation_digest": "9a5379742196c7b347f78c6e501dc9392e1bef2e030d1d82b9cd413a7e166a9a",
+      "checked_at_s": 1001,
+      "atomic_enforcement": "NOT_ESTABLISHED"
+    },
+    "changed_calibration": {
+      "status": "HOLD_REVALIDATE",
+      "reasons": [
+        "changed_context:calibration_id"
+      ],
+      "recommendation_digest": "9a5379742196c7b347f78c6e501dc9392e1bef2e030d1d82b9cd413a7e166a9a",
+      "checked_at_s": 1001,
+      "atomic_enforcement": "NOT_ESTABLISHED"
+    },
+    "changed_workload": {
+      "status": "HOLD_REVALIDATE",
+      "reasons": [
+        "changed_context:workload_id"
+      ],
+      "recommendation_digest": "9a5379742196c7b347f78c6e501dc9392e1bef2e030d1d82b9cd413a7e166a9a",
+      "checked_at_s": 1001,
+      "atomic_enforcement": "NOT_ESTABLISHED"
+    },
+    "revoked": {
+      "status": "HOLD_REVALIDATE",
+      "reasons": [
+        "inactive_authority"
+      ],
+      "recommendation_digest": "9a5379742196c7b347f78c6e501dc9392e1bef2e030d1d82b9cd413a7e166a9a",
+      "checked_at_s": 1001,
+      "atomic_enforcement": "NOT_ESTABLISHED"
+    },
+    "missing_authority": {
+      "status": "HOLD_REVALIDATE",
+      "reasons": [
+        "missing_authority"
+      ],
+      "recommendation_digest": "9a5379742196c7b347f78c6e501dc9392e1bef2e030d1d82b9cd413a7e166a9a",
+      "checked_at_s": 1001,
+      "atomic_enforcement": "NOT_ESTABLISHED"
+    },
+    "replayed": {
+      "status": "HOLD_REVALIDATE",
+      "reasons": [
+        "replayed_recommendation"
+      ],
+      "recommendation_digest": "9a5379742196c7b347f78c6e501dc9392e1bef2e030d1d82b9cd413a7e166a9a",
+      "checked_at_s": 1001,
+      "atomic_enforcement": "NOT_ESTABLISHED"
+    },
+    "incomplete": {
+      "status": "HOLD_REVALIDATE",
+      "reasons": [
+        "incomplete_evidence"
+      ],
+      "recommendation_digest": "9a5379742196c7b347f78c6e501dc9392e1bef2e030d1d82b9cd413a7e166a9a",
+      "checked_at_s": 1001,
+      "atomic_enforcement": "NOT_ESTABLISHED"
+    },
+    "contradictory": {
+      "status": "HOLD_REVALIDATE",
+      "reasons": [
+        "contradictory_or_unknown_evidence"
+      ],
+      "recommendation_digest": "9a5379742196c7b347f78c6e501dc9392e1bef2e030d1d82b9cd413a7e166a9a",
+      "checked_at_s": 1001,
+      "atomic_enforcement": "NOT_ESTABLISHED"
+    },
+    "clock_skew": {
+      "status": "HOLD_REVALIDATE",
+      "reasons": [
+        "uncertain_clock"
+      ],
+      "recommendation_digest": "9a5379742196c7b347f78c6e501dc9392e1bef2e030d1d82b9cd413a7e166a9a",
+      "checked_at_s": 1001,
+      "atomic_enforcement": "NOT_ESTABLISHED"
+    },
+    "changed_parameters": {
+      "status": "HOLD_REVALIDATE",
+      "reasons": [
+        "authority_scope_mismatch"
+      ],
+      "recommendation_digest": "29e22e8c481483643f38cf4bec6f9d8fbf2afec5ed20d61c17a27677394327a9",
+      "checked_at_s": 1001,
+      "atomic_enforcement": "NOT_ESTABLISHED"
+    }
+  },
+  "acknowledgement_only": {
+    "grade": "W1",
+    "status": "UNVERIFIED_EFFECT",
+    "confirmed": false
+  },
+  "records": [
+    {
+      "observation": {
+        "execution_id": "baseline-0",
+        "sequence": 0,
+        "timestamp_s": 1000,
+        "clock": "synthetic-UTC-Unix-seconds",
+        "result": {
+          "x": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "energy": 0.2004342647273205,
+          "method": "simulated_annealing",
+          "seed": 0,
+          "elapsed_s": 0.017358723001962062,
+          "feasible": false,
+          "metadata": {
+            "reads": 1,
+            "sweeps": 80,
+            "local_polish": true,
+            "raw_best_energy": 0.2004342647273205,
+            "certified": false
+          }
+        },
+        "workload_id": "d2810ed3cbbd87b7def660f87e31c3eb0326f4128d43cea1560525875d774225",
+        "signal_rmse": 0.020839019346455857,
+        "energy_gap": 0.20043185564003352
+      },
+      "interpretation": {
+        "method": "scripted-budget-policy-v1",
+        "claim": "More reads may reduce solution gap; unproven"
+      },
+      "recommendation": {
+        "id": "increase-reads-0",
+        "version": "1",
+        "target": "local-sa",
+        "parameters": [
+          [
+            "reads",
+            16.0
+          ],
+          [
+            "sweeps",
+            80.0
+          ]
+        ],
+        "context": {
+          "workload_id": "d2810ed3cbbd87b7def660f87e31c3eb0326f4128d43cea1560525875d774225",
+          "provider": "local-cpu",
+          "control_stack": "enerqit-sa-v1",
+          "calibration_id": "synthetic-v1",
+          "model_version": "scripted-budget-policy-v1",
+          "boundary_id": "between-solver-runs"
+        },
+        "evidence_id": "dfd885bbb7b323da86e97cedb6c61bd897997c6041acbdd188cf807e260b7da3",
+        "evidence_at_s": 1000,
+        "valid_from_s": 1000,
+        "valid_until_s": 1100
+      },
+      "authority": {
+        "principal": "offline-study-owner",
+        "policy": "simulation-only-v1",
+        "recommendation_digest": "dde50002f67674bdf65e4ca224bc335bb777a41746d24c884677fec009994def",
+        "valid_from_s": 1000,
+        "valid_until_s": 1100,
+        "active": true
+      },
+      "gate": {
+        "status": "ELIGIBLE_FOR_SIMULATION",
+        "reasons": [],
+        "recommendation_digest": "dde50002f67674bdf65e4ca224bc335bb777a41746d24c884677fec009994def",
+        "checked_at_s": 1001,
+        "atomic_enforcement": "NOT_ESTABLISHED"
+      },
+      "governance_path_s": 4.969399742549285e-05,
+      "effect_request_id": "local-request-0",
+      "witness": {
+        "request_id": "local-request-0",
+        "recommendation_digest": "dde50002f67674bdf65e4ca224bc335bb777a41746d24c884677fec009994def",
+        "target": "local-sa",
+        "acknowledged": true,
+        "readback": [
+          [
+            "reads",
+            16.0
+          ],
+          [
+            "sweeps",
+            80.0
+          ]
+        ],
+        "readback_source": "applying-local-solver-metadata",
+        "corroboration": null,
+        "corroboration_source": null,
+        "contradictory": false,
+        "observed_at_s": 1002
+      },
+      "effect": {
+        "grade": "W2",
+        "status": "TARGET_STATE_OBSERVED",
+        "confirmed": true
+      },
+      "post_effect": {
+        "execution_id": "adapted-0",
+        "sequence": 1,
+        "timestamp_s": 1002,
+        "result": {
+          "x": [
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            0
+          ],
+          "energy": 2.968822670368354e-06,
+          "method": "simulated_annealing",
+          "seed": 0,
+          "elapsed_s": 0.019138123003358487,
+          "feasible": true,
+          "metadata": {
+            "reads": 16,
+            "sweeps": 80,
+            "local_polish": true,
+            "raw_best_energy": 2.968822670368354e-06,
+            "certified": false
+          }
+        },
+        "signal_rmse": 0.0017230271820809532,
+        "energy_gap": 5.597353833763918e-07,
+        "true_bits_recovered": false
+      },
+      "outcome": {
+        "status": "INCONCLUSIVE",
+        "improvement": null,
+        "causation": "NOT_ESTABLISHED"
+      }
+    },
+    {
+      "observation": {
+        "execution_id": "baseline-1",
+        "sequence": 2,
+        "timestamp_s": 1000,
+        "clock": "synthetic-UTC-Unix-seconds",
+        "result": {
+          "x": [
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0
+          ],
+          "energy": 1.6743918681783043e-05,
+          "method": "simulated_annealing",
+          "seed": 1,
+          "elapsed_s": 0.01704676899680635,
+          "feasible": true,
+          "metadata": {
+            "reads": 1,
+            "sweeps": 80,
+            "local_polish": true,
+            "raw_best_energy": 1.6743918681783043e-05,
+            "certified": false
+          }
+        },
+        "workload_id": "d2810ed3cbbd87b7def660f87e31c3eb0326f4128d43cea1560525875d774225",
+        "signal_rmse": 0.004091933367015633,
+        "energy_gap": 1.4334831394791081e-05
+      },
+      "interpretation": {
+        "method": "scripted-budget-policy-v1",
+        "claim": "More reads may reduce solution gap; unproven"
+      },
+      "recommendation": {
+        "id": "increase-reads-1",
+        "version": "1",
+        "target": "local-sa",
+        "parameters": [
+          [
+            "reads",
+            16.0
+          ],
+          [
+            "sweeps",
+            80.0
+          ]
+        ],
+        "context": {
+          "workload_id": "d2810ed3cbbd87b7def660f87e31c3eb0326f4128d43cea1560525875d774225",
+          "provider": "local-cpu",
+          "control_stack": "enerqit-sa-v1",
+          "calibration_id": "synthetic-v1",
+          "model_version": "scripted-budget-policy-v1",
+          "boundary_id": "between-solver-runs"
+        },
+        "evidence_id": "72e938a6e6754f60c4ecdaefa022da89bbe375a585062e1db9926600c1b43a04",
+        "evidence_at_s": 1000,
+        "valid_from_s": 1000,
+        "valid_until_s": 1100
+      },
+      "authority": {
+        "principal": "offline-study-owner",
+        "policy": "simulation-only-v1",
+        "recommendation_digest": "629fd22a2aff0de75588e37a84769a2ed707f0e6a630c0924d557e4723265b4e",
+        "valid_from_s": 1000,
+        "valid_until_s": 1100,
+        "active": true
+      },
+      "gate": {
+        "status": "ELIGIBLE_FOR_SIMULATION",
+        "reasons": [],
+        "recommendation_digest": "629fd22a2aff0de75588e37a84769a2ed707f0e6a630c0924d557e4723265b4e",
+        "checked_at_s": 1001,
+        "atomic_enforcement": "NOT_ESTABLISHED"
+      },
+      "governance_path_s": 5.126999894855544e-05,
+      "effect_request_id": "local-request-1",
+      "witness": {
+        "request_id": "local-request-1",
+        "recommendation_digest": "629fd22a2aff0de75588e37a84769a2ed707f0e6a630c0924d557e4723265b4e",
+        "target": "local-sa",
+        "acknowledged": true,
+        "readback": [
+          [
+            "reads",
+            16.0
+          ],
+          [
+            "sweeps",
+            80.0
+          ]
+        ],
+        "readback_source": "applying-local-solver-metadata",
+        "corroboration": null,
+        "corroboration_source": null,
+        "contradictory": false,
+        "observed_at_s": 1002
+      },
+      "effect": {
+        "grade": "W2",
+        "status": "TARGET_STATE_OBSERVED",
+        "confirmed": true
+      },
+      "post_effect": {
+        "execution_id": "adapted-1",
+        "sequence": 3,
+        "timestamp_s": 1002,
+        "result": {
+          "x": [
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "energy": 1.7956980592259697e-05,
+          "method": "simulated_annealing",
+          "seed": 1,
+          "elapsed_s": 0.017506839998532087,
+          "feasible": true,
+          "metadata": {
+            "reads": 16,
+            "sweeps": 80,
+            "local_polish": true,
+            "raw_best_energy": 1.7956980592259697e-05,
+            "certified": false
+          }
+        },
+        "signal_rmse": 0.004237567768656038,
+        "energy_gap": 1.5547893305267735e-05,
+        "true_bits_recovered": false
+      },
+      "outcome": {
+        "status": "REGRESSED",
+        "improvement": -1.2130619104766538e-06,
+        "causation": "NOT_ESTABLISHED"
+      }
+    },
+    {
+      "observation": {
+        "execution_id": "baseline-2",
+        "sequence": 4,
+        "timestamp_s": 1000,
+        "clock": "synthetic-UTC-Unix-seconds",
+        "result": {
+          "x": [
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1
+          ],
+          "energy": 8.802445307765083e-06,
+          "method": "simulated_annealing",
+          "seed": 2,
+          "elapsed_s": 0.016208799002924934,
+          "feasible": true,
+          "metadata": {
+            "reads": 1,
+            "sweeps": 80,
+            "local_polish": true,
+            "raw_best_energy": 8.802445307765083e-06,
+            "certified": false
+          }
+        },
+        "workload_id": "d2810ed3cbbd87b7def660f87e31c3eb0326f4128d43cea1560525875d774225",
+        "signal_rmse": 0.002966891522523644,
+        "energy_gap": 6.393358020773121e-06
+      },
+      "interpretation": {
+        "method": "scripted-budget-policy-v1",
+        "claim": "More reads may reduce solution gap; unproven"
+      },
+      "recommendation": {
+        "id": "increase-reads-2",
+        "version": "1",
+        "target": "local-sa",
+        "parameters": [
+          [
+            "reads",
+            16.0
+          ],
+          [
+            "sweeps",
+            80.0
+          ]
+        ],
+        "context": {
+          "workload_id": "d2810ed3cbbd87b7def660f87e31c3eb0326f4128d43cea1560525875d774225",
+          "provider": "local-cpu",
+          "control_stack": "enerqit-sa-v1",
+          "calibration_id": "synthetic-v1",
+          "model_version": "scripted-budget-policy-v1",
+          "boundary_id": "between-solver-runs"
+        },
+        "evidence_id": "d710e8230c41a102f3fdfdd3c9f5c39c3c27958f1114d226dadcd401f140a9a3",
+        "evidence_at_s": 1000,
+        "valid_from_s": 1000,
+        "valid_until_s": 1100
+      },
+      "authority": {
+        "principal": "offline-study-owner",
+        "policy": "simulation-only-v1",
+        "recommendation_digest": "ceb7e85f57e10693cbee5f01a7345427ba478bb8d2b891f126b6a33f92152753",
+        "valid_from_s": 1000,
+        "valid_until_s": 1100,
+        "active": true
+      },
+      "gate": {
+        "status": "ELIGIBLE_FOR_SIMULATION",
+        "reasons": [],
+        "recommendation_digest": "ceb7e85f57e10693cbee5f01a7345427ba478bb8d2b891f126b6a33f92152753",
+        "checked_at_s": 1001,
+        "atomic_enforcement": "NOT_ESTABLISHED"
+      },
+      "governance_path_s": 6.138099706731737e-05,
+      "effect_request_id": "local-request-2",
+      "witness": {
+        "request_id": "local-request-2",
+        "recommendation_digest": "ceb7e85f57e10693cbee5f01a7345427ba478bb8d2b891f126b6a33f92152753",
+        "target": "local-sa",
+        "acknowledged": true,
+        "readback": [
+          [
+            "reads",
+            16.0
+          ],
+          [
+            "sweeps",
+            80.0
+          ]
+        ],
+        "readback_source": "applying-local-solver-metadata",
+        "corroboration": null,
+        "corroboration_source": null,
+        "contradictory": false,
+        "observed_at_s": 1002
+      },
+      "effect": {
+        "grade": "W2",
+        "status": "TARGET_STATE_OBSERVED",
+        "confirmed": true
+      },
+      "post_effect": {
+        "execution_id": "adapted-2",
+        "sequence": 5,
+        "timestamp_s": 1002,
+        "result": {
+          "x": [
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            0
+          ],
+          "energy": 2.968822670368354e-06,
+          "method": "simulated_annealing",
+          "seed": 2,
+          "elapsed_s": 0.021589667994703632,
+          "feasible": true,
+          "metadata": {
+            "reads": 16,
+            "sweeps": 80,
+            "local_polish": true,
+            "raw_best_energy": 2.968822670368354e-06,
+            "certified": false
+          }
+        },
+        "signal_rmse": 0.0017230271820809532,
+        "energy_gap": 5.597353833763918e-07,
+        "true_bits_recovered": false
+      },
+      "outcome": {
+        "status": "IMPROVED",
+        "improvement": 5.833622637396729e-06,
+        "causation": "NOT_ESTABLISHED"
+      }
+    },
+    {
+      "observation": {
+        "execution_id": "baseline-3",
+        "sequence": 6,
+        "timestamp_s": 1000,
+        "clock": "synthetic-UTC-Unix-seconds",
+        "result": {
+          "x": [
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "energy": 0.20044526616200997,
+          "method": "simulated_annealing",
+          "seed": 3,
+          "elapsed_s": 0.01645616000314476,
+          "feasible": false,
+          "metadata": {
+            "reads": 1,
+            "sweeps": 80,
+            "local_polish": true,
+            "raw_best_energy": 0.20044526616200997,
+            "certified": false
+          }
+        },
+        "workload_id": "d2810ed3cbbd87b7def660f87e31c3eb0326f4128d43cea1560525875d774225",
+        "signal_rmse": 0.02110133081148418,
+        "energy_gap": 0.20044285707472298
+      },
+      "interpretation": {
+        "method": "scripted-budget-policy-v1",
+        "claim": "More reads may reduce solution gap; unproven"
+      },
+      "recommendation": {
+        "id": "increase-reads-3",
+        "version": "1",
+        "target": "local-sa",
+        "parameters": [
+          [
+            "reads",
+            16.0
+          ],
+          [
+            "sweeps",
+            80.0
+          ]
+        ],
+        "context": {
+          "workload_id": "d2810ed3cbbd87b7def660f87e31c3eb0326f4128d43cea1560525875d774225",
+          "provider": "local-cpu",
+          "control_stack": "enerqit-sa-v1",
+          "calibration_id": "synthetic-v1",
+          "model_version": "scripted-budget-policy-v1",
+          "boundary_id": "between-solver-runs"
+        },
+        "evidence_id": "8aac09df9d56cf4a46aa9d2b411f3e1c3030116506ee43a2ad9a64709fc09155",
+        "evidence_at_s": 1000,
+        "valid_from_s": 1000,
+        "valid_until_s": 1100
+      },
+      "authority": {
+        "principal": "offline-study-owner",
+        "policy": "simulation-only-v1",
+        "recommendation_digest": "f11dfd7ccddd6849853344067584238256c6fbc95920617faaae6dc9be2016ee",
+        "valid_from_s": 1000,
+        "valid_until_s": 1100,
+        "active": true
+      },
+      "gate": {
+        "status": "ELIGIBLE_FOR_SIMULATION",
+        "reasons": [],
+        "recommendation_digest": "f11dfd7ccddd6849853344067584238256c6fbc95920617faaae6dc9be2016ee",
+        "checked_at_s": 1001,
+        "atomic_enforcement": "NOT_ESTABLISHED"
+      },
+      "governance_path_s": 4.9639995268080384e-05,
+      "effect_request_id": "local-request-3",
+      "witness": {
+        "request_id": "local-request-3",
+        "recommendation_digest": "f11dfd7ccddd6849853344067584238256c6fbc95920617faaae6dc9be2016ee",
+        "target": "local-sa",
+        "acknowledged": true,
+        "readback": [
+          [
+            "reads",
+            16.0
+          ],
+          [
+            "sweeps",
+            80.0
+          ]
+        ],
+        "readback_source": "applying-local-solver-metadata",
+        "corroboration": null,
+        "corroboration_source": null,
+        "contradictory": false,
+        "observed_at_s": 1002
+      },
+      "effect": {
+        "grade": "W2",
+        "status": "TARGET_STATE_OBSERVED",
+        "confirmed": true
+      },
+      "post_effect": {
+        "execution_id": "adapted-3",
+        "sequence": 7,
+        "timestamp_s": 1002,
+        "result": {
+          "x": [
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0
+          ],
+          "energy": 6.198669979085025e-06,
+          "method": "simulated_annealing",
+          "seed": 3,
+          "elapsed_s": 0.01804154700221261,
+          "feasible": true,
+          "metadata": {
+            "reads": 16,
+            "sweeps": 80,
+            "local_polish": true,
+            "raw_best_energy": 6.198669979085025e-06,
+            "certified": false
+          }
+        },
+        "signal_rmse": 0.0024897128320281623,
+        "energy_gap": 3.789582692093063e-06,
+        "true_bits_recovered": false
+      },
+      "outcome": {
+        "status": "INCONCLUSIVE",
+        "improvement": null,
+        "causation": "NOT_ESTABLISHED"
+      }
+    },
+    {
+      "observation": {
+        "execution_id": "baseline-4",
+        "sequence": 8,
+        "timestamp_s": 1000,
+        "clock": "synthetic-UTC-Unix-seconds",
+        "result": {
+          "x": [
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "energy": 0.20040883088661943,
+          "method": "simulated_annealing",
+          "seed": 4,
+          "elapsed_s": 0.017071843998564873,
+          "feasible": false,
+          "metadata": {
+            "reads": 1,
+            "sweeps": 80,
+            "local_polish": true,
+            "raw_best_energy": 0.20040883088661943,
+            "certified": false
+          }
+        },
+        "workload_id": "d2810ed3cbbd87b7def660f87e31c3eb0326f4128d43cea1560525875d774225",
+        "signal_rmse": 0.02021956692456436,
+        "energy_gap": 0.20040642179933243
+      },
+      "interpretation": {
+        "method": "scripted-budget-policy-v1",
+        "claim": "More reads may reduce solution gap; unproven"
+      },
+      "recommendation": {
+        "id": "increase-reads-4",
+        "version": "1",
+        "target": "local-sa",
+        "parameters": [
+          [
+            "reads",
+            16.0
+          ],
+          [
+            "sweeps",
+            80.0
+          ]
+        ],
+        "context": {
+          "workload_id": "d2810ed3cbbd87b7def660f87e31c3eb0326f4128d43cea1560525875d774225",
+          "provider": "local-cpu",
+          "control_stack": "enerqit-sa-v1",
+          "calibration_id": "synthetic-v1",
+          "model_version": "scripted-budget-policy-v1",
+          "boundary_id": "between-solver-runs"
+        },
+        "evidence_id": "60070b26fa5acca109a6b0a0903c80db7d69ae54aa11302610a11709990706fa",
+        "evidence_at_s": 1000,
+        "valid_from_s": 1000,
+        "valid_until_s": 1100
+      },
+      "authority": {
+        "principal": "offline-study-owner",
+        "policy": "simulation-only-v1",
+        "recommendation_digest": "6cebd912f238d2030f5c57c441b293cf930af5b147f5ff0c55bc9a5e84a99157",
+        "valid_from_s": 1000,
+        "valid_until_s": 1100,
+        "active": true
+      },
+      "gate": {
+        "status": "ELIGIBLE_FOR_SIMULATION",
+        "reasons": [],
+        "recommendation_digest": "6cebd912f238d2030f5c57c441b293cf930af5b147f5ff0c55bc9a5e84a99157",
+        "checked_at_s": 1001,
+        "atomic_enforcement": "NOT_ESTABLISHED"
+      },
+      "governance_path_s": 4.995500057702884e-05,
+      "effect_request_id": "local-request-4",
+      "witness": {
+        "request_id": "local-request-4",
+        "recommendation_digest": "6cebd912f238d2030f5c57c441b293cf930af5b147f5ff0c55bc9a5e84a99157",
+        "target": "local-sa",
+        "acknowledged": true,
+        "readback": [
+          [
+            "reads",
+            16.0
+          ],
+          [
+            "sweeps",
+            80.0
+          ]
+        ],
+        "readback_source": "applying-local-solver-metadata",
+        "corroboration": null,
+        "corroboration_source": null,
+        "contradictory": false,
+        "observed_at_s": 1002
+      },
+      "effect": {
+        "grade": "W2",
+        "status": "TARGET_STATE_OBSERVED",
+        "confirmed": true
+      },
+      "post_effect": {
+        "execution_id": "adapted-4",
+        "sequence": 9,
+        "timestamp_s": 1002,
+        "result": {
+          "x": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0
+          ],
+          "energy": 5.475145410827054e-06,
+          "method": "simulated_annealing",
+          "seed": 4,
+          "elapsed_s": 0.019077119999565184,
+          "feasible": true,
+          "metadata": {
+            "reads": 16,
+            "sweeps": 80,
+            "local_polish": true,
+            "raw_best_energy": 5.475145410827054e-06,
+            "certified": false
+          }
+        },
+        "signal_rmse": 0.002339902863367022,
+        "energy_gap": 3.0660581238350915e-06,
+        "true_bits_recovered": false
+      },
+      "outcome": {
+        "status": "INCONCLUSIVE",
+        "improvement": null,
+        "causation": "NOT_ESTABLISHED"
+      }
+    },
+    {
+      "observation": {
+        "execution_id": "baseline-5",
+        "sequence": 10,
+        "timestamp_s": 1000,
+        "clock": "synthetic-UTC-Unix-seconds",
+        "result": {
+          "x": [
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0
+          ],
+          "energy": 0.20040174083757023,
+          "method": "simulated_annealing",
+          "seed": 5,
+          "elapsed_s": 0.017229780001798645,
+          "feasible": false,
+          "metadata": {
+            "reads": 1,
+            "sweeps": 80,
+            "local_polish": true,
+            "raw_best_energy": 0.20040174083757023,
+            "certified": false
+          }
+        },
+        "workload_id": "d2810ed3cbbd87b7def660f87e31c3eb0326f4128d43cea1560525875d774225",
+        "signal_rmse": 0.020043473690261816,
+        "energy_gap": 0.20039933175028324
+      },
+      "interpretation": {
+        "method": "scripted-budget-policy-v1",
+        "claim": "More reads may reduce solution gap; unproven"
+      },
+      "recommendation": {
+        "id": "increase-reads-5",
+        "version": "1",
+        "target": "local-sa",
+        "parameters": [
+          [
+            "reads",
+            16.0
+          ],
+          [
+            "sweeps",
+            80.0
+          ]
+        ],
+        "context": {
+          "workload_id": "d2810ed3cbbd87b7def660f87e31c3eb0326f4128d43cea1560525875d774225",
+          "provider": "local-cpu",
+          "control_stack": "enerqit-sa-v1",
+          "calibration_id": "synthetic-v1",
+          "model_version": "scripted-budget-policy-v1",
+          "boundary_id": "between-solver-runs"
+        },
+        "evidence_id": "b2c1f10b4e4a562ea938a171a8bac161fd3944585c55a5889fe3edda73e3fd03",
+        "evidence_at_s": 1000,
+        "valid_from_s": 1000,
+        "valid_until_s": 1100
+      },
+      "authority": {
+        "principal": "offline-study-owner",
+        "policy": "simulation-only-v1",
+        "recommendation_digest": "85856ae4eddbaf4cb14e940efa3fa306e4edee3a56f979ace0fe6e98eba4ac27",
+        "valid_from_s": 1000,
+        "valid_until_s": 1100,
+        "active": true
+      },
+      "gate": {
+        "status": "ELIGIBLE_FOR_SIMULATION",
+        "reasons": [],
+        "recommendation_digest": "85856ae4eddbaf4cb14e940efa3fa306e4edee3a56f979ace0fe6e98eba4ac27",
+        "checked_at_s": 1001,
+        "atomic_enforcement": "NOT_ESTABLISHED"
+      },
+      "governance_path_s": 5.332000000635162e-05,
+      "effect_request_id": "local-request-5",
+      "witness": {
+        "request_id": "local-request-5",
+        "recommendation_digest": "85856ae4eddbaf4cb14e940efa3fa306e4edee3a56f979ace0fe6e98eba4ac27",
+        "target": "local-sa",
+        "acknowledged": true,
+        "readback": [
+          [
+            "reads",
+            16.0
+          ],
+          [
+            "sweeps",
+            80.0
+          ]
+        ],
+        "readback_source": "applying-local-solver-metadata",
+        "corroboration": null,
+        "corroboration_source": null,
+        "contradictory": false,
+        "observed_at_s": 1002
+      },
+      "effect": {
+        "grade": "W2",
+        "status": "TARGET_STATE_OBSERVED",
+        "confirmed": true
+      },
+      "post_effect": {
+        "execution_id": "adapted-5",
+        "sequence": 11,
+        "timestamp_s": 1002,
+        "result": {
+          "x": [
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            0
+          ],
+          "energy": 7.479955478117972e-06,
+          "method": "simulated_annealing",
+          "seed": 5,
+          "elapsed_s": 0.02071383600559784,
+          "feasible": true,
+          "metadata": {
+            "reads": 16,
+            "sweeps": 80,
+            "local_polish": true,
+            "raw_best_energy": 7.479955478117972e-06,
+            "certified": false
+          }
+        },
+        "signal_rmse": 0.002734950726302699,
+        "energy_gap": 5.07086819112601e-06,
+        "true_bits_recovered": false
+      },
+      "outcome": {
+        "status": "INCONCLUSIVE",
+        "improvement": null,
+        "causation": "NOT_ESTABLISHED"
+      }
+    },
+    {
+      "observation": {
+        "execution_id": "baseline-6",
+        "sequence": 12,
+        "timestamp_s": 1000,
+        "clock": "synthetic-UTC-Unix-seconds",
+        "result": {
+          "x": [
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0
+          ],
+          "energy": 1.8540613744733037e-05,
+          "method": "simulated_annealing",
+          "seed": 6,
+          "elapsed_s": 0.016934250001213513,
+          "feasible": true,
+          "metadata": {
+            "reads": 1,
+            "sweeps": 80,
+            "local_polish": true,
+            "raw_best_energy": 1.8540613744733037e-05,
+            "certified": false
+          }
+        },
+        "workload_id": "d2810ed3cbbd87b7def660f87e31c3eb0326f4128d43cea1560525875d774225",
+        "signal_rmse": 0.004305881297091658,
+        "energy_gap": 1.6131526457741074e-05
+      },
+      "interpretation": {
+        "method": "scripted-budget-policy-v1",
+        "claim": "More reads may reduce solution gap; unproven"
+      },
+      "recommendation": {
+        "id": "increase-reads-6",
+        "version": "1",
+        "target": "local-sa",
+        "parameters": [
+          [
+            "reads",
+            16.0
+          ],
+          [
+            "sweeps",
+            80.0
+          ]
+        ],
+        "context": {
+          "workload_id": "d2810ed3cbbd87b7def660f87e31c3eb0326f4128d43cea1560525875d774225",
+          "provider": "local-cpu",
+          "control_stack": "enerqit-sa-v1",
+          "calibration_id": "synthetic-v1",
+          "model_version": "scripted-budget-policy-v1",
+          "boundary_id": "between-solver-runs"
+        },
+        "evidence_id": "c31128eff0128f0a1c15097b3c886b5c62baf09ddc50389ec88b88e225c8ecad",
+        "evidence_at_s": 1000,
+        "valid_from_s": 1000,
+        "valid_until_s": 1100
+      },
+      "authority": {
+        "principal": "offline-study-owner",
+        "policy": "simulation-only-v1",
+        "recommendation_digest": "5f559b3c514e3f8b57e629d20dd4134882c07fcc17a1a4d44316df0ac8c4a4c8",
+        "valid_from_s": 1000,
+        "valid_until_s": 1100,
+        "active": true
+      },
+      "gate": {
+        "status": "ELIGIBLE_FOR_SIMULATION",
+        "reasons": [],
+        "recommendation_digest": "5f559b3c514e3f8b57e629d20dd4134882c07fcc17a1a4d44316df0ac8c4a4c8",
+        "checked_at_s": 1001,
+        "atomic_enforcement": "NOT_ESTABLISHED"
+      },
+      "governance_path_s": 0.0002543519949540496,
+      "effect_request_id": "local-request-6",
+      "witness": {
+        "request_id": "local-request-6",
+        "recommendation_digest": "5f559b3c514e3f8b57e629d20dd4134882c07fcc17a1a4d44316df0ac8c4a4c8",
+        "target": "local-sa",
+        "acknowledged": true,
+        "readback": [
+          [
+            "reads",
+            16.0
+          ],
+          [
+            "sweeps",
+            80.0
+          ]
+        ],
+        "readback_source": "applying-local-solver-metadata",
+        "corroboration": null,
+        "corroboration_source": null,
+        "contradictory": false,
+        "observed_at_s": 1002
+      },
+      "effect": {
+        "grade": "W2",
+        "status": "TARGET_STATE_OBSERVED",
+        "confirmed": true
+      },
+      "post_effect": {
+        "execution_id": "adapted-6",
+        "sequence": 13,
+        "timestamp_s": 1002,
+        "result": {
+          "x": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0
+          ],
+          "energy": 2.409087286991962e-06,
+          "method": "simulated_annealing",
+          "seed": 6,
+          "elapsed_s": 0.018446902999130543,
+          "feasible": true,
+          "metadata": {
+            "reads": 16,
+            "sweeps": 80,
+            "local_polish": true,
+            "raw_best_energy": 2.409087286991962e-06,
+            "certified": false
+          }
+        },
+        "signal_rmse": 0.0015521234762167185,
+        "energy_gap": 0.0,
+        "true_bits_recovered": true
+      },
+      "outcome": {
+        "status": "IMPROVED",
+        "improvement": 1.6131526457741074e-05,
+        "causation": "NOT_ESTABLISHED"
+      }
+    },
+    {
+      "observation": {
+        "execution_id": "baseline-7",
+        "sequence": 14,
+        "timestamp_s": 1000,
+        "clock": "synthetic-UTC-Unix-seconds",
+        "result": {
+          "x": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1
+          ],
+          "energy": 4.25083207993282e-05,
+          "method": "simulated_annealing",
+          "seed": 7,
+          "elapsed_s": 0.01666431700141402,
+          "feasible": true,
+          "metadata": {
+            "reads": 1,
+            "sweeps": 80,
+            "local_polish": true,
+            "raw_best_energy": 4.25083207993282e-05,
+            "certified": false
+          }
+        },
+        "workload_id": "d2810ed3cbbd87b7def660f87e31c3eb0326f4128d43cea1560525875d774225",
+        "signal_rmse": 0.006519840550331664,
+        "energy_gap": 4.009923351233624e-05
+      },
+      "interpretation": {
+        "method": "scripted-budget-policy-v1",
+        "claim": "More reads may reduce solution gap; unproven"
+      },
+      "recommendation": {
+        "id": "increase-reads-7",
+        "version": "1",
+        "target": "local-sa",
+        "parameters": [
+          [
+            "reads",
+            16.0
+          ],
+          [
+            "sweeps",
+            80.0
+          ]
+        ],
+        "context": {
+          "workload_id": "d2810ed3cbbd87b7def660f87e31c3eb0326f4128d43cea1560525875d774225",
+          "provider": "local-cpu",
+          "control_stack": "enerqit-sa-v1",
+          "calibration_id": "synthetic-v1",
+          "model_version": "scripted-budget-policy-v1",
+          "boundary_id": "between-solver-runs"
+        },
+        "evidence_id": "9d66f3f313c8e14dbb8270ec0637959c465e16603faad18260db53b9ebede7a8",
+        "evidence_at_s": 1000,
+        "valid_from_s": 1000,
+        "valid_until_s": 1100
+      },
+      "authority": {
+        "principal": "offline-study-owner",
+        "policy": "simulation-only-v1",
+        "recommendation_digest": "23ee22fe8b9b441dcad876450d5c2a8404b0c4d7475da8fc7824cdfc87fc7c44",
+        "valid_from_s": 1000,
+        "valid_until_s": 1100,
+        "active": true
+      },
+      "gate": {
+        "status": "ELIGIBLE_FOR_SIMULATION",
+        "reasons": [],
+        "recommendation_digest": "23ee22fe8b9b441dcad876450d5c2a8404b0c4d7475da8fc7824cdfc87fc7c44",
+        "checked_at_s": 1001,
+        "atomic_enforcement": "NOT_ESTABLISHED"
+      },
+      "governance_path_s": 5.1933006034232676e-05,
+      "effect_request_id": "local-request-7",
+      "witness": {
+        "request_id": "local-request-7",
+        "recommendation_digest": "23ee22fe8b9b441dcad876450d5c2a8404b0c4d7475da8fc7824cdfc87fc7c44",
+        "target": "local-sa",
+        "acknowledged": true,
+        "readback": [
+          [
+            "reads",
+            16.0
+          ],
+          [
+            "sweeps",
+            80.0
+          ]
+        ],
+        "readback_source": "applying-local-solver-metadata",
+        "corroboration": null,
+        "corroboration_source": null,
+        "contradictory": false,
+        "observed_at_s": 1002
+      },
+      "effect": {
+        "grade": "W2",
+        "status": "TARGET_STATE_OBSERVED",
+        "confirmed": true
+      },
+      "post_effect": {
+        "execution_id": "adapted-7",
+        "sequence": 15,
+        "timestamp_s": 1002,
+        "result": {
+          "x": [
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0
+          ],
+          "energy": 6.198669979085025e-06,
+          "method": "simulated_annealing",
+          "seed": 7,
+          "elapsed_s": 0.017695235001156107,
+          "feasible": true,
+          "metadata": {
+            "reads": 16,
+            "sweeps": 80,
+            "local_polish": true,
+            "raw_best_energy": 6.198669979085025e-06,
+            "certified": false
+          }
+        },
+        "signal_rmse": 0.0024897128320281623,
+        "energy_gap": 3.789582692093063e-06,
+        "true_bits_recovered": false
+      },
+      "outcome": {
+        "status": "IMPROVED",
+        "improvement": 3.630965082024318e-05,
+        "causation": "NOT_ESTABLISHED"
+      }
+    }
+  ],
+  "limits": [
+    "No hardware execution, AI model, quantum simulation or real-time QEC.",
+    "W2 is local self-reported solver metadata, not independent telemetry.",
+    "Atomic authorization-to-effect and timing isolation are NOT ESTABLISHED.",
+    "More compute is not evidence of architecture value or quantum advantage.",
+    "Same-seed pairs do not imply identical random trajectories at different reads.",
+    "Single-instance descriptive differences do not establish causality or significance."
+  ],
+  "serialized_bytes_without_size_field": 28273,
+  "lineage_run_id": "38935f03-b537-44ce-a2c7-05532c25bf86"
+}
