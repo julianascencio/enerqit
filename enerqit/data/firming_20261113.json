@@ -1,0 +1,96 @@
+{
+  "as_of_utc": "2026-11-13",
+  "classification": "All numerical inputs synthetic, authored MIT fixture; primary sources context only",
+  "agent_revision": "e077b5f240852c7fe28c4de2ed530a52f65e8347",
+  "enerqit_base": "581d84ec721ac80a5905c5e3fac55c5c18f39bfe",
+  "edi_inspection": {
+    "commit": "53f47b87fe9a6213e85a7fe60d4cf2599ec26658",
+    "path": "docs/ree-adjustment-bess.md",
+    "blob": "81aa7f0bbe859d2ce76ee2ee298c0f1e226ee37a",
+    "finding": "Existing one-cycle economics screen does not supply co-located chronological weather; no code or connector reused"
+  },
+  "seed": null,
+  "seed_reason": "Deterministic optimization, no random samples",
+  "inputs": {
+    "demand_mw": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "power_mw": 2,
+    "max_energy_mwh": 10,
+    "profiles": {
+      "solar_only": [
+        0,
+        3,
+        3,
+        0
+      ],
+      "complementary_mix": [
+        0.75,
+        2.25,
+        2.25,
+        0.75
+      ],
+      "coincident_mix": [
+        0,
+        3,
+        3,
+        0
+      ]
+    }
+  },
+  "sources": [
+    {
+      "url": "https://ember-energy.org/latest-insights/harnessing-the-winds/",
+      "published_on_page": "2026-11-13",
+      "listing_date": "2026-11-12",
+      "date_note": "Index and article differ; article date used. Current analysis of historical 2015\u20132024 modeled weather, not a new physical event.",
+      "retrieval": "Primary page indexed text retrieved via web search; direct HTTP 403; no raw response hash claimed.",
+      "response_sha256": null
+    },
+    {
+      "url": "https://docs.pypsa.org/latest/user-guide/optimization/storage/",
+      "retrieved": "2026-11-13",
+      "role": "Storage energy-balance context, not a runtime dependency"
+    }
+  ],
+  "candidates": [
+    {
+      "title": "Harnessing the winds",
+      "date": "2026-11-13 article / 12 listing",
+      "business": "Firm renewable supply and storage capacity",
+      "technical": "Chronological deficits and efficiency",
+      "evidence": "Primary model report, not measured local data",
+      "tractability": "High bounded synthetic mechanism test",
+      "novelty": "First cyclic storage sizing; existing storage only availability portfolio",
+      "fit": "MILP with LP bound",
+      "decision": "selected"
+    },
+    {
+      "title": "Japan electrotech revolution",
+      "date": "2026-11-11 article",
+      "url": "https://ember-energy.org/latest-insights/japan-and-the-electrotech-revolution/",
+      "business": "Electrification and fuel substitution",
+      "technical": "Grid integration",
+      "evidence": "Macro scenario",
+      "tractability": "Needs local demand constraints",
+      "novelty": "Broad planning overlaps flexibility work",
+      "fit": "Capacity planning",
+      "decision": "defer"
+    },
+    {
+      "title": "Renewables 2026",
+      "date": "2026-11-06",
+      "url": "https://www.iea.org/reports/renewables-2026",
+      "business": "PV/wind/hydro deployment",
+      "technical": "System integration",
+      "evidence": "Primary global outlook",
+      "tractability": "Needs regional profiles",
+      "novelty": "No narrow new calibrated case",
+      "fit": "Planning optimization",
+      "decision": "background"
+    }
+  ]
+}

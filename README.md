@@ -111,7 +111,7 @@ python docs/examples/plot_orientation.py
 
 The demo writes observations and a JSON result with provenance. The
 [example gallery](https://julianascencio.github.io/enerqit/gallery/index.html)
-contains eleven executed studies with downloadable scripts and notebooks.
+contains twelve executed studies with downloadable scripts and notebooks.
 
 ## Battery portfolio engineer
 
@@ -215,7 +215,7 @@ for the encoding conventions, limitations and future hardware research path.
 | `enerqit/` | Physical models, inverse estimators, QUBO encodings and evidence utilities |
 | `enerqit/solar/` | Public entry point for the initial solar application |
 | `enerqit/solvers/` | Classical baselines, simulated bifurcation and optional quantum exports |
-| `docs/examples/` | Eleven executable gallery examples |
+| `docs/examples/` | Twelve executable gallery examples |
 | `docs/notebooks/` | Introductory inverse-study notebook |
 | `docs/sphinx/source/` | User guide, gallery configuration, API, research and contributor documentation |
 | `tests/` | Recovery, invalid-data, identifiability, encoding and audit checks |
@@ -291,3 +291,7 @@ forward PV physics and is independent of, and not endorsed by, pvlib.
 ## Preventive outage security
 
 [Runnable example](docs/examples/plot_preventive_security.py) and [study](docs/sphinx/source/preventive_security.rst) compare base DC, a 70% rating margin, and preventive dispatch under explicit line outages. All inputs are synthetic. Run `python -m enerqit.contingency_study` after installing `requirements/agent-study.txt`.
+
+## Renewable firming
+
+[Runnable cyclic storage-sizing example](docs/examples/plot_renewable_firming.py) compares equal-energy solar and complementary/coincident profiles with physical energy accounting. [Model and limits](docs/sphinx/source/renewable_firming.rst). Run `python -m enerqit.firming_study` after installing the pinned agent requirements. All numerical inputs are synthetic.

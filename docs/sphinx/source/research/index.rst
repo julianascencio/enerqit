@@ -132,3 +132,7 @@ The :doc:`preventive security study </preventive_security>` adds shared-injectio
 outage constraints with independent radial-cut references. Ember (10 November
 2026) supplies motivation; PyPSA contingency documentation supplies technical
 context. All numerical inputs are synthetic, with no field validation claim.
+
+The :doc:`renewable firming study </renewable_firming>` connects Ember’s
+13 November article to a synthetic chronological mechanism test, with analytic
+cyclic deficit references. No global results are claimed replicated.

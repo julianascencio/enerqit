@@ -93,3 +93,7 @@ is checked automatically; field validation and human scientific review remain op
 ## Preventive security (11 November 2026)
 
 [Study](../docs/sphinx/source/preventive_security.rst): explicit post-outage topology constraints with common injections. [PyPSA documentation](https://docs.pypsa.org/latest/user-guide/optimization/contingencies/) provides methodological context; this implementation uses reduced nodal solves, not BODF. Synthetic radial-cut references validate the LP; no operational certification or quantum advantage is claimed.
+
+## Chronological firming (13 November 2026)
+
+[Study](../docs/sphinx/source/renewable_firming.rst) implements standard storage balances and binary charge/discharge modes. [PyPSA storage documentation](https://docs.pypsa.org/latest/user-guide/optimization/storage/) provides technical context; [Ember](https://ember-energy.org/latest-insights/harnessing-the-winds/) motivates complementarity. Synthetic deficit-block lower bounds validate results independently; no field or global-cost replication claimed.
