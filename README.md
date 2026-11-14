@@ -233,7 +233,7 @@ for the encoding conventions, limitations and future hardware research path.
 | `enerqit/` | Physical models, inverse estimators, QUBO encodings and evidence utilities |
 | `enerqit/solar/` | Public entry point for the initial solar application |
 | `enerqit/solvers/` | Classical baselines, simulated bifurcation and optional quantum exports |
-| `docs/examples/` | Twelve executable gallery examples |
+| `docs/examples/` | Fourteen executable gallery examples |
 | `docs/notebooks/` | Introductory inverse-study notebook |
 | `docs/sphinx/source/` | User guide, gallery configuration, API, research and contributor documentation |
 | `tests/` | Recovery, invalid-data, identifiability, encoding and audit checks |
@@ -313,3 +313,7 @@ forward PV physics and is independent of, and not endorsed by, pvlib.
 ## Renewable firming
 
 [Runnable cyclic storage-sizing example](docs/examples/plot_renewable_firming.py) compares equal-energy solar and complementary/coincident profiles with physical energy accounting. [Model and limits](docs/sphinx/source/renewable_firming.rst). Run `python -m enerqit.firming_study` after installing the pinned agent requirements. All numerical inputs are synthetic.
+
+## Probabilistic capacity adequacy
+
+[Runnable example](docs/examples/plot_adequacy_risk.py) compares nameplate, mean-capacity and exact probability-weighted risk, with matched-marginal common-outage sensitivity. [Study](docs/sphinx/source/adequacy_risk.rst). Run `python -m enerqit.adequacy_study`. All numeric inputs and fees are synthetic; four-hour metrics are not annual forecasts.

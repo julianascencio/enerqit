@@ -51,6 +51,10 @@ a feature-completeness claim for every possible PV inverse problem.
      - Native MILP and actual-start enumeration
      - One-hot starts and conservative capacity-slack QUBO
      - Synthetic deadlines and scenario ceilings; no plant dispatch
+   * - Window adequacy and firm capacity
+     - Exact state enumeration and finite offer search
+     - None used
+     - Synthetic common outages, EENS/LOLE; no annual forecast
    * - Cyclic renewable firming
      - MILP and LP capacity lower bound
      - None used

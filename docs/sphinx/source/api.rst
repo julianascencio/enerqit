@@ -152,3 +152,12 @@ Chronological storage sizing
 
 .. automodule:: enerqit.firming_study
    :members:
+
+Probabilistic adequacy
+-----------------------
+
+.. automodule:: enerqit.adequacy
+   :members:
+
+.. automodule:: enerqit.adequacy_study
+   :members:

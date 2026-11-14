@@ -97,3 +97,7 @@ is checked automatically; field validation and human scientific review remain op
 ## Chronological firming (13 November 2026)
 
 [Study](../docs/sphinx/source/renewable_firming.rst) implements standard storage balances and binary charge/discharge modes. [PyPSA storage documentation](https://docs.pypsa.org/latest/user-guide/optimization/storage/) provides technical context; [Ember](https://ember-energy.org/latest-insights/harnessing-the-winds/) motivates complementarity. Synthetic deficit-block lower bounds validate results independently; no field or global-cost replication claimed.
+
+## Window adequacy (14 November 2026)
+
+[Study](../docs/sphinx/source/adequacy_risk.rst) uses probability-weighted unserved energy and shortage duration, motivated by [ENTSO-E adequacy methodology](https://www.entsoe.eu/outlooks/adequacy-methodology/). Synthetic common-outage probabilities are explicit; two-unit hand calculations and independent binomial references validate enumeration. No regional or annual forecast claimed.
