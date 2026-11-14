@@ -233,7 +233,7 @@ for the encoding conventions, limitations and future hardware research path.
 | `enerqit/` | Physical models, inverse estimators, QUBO encodings and evidence utilities |
 | `enerqit/solar/` | Public entry point for the initial solar application |
 | `enerqit/solvers/` | Classical baselines, simulated bifurcation and optional quantum exports |
-| `docs/examples/` | Fourteen executable gallery examples |
+| `docs/examples/` | Executable gallery examples |
 | `docs/notebooks/` | Introductory inverse-study notebook |
 | `docs/sphinx/source/` | User guide, gallery configuration, API, research and contributor documentation |
 | `tests/` | Recovery, invalid-data, identifiability, encoding and audit checks |
@@ -313,6 +313,22 @@ forward PV physics and is independent of, and not endorsed by, pvlib.
 ## Renewable firming
 
 [Runnable cyclic storage-sizing example](docs/examples/plot_renewable_firming.py) compares equal-energy solar and complementary/coincident profiles with physical energy accounting. [Model and limits](docs/sphinx/source/renewable_firming.rst). Run `python -m enerqit.firming_study` after installing the pinned agent requirements. All numerical inputs are synthetic.
+
+## Energy application validation lab
+
+Run larger matched-budget solver comparisons, sparse chronological storage sizing,
+held-out historical profile replay, boundary-aware block decomposition and measured
+scripted/registered-agent workflow comparisons:
+
+```bash
+python -m enerqit.validation_study --agent --output results/validation-lab
+```
+
+[Protocol, data download and limits](docs/sphinx/source/validation_lab.rst).
+The offline default is synthetic; the explicit OPSD path uses 2018 design data and
+2019 held-out national aggregate profiles. No raw third-party data are bundled.
+Costs and calendar degradation are declared assumptions, and all execution is
+classical CPU work. No quantum advantage or plant-level validation is claimed.
 
 ## Probabilistic capacity adequacy
 

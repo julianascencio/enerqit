@@ -25,3 +25,12 @@ tests, seven gallery examples, notebook, documentation and CI.
 Known limits: synthetic validation only, simplified irradiance/thermal models,
 no globally calibrated uncertainty, no production scalability guarantees, and
 no demonstrated quantum-inspired or quantum hardware advantage.
+
+## Unreleased - application validation lab
+
+- Add growing matched-budget classical/quantum-inspired comparisons with a native
+  MILP baseline and boundary-aware block-coordinate solver.
+- Replace dense storage constraints with sparse matrices; add a restricted physical
+  LP, chronological CSV holdouts, causal replay and explicit lifecycle scenarios.
+- Add versioned experiment records, agent/script repeatability measurements,
+  three executable gallery examples and an opt-in historical data workflow.

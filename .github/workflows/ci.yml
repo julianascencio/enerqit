@@ -40,4 +40,7 @@ jobs:
       - run: python -m enerqit.network_study --output results/network-engineer.json
       - run: python -m enerqit.contingency_study
       - run: python -m enerqit.firming_study
+      - run: python -m pytest tests/test_validation_lab.py
+      - run: python -m enerqit.validation_study --agent --skip-scaling
+
       - run: python -m enerqit.adequacy_study

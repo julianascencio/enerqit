@@ -1,0 +1,18 @@
+{
+  "direct_script": {
+    "runs": 3,
+    "feasible_runs": 3,
+    "failed_runs": 0,
+    "median_wall_s": 0.02819392799574416,
+    "identical_successful_outcomes": true,
+    "reported_human_minutes": null
+  },
+  "registered_agent": {
+    "runs": 3,
+    "feasible_runs": 3,
+    "failed_runs": 0,
+    "median_wall_s": 0.043951397005002946,
+    "identical_successful_outcomes": true,
+    "reported_human_minutes": null
+  }
+}

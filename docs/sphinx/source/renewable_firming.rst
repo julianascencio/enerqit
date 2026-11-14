@@ -100,7 +100,8 @@ Efficiency sensitivity 0.8/0.9/1 gives complementary-case capacity
 50% renewable lull is infeasible regardless of timing because energy is inadequate.
 These are scenario ranges, not probabilistic confidence intervals. Repeating the
 same cycle to 24/96 intervals measures runtime and dense matrix growth, not new
-weather evidence. Inputs are limited to 168 intervals; solver time limit is
+weather evidence. The original dense implementation used a 168-interval cap; sparse constraints now
+support up to 87,840 intervals. The default solver time limit is
 30 seconds and failure to prove optimality is reported rather than accepted.
 
 Agent and reproduction
@@ -128,3 +129,5 @@ validate chronological holdouts, and model initial-state policy, joint lulls,
 reserves, degradation and full lifecycle costs. Do not infer annual uptime from
 this example. Code and documentation are AI-generated and automatically tested;
 human scientific review and field validation remain outstanding.
+
+See :doc:`validation_lab` for sparse physical LP sizing and chronological holdouts.

@@ -45,3 +45,19 @@ solution quality before any algorithmic advantage claim.
 The earlier QuantumPV prototype is the basis of the first solar application.
 New domain modules should reuse the generic interfaces where scientifically
 appropriate; energy-specific constraints and physics remain explicit.
+
+## Application validation lab delivered
+
+- Matched search budgets on growing coupled-inventory instances; native sparse MILP,
+  SA, bSB and block-coordinate experiments, with timeouts and late batches retained.
+- Sparse cyclic storage constraints up to 87,840 intervals; physical net-balance LP
+  for the restricted no-grid/free-curtailment firming model.
+- Strict UTC CSV ingestion, training-only normalization, frozen chronological
+  holdout replay and explicit calendar-capacity/cost scenarios.
+- Shared JSONL experiment records and actual registered-agent/direct-script
+  repeatability comparison.
+
+Still open: co-located multi-year site evidence; cycle/thermal aging calibration;
+optimized large native MIQP/CP-SAT baselines; statistically powered matched-target
+comparisons; live-agent human-effort studies; independent human scientific review;
+physical QPU execution. See the validation-lab guide for reproducible commands.

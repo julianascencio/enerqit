@@ -153,6 +153,30 @@ Chronological storage sizing
 .. automodule:: enerqit.firming_study
    :members:
 
+Application validation lab
+---------------------------
+
+.. automodule:: enerqit.experiments
+   :members:
+
+.. automodule:: enerqit.solvers.milp
+   :members:
+
+.. automodule:: enerqit.decomposition
+   :members:
+
+.. automodule:: enerqit.scaling
+   :members:
+
+.. automodule:: enerqit.chronological
+   :members:
+
+.. automodule:: enerqit.workflow_evaluation
+   :members:
+
+.. automodule:: enerqit.validation_study
+   :members:
+
 Probabilistic adequacy
 -----------------------
 
