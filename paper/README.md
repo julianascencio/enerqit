@@ -113,3 +113,7 @@ with source hashes and provider attribution. The configured 2018/2019 German
 aggregate-shape scenario is not co-located asset validation. See the protocol for
 the proof scope of fixed net-balance modes, assumed costs/calendar degradation,
 benchmark limits and pending human review. No quantum advantage is claimed.
+
+## Window adequacy (14 November 2026)
+
+[Study](../docs/sphinx/source/adequacy_risk.rst) uses probability-weighted unserved energy and shortage duration, motivated by [ENTSO-E adequacy methodology](https://www.entsoe.eu/outlooks/adequacy-methodology/). Synthetic common-outage probabilities are explicit; two-unit hand calculations and independent binomial references validate enumeration. No regional or annual forecast claimed.

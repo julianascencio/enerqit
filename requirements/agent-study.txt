@@ -1,3 +1,3 @@
-# Optional agent orchestration, pinned to current merged main on 2026-11-13.
+# Optional agent orchestration, pinned to current merged main on 2026-11-14.
 # Numerical methods remain in EnerQit; includes the registered-study runner.
-energy-agents[quantum] @ git+https://github.com/julianascencio/energy-agents.git@e077b5f240852c7fe28c4de2ed530a52f65e8347
+energy-agents[quantum] @ git+https://github.com/julianascencio/energy-agents.git@f465e6afb43a52f41b151c199144b53c3bbf441f

@@ -120,6 +120,12 @@ Evidence and reproducibility
 .. automodule:: enerqit.benchmarking
    :members:
 
+.. automodule:: enerqit.lineage
+   :members:
+
+.. automodule:: enerqit.lineage_study
+   :members:
+
 Network dispatch
 ----------------
 
@@ -169,4 +175,13 @@ Application validation lab
    :members:
 
 .. automodule:: enerqit.validation_study
+   :members:
+
+Probabilistic adequacy
+-----------------------
+
+.. automodule:: enerqit.adequacy
+   :members:
+
+.. automodule:: enerqit.adequacy_study
    :members:

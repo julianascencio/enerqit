@@ -1,0 +1,510 @@
+{
+  "success": true,
+  "role": {
+    "id": "career_quantum_ml_engineer",
+    "title": "Quantum Machine Learning Engineer",
+    "mandate": "Design and evaluate classical, quantum-inspired and hybrid energy research workflows.",
+    "inputs": [
+      "load_case",
+      "experiment_budget",
+      "research_context"
+    ],
+    "tool": "prepare_data",
+    "output": "quantum_ml_research_handoff",
+    "acceptance": "Chronological held-out benchmarks, feasible schedules, provenance and limitations.",
+    "technology": "cross_technology",
+    "authority": "local_bounded_research_only"
+  },
+  "mode": "scripted_tool_workflow",
+  "classification": "mixed",
+  "reports": {
+    "inspect_evidence": {
+      "as_of_utc": "2026-11-14",
+      "agent_revision": "f465e6afb43a52f41b151c199144b53c3bbf441f",
+      "enerqit_base": "26d2bdd67ab8682e705f1eb25e47b17f8ddfc09b",
+      "classification": "Synthetic probabilities, capacities, demand, fees and EENS target; primary report is context only. Authored MIT inputs.",
+      "seed": null,
+      "seed_reason": "Exact enumeration, no randomness",
+      "edi_inspection": {
+        "commit": "3d6000b9d981bbbf594eeee296a391c03f78c6e7",
+        "path": "docs/ree-adjustment-bess.md",
+        "blob": "81aa7f0bbe859d2ce76ee2ee298c0f1e226ee37a",
+        "finding": "Cost aggregation and one-cycle BESS screen do not provide calibrated joint outage probabilities; no connector or licensed code reused"
+      },
+      "inputs": {
+        "units": [
+          {
+            "capacity_mw": 60,
+            "outage_probability": 0.1
+          },
+          {
+            "capacity_mw": 60,
+            "outage_probability": 0.1
+          }
+        ],
+        "common_outage_probability": 0.1,
+        "demand_mw": 100,
+        "hours": 4,
+        "target_eens_mwh": 20,
+        "offers": [
+          [
+            0,
+            0
+          ],
+          [
+            20,
+            2000
+          ],
+          [
+            40,
+            4000
+          ],
+          [
+            60,
+            6000
+          ],
+          [
+            80,
+            8000
+          ],
+          [
+            100,
+            10000
+          ]
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.entsoe.eu/news/2026/11/13/entso-e-winter-outlook-2026-2027-europe-is-prepared-some-risks-remain-in-specific-areas/",
+          "published": "2026-11-13",
+          "event_period": "Forward assessment winter 2026\u20132027; not an observed outage",
+          "role": "Context only",
+          "retrieved": "2026-11-14",
+          "response_sha256": "a5fd361c6caf786427859353e4eff689a8f31bdca9812b395bedb079e54ead76",
+          "response_bytes": 30614
+        },
+        {
+          "url": "https://www.entsoe.eu/outlooks/adequacy-methodology/",
+          "role": "Probabilistic adequacy definitions; not replication of ENTSO-E models",
+          "retrieved": "2026-11-14",
+          "response_sha256": "a31bbe84d0ee4f79c42e05a59055a4fb6083571e7cc62a1b87665cbf0d3f1c72",
+          "response_bytes": 32503
+        }
+      ],
+      "candidates": [
+        {
+          "title": "ENTSO-E Winter Outlook",
+          "date": "2026-11-13",
+          "business": "Firm capacity and adequacy risk",
+          "technical": "Dependence and scarce deliverable capacity",
+          "evidence": "TSO primary assessment, no unit-level calibration here",
+          "tractability": "High exact small-fleet model",
+          "novelty": "Probability-weighted adequacy absent from main and PR8",
+          "fit": "Exact probabilistic inference and discrete procurement",
+          "decision": "selected"
+        },
+        {
+          "title": "Harnessing the winds",
+          "date": "2026-11-13",
+          "url": "https://ember-energy.org/latest-insights/harnessing-the-winds/",
+          "business": "Renewable firming cost",
+          "technical": "Weather complementarity",
+          "evidence": "Primary modeled weather analysis",
+          "tractability": "High",
+          "novelty": "Storage sizing already merged; historical work pending PR8",
+          "fit": "Chronological optimization",
+          "decision": "avoid duplicate"
+        },
+        {
+          "title": "Faraday battery",
+          "date": "2026-11-12 coverage; 10 announcement; 18 September operation",
+          "url": "https://www.ess-news.com/2026/11/12/utility-tariff-links-600-mwh-utah-battery-to-meta-data-center/",
+          "business": "Data-centre contracted storage",
+          "technical": "Energy duration and shared connection",
+          "evidence": "Secondary coverage, contract obligations unknown",
+          "tractability": "Needs settlement and operating inputs",
+          "novelty": "Existing duration-aware battery portfolio",
+          "fit": "Scheduling",
+          "decision": "defer; no invented tariff revenue"
+        }
+      ]
+    },
+    "benchmark_methods": {
+      "correlated": {
+        "lolp": 0.271,
+        "expected_shortfall_mw": 17.380000000000003,
+        "eens_mwh": 69.52000000000001,
+        "lole_hours": 1.084,
+        "mean_available_mw": 97.20000000000002,
+        "probability_mass": 1.0000000000000002
+      },
+      "matched_marginal_independence": {
+        "lolp": 0.34390000000000004,
+        "expected_shortfall_mw": 15.922,
+        "eens_mwh": 63.688,
+        "lole_hours": 1.3756000000000002,
+        "mean_available_mw": 97.20000000000002,
+        "probability_mass": 1.0000000000000002
+      },
+      "nameplate_shortfall_mwh": 0,
+      "mean_capacity_shortfall_mwh": 11.199999999999932,
+      "correlated_procurement": {
+        "status": "optimal",
+        "selected": {
+          "firm_mw": 60,
+          "fee_eur": 6000,
+          "meets_target": true,
+          "lolp": 0.10900000000000001,
+          "expected_shortfall_mw": 4.36,
+          "eens_mwh": 17.44,
+          "lole_hours": 0.43600000000000005,
+          "mean_available_mw": 97.20000000000002,
+          "probability_mass": 1.0000000000000002
+        },
+        "offers": [
+          {
+            "firm_mw": 0,
+            "fee_eur": 0,
+            "meets_target": false,
+            "lolp": 0.271,
+            "expected_shortfall_mw": 17.380000000000003,
+            "eens_mwh": 69.52000000000001,
+            "lole_hours": 1.084,
+            "mean_available_mw": 97.20000000000002,
+            "probability_mass": 1.0000000000000002
+          },
+          {
+            "firm_mw": 20,
+            "fee_eur": 2000,
+            "meets_target": false,
+            "lolp": 0.271,
+            "expected_shortfall_mw": 11.96,
+            "eens_mwh": 47.84,
+            "lole_hours": 1.084,
+            "mean_available_mw": 97.20000000000002,
+            "probability_mass": 1.0000000000000002
+          },
+          {
+            "firm_mw": 40,
+            "fee_eur": 4000,
+            "meets_target": false,
+            "lolp": 0.10900000000000001,
+            "expected_shortfall_mw": 6.54,
+            "eens_mwh": 26.16,
+            "lole_hours": 0.43600000000000005,
+            "mean_available_mw": 97.20000000000002,
+            "probability_mass": 1.0000000000000002
+          },
+          {
+            "firm_mw": 60,
+            "fee_eur": 6000,
+            "meets_target": true,
+            "lolp": 0.10900000000000001,
+            "expected_shortfall_mw": 4.36,
+            "eens_mwh": 17.44,
+            "lole_hours": 0.43600000000000005,
+            "mean_available_mw": 97.20000000000002,
+            "probability_mass": 1.0000000000000002
+          },
+          {
+            "firm_mw": 80,
+            "fee_eur": 8000,
+            "meets_target": true,
+            "lolp": 0.10900000000000001,
+            "expected_shortfall_mw": 2.18,
+            "eens_mwh": 8.72,
+            "lole_hours": 0.43600000000000005,
+            "mean_available_mw": 97.20000000000002,
+            "probability_mass": 1.0000000000000002
+          },
+          {
+            "firm_mw": 100,
+            "fee_eur": 10000,
+            "meets_target": true,
+            "lolp": 0,
+            "expected_shortfall_mw": 0.0,
+            "eens_mwh": 0.0,
+            "lole_hours": 0,
+            "mean_available_mw": 97.20000000000002,
+            "probability_mass": 1.0000000000000002
+          }
+        ],
+        "runtime_s": 6.115500582382083e-05
+      },
+      "independent_procurement": {
+        "status": "optimal",
+        "selected": {
+          "firm_mw": 40,
+          "fee_eur": 4000,
+          "meets_target": true,
+          "lolp": 0.0361,
+          "expected_shortfall_mw": 2.166,
+          "eens_mwh": 8.664,
+          "lole_hours": 0.1444,
+          "mean_available_mw": 97.20000000000002,
+          "probability_mass": 1.0000000000000002
+        },
+        "offers": [
+          {
+            "firm_mw": 0,
+            "fee_eur": 0,
+            "meets_target": false,
+            "lolp": 0.34390000000000004,
+            "expected_shortfall_mw": 15.922,
+            "eens_mwh": 63.688,
+            "lole_hours": 1.3756000000000002,
+            "mean_available_mw": 97.20000000000002,
+            "probability_mass": 1.0000000000000002
+          },
+          {
+            "firm_mw": 20,
+            "fee_eur": 2000,
+            "meets_target": false,
+            "lolp": 0.34390000000000004,
+            "expected_shortfall_mw": 9.044,
+            "eens_mwh": 36.176,
+            "lole_hours": 1.3756000000000002,
+            "mean_available_mw": 97.20000000000002,
+            "probability_mass": 1.0000000000000002
+          },
+          {
+            "firm_mw": 40,
+            "fee_eur": 4000,
+            "meets_target": true,
+            "lolp": 0.0361,
+            "expected_shortfall_mw": 2.166,
+            "eens_mwh": 8.664,
+            "lole_hours": 0.1444,
+            "mean_available_mw": 97.20000000000002,
+            "probability_mass": 1.0000000000000002
+          },
+          {
+            "firm_mw": 60,
+            "fee_eur": 6000,
+            "meets_target": true,
+            "lolp": 0.0361,
+            "expected_shortfall_mw": 1.444,
+            "eens_mwh": 5.776,
+            "lole_hours": 0.1444,
+            "mean_available_mw": 97.20000000000002,
+            "probability_mass": 1.0000000000000002
+          },
+          {
+            "firm_mw": 80,
+            "fee_eur": 8000,
+            "meets_target": true,
+            "lolp": 0.0361,
+            "expected_shortfall_mw": 0.722,
+            "eens_mwh": 2.888,
+            "lole_hours": 0.1444,
+            "mean_available_mw": 97.20000000000002,
+            "probability_mass": 1.0000000000000002
+          },
+          {
+            "firm_mw": 100,
+            "fee_eur": 10000,
+            "meets_target": true,
+            "lolp": 0,
+            "expected_shortfall_mw": 0.0,
+            "eens_mwh": 0.0,
+            "lole_hours": 0,
+            "mean_available_mw": 97.20000000000002,
+            "probability_mass": 1.0000000000000002
+          }
+        ],
+        "runtime_s": 3.510700480546802e-05
+      }
+    },
+    "assess_sensitivity": {
+      "common_probability": [
+        {
+          "q": 0,
+          "lolp": 0.19000000000000003,
+          "expected_shortfall_mw": 8.200000000000001,
+          "eens_mwh": 32.800000000000004,
+          "lole_hours": 0.7600000000000001,
+          "mean_available_mw": 108.0,
+          "probability_mass": 1.0
+        },
+        {
+          "q": 0.05,
+          "lolp": 0.2305,
+          "expected_shortfall_mw": 12.790000000000001,
+          "eens_mwh": 51.160000000000004,
+          "lole_hours": 0.922,
+          "mean_available_mw": 102.6,
+          "probability_mass": 1.0
+        },
+        {
+          "q": 0.1,
+          "lolp": 0.271,
+          "expected_shortfall_mw": 17.380000000000003,
+          "eens_mwh": 69.52000000000001,
+          "lole_hours": 1.084,
+          "mean_available_mw": 97.20000000000002,
+          "probability_mass": 1.0000000000000002
+        },
+        {
+          "q": 0.2,
+          "lolp": 0.35200000000000004,
+          "expected_shortfall_mw": 26.560000000000002,
+          "eens_mwh": 106.24000000000001,
+          "lole_hours": 1.4080000000000001,
+          "mean_available_mw": 86.40000000000002,
+          "probability_mass": 1.0000000000000002
+        }
+      ],
+      "demand": [
+        {
+          "demand_mw": 80,
+          "lolp": 0.271,
+          "expected_shortfall_mw": 11.96,
+          "eens_mwh": 47.84,
+          "lole_hours": 1.084,
+          "mean_available_mw": 97.20000000000002,
+          "probability_mass": 1.0000000000000002
+        },
+        {
+          "demand_mw": 100,
+          "lolp": 0.271,
+          "expected_shortfall_mw": 17.380000000000003,
+          "eens_mwh": 69.52000000000001,
+          "lole_hours": 1.084,
+          "mean_available_mw": 97.20000000000002,
+          "probability_mass": 1.0000000000000002
+        },
+        {
+          "demand_mw": 120,
+          "lolp": 0.271,
+          "expected_shortfall_mw": 22.800000000000004,
+          "eens_mwh": 91.20000000000002,
+          "lole_hours": 1.084,
+          "mean_available_mw": 97.20000000000002,
+          "probability_mass": 1.0000000000000002
+        }
+      ],
+      "scaling": [
+        {
+          "units": 2,
+          "states": 5,
+          "seconds": 1.7887010471895337e-05,
+          "risk": {
+            "lolp": 0.271,
+            "expected_shortfall_mw": 2.716,
+            "eens_mwh": 10.864,
+            "lole_hours": 1.084,
+            "mean_available_mw": 16.200000000000003,
+            "probability_mass": 1.0000000000000002
+          }
+        },
+        {
+          "units": 8,
+          "states": 257,
+          "seconds": 0.00062866898952052,
+          "risk": {
+            "lolp": 0.2682057430000001,
+            "expected_shortfall_mw": 7.464970432000001,
+            "eens_mwh": 29.859881728000005,
+            "lole_hours": 1.0728229720000004,
+            "mean_available_mw": 64.80000000000003,
+            "probability_mass": 1.0000000000000004
+          }
+        },
+        {
+          "units": 12,
+          "states": 4097,
+          "seconds": 0.011919667987967841,
+          "risk": {
+            "lolp": 0.19978297997050007,
+            "expected_shortfall_mw": 10.473754174548002,
+            "eens_mwh": 41.89501669819201,
+            "lole_hours": 0.7991319198820003,
+            "mean_available_mw": 97.20000000000005,
+            "probability_mass": 1.0000000000000004
+          }
+        },
+        {
+          "units": 16,
+          "states": 65537,
+          "seconds": 0.25404772598994896,
+          "risk": {
+            "lolp": 0.1615655565256794,
+            "expected_shortfall_mw": 13.480381586310292,
+            "eens_mwh": 53.92152634524117,
+            "lole_hours": 0.6462622261027176,
+            "mean_available_mw": 129.60000000000008,
+            "probability_mass": 1.0000000000000007
+          }
+        }
+      ]
+    },
+    "prepare_handoff": {
+      "method": "classical exact state enumeration and finite offer search",
+      "quantum_used": false,
+      "selected": {
+        "firm_mw": 60,
+        "fee_eur": 6000,
+        "meets_target": true,
+        "lolp": 0.10900000000000001,
+        "expected_shortfall_mw": 4.36,
+        "eens_mwh": 17.44,
+        "lole_hours": 0.43600000000000005,
+        "mean_available_mw": 97.20000000000002,
+        "probability_mass": 1.0000000000000002
+      },
+      "next_action": "Calibrate joint outages, chronological weather/load, imports and storage energy; independent adequacy review",
+      "limits": "Synthetic four-hour constant-demand window; not annual LOLE, a winter forecast, or realized savings"
+    }
+  },
+  "trace": [
+    {
+      "step": 0,
+      "tool": "inspect_evidence",
+      "status": "completed"
+    },
+    {
+      "step": 1,
+      "tool": "benchmark_methods",
+      "status": "completed"
+    },
+    {
+      "step": 2,
+      "tool": "assess_sensitivity",
+      "status": "completed"
+    },
+    {
+      "step": 3,
+      "tool": "prepare_handoff",
+      "status": "completed"
+    },
+    {
+      "step": 4,
+      "tool": "finish",
+      "status": "completed"
+    }
+  ],
+  "human_review_required": true,
+  "execution_authorized": false,
+  "validation": "registered_tool_execution_and_protocol_only",
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Linux",
+    "machine": "x86_64",
+    "versions": {
+      "numpy": "2.3.5",
+      "scipy": "1.17.0",
+      "pandas": "2.2.3",
+      "pvlib": "0.16.1",
+      "enerqit": "0.1.0"
+    }
+  },
+  "fixture_sha256": "a71a5463c0b8c2fdbbda8ace142e4538210aa3c4c864c98785fd71d68629b2ca",
+  "agent_install": {
+    "url": "https://github.com/julianascencio/energy-agents.git",
+    "vcs_info": {
+      "commit_id": "f465e6afb43a52f41b151c199144b53c3bbf441f",
+      "requested_revision": "f465e6afb43a52f41b151c199144b53c3bbf441f",
+      "vcs": "git"
+    }
+  }
+}

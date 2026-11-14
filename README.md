@@ -111,7 +111,25 @@ python docs/examples/plot_orientation.py
 
 The demo writes observations and a JSON result with provenance. The
 [example gallery](https://julianascencio.github.io/enerqit/gallery/index.html)
-contains fifteen executed studies with downloadable scripts and notebooks.
+contains executable studies with downloadable scripts and notebooks.
+
+## Adaptive experiment evidence
+
+The [Genesis-inspired evidence study](docs/sphinx/source/adaptation_evidence.rst)
+adds local experiment lineage, currentness checks, exact recommendation scope,
+effect-witness grades and explicit outcome classification. It applies the
+user-supplied Genesis AiX v0.3 research proposal to a synthetic PV solver example.
+
+```bash
+python -m enerqit.lineage_study --output results/adaptation-evidence.json
+python docs/examples/plot_adaptation_evidence.py
+```
+
+The study is entirely classical and offline. Increasing annealing reads uses
+more compute; it does not establish quantum advantage or architecture value.
+The evidence layer is advisory, with no hardware-control or production-security
+claim. [Recorded results](benchmarks/results/adaptation-evidence-20261113.json)
+retain improvements, regressions and inconclusive comparisons.
 
 ## Battery portfolio engineer
 
@@ -215,7 +233,7 @@ for the encoding conventions, limitations and future hardware research path.
 | `enerqit/` | Physical models, inverse estimators, QUBO encodings and evidence utilities |
 | `enerqit/solar/` | Public entry point for the initial solar application |
 | `enerqit/solvers/` | Classical baselines, simulated bifurcation and optional quantum exports |
-| `docs/examples/` | Fifteen executable gallery examples |
+| `docs/examples/` | Executable gallery examples |
 | `docs/notebooks/` | Introductory inverse-study notebook |
 | `docs/sphinx/source/` | User guide, gallery configuration, API, research and contributor documentation |
 | `tests/` | Recovery, invalid-data, identifiability, encoding and audit checks |
@@ -311,3 +329,7 @@ The offline default is synthetic; the explicit OPSD path uses 2018 design data a
 2019 held-out national aggregate profiles. No raw third-party data are bundled.
 Costs and calendar degradation are declared assumptions, and all execution is
 classical CPU work. No quantum advantage or plant-level validation is claimed.
+
+## Probabilistic capacity adequacy
+
+[Runnable example](docs/examples/plot_adequacy_risk.py) compares nameplate, mean-capacity and exact probability-weighted risk, with matched-marginal common-outage sensitivity. [Study](docs/sphinx/source/adequacy_risk.rst). Run `python -m enerqit.adequacy_study`. All numeric inputs and fees are synthetic; four-hour metrics are not annual forecasts.

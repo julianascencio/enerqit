@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_on": "2026-11-13",
+  "updated_on": "2026-11-14",
   "implemented": [
     {
       "id": "gb-duration-aware-battery-portfolio-2026-11-10",
@@ -27,48 +27,53 @@
       "id": "renewable-firming-20261113",
       "status": "proposed",
       "fixture": "enerqit/data/firming_20261113.json"
+    },
+    {
+      "id": "adequacy-20261114",
+      "status": "proposed",
+      "fixture": "enerqit/data/adequacy_20261114.json"
     }
   ],
   "latest_selection": {
-    "as_of": "2026-11-13",
+    "as_of": "2026-11-14",
     "candidates": [
       {
-        "title": "Harnessing the winds",
-        "date": "2026-11-13 article / 12 listing",
-        "business": "Firm renewable supply and storage capacity",
-        "technical": "Chronological deficits and efficiency",
-        "evidence": "Primary model report, not measured local data",
-        "tractability": "High bounded synthetic mechanism test",
-        "novelty": "First cyclic storage sizing; existing storage only availability portfolio",
-        "fit": "MILP with LP bound",
+        "title": "ENTSO-E Winter Outlook",
+        "date": "2026-11-13",
+        "business": "Firm capacity and adequacy risk",
+        "technical": "Dependence and scarce deliverable capacity",
+        "evidence": "TSO primary assessment, no unit-level calibration here",
+        "tractability": "High exact small-fleet model",
+        "novelty": "Probability-weighted adequacy absent from main and PR8",
+        "fit": "Exact probabilistic inference and discrete procurement",
         "decision": "selected"
       },
       {
-        "title": "Japan electrotech revolution",
-        "date": "2026-11-11 article",
-        "url": "https://ember-energy.org/latest-insights/japan-and-the-electrotech-revolution/",
-        "business": "Electrification and fuel substitution",
-        "technical": "Grid integration",
-        "evidence": "Macro scenario",
-        "tractability": "Needs local demand constraints",
-        "novelty": "Broad planning overlaps flexibility work",
-        "fit": "Capacity planning",
-        "decision": "defer"
+        "title": "Harnessing the winds",
+        "date": "2026-11-13",
+        "url": "https://ember-energy.org/latest-insights/harnessing-the-winds/",
+        "business": "Renewable firming cost",
+        "technical": "Weather complementarity",
+        "evidence": "Primary modeled weather analysis",
+        "tractability": "High",
+        "novelty": "Storage sizing already merged; historical work pending PR8",
+        "fit": "Chronological optimization",
+        "decision": "avoid duplicate"
       },
       {
-        "title": "Renewables 2026",
-        "date": "2026-11-06",
-        "url": "https://www.iea.org/reports/renewables-2026",
-        "business": "PV/wind/hydro deployment",
-        "technical": "System integration",
-        "evidence": "Primary global outlook",
-        "tractability": "Needs regional profiles",
-        "novelty": "No narrow new calibrated case",
-        "fit": "Planning optimization",
-        "decision": "background"
+        "title": "Faraday battery",
+        "date": "2026-11-12 coverage; 10 announcement; 18 September operation",
+        "url": "https://www.ess-news.com/2026/11/12/utility-tariff-links-600-mwh-utah-battery-to-meta-data-center/",
+        "business": "Data-centre contracted storage",
+        "technical": "Energy duration and shared connection",
+        "evidence": "Secondary coverage, contract obligations unknown",
+        "tractability": "Needs settlement and operating inputs",
+        "novelty": "Existing duration-aware battery portfolio",
+        "fit": "Scheduling",
+        "decision": "defer; no invented tariff revenue"
       }
     ],
-    "selected": "chronological renewable firming"
+    "selected": "probabilistic small-fleet adequacy"
   },
   "sources": [
     {
@@ -244,6 +249,47 @@
         }
       ],
       "selected": "Preventive outage security, distinct from base-case network screening"
+    },
+    {
+      "as_of": "2026-11-13",
+      "candidates": [
+        {
+          "title": "Harnessing the winds",
+          "date": "2026-11-13 article / 12 listing",
+          "business": "Firm renewable supply and storage capacity",
+          "technical": "Chronological deficits and efficiency",
+          "evidence": "Primary model report, not measured local data",
+          "tractability": "High bounded synthetic mechanism test",
+          "novelty": "First cyclic storage sizing; existing storage only availability portfolio",
+          "fit": "MILP with LP bound",
+          "decision": "selected"
+        },
+        {
+          "title": "Japan electrotech revolution",
+          "date": "2026-11-11 article",
+          "url": "https://ember-energy.org/latest-insights/japan-and-the-electrotech-revolution/",
+          "business": "Electrification and fuel substitution",
+          "technical": "Grid integration",
+          "evidence": "Macro scenario",
+          "tractability": "Needs local demand constraints",
+          "novelty": "Broad planning overlaps flexibility work",
+          "fit": "Capacity planning",
+          "decision": "defer"
+        },
+        {
+          "title": "Renewables 2026",
+          "date": "2026-11-06",
+          "url": "https://www.iea.org/reports/renewables-2026",
+          "business": "PV/wind/hydro deployment",
+          "technical": "System integration",
+          "evidence": "Primary global outlook",
+          "tractability": "Needs regional profiles",
+          "novelty": "No narrow new calibrated case",
+          "fit": "Planning optimization",
+          "decision": "background"
+        }
+      ],
+      "selected": "chronological renewable firming"
     }
   ],
   "backlog": [

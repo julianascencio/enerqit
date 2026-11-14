@@ -18,6 +18,7 @@ to independently checked physical optimization and an agent-led runnable example
    :hidden:
 
    /battery_portfolio
+   /adaptation_evidence
 
 The :doc:`batch flexibility study </batch_flexibility>` extends this workflow to
 industrial deadlines, rebound overload and shared-scenario feasibility. A
@@ -76,6 +77,11 @@ Sources and their role
 
 Evidence available today
 ------------------------
+
+The :doc:`adaptive evidence study </adaptation_evidence>` considers the
+user-supplied Genesis AiX v0.3 research proposal through an offline PV solver
+experiment. It keeps currentness, declared approval, effect evidence and
+outcomes separate, with no quantum reliability or production-control claim.
 
 The :doc:`/gallery/index` contains deterministic synthetic demonstrations of
 PV configuration inference, equipment characterization, constrained optimization
@@ -146,3 +152,7 @@ matched budgets, sparse chronological holdouts, shared records, block conditioni
 and measured agent/script comparisons. Historical national profiles are distinguished
 from synthetic gallery fixtures and co-located field validation. The JRC does not
 endorse this implementation or establish its performance.
+
+The :doc:`adequacy study </adequacy_risk>` connects the 13 November ENTSO-E
+Winter Outlook to an independently checked synthetic common-outage model.
+Exact enumeration removes sampling error, not calibration uncertainty.
