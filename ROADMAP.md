@@ -22,6 +22,8 @@ hardware experiments will be a separate, explicitly labeled execution path.
 
 - Cyclic chronological renewable firming with losses, MILP mode exclusivity and LP lower bounds. Multi-year field calibration remains open.
 
+- Exact small-fleet probabilistic window adequacy and finite firm-capacity offers; joint-outage calibration and chronological reliability remain open.
+
 ## Next research milestones — not implemented yet
 
 | Domain | Candidate problem | Required classical baseline |

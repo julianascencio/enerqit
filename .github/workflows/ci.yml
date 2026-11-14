@@ -34,9 +34,10 @@ jobs:
         with:
           python-version: '3.12'
       - run: python -m pip install -e '.[dev]' -r requirements/agent-study.txt
-      - run: python -m pytest tests/test_storage.py tests/test_flexibility.py tests/test_network.py tests/test_contingency.py tests/test_storage_sizing.py
+      - run: python -m pytest tests/test_storage.py tests/test_flexibility.py tests/test_network.py tests/test_contingency.py tests/test_storage_sizing.py tests/test_adequacy.py
       - run: python -m enerqit.storage_study --output results/battery-engineer.json
       - run: python -m enerqit.flexibility_study --output results/flexibility-engineer.json
       - run: python -m enerqit.network_study --output results/network-engineer.json
       - run: python -m enerqit.contingency_study
       - run: python -m enerqit.firming_study
+      - run: python -m enerqit.adequacy_study

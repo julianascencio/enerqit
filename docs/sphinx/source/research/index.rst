@@ -142,3 +142,7 @@ context. All numerical inputs are synthetic, with no field validation claim.
 The :doc:`renewable firming study </renewable_firming>` connects Ember’s
 13 November article to a synthetic chronological mechanism test, with analytic
 cyclic deficit references. No global results are claimed replicated.
+
+The :doc:`adequacy study </adequacy_risk>` connects the 13 November ENTSO-E
+Winter Outlook to an independently checked synthetic common-outage model.
+Exact enumeration removes sampling error, not calibration uncertainty.

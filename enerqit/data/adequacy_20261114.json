@@ -1,0 +1,111 @@
+{
+  "as_of_utc": "2026-11-14",
+  "agent_revision": "f465e6afb43a52f41b151c199144b53c3bbf441f",
+  "enerqit_base": "26d2bdd67ab8682e705f1eb25e47b17f8ddfc09b",
+  "classification": "Synthetic probabilities, capacities, demand, fees and EENS target; primary report is context only. Authored MIT inputs.",
+  "seed": null,
+  "seed_reason": "Exact enumeration, no randomness",
+  "edi_inspection": {
+    "commit": "3d6000b9d981bbbf594eeee296a391c03f78c6e7",
+    "path": "docs/ree-adjustment-bess.md",
+    "blob": "81aa7f0bbe859d2ce76ee2ee298c0f1e226ee37a",
+    "finding": "Cost aggregation and one-cycle BESS screen do not provide calibrated joint outage probabilities; no connector or licensed code reused"
+  },
+  "inputs": {
+    "units": [
+      {
+        "capacity_mw": 60,
+        "outage_probability": 0.1
+      },
+      {
+        "capacity_mw": 60,
+        "outage_probability": 0.1
+      }
+    ],
+    "common_outage_probability": 0.1,
+    "demand_mw": 100,
+    "hours": 4,
+    "target_eens_mwh": 20,
+    "offers": [
+      [
+        0,
+        0
+      ],
+      [
+        20,
+        2000
+      ],
+      [
+        40,
+        4000
+      ],
+      [
+        60,
+        6000
+      ],
+      [
+        80,
+        8000
+      ],
+      [
+        100,
+        10000
+      ]
+    ]
+  },
+  "sources": [
+    {
+      "url": "https://www.entsoe.eu/news/2026/11/13/entso-e-winter-outlook-2026-2027-europe-is-prepared-some-risks-remain-in-specific-areas/",
+      "published": "2026-11-13",
+      "event_period": "Forward assessment winter 2026\u20132027; not an observed outage",
+      "role": "Context only",
+      "retrieved": "2026-11-14",
+      "response_sha256": "a5fd361c6caf786427859353e4eff689a8f31bdca9812b395bedb079e54ead76",
+      "response_bytes": 30614
+    },
+    {
+      "url": "https://www.entsoe.eu/outlooks/adequacy-methodology/",
+      "role": "Probabilistic adequacy definitions; not replication of ENTSO-E models",
+      "retrieved": "2026-11-14",
+      "response_sha256": "a31bbe84d0ee4f79c42e05a59055a4fb6083571e7cc62a1b87665cbf0d3f1c72",
+      "response_bytes": 32503
+    }
+  ],
+  "candidates": [
+    {
+      "title": "ENTSO-E Winter Outlook",
+      "date": "2026-11-13",
+      "business": "Firm capacity and adequacy risk",
+      "technical": "Dependence and scarce deliverable capacity",
+      "evidence": "TSO primary assessment, no unit-level calibration here",
+      "tractability": "High exact small-fleet model",
+      "novelty": "Probability-weighted adequacy absent from main and PR8",
+      "fit": "Exact probabilistic inference and discrete procurement",
+      "decision": "selected"
+    },
+    {
+      "title": "Harnessing the winds",
+      "date": "2026-11-13",
+      "url": "https://ember-energy.org/latest-insights/harnessing-the-winds/",
+      "business": "Renewable firming cost",
+      "technical": "Weather complementarity",
+      "evidence": "Primary modeled weather analysis",
+      "tractability": "High",
+      "novelty": "Storage sizing already merged; historical work pending PR8",
+      "fit": "Chronological optimization",
+      "decision": "avoid duplicate"
+    },
+    {
+      "title": "Faraday battery",
+      "date": "2026-11-12 coverage; 10 announcement; 18 September operation",
+      "url": "https://www.ess-news.com/2026/11/12/utility-tariff-links-600-mwh-utah-battery-to-meta-data-center/",
+      "business": "Data-centre contracted storage",
+      "technical": "Energy duration and shared connection",
+      "evidence": "Secondary coverage, contract obligations unknown",
+      "tractability": "Needs settlement and operating inputs",
+      "novelty": "Existing duration-aware battery portfolio",
+      "fit": "Scheduling",
+      "decision": "defer; no invented tariff revenue"
+    }
+  ]
+}
