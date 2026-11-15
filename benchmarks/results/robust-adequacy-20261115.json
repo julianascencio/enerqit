@@ -1,0 +1,786 @@
+{
+  "success": true,
+  "role": {
+    "id": "career_quantum_ml_engineer",
+    "title": "Quantum Machine Learning Engineer",
+    "mandate": "Design and evaluate classical, quantum-inspired and hybrid energy research workflows.",
+    "inputs": [
+      "load_case",
+      "experiment_budget",
+      "research_context"
+    ],
+    "tool": "prepare_data",
+    "output": "quantum_ml_research_handoff",
+    "acceptance": "Chronological held-out benchmarks, feasible schedules, provenance and limitations.",
+    "technology": "cross_technology",
+    "authority": "local_bounded_research_only"
+  },
+  "mode": "scripted_tool_workflow",
+  "classification": "mixed",
+  "reports": {
+    "inspect_evidence": {
+      "as_of_utc": "2026-11-15",
+      "agent_revision": "c8a61091683856c890a5059d0ff6e3d4bd94a445",
+      "base": "2c7f9c1fcf9432f11c6321e3d726b4febb10c58e",
+      "classification": "Authored synthetic MIT numerical inputs; primary reports are context, not calibration",
+      "seed": null,
+      "seed_reason": "Deterministic LP, no sampling",
+      "states": [
+        {
+          "available_mw": 0,
+          "probability": 0.109
+        },
+        {
+          "available_mw": 60,
+          "probability": 0.162
+        },
+        {
+          "available_mw": 120,
+          "probability": 0.729
+        }
+      ],
+      "demand_mw": 100,
+      "hours": 4,
+      "fee_eur_per_mw_per_window": 100,
+      "target_eens_mwh": 20,
+      "sources": [
+        {
+          "url": "https://www.neso.energy/document/390236/download",
+          "published": "2026-11-14",
+          "event": "24-hour forecast; not observations of future outcomes",
+          "license": "Report states Open Government Licence v1.0; no report reproduced",
+          "hash_unavailable": "HTTPError"
+        },
+        {
+          "url": "https://www.entsoe.eu/news/2026/11/13/entso-e-winter-outlook-2026-2027-europe-is-prepared-some-risks-remain-in-specific-areas/",
+          "published": "2026-11-13",
+          "event": "Winter 2026-27 outlook",
+          "response_sha256": "a5fd361c6caf786427859353e4eff689a8f31bdca9812b395bedb079e54ead76",
+          "retrieved_utc": "2026-11-15"
+        },
+        {
+          "url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.linprog.html",
+          "role": "LP implementation reference",
+          "response_sha256": "9e5dadb5bea60447212f1cdf6ee3ab004dc4df123ec8d24548194dded5be3c23",
+          "retrieved_utc": "2026-11-15"
+        }
+      ],
+      "candidates": [
+        {
+          "case": "NESO 14 November forecasts",
+          "impact": "Reserve decisions",
+          "evidence": "Primary operator",
+          "tractability": "Finite-support uncertainty screen",
+          "novelty": "Probability ambiguity absent from current main",
+          "fit": "Robust optimization",
+          "decision": "Selected as motivation for advancing 1-day-old adequacy uncertainty backlog; no GB calibration"
+        },
+        {
+          "case": "ENTSO-E winter outlook 13 November",
+          "impact": "Regional adequacy, PV/wind/storage/hydro/import constraints",
+          "evidence": "Primary TSO",
+          "tractability": "High for bounded inference",
+          "novelty": "Nominal model merged yesterday",
+          "fit": "Inference",
+          "decision": "Extend documented uncertainty gap, do not duplicate nominal study"
+        },
+        {
+          "case": "Turkey wind record 13 November, reported 15 November",
+          "impact": "Renewable variability and market balancing",
+          "evidence": "Anadolu secondary report",
+          "tractability": "Needs primary chronological data",
+          "novelty": "Historical firming already implemented",
+          "fit": "Forecasting/dispatch",
+          "decision": "Deferred without calibrated series"
+        },
+        {
+          "case": "NESO data-centre flexibility study Sep-Dec 2026",
+          "impact": "Large-load flexibility",
+          "evidence": "Primary ENA project record, older than 7 days",
+          "tractability": "No completed results",
+          "novelty": "Existing batch flexibility overlaps",
+          "fit": "Optimization",
+          "decision": "Backlog pending measured flexibility evidence"
+        }
+      ]
+    },
+    "benchmark_methods": {
+      "0": {
+        "offers": [
+          {
+            "firm_mw": 0,
+            "fee_eur": 0,
+            "nominal_eens_mwh": 69.52000000000001,
+            "worst_eens_mwh": 69.52,
+            "worst_probabilities": [
+              0.109,
+              0.162,
+              0.729
+            ],
+            "total_variation": 0.0,
+            "probability_mass_error": 0.0,
+            "runtime_s": 0.004763707001984585,
+            "solver": "classical HiGHS LP",
+            "feasible": false
+          },
+          {
+            "firm_mw": 20,
+            "fee_eur": 2000,
+            "nominal_eens_mwh": 47.84,
+            "worst_eens_mwh": 47.84,
+            "worst_probabilities": [
+              0.109,
+              0.162,
+              0.729
+            ],
+            "total_variation": 0.0,
+            "probability_mass_error": 0.0,
+            "runtime_s": 0.0028577340053743683,
+            "solver": "classical HiGHS LP",
+            "feasible": false
+          },
+          {
+            "firm_mw": 40,
+            "fee_eur": 4000,
+            "nominal_eens_mwh": 26.16,
+            "worst_eens_mwh": 26.16,
+            "worst_probabilities": [
+              0.109,
+              0.162,
+              0.729
+            ],
+            "total_variation": 0.0,
+            "probability_mass_error": 0.0,
+            "runtime_s": 0.004026438000437338,
+            "solver": "classical HiGHS LP",
+            "feasible": false
+          },
+          {
+            "firm_mw": 60,
+            "fee_eur": 6000,
+            "nominal_eens_mwh": 17.44,
+            "worst_eens_mwh": 17.44,
+            "worst_probabilities": [
+              0.109,
+              0.162,
+              0.729
+            ],
+            "total_variation": 0.0,
+            "probability_mass_error": 0.0,
+            "runtime_s": 0.0020492629992077127,
+            "solver": "classical HiGHS LP",
+            "feasible": true
+          },
+          {
+            "firm_mw": 80,
+            "fee_eur": 8000,
+            "nominal_eens_mwh": 8.72,
+            "worst_eens_mwh": 8.72,
+            "worst_probabilities": [
+              0.109,
+              0.162,
+              0.729
+            ],
+            "total_variation": 0.0,
+            "probability_mass_error": 0.0,
+            "runtime_s": 0.002244550996692851,
+            "solver": "classical HiGHS LP",
+            "feasible": true
+          },
+          {
+            "firm_mw": 100,
+            "fee_eur": 10000,
+            "nominal_eens_mwh": 0.0,
+            "worst_eens_mwh": 0.0,
+            "worst_probabilities": [
+              0.109,
+              0.162,
+              0.729
+            ],
+            "total_variation": 0.0,
+            "probability_mass_error": 0.0,
+            "runtime_s": 0.0018560340031399392,
+            "solver": "classical HiGHS LP",
+            "feasible": true
+          }
+        ],
+        "selected": {
+          "firm_mw": 60,
+          "fee_eur": 6000,
+          "nominal_eens_mwh": 17.44,
+          "worst_eens_mwh": 17.44,
+          "worst_probabilities": [
+            0.109,
+            0.162,
+            0.729
+          ],
+          "total_variation": 0.0,
+          "probability_mass_error": 0.0,
+          "runtime_s": 0.0020492629992077127,
+          "solver": "classical HiGHS LP",
+          "feasible": true
+        },
+        "status": "optimal"
+      },
+      "0.05": {
+        "offers": [
+          {
+            "firm_mw": 0,
+            "fee_eur": 0,
+            "nominal_eens_mwh": 69.52000000000001,
+            "worst_eens_mwh": 89.52,
+            "worst_probabilities": [
+              0.15900000000000003,
+              0.16199999999999992,
+              0.679
+            ],
+            "total_variation": 0.050000000000000024,
+            "probability_mass_error": 0.0,
+            "runtime_s": 0.002048810994892847,
+            "solver": "classical HiGHS LP",
+            "feasible": false
+          },
+          {
+            "firm_mw": 20,
+            "fee_eur": 2000,
+            "nominal_eens_mwh": 47.84,
+            "worst_eens_mwh": 63.84,
+            "worst_probabilities": [
+              0.15900000000000003,
+              0.16199999999999992,
+              0.679
+            ],
+            "total_variation": 0.050000000000000024,
+            "probability_mass_error": 0.0,
+            "runtime_s": 0.0018507330023567192,
+            "solver": "classical HiGHS LP",
+            "feasible": false
+          },
+          {
+            "firm_mw": 40,
+            "fee_eur": 4000,
+            "nominal_eens_mwh": 26.16,
+            "worst_eens_mwh": 38.16000000000001,
+            "worst_probabilities": [
+              0.15900000000000003,
+              0.112,
+              0.729
+            ],
+            "total_variation": 0.05000000000000002,
+            "probability_mass_error": 0.0,
+            "runtime_s": 0.0023449630025424995,
+            "solver": "classical HiGHS LP",
+            "feasible": false
+          },
+          {
+            "firm_mw": 60,
+            "fee_eur": 6000,
+            "nominal_eens_mwh": 17.44,
+            "worst_eens_mwh": 25.440000000000005,
+            "worst_probabilities": [
+              0.15900000000000003,
+              0.112,
+              0.729
+            ],
+            "total_variation": 0.05000000000000002,
+            "probability_mass_error": 0.0,
+            "runtime_s": 0.002423764999548439,
+            "solver": "classical HiGHS LP",
+            "feasible": false
+          },
+          {
+            "firm_mw": 80,
+            "fee_eur": 8000,
+            "nominal_eens_mwh": 8.72,
+            "worst_eens_mwh": 12.720000000000002,
+            "worst_probabilities": [
+              0.15900000000000003,
+              0.112,
+              0.729
+            ],
+            "total_variation": 0.05000000000000002,
+            "probability_mass_error": 0.0,
+            "runtime_s": 0.0019076269963989034,
+            "solver": "classical HiGHS LP",
+            "feasible": true
+          },
+          {
+            "firm_mw": 100,
+            "fee_eur": 10000,
+            "nominal_eens_mwh": 0.0,
+            "worst_eens_mwh": 0.0,
+            "worst_probabilities": [
+              0.10899999999999999,
+              0.21199999999999997,
+              0.679
+            ],
+            "total_variation": 0.049999999999999954,
+            "probability_mass_error": 0.0,
+            "runtime_s": 0.0018548340012785047,
+            "solver": "classical HiGHS LP",
+            "feasible": true
+          }
+        ],
+        "selected": {
+          "firm_mw": 80,
+          "fee_eur": 8000,
+          "nominal_eens_mwh": 8.72,
+          "worst_eens_mwh": 12.720000000000002,
+          "worst_probabilities": [
+            0.15900000000000003,
+            0.112,
+            0.729
+          ],
+          "total_variation": 0.05000000000000002,
+          "probability_mass_error": 0.0,
+          "runtime_s": 0.0019076269963989034,
+          "solver": "classical HiGHS LP",
+          "feasible": true
+        },
+        "status": "optimal"
+      },
+      "0.1": {
+        "offers": [
+          {
+            "firm_mw": 0,
+            "fee_eur": 0,
+            "nominal_eens_mwh": 69.52000000000001,
+            "worst_eens_mwh": 109.52000000000001,
+            "worst_probabilities": [
+              0.20900000000000002,
+              0.16199999999999998,
+              0.629
+            ],
+            "total_variation": 0.1,
+            "probability_mass_error": 0.0,
+            "runtime_s": 0.00203245800366858,
+            "solver": "classical HiGHS LP",
+            "feasible": false
+          },
+          {
+            "firm_mw": 20,
+            "fee_eur": 2000,
+            "nominal_eens_mwh": 47.84,
+            "worst_eens_mwh": 79.84,
+            "worst_probabilities": [
+              0.20900000000000002,
+              0.16199999999999998,
+              0.629
+            ],
+            "total_variation": 0.1,
+            "probability_mass_error": 0.0,
+            "runtime_s": 0.0019643199993879534,
+            "solver": "classical HiGHS LP",
+            "feasible": false
+          },
+          {
+            "firm_mw": 40,
+            "fee_eur": 4000,
+            "nominal_eens_mwh": 26.16,
+            "worst_eens_mwh": 50.16000000000001,
+            "worst_probabilities": [
+              0.20900000000000005,
+              0.061999999999999986,
+              0.729
+            ],
+            "total_variation": 0.10000000000000003,
+            "probability_mass_error": 0.0,
+            "runtime_s": 0.00225873599993065,
+            "solver": "classical HiGHS LP",
+            "feasible": false
+          },
+          {
+            "firm_mw": 60,
+            "fee_eur": 6000,
+            "nominal_eens_mwh": 17.44,
+            "worst_eens_mwh": 33.440000000000005,
+            "worst_probabilities": [
+              0.20900000000000005,
+              0.061999999999999986,
+              0.729
+            ],
+            "total_variation": 0.10000000000000003,
+            "probability_mass_error": 0.0,
+            "runtime_s": 0.0020269659944460727,
+            "solver": "classical HiGHS LP",
+            "feasible": false
+          },
+          {
+            "firm_mw": 80,
+            "fee_eur": 8000,
+            "nominal_eens_mwh": 8.72,
+            "worst_eens_mwh": 16.720000000000002,
+            "worst_probabilities": [
+              0.20900000000000005,
+              0.061999999999999986,
+              0.729
+            ],
+            "total_variation": 0.10000000000000003,
+            "probability_mass_error": 0.0,
+            "runtime_s": 0.0018913499952759594,
+            "solver": "classical HiGHS LP",
+            "feasible": true
+          },
+          {
+            "firm_mw": 100,
+            "fee_eur": 10000,
+            "nominal_eens_mwh": 0.0,
+            "worst_eens_mwh": 0.0,
+            "worst_probabilities": [
+              0.10899999999999999,
+              0.262,
+              0.629
+            ],
+            "total_variation": 0.1,
+            "probability_mass_error": 0.0,
+            "runtime_s": 0.0016826219944050536,
+            "solver": "classical HiGHS LP",
+            "feasible": true
+          }
+        ],
+        "selected": {
+          "firm_mw": 80,
+          "fee_eur": 8000,
+          "nominal_eens_mwh": 8.72,
+          "worst_eens_mwh": 16.720000000000002,
+          "worst_probabilities": [
+            0.20900000000000005,
+            0.061999999999999986,
+            0.729
+          ],
+          "total_variation": 0.10000000000000003,
+          "probability_mass_error": 0.0,
+          "runtime_s": 0.0018913499952759594,
+          "solver": "classical HiGHS LP",
+          "feasible": true
+        },
+        "status": "optimal"
+      }
+    },
+    "assess_sensitivity": {
+      "radius": [
+        {
+          "radius": 0,
+          "nominal_eens_mwh": 17.44,
+          "worst_eens_mwh": 17.44,
+          "worst_probabilities": [
+            0.109,
+            0.162,
+            0.729
+          ],
+          "total_variation": 0.0,
+          "probability_mass_error": 0.0,
+          "runtime_s": 0.0016982180022750981,
+          "solver": "classical HiGHS LP"
+        },
+        {
+          "radius": 0.025,
+          "nominal_eens_mwh": 17.44,
+          "worst_eens_mwh": 21.44,
+          "worst_probabilities": [
+            0.134,
+            0.137,
+            0.729
+          ],
+          "total_variation": 0.025,
+          "probability_mass_error": 0.0,
+          "runtime_s": 0.0016637709995848127,
+          "solver": "classical HiGHS LP"
+        },
+        {
+          "radius": 0.05,
+          "nominal_eens_mwh": 17.44,
+          "worst_eens_mwh": 25.440000000000005,
+          "worst_probabilities": [
+            0.15900000000000003,
+            0.112,
+            0.729
+          ],
+          "total_variation": 0.05000000000000002,
+          "probability_mass_error": 0.0,
+          "runtime_s": 0.001660755995544605,
+          "solver": "classical HiGHS LP"
+        },
+        {
+          "radius": 0.1,
+          "nominal_eens_mwh": 17.44,
+          "worst_eens_mwh": 33.440000000000005,
+          "worst_probabilities": [
+            0.20900000000000005,
+            0.061999999999999986,
+            0.729
+          ],
+          "total_variation": 0.10000000000000003,
+          "probability_mass_error": 0.0,
+          "runtime_s": 0.0017957360032596625,
+          "solver": "classical HiGHS LP"
+        },
+        {
+          "radius": 0.2,
+          "nominal_eens_mwh": 17.44,
+          "worst_eens_mwh": 49.44,
+          "worst_probabilities": [
+            0.309,
+            0.0,
+            0.6910000000000001
+          ],
+          "total_variation": 0.19999999999999996,
+          "probability_mass_error": 0.0,
+          "runtime_s": 0.00175615099578863,
+          "solver": "classical HiGHS LP"
+        },
+        {
+          "radius": 1,
+          "nominal_eens_mwh": 17.44,
+          "worst_eens_mwh": 160.0,
+          "worst_probabilities": [
+            1.0,
+            0.0,
+            -0.0
+          ],
+          "total_variation": 0.891,
+          "probability_mass_error": 0.0,
+          "runtime_s": 0.0021662830040440895,
+          "solver": "classical HiGHS LP"
+        }
+      ],
+      "scaling": [
+        {
+          "states": 2,
+          "nominal_eens_mwh": 50.0,
+          "worst_eens_mwh": 55.00000000000001,
+          "worst_probabilities": [
+            0.55,
+            0.44999999999999996
+          ],
+          "total_variation": 0.050000000000000044,
+          "probability_mass_error": 0.0,
+          "runtime_s": 0.0025254690044675954,
+          "solver": "classical HiGHS LP"
+        },
+        {
+          "states": 16,
+          "nominal_eens_mwh": 50.0,
+          "worst_eens_mwh": 55.0,
+          "worst_probabilities": [
+            0.11249999999999999,
+            0.062499999999999944,
+            0.0625,
+            0.0625,
+            0.0625,
+            0.0625,
+            0.06250000000000011,
+            0.0625,
+            0.0625,
+            0.0625,
+            0.0625,
+            0.0625,
+            0.0625,
+            0.0625,
+            0.0625,
+            0.012499999999999983
+          ],
+          "total_variation": 0.050000000000000086,
+          "probability_mass_error": 0.0,
+          "runtime_s": 0.002851078999810852,
+          "solver": "classical HiGHS LP"
+        },
+        {
+          "states": 128,
+          "nominal_eens_mwh": 50.0,
+          "worst_eens_mwh": 54.8929625984252,
+          "worst_probabilities": [
+            0.05781249999999999,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.007812500000000056,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.0078125,
+            0.004687499999999983,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "total_variation": 0.05000000000000003,
+          "probability_mass_error": 0.0,
+          "runtime_s": 0.009439377994567621,
+          "solver": "classical HiGHS LP"
+        }
+      ]
+    },
+    "prepare_handoff": {
+      "next_action": "Calibrate support and ambiguity radius on licensed joint-outage evidence before procurement",
+      "quantum_used": false,
+      "limits": "Synthetic single window; radius is not statistical confidence"
+    }
+  },
+  "trace": [
+    {
+      "step": 0,
+      "tool": "inspect_evidence",
+      "status": "completed"
+    },
+    {
+      "step": 1,
+      "tool": "benchmark_methods",
+      "status": "completed"
+    },
+    {
+      "step": 2,
+      "tool": "assess_sensitivity",
+      "status": "completed"
+    },
+    {
+      "step": 3,
+      "tool": "prepare_handoff",
+      "status": "completed"
+    },
+    {
+      "step": 4,
+      "tool": "finish",
+      "status": "completed"
+    }
+  ],
+  "human_review_required": true,
+  "execution_authorized": false,
+  "validation": "registered_tool_execution_and_protocol_only",
+  "fixture_sha256": "5f41b58900931d8aaf3fd0d2f4df27eb279033636363676654f679fef6af8bcf",
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Linux",
+    "machine": "x86_64",
+    "versions": {
+      "numpy": "2.3.5",
+      "scipy": "1.17.0",
+      "pandas": "2.2.3",
+      "pvlib": "0.16.1",
+      "enerqit": "0.1.0"
+    }
+  },
+  "agent_install": {
+    "url": "https://github.com/julianascencio/energy-agents.git",
+    "vcs_info": {
+      "commit_id": "c8a61091683856c890a5059d0ff6e3d4bd94a445",
+      "requested_revision": "c8a61091683856c890a5059d0ff6e3d4bd94a445",
+      "vcs": "git"
+    }
+  }
+}

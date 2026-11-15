@@ -61,3 +61,5 @@ Still open: co-located multi-year site evidence; cycle/thermal aging calibration
 optimized large native MIQP/CP-SAT baselines; statistically powered matched-target
 comparisons; live-agent human-effort studies; independent human scientific review;
 physical QPU execution. See the validation-lab guide for reproducible commands.
+
+Implemented finite-support probability-robust reserve screening; statistical radius calibration and missing-state validation remain open.

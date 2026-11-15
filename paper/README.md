@@ -117,3 +117,5 @@ benchmark limits and pending human review. No quantum advantage is claimed.
 ## Window adequacy (14 November 2026)
 
 [Study](../docs/sphinx/source/adequacy_risk.rst) uses probability-weighted unserved energy and shortage duration, motivated by [ENTSO-E adequacy methodology](https://www.entsoe.eu/outlooks/adequacy-methodology/). Synthetic common-outage probabilities are explicit; two-unit hand calculations and independent binomial references validate enumeration. No regional or annual forecast claimed.
+
+Probability ambiguity (2026-11-15): sparse total-variation LP and finite reserve-offer search. See the probability-ambiguity guide for equations, operator sources, synthetic data and independent reference tests.
