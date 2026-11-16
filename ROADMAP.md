@@ -61,3 +61,5 @@ Still open: co-located multi-year site evidence; cycle/thermal aging calibration
 optimized large native MIQP/CP-SAT baselines; statistically powered matched-target
 comparisons; live-agent human-effort studies; independent human scientific review;
 physical QPU execution. See the validation-lab guide for reproducible commands.
+
+Implemented sequential no-recharge battery reserve screening. Initial SOC and outage-path calibration remain open.

@@ -44,3 +44,6 @@ jobs:
       - run: python -m enerqit.validation_study --agent --skip-scaling
 
       - run: python -m enerqit.adequacy_study
+
+      - run: python -m pytest tests/test_reserve_replay.py
+      - run: python -m enerqit.reserve_study

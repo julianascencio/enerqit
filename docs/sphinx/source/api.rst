@@ -185,3 +185,9 @@ Probabilistic adequacy
 
 .. automodule:: enerqit.adequacy_study
    :members:
+
+Reserve replay
+--------------
+
+.. automodule:: enerqit.reserve_replay
+   :members:

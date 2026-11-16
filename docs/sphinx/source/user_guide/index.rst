@@ -48,3 +48,8 @@ The :doc:`/gallery/index` contains executable examples with plots and
 downloadable source. For function signatures, use the :doc:`/api`; for the
 papers and technical sources behind the implementation, see the
 :doc:`/research/index`.
+
+.. toctree::
+   :maxdepth: 1
+
+   /reserve_depletion
