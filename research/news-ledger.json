@@ -316,5 +316,47 @@
       "raw_third_party_data_redistributed": false,
       "quantum_advantage_claimed": false
     }
-  ]
+  ],
+  "shared_export_20261117": {
+    "candidates": [
+      {
+        "case": "Forbach co-located battery/hydro",
+        "impact": "Avoid infeasible exports and overvalued schedules",
+        "evidence": "Primary multilingual pages conflict on MW; secondary report dated 17 November",
+        "tractability": "High bounded LP; actual head/losses unknown",
+        "novelty": "Multi-interval shared export not covered by network snapshot or pending reserve PRs",
+        "fit": "Optimization",
+        "decision": "selected generic mechanism, no plant calibration"
+      },
+      {
+        "case": "EC winter preparedness",
+        "impact": "Regional reliability, wind/PV/storage/hydro",
+        "evidence": "Primary 16 November announcement of 12 November meeting",
+        "tractability": "High bounded adequacy",
+        "novelty": "Already main and PR10/11",
+        "fit": "Inference",
+        "decision": "avoid duplication"
+      },
+      {
+        "case": "Muswellbrook solar-battery module supply",
+        "impact": "PV hybrid delivery",
+        "evidence": "16 November secondary supplier announcement",
+        "tractability": "Needs resource and contract inputs",
+        "novelty": "Existing firming models",
+        "fit": "Sizing",
+        "decision": "defer"
+      },
+      {
+        "case": "Siemens Energy data-centre equipment demand",
+        "impact": "Grid/turbine capacity bottlenecks",
+        "evidence": "11 November Reuters; six days old",
+        "tractability": "No lead-time distribution",
+        "novelty": "New domain but insufficient calibration",
+        "fit": "Procurement optimization",
+        "decision": "backlog, no invented lead times"
+      }
+    ],
+    "status": "proposed",
+    "fixture": "enerqit/data/shared_export_20261117.json"
+  }
 }

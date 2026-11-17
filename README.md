@@ -333,3 +333,5 @@ classical CPU work. No quantum advantage or plant-level validation is claimed.
 ## Probabilistic capacity adequacy
 
 [Runnable example](docs/examples/plot_adequacy_risk.py) compares nameplate, mean-capacity and exact probability-weighted risk, with matched-marginal common-outage sensitivity. [Study](docs/sphinx/source/adequacy_risk.rst). Run `python -m enerqit.adequacy_study`. All numeric inputs and fees are synthetic; four-hour metrics are not annual forecasts.
+
+[Shared export coordination](docs/examples/plot_shared_export.py): runnable agent-led co-located resource study.

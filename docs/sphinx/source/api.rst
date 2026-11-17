@@ -185,3 +185,9 @@ Probabilistic adequacy
 
 .. automodule:: enerqit.adequacy_study
    :members:
+
+Shared export
+-------------
+
+.. automodule:: enerqit.shared_export
+   :members:
