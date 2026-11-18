@@ -157,4 +157,16 @@ The :doc:`adequacy study </adequacy_risk>` connects the 13 November ENTSO-E
 Winter Outlook to an independently checked synthetic common-outage model.
 Exact enumeration removes sampling error, not calibration uncertainty.
 
+Probability uncertainty
+-----------------------
+
+See :doc:`/probability_ambiguity` for the finite-support total-variation LP,
+primary operator context and synthetic validation limits.
+
+Energy-limited reserve: :doc:`/reserve_depletion` documents operator context,
+restricted optimality and independent LP reference tests.
+
+:doc:`/shared_export` documents co-location evidence, conflicting source ratings
+and independent enumeration of the finite-energy export LP.
+
 :doc:`/curtailment_recovery` separates captured energy, losses, remaining SOC and recovered export, with independent LP tests.

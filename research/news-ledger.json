@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_on": "2026-11-14",
+  "updated_on": "2026-11-15",
   "implemented": [
     {
       "id": "gb-duration-aware-battery-portfolio-2026-11-10",
@@ -216,7 +216,7 @@
       "as_of": "2026-11-11",
       "candidates": [
         {
-          "case": "T\u00fcrkiye interconnection report",
+          "case": "Türkiye interconnection report",
           "date": "2026-11-10",
           "impact": "Secure transfer and regional electricity value",
           "evidence": "Primary analysis, historical trade totals not topology",
@@ -317,6 +317,133 @@
       "quantum_advantage_claimed": false
     }
   ],
+  "probability_ambiguity_20261115": {
+    "candidates": [
+      {
+        "case": "NESO 14 November forecasts",
+        "impact": "Reserve decisions",
+        "evidence": "Primary operator",
+        "tractability": "Finite-support uncertainty screen",
+        "novelty": "Probability ambiguity absent from current main",
+        "fit": "Robust optimization",
+        "decision": "Selected as motivation for advancing 1-day-old adequacy uncertainty backlog; no GB calibration"
+      },
+      {
+        "case": "ENTSO-E winter outlook 13 November",
+        "impact": "Regional adequacy, PV/wind/storage/hydro/import constraints",
+        "evidence": "Primary TSO",
+        "tractability": "High for bounded inference",
+        "novelty": "Nominal model merged yesterday",
+        "fit": "Inference",
+        "decision": "Extend documented uncertainty gap, do not duplicate nominal study"
+      },
+      {
+        "case": "Turkey wind record 13 November, reported 15 November",
+        "impact": "Renewable variability and market balancing",
+        "evidence": "Anadolu secondary report",
+        "tractability": "Needs primary chronological data",
+        "novelty": "Historical firming already implemented",
+        "fit": "Forecasting/dispatch",
+        "decision": "Deferred without calibrated series"
+      },
+      {
+        "case": "NESO data-centre flexibility study Sep-Dec 2026",
+        "impact": "Large-load flexibility",
+        "evidence": "Primary ENA project record, older than 7 days",
+        "tractability": "No completed results",
+        "novelty": "Existing batch flexibility overlaps",
+        "fit": "Optimization",
+        "decision": "Backlog pending measured flexibility evidence"
+      }
+    ],
+    "fixture": "enerqit/data/robust_adequacy_20261115.json",
+    "status": "proposed",
+    "backlog": "Calibrate support and TV radius from licensed joint outages; no confidence claims"
+  },
+  "reserve_20261116": {
+    "candidates": [
+      {
+        "case": "ENTSO-E winter storage growth and adequacy",
+        "impact": "Reserve delivery",
+        "evidence": "Primary TSO, no asset calibration",
+        "tractability": "High bounded chronological replay",
+        "novelty": "Energy-limited adequacy gap documented 14 November; distinct from open probability PR10",
+        "fit": "Optimization and physical inference",
+        "decision": "Selected backlog advancement, two days old"
+      },
+      {
+        "case": "REE 15 November renewable balance",
+        "impact": "Wind/PV/hydro balancing and exports",
+        "evidence": "Primary provisional aggregates",
+        "tractability": "Needs interval-level data",
+        "novelty": "Existing renewable firming models",
+        "fit": "Dispatch",
+        "decision": "Defer; daily totals cannot calibrate shortage paths"
+      },
+      {
+        "case": "NESO 14 November wind forecasts",
+        "impact": "Grid reserve and uncertainty",
+        "evidence": "Primary forecast",
+        "tractability": "No joint outage calibration",
+        "novelty": "Probability ambiguity already pending PR10",
+        "fit": "Forecasting",
+        "decision": "Avoid duplication"
+      },
+      {
+        "case": "Data-centre flexibility",
+        "impact": "Industrial load flexibility",
+        "evidence": "Prior NESO feasibility project, no new verified result in search",
+        "tractability": "Needs workload obligations",
+        "novelty": "Existing batch-flexibility module",
+        "fit": "Scheduling",
+        "decision": "Keep backlog; no invented latest news"
+      }
+    ],
+    "fixture": "enerqit/data/reserve_20261116.json",
+    "status": "proposed"
+  },
+  "shared_export_20261117": {
+    "candidates": [
+      {
+        "case": "Forbach co-located battery/hydro",
+        "impact": "Avoid infeasible exports and overvalued schedules",
+        "evidence": "Primary multilingual pages conflict on MW; secondary report dated 17 November",
+        "tractability": "High bounded LP; actual head/losses unknown",
+        "novelty": "Multi-interval shared export not covered by network snapshot or pending reserve PRs",
+        "fit": "Optimization",
+        "decision": "selected generic mechanism, no plant calibration"
+      },
+      {
+        "case": "EC winter preparedness",
+        "impact": "Regional reliability, wind/PV/storage/hydro",
+        "evidence": "Primary 16 November announcement of 12 November meeting",
+        "tractability": "High bounded adequacy",
+        "novelty": "Already main and PR10/11",
+        "fit": "Inference",
+        "decision": "avoid duplication"
+      },
+      {
+        "case": "Muswellbrook solar-battery module supply",
+        "impact": "PV hybrid delivery",
+        "evidence": "16 November secondary supplier announcement",
+        "tractability": "Needs resource and contract inputs",
+        "novelty": "Existing firming models",
+        "fit": "Sizing",
+        "decision": "defer"
+      },
+      {
+        "case": "Siemens Energy data-centre equipment demand",
+        "impact": "Grid/turbine capacity bottlenecks",
+        "evidence": "11 November Reuters; six days old",
+        "tractability": "No lead-time distribution",
+        "novelty": "New domain but insufficient calibration",
+        "fit": "Procurement optimization",
+        "decision": "backlog, no invented lead times"
+      }
+    ],
+    "status": "proposed",
+    "fixture": "enerqit/data/shared_export_20261117.json"
+  },
   "curtailment_20261118": {
     "candidates": [
       {
