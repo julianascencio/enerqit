@@ -316,5 +316,70 @@
       "raw_third_party_data_redistributed": false,
       "quantum_advantage_claimed": false
     }
-  ]
+  ],
+  "curtailment_20261118": {
+    "candidates": [
+      {
+        "case": "Spanish curtailment",
+        "impact": "Recover exportable energy without double-counting losses",
+        "evidence": "Original Wood Mackenzie release, 16 November",
+        "tractability": "High bounded export-ceiling accounting; site calibration missing",
+        "novelty": "No surplus-only capture/re-export ledger in main; pending PR12 is discharge-only",
+        "fit": "Causal physical inference, independent LP benchmark",
+        "decision": "selected",
+        "url": "https://www.woodmac.com/press-releases/spains-renewable-sector-has-lost-140-million-to-grid-constraints-as-curtailment-remains-elevated-since-april-2025-blackout/",
+        "publication_date": "2026-11-16"
+      },
+      {
+        "case": "US storage exceeds 200 GWh",
+        "impact": "Storage deployment",
+        "evidence": "Primary SEIA/Benchmark report landing page; no licensed interval observations",
+        "tractability": "No operational series",
+        "novelty": "Existing duration/adequacy work",
+        "fit": "Sizing",
+        "decision": "defer",
+        "url": "https://seia.org/research-resources/energy-storage-market-outlook-q4-2026/",
+        "publication_date": "2026-11-17",
+        "event_period": "Q1-Q3 2026"
+      },
+      {
+        "case": "Greece merchant batteries",
+        "impact": "Connection allocation",
+        "evidence": "Primary Greek ministry announcement, within extended seven-day window",
+        "tractability": "Missing network constraints",
+        "novelty": "Existing network and shared-export work",
+        "fit": "Optimization",
+        "decision": "defer",
+        "url": "https://ypen.gov.gr/epitachynetai-i-anaptyxi-tis-apothikefsis-energeias-anoigei-o-dromos-gia-erga-ischyos-4-700-mw/",
+        "publication_date": "2026-11-13",
+        "event_period": "Connection application assessment; offers to follow"
+      },
+      {
+        "case": "Vertiv 800 VDC",
+        "impact": "Data-centre conversion losses",
+        "evidence": "Primary manufacturer announcement; peak ratings are not part-load curves",
+        "tractability": "Needs device curves",
+        "novelty": "Outside present models; no invented efficiencies",
+        "fit": "Physical inference",
+        "decision": "backlog",
+        "url": "https://www.vertiv.com/en-us/about/news-and-events/corporate-news/2026/vertiv-advances-800-vdc-power-architectures-to-support-growing-ai-data-center-demands/",
+        "publication_date": "2026-11-17",
+        "event_period": "SC26 November 17-22; pilots/validation underway"
+      },
+      {
+        "case": "Norwegian hydro, industry and wind balance",
+        "url": "https://www.renewableenergymagazine.com/panorama/norwaya-s-a-green-batterya--needs-20261117",
+        "publication_date": "2026-11-17",
+        "event_period": "Structural outlook, not an observed outage",
+        "impact": "Industrial and data-centre demand can erode hydro surplus",
+        "evidence": "Secondary coverage of GlobalData outlook",
+        "tractability": "Requires basin inflows, dispatch and demand scenarios",
+        "novelty": "Existing firming and adequacy APIs; no calibrated hydro model",
+        "fit": "Forecasting and flexibility optimization",
+        "decision": "backlog pending primary time-series evidence"
+      }
+    ],
+    "fixture": "enerqit/data/curtailment_20261118.json",
+    "status": "proposed"
+  }
 }

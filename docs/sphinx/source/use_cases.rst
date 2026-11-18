@@ -125,3 +125,5 @@ Tensor-network probability models or quantum-inspired sampling may become
 useful for structured posterior approximations, but are not implemented and
 should be compared with sparse graphical models, variational inference and MCMC.
 A dense QUBO is not automatically the right representation for every row above.
+
+:doc:`/curtailment_recovery` screens surplus-only battery recovery under a net-export ceiling.

@@ -156,3 +156,5 @@ endorse this implementation or establish its performance.
 The :doc:`adequacy study </adequacy_risk>` connects the 13 November ENTSO-E
 Winter Outlook to an independently checked synthetic common-outage model.
 Exact enumeration removes sampling error, not calibration uncertainty.
+
+:doc:`/curtailment_recovery` separates captured energy, losses, remaining SOC and recovered export, with independent LP tests.
