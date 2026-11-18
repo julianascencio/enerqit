@@ -1,0 +1,119 @@
+{
+  "as_of_utc": "2026-11-16",
+  "agent_commit": "c8a61091683856c890a5059d0ff6e3d4bd94a445",
+  "enerqit_base": "2c7f9c1fcf9432f11c6321e3d726b4febb10c58e",
+  "classification": "Synthetic authored MIT inputs; news is context only",
+  "seed": null,
+  "seed_reason": "Deterministic replay; independent randomized tests use seeds 0..4",
+  "offers": [
+    {
+      "power_mw": 50,
+      "start_soc": 1,
+      "minimum_soc": 0,
+      "state_of_health": 1,
+      "discharge_efficiency": 1,
+      "reserved_dc_mwh": 0,
+      "export_limit_mw": 50,
+      "id": "short",
+      "energy_mwh": 100,
+      "reservation_cost_gbp": 1000
+    },
+    {
+      "power_mw": 50,
+      "start_soc": 1,
+      "minimum_soc": 0,
+      "state_of_health": 1,
+      "discharge_efficiency": 1,
+      "reserved_dc_mwh": 0,
+      "export_limit_mw": 50,
+      "id": "long",
+      "energy_mwh": 200,
+      "reservation_cost_gbp": 1800
+    }
+  ],
+  "deficits_mw": [
+    [
+      50,
+      50,
+      0,
+      0
+    ],
+    [
+      50,
+      50,
+      50,
+      50
+    ]
+  ],
+  "probabilities": [
+    0.5,
+    0.5
+  ],
+  "hours": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "sources": [
+    {
+      "url": "https://www.entsoe.eu/news/2026/11/13/entso-e-winter-outlook-2026-2027-europe-is-prepared-some-risks-remain-in-specific-areas/",
+      "publication": "2026-11-13",
+      "event": "Forward winter 2026-27 assessment; not an outage event",
+      "response_sha256": "a5fd361c6caf786427859353e4eff689a8f31bdca9812b395bedb079e54ead76",
+      "retrieved_utc": "2026-11-16"
+    },
+    {
+      "url": "https://www.neso.energy/document/390236/download",
+      "publication": "2026-11-14",
+      "event": "24h forecast, not calibration",
+      "response_hash_unavailable": "HTTPError",
+      "retrieved_utc": "2026-11-16"
+    },
+    {
+      "url": "https://www.ree.es/en/datos/balance",
+      "event": "15 November provisional balance",
+      "retrieved": "2026-11-16",
+      "response_sha256": "b48041a1580cbad5e651fa6ea59f0cb94b549187dbc900f87ea27f272ab05772",
+      "retrieved_utc": "2026-11-16"
+    }
+  ],
+  "candidates": [
+    {
+      "case": "ENTSO-E winter storage growth and adequacy",
+      "impact": "Reserve delivery",
+      "evidence": "Primary TSO, no asset calibration",
+      "tractability": "High bounded chronological replay",
+      "novelty": "Energy-limited adequacy gap documented 14 November; distinct from open probability PR10",
+      "fit": "Optimization and physical inference",
+      "decision": "Selected backlog advancement, two days old"
+    },
+    {
+      "case": "REE 15 November renewable balance",
+      "impact": "Wind/PV/hydro balancing and exports",
+      "evidence": "Primary provisional aggregates",
+      "tractability": "Needs interval-level data",
+      "novelty": "Existing renewable firming models",
+      "fit": "Dispatch",
+      "decision": "Defer; daily totals cannot calibrate shortage paths"
+    },
+    {
+      "case": "NESO 14 November wind forecasts",
+      "impact": "Grid reserve and uncertainty",
+      "evidence": "Primary forecast",
+      "tractability": "No joint outage calibration",
+      "novelty": "Probability ambiguity already pending PR10",
+      "fit": "Forecasting",
+      "decision": "Avoid duplication"
+    },
+    {
+      "case": "Data-centre flexibility",
+      "impact": "Industrial load flexibility",
+      "evidence": "Prior NESO feasibility project, no new verified result in search",
+      "tractability": "Needs workload obligations",
+      "novelty": "Existing batch-flexibility module",
+      "fit": "Scheduling",
+      "decision": "Keep backlog; no invented latest news"
+    }
+  ]
+}

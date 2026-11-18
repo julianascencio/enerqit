@@ -119,3 +119,5 @@ benchmark limits and pending human review. No quantum advantage is claimed.
 [Study](../docs/sphinx/source/adequacy_risk.rst) uses probability-weighted unserved energy and shortage duration, motivated by [ENTSO-E adequacy methodology](https://www.entsoe.eu/outlooks/adequacy-methodology/). Synthetic common-outage probabilities are explicit; two-unit hand calculations and independent binomial references validate enumeration. No regional or annual forecast claimed.
 
 Probability ambiguity (2026-11-15): sparse total-variation LP and finite reserve-offer search. See the probability-ambiguity guide for equations, operator sources, synthetic data and independent reference tests.
+
+Energy-limited reserve (2026-11-16): causal no-recharge replay, analytic energy bound and independent LP references; see reserve_depletion guide.

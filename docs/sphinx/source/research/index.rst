@@ -162,3 +162,6 @@ Probability uncertainty
 
 See :doc:`/probability_ambiguity` for the finite-support total-variation LP,
 primary operator context and synthetic validation limits.
+
+Energy-limited reserve: :doc:`/reserve_depletion` documents operator context,
+restricted optimality and independent LP reference tests.

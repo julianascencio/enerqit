@@ -131,3 +131,6 @@ Probability-robust reserve procurement
 
 :doc:`/probability_ambiguity` extends nominal adequacy with uncertainty in
 probability estimates and fixed-window procurement costs.
+
+Battery reserve depletion: :doc:`/reserve_depletion` tracks sequential energy
+inventory before selecting a fixed-fee availability offer.

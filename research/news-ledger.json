@@ -216,7 +216,7 @@
       "as_of": "2026-11-11",
       "candidates": [
         {
-          "case": "T\u00fcrkiye interconnection report",
+          "case": "Türkiye interconnection report",
           "date": "2026-11-10",
           "impact": "Secure transfer and regional electricity value",
           "evidence": "Primary analysis, historical trade totals not topology",
@@ -359,5 +359,47 @@
     "fixture": "enerqit/data/robust_adequacy_20261115.json",
     "status": "proposed",
     "backlog": "Calibrate support and TV radius from licensed joint outages; no confidence claims"
+  },
+  "reserve_20261116": {
+    "candidates": [
+      {
+        "case": "ENTSO-E winter storage growth and adequacy",
+        "impact": "Reserve delivery",
+        "evidence": "Primary TSO, no asset calibration",
+        "tractability": "High bounded chronological replay",
+        "novelty": "Energy-limited adequacy gap documented 14 November; distinct from open probability PR10",
+        "fit": "Optimization and physical inference",
+        "decision": "Selected backlog advancement, two days old"
+      },
+      {
+        "case": "REE 15 November renewable balance",
+        "impact": "Wind/PV/hydro balancing and exports",
+        "evidence": "Primary provisional aggregates",
+        "tractability": "Needs interval-level data",
+        "novelty": "Existing renewable firming models",
+        "fit": "Dispatch",
+        "decision": "Defer; daily totals cannot calibrate shortage paths"
+      },
+      {
+        "case": "NESO 14 November wind forecasts",
+        "impact": "Grid reserve and uncertainty",
+        "evidence": "Primary forecast",
+        "tractability": "No joint outage calibration",
+        "novelty": "Probability ambiguity already pending PR10",
+        "fit": "Forecasting",
+        "decision": "Avoid duplication"
+      },
+      {
+        "case": "Data-centre flexibility",
+        "impact": "Industrial load flexibility",
+        "evidence": "Prior NESO feasibility project, no new verified result in search",
+        "tractability": "Needs workload obligations",
+        "novelty": "Existing batch-flexibility module",
+        "fit": "Scheduling",
+        "decision": "Keep backlog; no invented latest news"
+      }
+    ],
+    "fixture": "enerqit/data/reserve_20261116.json",
+    "status": "proposed"
   }
 }

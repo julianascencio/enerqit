@@ -191,3 +191,9 @@ Probability ambiguity
 
 .. automodule:: enerqit.robust_adequacy
    :members:
+
+Reserve replay
+--------------
+
+.. automodule:: enerqit.reserve_replay
+   :members:
