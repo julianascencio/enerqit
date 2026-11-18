@@ -1,0 +1,1489 @@
+{
+  "success": true,
+  "role": {
+    "id": "career_quantum_ml_engineer",
+    "title": "Quantum Machine Learning Engineer",
+    "mandate": "Design and evaluate classical, quantum-inspired and hybrid energy research workflows.",
+    "inputs": [
+      "load_case",
+      "experiment_budget",
+      "research_context"
+    ],
+    "tool": "prepare_data",
+    "output": "quantum_ml_research_handoff",
+    "acceptance": "Chronological held-out benchmarks, feasible schedules, provenance and limitations.",
+    "technology": "cross_technology",
+    "authority": "local_bounded_research_only"
+  },
+  "mode": "scripted_tool_workflow",
+  "classification": "mixed",
+  "reports": {
+    "inspect_evidence": {
+      "as_of_utc": "2026-11-17",
+      "agent_commit": "c8a61091683856c890a5059d0ff6e3d4bd94a445",
+      "enerqit_base": "2c7f9c1fcf9432f11c6321e3d726b4febb10c58e",
+      "classification": "Authored synthetic MIT inputs; not calibrated to Forbach. No project connection rating inferred.",
+      "inputs": {
+        "power_mw": [
+          50,
+          50
+        ],
+        "energy_ac_mwh": [
+          50,
+          100
+        ],
+        "prices_eur_mwh": [
+          10,
+          100,
+          90,
+          20,
+          60,
+          30
+        ],
+        "hours": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "connection_mw": [
+          50,
+          50,
+          50,
+          50,
+          50,
+          50
+        ]
+      },
+      "seed": null,
+      "seed_reason": "Deterministic LP; no sampling",
+      "sources": [
+        {
+          "url": "https://www.enbw.com/press/green-light-for-enbw-battery-storage-facility-in-forbach.html",
+          "publication_date": "not verified on primary page",
+          "claim": "41 MW and approximately 170 MWh; planned shared-site infrastructure",
+          "response_sha256": "967fffc63122b2425e0656ccd246ea503360d8103e8f627658f4231042fedc1c",
+          "retrieved_utc": "2026-11-17"
+        },
+        {
+          "url": "https://www.enbw.com/presse/gruenes-licht-fuer-enbw-batteriespeicher-in-forbach.html",
+          "publication_date": "not verified on primary page",
+          "claim": "46 MW and 170 MWh; differs from English page",
+          "response_sha256": "0dc9963823b5be1881ff646f0ddb8e39a69b3461accc4a4a68b5e47e01281f51",
+          "retrieved_utc": "2026-11-17"
+        },
+        {
+          "url": "https://energynews.pro/en/enbw-takes-final-investment-decision-on-battery-storage-at-its-forbach-site",
+          "publication_date": "2026-11-17",
+          "role": "Secondary dated report; investment decision, not commissioning",
+          "response_hash_unavailable": "HTTPError",
+          "retrieved_utc": "2026-11-17"
+        },
+        {
+          "url": "https://energy.ec.europa.eu/news/electricity-coordination-group-considers-eu-electricity-market-prepared-winter-2026-11-16_en",
+          "publication_date": "2026-11-16",
+          "event_date": "2026-11-12",
+          "role": "Primary winter meeting context",
+          "response_sha256": "2a2ebeabe76fc866a4c9ed9c57d8e08971df6251dc369e0797798e426aad813a",
+          "retrieved_utc": "2026-11-17"
+        }
+      ],
+      "candidates": [
+        {
+          "case": "Forbach co-located battery/hydro",
+          "impact": "Avoid infeasible exports and overvalued schedules",
+          "evidence": "Primary multilingual pages conflict on MW; secondary report dated 17 November",
+          "tractability": "High bounded LP; actual head/losses unknown",
+          "novelty": "Multi-interval shared export not covered by network snapshot or pending reserve PRs",
+          "fit": "Optimization",
+          "decision": "selected generic mechanism, no plant calibration"
+        },
+        {
+          "case": "EC winter preparedness",
+          "impact": "Regional reliability, wind/PV/storage/hydro",
+          "evidence": "Primary 16 November announcement of 12 November meeting",
+          "tractability": "High bounded adequacy",
+          "novelty": "Already main and PR10/11",
+          "fit": "Inference",
+          "decision": "avoid duplication"
+        },
+        {
+          "case": "Muswellbrook solar-battery module supply",
+          "impact": "PV hybrid delivery",
+          "evidence": "16 November secondary supplier announcement",
+          "tractability": "Needs resource and contract inputs",
+          "novelty": "Existing firming models",
+          "fit": "Sizing",
+          "decision": "defer"
+        },
+        {
+          "case": "Siemens Energy data-centre equipment demand",
+          "impact": "Grid/turbine capacity bottlenecks",
+          "evidence": "11 November Reuters; six days old",
+          "tractability": "No lead-time distribution",
+          "novelty": "New domain but insufficient calibration",
+          "fit": "Procurement optimization",
+          "decision": "backlog, no invented lead times"
+        }
+      ]
+    },
+    "benchmark_methods": {
+      "coordinated": {
+        "dispatch_mw": [
+          [
+            0.0,
+            -0.0,
+            50.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            50.0,
+            -0.0,
+            0.0,
+            50.0,
+            0.0
+          ]
+        ],
+        "export_mw": [
+          0.0,
+          50.0,
+          50.0,
+          0.0,
+          50.0,
+          0.0
+        ],
+        "used_ac_mwh": [
+          50.0,
+          100.0
+        ],
+        "gross_value_eur": 12500.0,
+        "max_constraint_violation": -0.0,
+        "runtime_s": 0.004699814999185037,
+        "solver": "classical HiGHS LP",
+        "optimal": true
+      },
+      "independent_requested": {
+        "dispatch_mw": [
+          [
+            0.0,
+            50.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            50.0,
+            50.0,
+            0.0,
+            -0.0,
+            0.0
+          ]
+        ],
+        "export_mw": [
+          0.0,
+          100.0,
+          50.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "used_ac_mwh": [
+          50.0,
+          100.0
+        ],
+        "gross_value_eur": 14500.0,
+        "max_constraint_violation": -0.0,
+        "runtime_s": 0.0024143110022123437,
+        "solver": "classical HiGHS LP",
+        "optimal": true
+      },
+      "independent_overload_mw": [
+        0.0,
+        50.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "clipped_dispatch_mw": [
+        [
+          0.0,
+          25.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          25.0,
+          50.0,
+          0.0,
+          -0.0,
+          0.0
+        ]
+      ],
+      "clipped_gross_value_eur": 9500.0,
+      "coordination_value_eur": 3000.0
+    },
+    "assess_sensitivity": {
+      "connection": [
+        {
+          "connection_mw": 25,
+          "coordinated": {
+            "dispatch_mw": [
+              [
+                0.0,
+                0.0,
+                25.0,
+                25.0,
+                0.0,
+                0.0
+              ],
+              [
+                25.0,
+                25.0,
+                0.0,
+                -0.0,
+                25.0,
+                25.0
+              ]
+            ],
+            "export_mw": [
+              25.0,
+              25.0,
+              25.0,
+              25.0,
+              25.0,
+              25.0
+            ],
+            "used_ac_mwh": [
+              50.0,
+              100.0
+            ],
+            "gross_value_eur": 7750.0,
+            "max_constraint_violation": 0.0,
+            "runtime_s": 0.001670157002081396,
+            "solver": "classical HiGHS LP",
+            "optimal": true
+          },
+          "independent_requested": {
+            "dispatch_mw": [
+              [
+                0.0,
+                50.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                50.0,
+                50.0,
+                0.0,
+                -0.0,
+                0.0
+              ]
+            ],
+            "export_mw": [
+              0.0,
+              100.0,
+              50.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "used_ac_mwh": [
+              50.0,
+              100.0
+            ],
+            "gross_value_eur": 14500.0,
+            "max_constraint_violation": -0.0,
+            "runtime_s": 0.002449079001962673,
+            "solver": "classical HiGHS LP",
+            "optimal": true
+          },
+          "independent_overload_mw": [
+            0.0,
+            75.0,
+            25.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "clipped_dispatch_mw": [
+            [
+              0.0,
+              12.5,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              12.5,
+              25.0,
+              0.0,
+              -0.0,
+              0.0
+            ]
+          ],
+          "clipped_gross_value_eur": 4750.0,
+          "coordination_value_eur": 3000.0
+        },
+        {
+          "connection_mw": 50,
+          "coordinated": {
+            "dispatch_mw": [
+              [
+                0.0,
+                -0.0,
+                50.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                50.0,
+                -0.0,
+                0.0,
+                50.0,
+                0.0
+              ]
+            ],
+            "export_mw": [
+              0.0,
+              50.0,
+              50.0,
+              0.0,
+              50.0,
+              0.0
+            ],
+            "used_ac_mwh": [
+              50.0,
+              100.0
+            ],
+            "gross_value_eur": 12500.0,
+            "max_constraint_violation": -0.0,
+            "runtime_s": 0.0025362710002809763,
+            "solver": "classical HiGHS LP",
+            "optimal": true
+          },
+          "independent_requested": {
+            "dispatch_mw": [
+              [
+                0.0,
+                50.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                50.0,
+                50.0,
+                0.0,
+                -0.0,
+                0.0
+              ]
+            ],
+            "export_mw": [
+              0.0,
+              100.0,
+              50.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "used_ac_mwh": [
+              50.0,
+              100.0
+            ],
+            "gross_value_eur": 14500.0,
+            "max_constraint_violation": -0.0,
+            "runtime_s": 0.002422737998131197,
+            "solver": "classical HiGHS LP",
+            "optimal": true
+          },
+          "independent_overload_mw": [
+            0.0,
+            50.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "clipped_dispatch_mw": [
+            [
+              0.0,
+              25.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              25.0,
+              50.0,
+              0.0,
+              -0.0,
+              0.0
+            ]
+          ],
+          "clipped_gross_value_eur": 9500.0,
+          "coordination_value_eur": 3000.0
+        },
+        {
+          "connection_mw": 75,
+          "coordinated": {
+            "dispatch_mw": [
+              [
+                0.0,
+                25.0,
+                25.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                50.0,
+                50.0,
+                0.0,
+                -0.0,
+                0.0
+              ]
+            ],
+            "export_mw": [
+              0.0,
+              75.0,
+              75.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "used_ac_mwh": [
+              50.0,
+              100.0
+            ],
+            "gross_value_eur": 14250.0,
+            "max_constraint_violation": -0.0,
+            "runtime_s": 0.003029611998499604,
+            "solver": "classical HiGHS LP",
+            "optimal": true
+          },
+          "independent_requested": {
+            "dispatch_mw": [
+              [
+                0.0,
+                50.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                50.0,
+                50.0,
+                0.0,
+                -0.0,
+                0.0
+              ]
+            ],
+            "export_mw": [
+              0.0,
+              100.0,
+              50.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "used_ac_mwh": [
+              50.0,
+              100.0
+            ],
+            "gross_value_eur": 14500.0,
+            "max_constraint_violation": -0.0,
+            "runtime_s": 0.0024939840004662983,
+            "solver": "classical HiGHS LP",
+            "optimal": true
+          },
+          "independent_overload_mw": [
+            0.0,
+            25.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "clipped_dispatch_mw": [
+            [
+              0.0,
+              37.5,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              37.5,
+              50.0,
+              0.0,
+              -0.0,
+              0.0
+            ]
+          ],
+          "clipped_gross_value_eur": 12000.0,
+          "coordination_value_eur": 2250.0
+        },
+        {
+          "connection_mw": 100,
+          "coordinated": {
+            "dispatch_mw": [
+              [
+                0.0,
+                50.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                50.0,
+                50.0,
+                0.0,
+                -0.0,
+                0.0
+              ]
+            ],
+            "export_mw": [
+              0.0,
+              100.0,
+              50.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "used_ac_mwh": [
+              50.0,
+              100.0
+            ],
+            "gross_value_eur": 14500.0,
+            "max_constraint_violation": -0.0,
+            "runtime_s": 0.003408341002796078,
+            "solver": "classical HiGHS LP",
+            "optimal": true
+          },
+          "independent_requested": {
+            "dispatch_mw": [
+              [
+                0.0,
+                50.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                50.0,
+                50.0,
+                0.0,
+                -0.0,
+                0.0
+              ]
+            ],
+            "export_mw": [
+              0.0,
+              100.0,
+              50.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "used_ac_mwh": [
+              50.0,
+              100.0
+            ],
+            "gross_value_eur": 14500.0,
+            "max_constraint_violation": -0.0,
+            "runtime_s": 0.0028966350000700913,
+            "solver": "classical HiGHS LP",
+            "optimal": true
+          },
+          "independent_overload_mw": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "clipped_dispatch_mw": [
+            [
+              0.0,
+              50.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              50.0,
+              50.0,
+              0.0,
+              -0.0,
+              0.0
+            ]
+          ],
+          "clipped_gross_value_eur": 14500.0,
+          "coordination_value_eur": 0.0
+        }
+      ],
+      "energy": [
+        {
+          "energy_factor": 0.5,
+          "dispatch_mw": [
+            [
+              0.0,
+              -0.0,
+              25.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              50.0,
+              -0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          ],
+          "export_mw": [
+            0.0,
+            50.0,
+            25.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "used_ac_mwh": [
+            25.0,
+            50.0
+          ],
+          "gross_value_eur": 7250.0,
+          "max_constraint_violation": -0.0,
+          "runtime_s": 0.0022355030014296062,
+          "solver": "classical HiGHS LP",
+          "optimal": true
+        },
+        {
+          "energy_factor": 1,
+          "dispatch_mw": [
+            [
+              0.0,
+              -0.0,
+              50.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              50.0,
+              -0.0,
+              0.0,
+              50.0,
+              0.0
+            ]
+          ],
+          "export_mw": [
+            0.0,
+            50.0,
+            50.0,
+            0.0,
+            50.0,
+            0.0
+          ],
+          "used_ac_mwh": [
+            50.0,
+            100.0
+          ],
+          "gross_value_eur": 12500.0,
+          "max_constraint_violation": -0.0,
+          "runtime_s": 0.005223638003371889,
+          "solver": "classical HiGHS LP",
+          "optimal": true
+        },
+        {
+          "energy_factor": 1.5,
+          "dispatch_mw": [
+            [
+              0.0,
+              -0.0,
+              50.0,
+              25.0,
+              -0.0,
+              -0.0
+            ],
+            [
+              0.0,
+              50.0,
+              -0.0,
+              0.0,
+              50.0,
+              50.0
+            ]
+          ],
+          "export_mw": [
+            0.0,
+            50.0,
+            50.0,
+            25.0,
+            50.0,
+            50.0
+          ],
+          "used_ac_mwh": [
+            75.0,
+            150.0
+          ],
+          "gross_value_eur": 14500.0,
+          "max_constraint_violation": -0.0,
+          "runtime_s": 0.0023014689977571834,
+          "solver": "classical HiGHS LP",
+          "optimal": true
+        }
+      ],
+      "scaling": [
+        {
+          "intervals": 6,
+          "dispatch_mw": [
+            [
+              0.0,
+              -0.0,
+              50.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              50.0,
+              -0.0,
+              0.0,
+              50.0,
+              0.0
+            ]
+          ],
+          "export_mw": [
+            0.0,
+            50.0,
+            50.0,
+            0.0,
+            50.0,
+            0.0
+          ],
+          "used_ac_mwh": [
+            50.0,
+            100.0
+          ],
+          "gross_value_eur": 12500.0,
+          "max_constraint_violation": -0.0,
+          "runtime_s": 0.0017084359969885554,
+          "solver": "classical HiGHS LP",
+          "optimal": true
+        },
+        {
+          "intervals": 24,
+          "dispatch_mw": [
+            [
+              0.0,
+              50.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              -0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              -0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              50.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              50.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          ],
+          "export_mw": [
+            0.0,
+            50.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            50.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            50.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "used_ac_mwh": [
+            50.0,
+            100.0
+          ],
+          "gross_value_eur": 15000.0,
+          "max_constraint_violation": -0.0,
+          "runtime_s": 0.0022931469975446817,
+          "solver": "classical HiGHS LP",
+          "optimal": true
+        },
+        {
+          "intervals": 168,
+          "dispatch_mw": [
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              50.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              -0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              50.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              50.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              -0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          ],
+          "export_mw": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            50.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            50.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            50.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "used_ac_mwh": [
+            50.0,
+            100.0
+          ],
+          "gross_value_eur": 15000.0,
+          "max_constraint_violation": -0.0,
+          "runtime_s": 0.00397724700087565,
+          "solver": "classical HiGHS LP",
+          "optimal": true
+        }
+      ]
+    },
+    "prepare_handoff": {
+      "quantum_used": false,
+      "next_action": "Verify connection agreement, usable AC budgets, price forecasts, losses and terminal values before bidding",
+      "limits": "Synthetic discharge-only perfect-price scenario; not Forbach calibration or realized trading revenue"
+    }
+  },
+  "trace": [
+    {
+      "step": 0,
+      "tool": "inspect_evidence",
+      "status": "completed"
+    },
+    {
+      "step": 1,
+      "tool": "benchmark_methods",
+      "status": "completed"
+    },
+    {
+      "step": 2,
+      "tool": "assess_sensitivity",
+      "status": "completed"
+    },
+    {
+      "step": 3,
+      "tool": "prepare_handoff",
+      "status": "completed"
+    },
+    {
+      "step": 4,
+      "tool": "finish",
+      "status": "completed"
+    }
+  ],
+  "human_review_required": true,
+  "execution_authorized": false,
+  "validation": "registered_tool_execution_and_protocol_only",
+  "fixture_sha256": "14f24df6e62b9dc9b4a29ffc8fa38d43f04b6467b9bf902923bda44865acb164",
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Linux",
+    "machine": "x86_64",
+    "versions": {
+      "numpy": "2.3.5",
+      "scipy": "1.17.0",
+      "pandas": "2.2.3",
+      "pvlib": "0.16.1",
+      "enerqit": "0.1.0"
+    }
+  },
+  "agent_install": {
+    "url": "https://github.com/julianascencio/energy-agents.git",
+    "vcs_info": {
+      "commit_id": "c8a61091683856c890a5059d0ff6e3d4bd94a445",
+      "requested_revision": "c8a61091683856c890a5059d0ff6e3d4bd94a445",
+      "vcs": "git"
+    }
+  }
+}

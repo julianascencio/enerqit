@@ -65,3 +65,5 @@ physical QPU execution. See the validation-lab guide for reproducible commands.
 Implemented finite-support probability-robust reserve screening; statistical radius calibration and missing-state validation remain open.
 
 Implemented sequential no-recharge battery reserve screening. Initial SOC and outage-path calibration remain open.
+
+Implemented shared export allocation for initial AC energy budgets. Site-specific charging, hydro head, fees and terminal values remain open.

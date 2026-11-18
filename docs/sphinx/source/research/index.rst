@@ -165,3 +165,6 @@ primary operator context and synthetic validation limits.
 
 Energy-limited reserve: :doc:`/reserve_depletion` documents operator context,
 restricted optimality and independent LP reference tests.
+
+:doc:`/shared_export` documents co-location evidence, conflicting source ratings
+and independent enumeration of the finite-energy export LP.

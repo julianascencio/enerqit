@@ -197,3 +197,9 @@ Reserve replay
 
 .. automodule:: enerqit.reserve_replay
    :members:
+
+Shared export
+-------------
+
+.. automodule:: enerqit.shared_export
+   :members:

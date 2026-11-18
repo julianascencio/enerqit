@@ -337,3 +337,5 @@ classical CPU work. No quantum advantage or plant-level validation is claimed.
 Probability-robust reserve procurement: [method](docs/sphinx/source/probability_ambiguity.rst), [runnable example](docs/examples/plot_probability_ambiguity.py).
 
 [Energy-limited reserve example](docs/examples/plot_reserve_depletion.py) and [method](docs/sphinx/source/reserve_depletion.rst).
+
+[Shared export coordination](docs/examples/plot_shared_export.py): runnable agent-led co-located resource study.
