@@ -45,5 +45,11 @@ jobs:
 
       - run: python -m enerqit.adequacy_study
 
+      - run: python -m pytest tests/test_robust_adequacy.py
+      - run: python -m enerqit.robust_adequacy_study
+
+      - run: python -m pytest tests/test_reserve_replay.py
+      - run: python -m enerqit.reserve_study
+
       - run: python -m pytest tests/test_shared_export.py
       - run: python -m enerqit.shared_export_study

@@ -126,5 +126,14 @@ useful for structured posterior approximations, but are not implemented and
 should be compared with sparse graphical models, variational inference and MCMC.
 A dense QUBO is not automatically the right representation for every row above.
 
+Probability-robust reserve procurement
+--------------------------------------
+
+:doc:`/probability_ambiguity` extends nominal adequacy with uncertainty in
+probability estimates and fixed-window procurement costs.
+
+Battery reserve depletion: :doc:`/reserve_depletion` tracks sequential energy
+inventory before selecting a fixed-fee availability offer.
+
 Shared export allocation: :doc:`/shared_export` compares independent requests,
 clipping and coordinated discharge under one connection.

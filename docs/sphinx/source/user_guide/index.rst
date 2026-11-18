@@ -52,4 +52,14 @@ papers and technical sources behind the implementation, see the
 .. toctree::
    :maxdepth: 1
 
+   /probability_ambiguity
+
+.. toctree::
+   :maxdepth: 1
+
+   /reserve_depletion
+
+.. toctree::
+   :maxdepth: 1
+
    /shared_export
