@@ -1,0 +1,569 @@
+{
+  "success": true,
+  "role": {
+    "id": "career_quantum_ml_engineer",
+    "title": "Quantum Machine Learning Engineer",
+    "mandate": "Design and evaluate classical, quantum-inspired and hybrid energy research workflows.",
+    "inputs": [
+      "load_case",
+      "experiment_budget",
+      "research_context"
+    ],
+    "tool": "prepare_data",
+    "output": "quantum_ml_research_handoff",
+    "acceptance": "Chronological held-out benchmarks, feasible schedules, provenance and limitations.",
+    "technology": "cross_technology",
+    "authority": "local_bounded_research_only"
+  },
+  "mode": "scripted_tool_workflow",
+  "classification": "mixed",
+  "reports": {
+    "inspect_evidence": {
+      "as_of_utc": "2026-11-18",
+      "agent_commit": "c8a61091683856c890a5059d0ff6e3d4bd94a445",
+      "enerqit_base": "2c7f9c1fcf9432f11c6321e3d726b4febb10c58e",
+      "classification": "Authored synthetic MIT inputs; national news is context, not calibration",
+      "inputs": {
+        "renewable_mw": [
+          50,
+          50,
+          0,
+          0,
+          0,
+          0
+        ],
+        "export_limit_mw": [
+          30,
+          30,
+          30,
+          30,
+          30,
+          30
+        ],
+        "hours": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "power_mw": 20,
+        "energy_dc_mwh": 40,
+        "charge_efficiency": 0.9,
+        "discharge_efficiency": 0.9
+      },
+      "assumed_export_price_eur_mwh": 50,
+      "seed": null,
+      "seed_reason": "Deterministic causal replay; test RNG seeds 0..4",
+      "sources": [
+        {
+          "url": "https://www.woodmac.com/press-releases/spains-renewable-sector-has-lost-140-million-to-grid-constraints-as-curtailment-remains-elevated-since-april-2025-blackout/",
+          "publication_date": "2026-11-16",
+          "event_period": "2026 YTD analysis using REE data through October; not a new outage",
+          "role": "Original analyst press release; underlying nodal data not redistributed",
+          "retrieved_payload_sha256": "272a5011d88cb164fa6f0e114dfaf8b4eedac9c7eb51740bca059b107704e598",
+          "hash_scope": "HTTP response bytes; source content not redistributed",
+          "retrieved_utc": "2026-11-18"
+        }
+      ],
+      "candidates": [
+        {
+          "case": "Spanish curtailment",
+          "impact": "Recover exportable energy without double-counting losses",
+          "evidence": "Original Wood Mackenzie release, 16 November",
+          "tractability": "High bounded export-ceiling accounting; site calibration missing",
+          "novelty": "No surplus-only capture/re-export ledger in main; pending PR12 is discharge-only",
+          "fit": "Causal physical inference, independent LP benchmark",
+          "decision": "selected",
+          "url": "https://www.woodmac.com/press-releases/spains-renewable-sector-has-lost-140-million-to-grid-constraints-as-curtailment-remains-elevated-since-april-2025-blackout/",
+          "publication_date": "2026-11-16"
+        },
+        {
+          "case": "US storage exceeds 200 GWh",
+          "impact": "Storage deployment",
+          "evidence": "Primary SEIA/Benchmark report landing page; no licensed interval observations",
+          "tractability": "No operational series",
+          "novelty": "Existing duration/adequacy work",
+          "fit": "Sizing",
+          "decision": "defer",
+          "url": "https://seia.org/research-resources/energy-storage-market-outlook-q4-2026/",
+          "publication_date": "2026-11-17",
+          "event_period": "Q1-Q3 2026"
+        },
+        {
+          "case": "Greece merchant batteries",
+          "impact": "Connection allocation",
+          "evidence": "Primary Greek ministry announcement, within extended seven-day window",
+          "tractability": "Missing network constraints",
+          "novelty": "Existing network and shared-export work",
+          "fit": "Optimization",
+          "decision": "defer",
+          "url": "https://ypen.gov.gr/epitachynetai-i-anaptyxi-tis-apothikefsis-energeias-anoigei-o-dromos-gia-erga-ischyos-4-700-mw/",
+          "publication_date": "2026-11-13",
+          "event_period": "Connection application assessment; offers to follow"
+        },
+        {
+          "case": "Vertiv 800 VDC",
+          "impact": "Data-centre conversion losses",
+          "evidence": "Primary manufacturer announcement; peak ratings are not part-load curves",
+          "tractability": "Needs device curves",
+          "novelty": "Outside present models; no invented efficiencies",
+          "fit": "Physical inference",
+          "decision": "backlog",
+          "url": "https://www.vertiv.com/en-us/about/news-and-events/corporate-news/2026/vertiv-advances-800-vdc-power-architectures-to-support-growing-ai-data-center-demands/",
+          "publication_date": "2026-11-17",
+          "event_period": "SC26 November 17-22; pilots/validation underway"
+        },
+        {
+          "case": "Norwegian hydro, industry and wind balance",
+          "url": "https://www.renewableenergymagazine.com/panorama/norwaya-s-a-green-batterya--needs-20261117",
+          "publication_date": "2026-11-17",
+          "event_period": "Structural outlook, not an observed outage",
+          "impact": "Industrial and data-centre demand can erode hydro surplus",
+          "evidence": "Secondary coverage of GlobalData outlook",
+          "tractability": "Requires basin inflows, dispatch and demand scenarios",
+          "novelty": "Existing firming and adequacy APIs; no calibrated hydro model",
+          "fit": "Forecasting and flexibility optimization",
+          "decision": "backlog pending primary time-series evidence"
+        }
+      ]
+    },
+    "benchmark_methods": {
+      "capacity_cases": {
+        "0": {
+          "charge_ac_mw": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "discharge_ac_mw": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "soc_dc_mwh": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "export_mw": [
+            30.0,
+            30.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "baseline_export_mwh": 60.0,
+          "baseline_curtailment_mwh": 40.0,
+          "captured_ac_mwh": 0.0,
+          "recovered_export_mwh": 0.0,
+          "remaining_curtailment_mwh": 40.0,
+          "conversion_loss_mwh": 0.0,
+          "terminal_dc_mwh": 0.0,
+          "balance_residual_mwh": 0.0
+        },
+        "20": {
+          "charge_ac_mw": [
+            20.0,
+            2.2222222222222223,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "discharge_ac_mw": [
+            0.0,
+            0.0,
+            18.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "soc_dc_mwh": [
+            0.0,
+            18.0,
+            20.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "export_mw": [
+            30.0,
+            30.0,
+            18.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "baseline_export_mwh": 60.0,
+          "baseline_curtailment_mwh": 40.0,
+          "captured_ac_mwh": 22.22222222222222,
+          "recovered_export_mwh": 18.0,
+          "remaining_curtailment_mwh": 17.77777777777778,
+          "conversion_loss_mwh": 4.222222222222223,
+          "terminal_dc_mwh": 0.0,
+          "balance_residual_mwh": -1.7763568394002505e-15
+        },
+        "40": {
+          "charge_ac_mw": [
+            20.0,
+            20.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "discharge_ac_mw": [
+            0.0,
+            0.0,
+            20.0,
+            12.4,
+            0.0,
+            0.0
+          ],
+          "soc_dc_mwh": [
+            0.0,
+            18.0,
+            36.0,
+            13.777777777777779,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "export_mw": [
+            30.0,
+            30.0,
+            20.0,
+            12.4,
+            0.0,
+            0.0
+          ],
+          "baseline_export_mwh": 60.0,
+          "baseline_curtailment_mwh": 40.0,
+          "captured_ac_mwh": 40.0,
+          "recovered_export_mwh": 32.4,
+          "remaining_curtailment_mwh": 0.0,
+          "conversion_loss_mwh": 7.6000000000000005,
+          "terminal_dc_mwh": 0.0,
+          "balance_residual_mwh": 8.881784197001252e-16
+        },
+        "80": {
+          "charge_ac_mw": [
+            20.0,
+            20.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "discharge_ac_mw": [
+            0.0,
+            0.0,
+            20.0,
+            12.4,
+            0.0,
+            0.0
+          ],
+          "soc_dc_mwh": [
+            0.0,
+            18.0,
+            36.0,
+            13.777777777777779,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "export_mw": [
+            30.0,
+            30.0,
+            20.0,
+            12.4,
+            0.0,
+            0.0
+          ],
+          "baseline_export_mwh": 60.0,
+          "baseline_curtailment_mwh": 40.0,
+          "captured_ac_mwh": 40.0,
+          "recovered_export_mwh": 32.4,
+          "remaining_curtailment_mwh": 0.0,
+          "conversion_loss_mwh": 7.6000000000000005,
+          "terminal_dc_mwh": 0.0,
+          "balance_residual_mwh": 8.881784197001252e-16
+        }
+      },
+      "illustrative_export_value_eur": {
+        "0": 0.0,
+        "20": 900.0,
+        "40": 1620.0,
+        "80": 1620.0
+      }
+    },
+    "assess_sensitivity": {
+      "efficiency": {
+        "0.8": {
+          "charge_ac_mw": [
+            20.0,
+            20.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "discharge_ac_mw": [
+            0.0,
+            0.0,
+            20.0,
+            5.6000000000000005,
+            0.0,
+            0.0
+          ],
+          "soc_dc_mwh": [
+            0.0,
+            16.0,
+            32.0,
+            7.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "export_mw": [
+            30.0,
+            30.0,
+            20.0,
+            5.6000000000000005,
+            0.0,
+            0.0
+          ],
+          "baseline_export_mwh": 60.0,
+          "baseline_curtailment_mwh": 40.0,
+          "captured_ac_mwh": 40.0,
+          "recovered_export_mwh": 25.6,
+          "remaining_curtailment_mwh": 0.0,
+          "conversion_loss_mwh": 14.399999999999999,
+          "terminal_dc_mwh": 0.0,
+          "balance_residual_mwh": 0.0
+        },
+        "0.9": {
+          "charge_ac_mw": [
+            20.0,
+            20.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "discharge_ac_mw": [
+            0.0,
+            0.0,
+            20.0,
+            12.4,
+            0.0,
+            0.0
+          ],
+          "soc_dc_mwh": [
+            0.0,
+            18.0,
+            36.0,
+            13.777777777777779,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "export_mw": [
+            30.0,
+            30.0,
+            20.0,
+            12.4,
+            0.0,
+            0.0
+          ],
+          "baseline_export_mwh": 60.0,
+          "baseline_curtailment_mwh": 40.0,
+          "captured_ac_mwh": 40.0,
+          "recovered_export_mwh": 32.4,
+          "remaining_curtailment_mwh": 0.0,
+          "conversion_loss_mwh": 7.6000000000000005,
+          "terminal_dc_mwh": 0.0,
+          "balance_residual_mwh": 8.881784197001252e-16
+        },
+        "1": {
+          "charge_ac_mw": [
+            20.0,
+            20.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "discharge_ac_mw": [
+            0.0,
+            0.0,
+            20.0,
+            20.0,
+            0.0,
+            0.0
+          ],
+          "soc_dc_mwh": [
+            0.0,
+            20.0,
+            40.0,
+            20.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "export_mw": [
+            30.0,
+            30.0,
+            20.0,
+            20.0,
+            0.0,
+            0.0
+          ],
+          "baseline_export_mwh": 60.0,
+          "baseline_curtailment_mwh": 40.0,
+          "captured_ac_mwh": 40.0,
+          "recovered_export_mwh": 40.0,
+          "remaining_curtailment_mwh": 0.0,
+          "conversion_loss_mwh": 0.0,
+          "terminal_dc_mwh": 0.0,
+          "balance_residual_mwh": 0.0
+        }
+      },
+      "no_later_headroom": {
+        "charge_ac_mw": [
+          20.0,
+          20.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "discharge_ac_mw": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "soc_dc_mwh": [
+          0.0,
+          18.0,
+          36.0,
+          36.0,
+          36.0,
+          36.0,
+          36.0
+        ],
+        "export_mw": [
+          30.0,
+          30.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "baseline_export_mwh": 60.0,
+        "baseline_curtailment_mwh": 40.0,
+        "captured_ac_mwh": 40.0,
+        "recovered_export_mwh": 0.0,
+        "remaining_curtailment_mwh": 0.0,
+        "conversion_loss_mwh": 3.999999999999999,
+        "terminal_dc_mwh": 36.0,
+        "balance_residual_mwh": 0.0
+      },
+      "scaling": [
+        {
+          "intervals": 6,
+          "runtime_s": 0.0002706679988477845,
+          "recovered_export_mwh": 32.4
+        },
+        {
+          "intervals": 24,
+          "runtime_s": 0.00011474300117697567,
+          "recovered_export_mwh": 129.6
+        },
+        {
+          "intervals": 168,
+          "runtime_s": 0.00032546999864280224,
+          "recovered_export_mwh": 907.2
+        },
+        {
+          "intervals": 8760,
+          "runtime_s": 0.01762292700004764,
+          "recovered_export_mwh": 47303.99999999999
+        }
+      ]
+    },
+    "prepare_handoff": {
+      "quantum_used": false,
+      "next_action": "Verify charging permission and licensed interval-level generation, export limits and settlement terms",
+      "limits": "Synthetic export-ceiling case; not Spanish grid stability simulation or realized savings"
+    }
+  },
+  "trace": [
+    {
+      "step": 0,
+      "tool": "inspect_evidence",
+      "status": "completed"
+    },
+    {
+      "step": 1,
+      "tool": "benchmark_methods",
+      "status": "completed"
+    },
+    {
+      "step": 2,
+      "tool": "assess_sensitivity",
+      "status": "completed"
+    },
+    {
+      "step": 3,
+      "tool": "prepare_handoff",
+      "status": "completed"
+    },
+    {
+      "step": 4,
+      "tool": "finish",
+      "status": "completed"
+    }
+  ],
+  "human_review_required": true,
+  "execution_authorized": false,
+  "validation": "registered_tool_execution_and_protocol_only",
+  "fixture_sha256": "8d544b7697733d02700be784eeaedfb7c850242053702e17fb1918fb4b45c2e9",
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Linux",
+    "machine": "x86_64",
+    "versions": {
+      "numpy": "2.3.5",
+      "scipy": "1.17.0",
+      "pandas": "2.2.3",
+      "pvlib": "0.16.1",
+      "enerqit": "0.1.0"
+    }
+  },
+  "agent_install": {
+    "url": "https://github.com/julianascencio/energy-agents.git",
+    "vcs_info": {
+      "commit_id": "c8a61091683856c890a5059d0ff6e3d4bd94a445",
+      "requested_revision": "c8a61091683856c890a5059d0ff6e3d4bd94a445",
+      "vcs": "git"
+    }
+  }
+}

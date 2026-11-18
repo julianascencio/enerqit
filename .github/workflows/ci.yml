@@ -53,3 +53,6 @@ jobs:
 
       - run: python -m pytest tests/test_shared_export.py
       - run: python -m enerqit.shared_export_study
+
+      - run: python -m pytest tests/test_curtailment.py
+      - run: python -m enerqit.curtailment_study

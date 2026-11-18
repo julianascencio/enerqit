@@ -203,3 +203,9 @@ Shared export
 
 .. automodule:: enerqit.shared_export
    :members:
+
+Curtailment recovery
+--------------------
+
+.. automodule:: enerqit.curtailment
+   :members:

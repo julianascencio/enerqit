@@ -168,3 +168,5 @@ restricted optimality and independent LP reference tests.
 
 :doc:`/shared_export` documents co-location evidence, conflicting source ratings
 and independent enumeration of the finite-energy export LP.
+
+:doc:`/curtailment_recovery` separates captured energy, losses, remaining SOC and recovered export, with independent LP tests.

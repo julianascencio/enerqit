@@ -63,3 +63,8 @@ papers and technical sources behind the implementation, see the
    :maxdepth: 1
 
    /shared_export
+
+.. toctree::
+   :maxdepth: 1
+
+   /curtailment_recovery

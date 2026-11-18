@@ -67,3 +67,5 @@ Implemented finite-support probability-robust reserve screening; statistical rad
 Implemented sequential no-recharge battery reserve screening. Initial SOC and outage-path calibration remain open.
 
 Implemented shared export allocation for initial AC energy budgets. Site-specific charging, hydro head, fees and terminal values remain open.
+
+Implemented export-ceiling curtailment recovery ledger; site charging permissions, degradation and settlement validation remain open.
