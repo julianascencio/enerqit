@@ -1,0 +1,86 @@
+{
+  "as_of_utc": "2026-11-15",
+  "agent_revision": "c8a61091683856c890a5059d0ff6e3d4bd94a445",
+  "base": "2c7f9c1fcf9432f11c6321e3d726b4febb10c58e",
+  "classification": "Authored synthetic MIT numerical inputs; primary reports are context, not calibration",
+  "seed": null,
+  "seed_reason": "Deterministic LP, no sampling",
+  "states": [
+    {
+      "available_mw": 0,
+      "probability": 0.109
+    },
+    {
+      "available_mw": 60,
+      "probability": 0.162
+    },
+    {
+      "available_mw": 120,
+      "probability": 0.729
+    }
+  ],
+  "demand_mw": 100,
+  "hours": 4,
+  "fee_eur_per_mw_per_window": 100,
+  "target_eens_mwh": 20,
+  "sources": [
+    {
+      "url": "https://www.neso.energy/document/390236/download",
+      "published": "2026-11-14",
+      "event": "24-hour forecast; not observations of future outcomes",
+      "license": "Report states Open Government Licence v1.0; no report reproduced",
+      "hash_unavailable": "HTTPError"
+    },
+    {
+      "url": "https://www.entsoe.eu/news/2026/11/13/entso-e-winter-outlook-2026-2027-europe-is-prepared-some-risks-remain-in-specific-areas/",
+      "published": "2026-11-13",
+      "event": "Winter 2026-27 outlook",
+      "response_sha256": "a5fd361c6caf786427859353e4eff689a8f31bdca9812b395bedb079e54ead76",
+      "retrieved_utc": "2026-11-15"
+    },
+    {
+      "url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.linprog.html",
+      "role": "LP implementation reference",
+      "response_sha256": "9e5dadb5bea60447212f1cdf6ee3ab004dc4df123ec8d24548194dded5be3c23",
+      "retrieved_utc": "2026-11-15"
+    }
+  ],
+  "candidates": [
+    {
+      "case": "NESO 14 November forecasts",
+      "impact": "Reserve decisions",
+      "evidence": "Primary operator",
+      "tractability": "Finite-support uncertainty screen",
+      "novelty": "Probability ambiguity absent from current main",
+      "fit": "Robust optimization",
+      "decision": "Selected as motivation for advancing 1-day-old adequacy uncertainty backlog; no GB calibration"
+    },
+    {
+      "case": "ENTSO-E winter outlook 13 November",
+      "impact": "Regional adequacy, PV/wind/storage/hydro/import constraints",
+      "evidence": "Primary TSO",
+      "tractability": "High for bounded inference",
+      "novelty": "Nominal model merged yesterday",
+      "fit": "Inference",
+      "decision": "Extend documented uncertainty gap, do not duplicate nominal study"
+    },
+    {
+      "case": "Turkey wind record 13 November, reported 15 November",
+      "impact": "Renewable variability and market balancing",
+      "evidence": "Anadolu secondary report",
+      "tractability": "Needs primary chronological data",
+      "novelty": "Historical firming already implemented",
+      "fit": "Forecasting/dispatch",
+      "decision": "Deferred without calibrated series"
+    },
+    {
+      "case": "NESO data-centre flexibility study Sep-Dec 2026",
+      "impact": "Large-load flexibility",
+      "evidence": "Primary ENA project record, older than 7 days",
+      "tractability": "No completed results",
+      "novelty": "Existing batch flexibility overlaps",
+      "fit": "Optimization",
+      "decision": "Backlog pending measured flexibility evidence"
+    }
+  ]
+}
