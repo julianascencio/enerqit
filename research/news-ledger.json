@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_on": "2026-11-14",
+  "updated_on": "2026-11-15",
   "implemented": [
     {
       "id": "gb-duration-aware-battery-portfolio-2026-11-10",
@@ -216,7 +216,7 @@
       "as_of": "2026-11-11",
       "candidates": [
         {
-          "case": "T\u00fcrkiye interconnection report",
+          "case": "Türkiye interconnection report",
           "date": "2026-11-10",
           "impact": "Secure transfer and regional electricity value",
           "evidence": "Primary analysis, historical trade totals not topology",
@@ -317,6 +317,49 @@
       "quantum_advantage_claimed": false
     }
   ],
+  "probability_ambiguity_20261115": {
+    "candidates": [
+      {
+        "case": "NESO 14 November forecasts",
+        "impact": "Reserve decisions",
+        "evidence": "Primary operator",
+        "tractability": "Finite-support uncertainty screen",
+        "novelty": "Probability ambiguity absent from current main",
+        "fit": "Robust optimization",
+        "decision": "Selected as motivation for advancing 1-day-old adequacy uncertainty backlog; no GB calibration"
+      },
+      {
+        "case": "ENTSO-E winter outlook 13 November",
+        "impact": "Regional adequacy, PV/wind/storage/hydro/import constraints",
+        "evidence": "Primary TSO",
+        "tractability": "High for bounded inference",
+        "novelty": "Nominal model merged yesterday",
+        "fit": "Inference",
+        "decision": "Extend documented uncertainty gap, do not duplicate nominal study"
+      },
+      {
+        "case": "Turkey wind record 13 November, reported 15 November",
+        "impact": "Renewable variability and market balancing",
+        "evidence": "Anadolu secondary report",
+        "tractability": "Needs primary chronological data",
+        "novelty": "Historical firming already implemented",
+        "fit": "Forecasting/dispatch",
+        "decision": "Deferred without calibrated series"
+      },
+      {
+        "case": "NESO data-centre flexibility study Sep-Dec 2026",
+        "impact": "Large-load flexibility",
+        "evidence": "Primary ENA project record, older than 7 days",
+        "tractability": "No completed results",
+        "novelty": "Existing batch flexibility overlaps",
+        "fit": "Optimization",
+        "decision": "Backlog pending measured flexibility evidence"
+      }
+    ],
+    "fixture": "enerqit/data/robust_adequacy_20261115.json",
+    "status": "proposed",
+    "backlog": "Calibrate support and TV radius from licensed joint outages; no confidence claims"
+  },
   "reserve_20261116": {
     "candidates": [
       {

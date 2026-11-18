@@ -334,4 +334,6 @@ classical CPU work. No quantum advantage or plant-level validation is claimed.
 
 [Runnable example](docs/examples/plot_adequacy_risk.py) compares nameplate, mean-capacity and exact probability-weighted risk, with matched-marginal common-outage sensitivity. [Study](docs/sphinx/source/adequacy_risk.rst). Run `python -m enerqit.adequacy_study`. All numeric inputs and fees are synthetic; four-hour metrics are not annual forecasts.
 
+Probability-robust reserve procurement: [method](docs/sphinx/source/probability_ambiguity.rst), [runnable example](docs/examples/plot_probability_ambiguity.py).
+
 [Energy-limited reserve example](docs/examples/plot_reserve_depletion.py) and [method](docs/sphinx/source/reserve_depletion.rst).

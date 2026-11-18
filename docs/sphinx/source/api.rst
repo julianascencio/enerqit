@@ -186,6 +186,12 @@ Probabilistic adequacy
 .. automodule:: enerqit.adequacy_study
    :members:
 
+Probability ambiguity
+---------------------
+
+.. automodule:: enerqit.robust_adequacy
+   :members:
+
 Reserve replay
 --------------
 
