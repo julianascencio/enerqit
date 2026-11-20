@@ -341,3 +341,5 @@ Probability-robust reserve procurement: [method](docs/sphinx/source/probability_
 [Shared export coordination](docs/examples/plot_shared_export.py): runnable agent-led co-located resource study.
 
 [Curtailment recovery ledger](docs/examples/plot_curtailment_recovery.py): runnable agent-led battery accounting example.
+
+[Temporal renewable procurement](docs/sphinx/source/hourly_matching.rst): [runnable agent example](docs/examples/plot_hourly_matching.py).

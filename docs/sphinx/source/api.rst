@@ -209,3 +209,9 @@ Curtailment recovery
 
 .. automodule:: enerqit.curtailment
    :members:
+
+Temporal procurement
+-------------------------
+
+.. automodule:: enerqit.matching
+   :members:

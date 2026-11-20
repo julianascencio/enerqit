@@ -125,3 +125,5 @@ Energy-limited reserve (2026-11-16): causal no-recharge replay, analytic energy 
 Shared export (17 November 2026): sparse finite-energy dispatch LP, independently enumerated references and explicit Forbach source discrepancy; see shared_export guide.
 
 Curtailment recovery (18 November 2026): causal surplus charging, explicit AC/DC ledger and independent inventory LP references. See curtailment_recovery guide.
+
+Temporal matching uses a sparse classical LP and independent analytic/grid references. See the hourly-matching guide for synthetic assumptions and accounting boundaries.
