@@ -1,0 +1,438 @@
+{
+  "success": true,
+  "role": {
+    "id": "career_quantum_ml_engineer",
+    "title": "Quantum Machine Learning Engineer",
+    "mandate": "Design and evaluate classical, quantum-inspired and hybrid energy research workflows.",
+    "inputs": [
+      "load_case",
+      "experiment_budget",
+      "research_context"
+    ],
+    "tool": "prepare_data",
+    "output": "quantum_ml_research_handoff",
+    "acceptance": "Chronological held-out benchmarks, feasible schedules, provenance and limitations.",
+    "technology": "cross_technology",
+    "authority": "local_bounded_research_only"
+  },
+  "mode": "scripted_tool_workflow",
+  "classification": "synthetic",
+  "reports": {
+    "inspect_evidence": {
+      "as_of_utc": "2026-11-20",
+      "agent_commit": "f8150df9a4272bf2b97042a61b3b785a92450057",
+      "base_commit": "f8ab496eb9c53c048d541b95ef5b9c7685df97a2",
+      "classification": "Authored synthetic MIT inputs; news context only",
+      "inputs": {
+        "profiles": [
+          [
+            1,
+            0
+          ],
+          [
+            0.5,
+            0.5
+          ]
+        ],
+        "demand_mw": [
+          1,
+          1
+        ],
+        "hours": [
+          1,
+          1
+        ],
+        "costs_eur_per_mw": [
+          500,
+          1500
+        ],
+        "capacity_limits_mw": [
+          4,
+          4
+        ]
+      },
+      "source": {
+        "url": "https://www.climatecouncil.org.au/resources/data-centres-that-could-rival-our-dirtiest-coal-power-stations/",
+        "publication_date": "2026-11-19",
+        "event_period": "Conditional projections to 2035; policy proposals not enacted rules",
+        "license": "No article body or third-party numerical data redistributed",
+        "hash_status": "Raw retrieval unavailable: HTTPError"
+      },
+      "seed": null,
+      "test_seeds": [
+        0,
+        1,
+        2
+      ],
+      "candidates": [
+        {
+          "case": "Data-centre renewable matching",
+          "url": "https://www.climatecouncil.org.au/resources/data-centres-that-could-rival-our-dirtiest-coal-power-stations/",
+          "date": "2026-11-19",
+          "impact": "Avoid confusing total procurement with temporal coverage",
+          "evidence": "Primary research organisation release",
+          "tractability": "Small exact LP; missing site calibration",
+          "novelty": "No capacity-contract temporal matching optimizer in main; distinct from PR14 ramps",
+          "fit": "Optimization",
+          "decision": "selected"
+        },
+        {
+          "case": "Australia wind/battery construction",
+          "url": "https://ieefa.org/articles/wind-and-battery-projects-catapult-australian-states-towards-2030-renewable-target",
+          "date": "2026-11-19",
+          "event": "Q3 construction commitments",
+          "impact": "Industrial renewable procurement",
+          "evidence": "Original IEEFA scorecard",
+          "tractability": "Aggregate project pipeline only",
+          "novelty": "Existing storage-sizing studies",
+          "fit": "Investment optimization",
+          "decision": "defer"
+        },
+        {
+          "case": "Holloway four-hour battery",
+          "url": "https://www.renewableenergymagazine.com/storage/edf-power-solutions-acquires-a-1-gwh-20261119",
+          "date": "2026-11-19",
+          "event": "Development acquisition; planned 2029 operation",
+          "impact": "Storage time shifting",
+          "evidence": "Secondary developer coverage",
+          "tractability": "No operational observations",
+          "novelty": "Existing curtailment and sizing methods",
+          "fit": "Dispatch optimization",
+          "decision": "defer"
+        },
+        {
+          "case": "Norwegian hydro surplus narrowing",
+          "url": "https://cyprusshippingnews.com/2026/11/19/norways-green-battery-needs-faster-wind-and-grid-build-out-as-power-surplus-narrows-says-globaldata/",
+          "date": "2026-11-19",
+          "event": "Structural outlook; previously covered 17 November",
+          "impact": "Hydro, industrial and data-centre demand",
+          "evidence": "Secondary GlobalData coverage",
+          "tractability": "Missing basin inflows and water values",
+          "novelty": "Hydro calibration backlog",
+          "fit": "Forecasting/optimization",
+          "decision": "backlog"
+        }
+      ]
+    },
+    "benchmark_methods": {
+      "total_energy": {
+        "feasible": true,
+        "capacity_mw": [
+          2.0,
+          0.0
+        ],
+        "generation_mw": [
+          2.0,
+          0.0
+        ],
+        "matched_mw": [
+          1.0,
+          0.0
+        ],
+        "cost_eur": 1000.0,
+        "matched_mwh": 1.0,
+        "unmatched_mwh": 1.0,
+        "excess_mwh": 1.0,
+        "total_generation_mwh": 2.0,
+        "demand_mwh": 2.0,
+        "matching_fraction": 0.5,
+        "max_violation": -0.0,
+        "runtime_s": 0.00396932200237643,
+        "solver": "classical HiGHS LP"
+      },
+      "interval": {
+        "feasible": true,
+        "capacity_mw": [
+          0.0,
+          2.0
+        ],
+        "generation_mw": [
+          1.0,
+          1.0
+        ],
+        "matched_mw": [
+          1.0,
+          1.0
+        ],
+        "cost_eur": 3000.0,
+        "matched_mwh": 2.0,
+        "unmatched_mwh": 0.0,
+        "excess_mwh": 0.0,
+        "total_generation_mwh": 2.0,
+        "demand_mwh": 2.0,
+        "matching_fraction": 1.0,
+        "max_violation": -0.0,
+        "runtime_s": 0.002700657001696527,
+        "solver": "classical HiGHS LP"
+      }
+    },
+    "assess_sensitivity": {
+      "target": {
+        "0": {
+          "feasible": true,
+          "capacity_mw": [
+            0.0,
+            0.0
+          ],
+          "generation_mw": [
+            0.0,
+            0.0
+          ],
+          "matched_mw": [
+            0.0,
+            0.0
+          ],
+          "cost_eur": 0.0,
+          "matched_mwh": 0.0,
+          "unmatched_mwh": 2.0,
+          "excess_mwh": 0.0,
+          "total_generation_mwh": 0.0,
+          "demand_mwh": 2.0,
+          "matching_fraction": 0.0,
+          "max_violation": -0.0,
+          "runtime_s": 0.0026178009975410532,
+          "solver": "classical HiGHS LP"
+        },
+        "0.25": {
+          "feasible": true,
+          "capacity_mw": [
+            0.5,
+            0.0
+          ],
+          "generation_mw": [
+            0.5,
+            0.0
+          ],
+          "matched_mw": [
+            0.5,
+            0.0
+          ],
+          "cost_eur": 250.0,
+          "matched_mwh": 0.5,
+          "unmatched_mwh": 1.5,
+          "excess_mwh": 0.0,
+          "total_generation_mwh": 0.5,
+          "demand_mwh": 2.0,
+          "matching_fraction": 0.25,
+          "max_violation": -0.0,
+          "runtime_s": 0.001990193999517942,
+          "solver": "classical HiGHS LP"
+        },
+        "0.5": {
+          "feasible": true,
+          "capacity_mw": [
+            1.0,
+            0.0
+          ],
+          "generation_mw": [
+            1.0,
+            0.0
+          ],
+          "matched_mw": [
+            1.0,
+            0.0
+          ],
+          "cost_eur": 500.0,
+          "matched_mwh": 1.0,
+          "unmatched_mwh": 1.0,
+          "excess_mwh": 0.0,
+          "total_generation_mwh": 1.0,
+          "demand_mwh": 2.0,
+          "matching_fraction": 0.5,
+          "max_violation": -0.0,
+          "runtime_s": 0.0021703259990317747,
+          "solver": "classical HiGHS LP"
+        },
+        "0.75": {
+          "feasible": true,
+          "capacity_mw": [
+            0.5,
+            1.0
+          ],
+          "generation_mw": [
+            1.0,
+            0.5
+          ],
+          "matched_mw": [
+            1.0,
+            0.5
+          ],
+          "cost_eur": 1750.0,
+          "matched_mwh": 1.5,
+          "unmatched_mwh": 0.5,
+          "excess_mwh": 0.0,
+          "total_generation_mwh": 1.5,
+          "demand_mwh": 2.0,
+          "matching_fraction": 0.75,
+          "max_violation": 0.0,
+          "runtime_s": 0.0018666379983187653,
+          "solver": "classical HiGHS LP"
+        },
+        "1": {
+          "feasible": true,
+          "capacity_mw": [
+            0.0,
+            2.0
+          ],
+          "generation_mw": [
+            1.0,
+            1.0
+          ],
+          "matched_mw": [
+            1.0,
+            1.0
+          ],
+          "cost_eur": 3000.0,
+          "matched_mwh": 2.0,
+          "unmatched_mwh": 0.0,
+          "excess_mwh": 0.0,
+          "total_generation_mwh": 2.0,
+          "demand_mwh": 2.0,
+          "matching_fraction": 1.0,
+          "max_violation": -0.0,
+          "runtime_s": 0.00201059499886469,
+          "solver": "classical HiGHS LP"
+        }
+      },
+      "wind_cost": {
+        "750": {
+          "feasible": true,
+          "capacity_mw": [
+            0.0,
+            2.0
+          ],
+          "generation_mw": [
+            1.0,
+            1.0
+          ],
+          "matched_mw": [
+            1.0,
+            1.0
+          ],
+          "cost_eur": 1500.0,
+          "matched_mwh": 2.0,
+          "unmatched_mwh": 0.0,
+          "excess_mwh": 0.0,
+          "total_generation_mwh": 2.0,
+          "demand_mwh": 2.0,
+          "matching_fraction": 1.0,
+          "max_violation": -0.0,
+          "runtime_s": 0.0017778529982024338,
+          "solver": "classical HiGHS LP"
+        },
+        "1500": {
+          "feasible": true,
+          "capacity_mw": [
+            0.0,
+            2.0
+          ],
+          "generation_mw": [
+            1.0,
+            1.0
+          ],
+          "matched_mw": [
+            1.0,
+            1.0
+          ],
+          "cost_eur": 3000.0,
+          "matched_mwh": 2.0,
+          "unmatched_mwh": 0.0,
+          "excess_mwh": 0.0,
+          "total_generation_mwh": 2.0,
+          "demand_mwh": 2.0,
+          "matching_fraction": 1.0,
+          "max_violation": -0.0,
+          "runtime_s": 0.0019614209995779675,
+          "solver": "classical HiGHS LP"
+        },
+        "3000": {
+          "feasible": true,
+          "capacity_mw": [
+            0.0,
+            2.0
+          ],
+          "generation_mw": [
+            1.0,
+            1.0
+          ],
+          "matched_mw": [
+            1.0,
+            1.0
+          ],
+          "cost_eur": 6000.0,
+          "matched_mwh": 2.0,
+          "unmatched_mwh": 0.0,
+          "excess_mwh": 0.0,
+          "total_generation_mwh": 2.0,
+          "demand_mwh": 2.0,
+          "matching_fraction": 1.0,
+          "max_violation": -0.0,
+          "runtime_s": 0.0018328559999645222,
+          "solver": "classical HiGHS LP"
+        }
+      },
+      "scaling": {
+        "2": 0.0017592850017535966,
+        "24": 0.0023153049987740815,
+        "168": 0.002581387001555413,
+        "8760": 0.08260457800133736
+      }
+    },
+    "prepare_handoff": {
+      "quantum_used": false,
+      "next_action": "Acquire aligned site generation/load, contract terms and attribute ownership; validate independently",
+      "limits": "Perfect-known synthetic profiles; no grid, storage, emissions or compliance model"
+    }
+  },
+  "trace": [
+    {
+      "step": 0,
+      "tool": "inspect_evidence",
+      "status": "completed"
+    },
+    {
+      "step": 1,
+      "tool": "benchmark_methods",
+      "status": "completed"
+    },
+    {
+      "step": 2,
+      "tool": "assess_sensitivity",
+      "status": "completed"
+    },
+    {
+      "step": 3,
+      "tool": "prepare_handoff",
+      "status": "completed"
+    },
+    {
+      "step": 4,
+      "tool": "finish",
+      "status": "completed"
+    }
+  ],
+  "human_review_required": true,
+  "execution_authorized": false,
+  "validation": "registered_tool_execution_and_protocol_only",
+  "fixture_sha256": "a4d8a26c336f661b8755343d8530715f464df32264f9d015258cf8c7a1552432",
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Linux",
+    "machine": "x86_64",
+    "versions": {
+      "numpy": "2.3.5",
+      "scipy": "1.17.0",
+      "pandas": "2.2.3",
+      "pvlib": "0.16.1",
+      "enerqit": "0.1.0"
+    }
+  },
+  "agent_install": {
+    "url": "https://github.com/julianascencio/energy-agents.git",
+    "vcs_info": {
+      "commit_id": "f8150df9a4272bf2b97042a61b3b785a92450057",
+      "requested_revision": "f8150df9a4272bf2b97042a61b3b785a92450057",
+      "vcs": "git"
+    }
+  }
+}

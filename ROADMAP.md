@@ -69,3 +69,5 @@ Implemented sequential no-recharge battery reserve screening. Initial SOC and ou
 Implemented shared export allocation for initial AC energy budgets. Site-specific charging, hydro head, fees and terminal values remain open.
 
 Implemented export-ceiling curtailment recovery ledger; site charging permissions, degradation and settlement validation remain open.
+
+Implemented temporal renewable capacity procurement. Forecast uncertainty, network deliverability and attribute ownership remain open.

@@ -170,3 +170,5 @@ restricted optimality and independent LP reference tests.
 and independent enumeration of the finite-energy export LP.
 
 :doc:`/curtailment_recovery` separates captured energy, losses, remaining SOC and recovered export, with independent LP tests.
+
+See :doc:`/hourly_matching` for temporal procurement evidence and independent tests.

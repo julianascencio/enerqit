@@ -139,3 +139,5 @@ Shared export allocation: :doc:`/shared_export` compares independent requests,
 clipping and coordinated discharge under one connection.
 
 :doc:`/curtailment_recovery` screens surplus-only battery recovery under a net-export ceiling.
+
+:doc:`/hourly_matching`: compare total-energy purchases with simultaneous coverage.
