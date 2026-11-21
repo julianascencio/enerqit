@@ -56,3 +56,6 @@ jobs:
 
       - run: python -m pytest tests/test_curtailment.py
       - run: python -m enerqit.curtailment_study
+
+      - run: python -m pytest tests/test_storage_envelope.py
+      - run: python -m enerqit.activation_study

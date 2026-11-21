@@ -209,3 +209,9 @@ Curtailment recovery
 
 .. automodule:: enerqit.curtailment
    :members:
+
+Storage activation envelope
+--------------------------------
+
+.. automodule:: enerqit.storage_envelope
+   :members:

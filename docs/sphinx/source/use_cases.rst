@@ -139,3 +139,7 @@ Shared export allocation: :doc:`/shared_export` compares independent requests,
 clipping and coordinated discharge under one connection.
 
 :doc:`/curtailment_recovery` screens surplus-only battery recovery under a net-export ceiling.
+
+Bidirectional activation readiness: :doc:`/storage_headroom` adds an exact
+classical initial-SOC certificate, independent small path-state LP reference,
+and minimum-movement preparation. Synthetic uncertainty boxes, no quantum use.
