@@ -20,3 +20,6 @@ The gallery covers three complementary parts of an EnerQit study:
 Each page includes the source code, generated results and downloadable Python
 and notebook versions. Read the :doc:`input requirements </data_contract>` and
 :doc:`method limitations </methods>` before adapting an example to real data.
+
+:doc:`Bidirectional battery readiness <plot_storage_headroom>` demonstrates
+charging headroom, an exact initial-energy envelope and actual engineer tools.

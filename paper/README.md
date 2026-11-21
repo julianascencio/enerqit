@@ -125,3 +125,13 @@ Energy-limited reserve (2026-11-16): causal no-recharge replay, analytic energy 
 Shared export (17 November 2026): sparse finite-energy dispatch LP, independently enumerated references and explicit Forbach source discrepancy; see shared_export guide.
 
 Curtailment recovery (18 November 2026): causal surplus charging, explicit AC/DC ledger and independent inventory LP references. See curtailment_recovery guide.
+
+## Bidirectional storage readiness (21 November 2026)
+
+The AEMO summer outlook release of 20 November motivates charging-headroom and
+discharge-readiness screening. Standard constant-efficiency storage balances
+(https://docs.pypsa.org/latest/user-guide/optimization/storage/) yield an exact
+monotone cumulative bound for an independent interval box. See the
+[derivation and limitations](../docs/sphinx/source/storage_headroom.rst).
+Independent path-state LP references validate small synthetic cases.
+No algorithmic novelty, field calibration or quantum advantage is claimed.
