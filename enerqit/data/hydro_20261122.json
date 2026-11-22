@@ -1,0 +1,14 @@
+{
+ "classification":"synthetic", "license":"MIT authored inputs; no provider dataset redistributed",
+ "source":"https://www.nve.no/media/20550/2026_46_kraftsituasjonen.pdf",
+ "published":"2026-11-18", "event":"ISO week 46, 9-15 November 2026",
+ "reviewed":"2026-11-22", "source_role":"National context only, not plant calibration",
+ "source_response_sha256":null,
+ "time_semantics":"Three consecutive one-hour intervals starting 2026-11-22T00:00:00Z; illustrative UTC timeline",
+ "agent_commit":"f8150df9a4272bf2b97042a61b3b785a92450057",
+ "edi_commit":"e72d9d822b442f6392c80ce12dfc62f738f51ddd",
+ "edi_scope":"Generation connectors inspected; generation MW cannot infer plant inflows, head, release rights or terminal water targets. No connector reused.",
+ "inputs":{"inflow_m3_s":[0,0,0],"prices_eur_mwh":[20,100,30],"hours":[1,1,1],"minimum_release_m3_s":[5.555555555555555,5.555555555555555,5.555555555555555],"initial_m3":100000,"capacity_m3":100000,"terminal_min_m3":20000,"turbine_m3_s":11.11111111111111,"head_m":100,"efficiency":0.9},
+ "baseline_turbine_m3":[40000,20000,20000],
+ "baseline_scope":"Feasible early-release schedule with same total release and terminal inventory, deliberately not price optimized"
+}

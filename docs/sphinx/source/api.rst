@@ -209,3 +209,9 @@ Curtailment recovery
 
 .. automodule:: enerqit.curtailment
    :members:
+
+Reservoir dispatch
+------------------------
+
+.. automodule:: enerqit.hydro
+   :members:

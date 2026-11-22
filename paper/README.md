@@ -125,3 +125,9 @@ Energy-limited reserve (2026-11-16): causal no-recharge replay, analytic energy 
 Shared export (17 November 2026): sparse finite-energy dispatch LP, independently enumerated references and explicit Forbach source discrepancy; see shared_export guide.
 
 Curtailment recovery (18 November 2026): causal surplus charging, explicit AC/DC ledger and independent inventory LP references. See curtailment_recovery guide.
+
+## Reservoir water allocation, 22 November 2026
+
+See [model and sources](../docs/sphinx/source/hydro_water.rst). NVE supplies
+context only. Standard constant-head water balance and sparse LP, independently
+checked against tiny physical enumeration; no research novelty claimed.

@@ -170,3 +170,6 @@ restricted optimality and independent LP reference tests.
 and independent enumeration of the finite-energy export LP.
 
 :doc:`/curtailment_recovery` separates captured energy, losses, remaining SOC and recovered export, with independent LP tests.
+
+:doc:`/hydro_water` advances the reservoir backlog with NVE week-46 context,
+standard constant-head water balances and independent exhaustive references.
