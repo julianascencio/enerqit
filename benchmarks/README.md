@@ -15,3 +15,7 @@ Before making any advantage claim, add larger constrained instances, tuned
 native MILP/MIQP/CP-SAT/decomposition solvers, real held-out plants and matched
 end-to-end cost or time-to-target experiments. ML models should only be compared
 under clearly specified training-data availability and domain shift.
+
+Bidirectional readiness: `python -m enerqit.activation_study` exports the actual
+agent trace, independent LP gap, preparation fee component, sensitivities and
+O(n) scaling. Snapshot: `results/activation-20261121.json`.

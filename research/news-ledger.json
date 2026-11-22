@@ -216,7 +216,7 @@
       "as_of": "2026-11-11",
       "candidates": [
         {
-          "case": "Türkiye interconnection report",
+          "case": "T\u00fcrkiye interconnection report",
           "date": "2026-11-10",
           "impact": "Secure transfer and regional electricity value",
           "evidence": "Primary analysis, historical trade totals not topology",
@@ -508,6 +508,119 @@
     ],
     "fixture": "enerqit/data/curtailment_20261118.json",
     "status": "proposed"
+  },
+  "ramping_20261119": {
+    "candidates": [
+      {
+        "case": "NESO forecast/ramp deliverability",
+        "date": "2026-11-18",
+        "url": "https://www.neso.energy/document/390381/download",
+        "impact": "Avoid confusing capacity with timely delivery",
+        "evidence": "Primary operator forecast",
+        "tractability": "Bounded LP; no calibrated resource data",
+        "novelty": "Existing reserve energy and capacity models lack ramp constraints",
+        "fit": "Optimization",
+        "decision": "selected"
+      },
+      {
+        "case": "Spain curtailment",
+        "date": "2026-11-16",
+        "url": "https://www.woodmac.com/press-releases/spains-renewable-sector-has-lost-140-million-to-grid-constraints-as-curtailment-remains-elevated-since-april-2025-blackout/",
+        "impact": "Renewable export value",
+        "evidence": "Original analyst release",
+        "tractability": "Site limits unavailable",
+        "novelty": "Already covered by merged PR13",
+        "fit": "Recovery inference",
+        "decision": "defer"
+      },
+      {
+        "case": "US storage deployment",
+        "date": "2026-11-17",
+        "url": "https://seia.org/research-resources/energy-storage-market-outlook-q4-2026/",
+        "impact": "Storage sizing",
+        "evidence": "Primary industry report",
+        "tractability": "No interval resource evidence",
+        "novelty": "Existing sizing studies",
+        "fit": "Optimization",
+        "decision": "defer"
+      },
+      {
+        "case": "800 VDC data-centre conversion",
+        "date": "2026-11-17",
+        "url": "https://www.vertiv.com/en-us/about/news-and-events/corporate-news/2026/vertiv-advances-800-vdc-power-architectures-to-support-growing-ai-data-center-demands/",
+        "impact": "AI power losses",
+        "evidence": "Manufacturer announcement",
+        "tractability": "Missing operating curves",
+        "novelty": "New domain but missing calibration",
+        "fit": "Inference",
+        "decision": "backlog"
+      }
+    ],
+    "status": "proposed",
+    "fixture": "enerqit/data/ramping_20261119.json"
+  },
+  "matching_20261120": {
+    "candidates": [
+      {
+        "case": "Data-centre renewable matching",
+        "url": "https://www.climatecouncil.org.au/resources/data-centres-that-could-rival-our-dirtiest-coal-power-stations/",
+        "date": "2026-11-19",
+        "impact": "Avoid confusing total procurement with temporal coverage",
+        "evidence": "Primary research organisation release",
+        "tractability": "Small exact LP; missing site calibration",
+        "novelty": "No capacity-contract temporal matching optimizer in main; distinct from PR14 ramps",
+        "fit": "Optimization",
+        "decision": "selected"
+      },
+      {
+        "case": "Australia wind/battery construction",
+        "url": "https://ieefa.org/articles/wind-and-battery-projects-catapult-australian-states-towards-2030-renewable-target",
+        "date": "2026-11-19",
+        "event": "Q3 construction commitments",
+        "impact": "Industrial renewable procurement",
+        "evidence": "Original IEEFA scorecard",
+        "tractability": "Aggregate project pipeline only",
+        "novelty": "Existing storage-sizing studies",
+        "fit": "Investment optimization",
+        "decision": "defer"
+      },
+      {
+        "case": "Holloway four-hour battery",
+        "url": "https://www.renewableenergymagazine.com/storage/edf-power-solutions-acquires-a-1-gwh-20261119",
+        "date": "2026-11-19",
+        "event": "Development acquisition; planned 2029 operation",
+        "impact": "Storage time shifting",
+        "evidence": "Secondary developer coverage",
+        "tractability": "No operational observations",
+        "novelty": "Existing curtailment and sizing methods",
+        "fit": "Dispatch optimization",
+        "decision": "defer"
+      },
+      {
+        "case": "Norwegian hydro surplus narrowing",
+        "url": "https://cyprusshippingnews.com/2026/11/19/norways-green-battery-needs-faster-wind-and-grid-build-out-as-power-surplus-narrows-says-globaldata/",
+        "date": "2026-11-19",
+        "event": "Structural outlook; previously covered 17 November",
+        "impact": "Hydro, industrial and data-centre demand",
+        "evidence": "Secondary GlobalData coverage",
+        "tractability": "Missing basin inflows and water values",
+        "novelty": "Hydro calibration backlog",
+        "fit": "Forecasting/optimization",
+        "decision": "backlog"
+      }
+    ],
+    "fixture": "enerqit/data/matching_20261120.json",
+    "status": "proposed"
+  },
+  "activation_20261121": {
+    "selection_record": "research/activation-selection-20261121.json",
+    "selected": "aemo-bidirectional-readiness",
+    "status": "proposed; not merged or deployed",
+    "fixture": "enerqit/data/activation_20261121.json",
+    "pending_work_preserved": [
+      14,
+      15
+    ]
   },
   "hydro_20261122": {
     "selection": "research/hydro-selection-20261122.md",

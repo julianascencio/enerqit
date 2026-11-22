@@ -1,0 +1,436 @@
+{
+  "success": true,
+  "role": {
+    "id": "career_quantum_ml_engineer",
+    "title": "Quantum Machine Learning Engineer",
+    "mandate": "Design and evaluate classical, quantum-inspired and hybrid energy research workflows.",
+    "inputs": [
+      "load_case",
+      "experiment_budget",
+      "research_context"
+    ],
+    "tool": "prepare_data",
+    "output": "quantum_ml_research_handoff",
+    "acceptance": "Chronological held-out benchmarks, feasible schedules, provenance and limitations.",
+    "technology": "cross_technology",
+    "authority": "local_bounded_research_only"
+  },
+  "mode": "scripted_tool_workflow",
+  "classification": "synthetic",
+  "reports": {
+    "inspect_evidence": {
+      "classification": "synthetic",
+      "license": "MIT; authored numerical fixture, no provider data redistributed",
+      "reviewed_on": "2026-11-21",
+      "time_semantics": "Two consecutive one-hour UTC intervals starting 2026-11-21T12:00:00Z; hypothetical timing, not Australian system measurements. Preparation immediately precedes the window.",
+      "source": "https://www.aemo.com.au/newsroom/media-release/aemo-prepares-for-summer-as-energy-supplies-forecast-to-remain-sufficient",
+      "publication_date": "2026-11-20",
+      "event_horizon": "Australian summer 2026-27 forecast, not a realized shortage",
+      "source_role": "Motivation only: high and low operational demand create different storage readiness needs. No battery parameters inferred from news.",
+      "source_response_sha256": null,
+      "source_hash_note": "Web retrieval verified; no raw provider response archived or hash claimed.",
+      "agent_commit": "f8150df9a4272bf2b97042a61b3b785a92450057",
+      "edi_commit": "e72d9d822b442f6392c80ce12dfc62f738f51ddd",
+      "edi_inspection": "docs/generation-connectors.md: AEMO five-minute instantaneous SCADA MW cannot identify usable SOC, efficiencies or activation bounds. No connector/code/data reused.",
+      "inputs": {
+        "lower_mw": [
+          -20,
+          10
+        ],
+        "upper_mw": [
+          -10,
+          20
+        ],
+        "hours": [
+          1,
+          1
+        ],
+        "charge_mw": 30,
+        "discharge_mw": 30,
+        "capacity_dc_mwh": 40,
+        "charge_efficiency": 0.9,
+        "discharge_efficiency": 0.9
+      },
+      "probe_ac_mw": [
+        -20,
+        20
+      ],
+      "initial_dc_mwh": 40,
+      "preparation_hours": 1,
+      "assumed_preparation_throughput_eur_per_ac_mwh": 5,
+      "economic_limits": "Preparation fee is an engineered assumption on AC throughput only, not a tariff or net cost. Energy sale/purchase, inventory opportunity value, taxes, degradation and service payments need separate calibration. No realized savings."
+    },
+    "benchmark_methods": {
+      "envelope": {
+        "status": "feasible",
+        "initial_lower_dc_mwh": 13.222222222222221,
+        "initial_upper_dc_mwh": 22.0,
+        "energy_interval_width_mwh": 8.777777777777779,
+        "required_capacity_dc_mwh": 31.22222222222222,
+        "lower_binding_boundary": 2,
+        "upper_binding_boundary": 1,
+        "power_feasible": true,
+        "runtime_s": 0.0001876739988802001
+      },
+      "vertex_lp": {
+        "status": "feasible",
+        "initial_lower_dc_mwh": 13.222222222222221,
+        "initial_upper_dc_mwh": 22.0,
+        "variables": 9,
+        "paths": 4,
+        "runtime_s": 0.004501012997934595
+      },
+      "max_reference_gap_mwh": 0.0,
+      "probe_replays": {
+        "full": {
+          "actual_ac_mw": [
+            -0.0,
+            20.0
+          ],
+          "energy_dc_mwh": [
+            40.0,
+            40.0,
+            17.77777777777778
+          ],
+          "missed_absorption_ac_mwh": 20.0,
+          "missed_discharge_ac_mwh": 0.0,
+          "conversion_loss_mwh": 2.222222222222223,
+          "max_balance_residual_mwh": 0.0
+        },
+        "half": {
+          "actual_ac_mw": [
+            -20.0,
+            20.0
+          ],
+          "energy_dc_mwh": [
+            20.0,
+            38.0,
+            15.777777777777779
+          ],
+          "missed_absorption_ac_mwh": 0.0,
+          "missed_discharge_ac_mwh": 0.0,
+          "conversion_loss_mwh": 4.222222222222223,
+          "max_balance_residual_mwh": 0.0
+        },
+        "empty": {
+          "actual_ac_mw": [
+            -20.0,
+            16.2
+          ],
+          "energy_dc_mwh": [
+            0.0,
+            18.0,
+            0.0
+          ],
+          "missed_absorption_ac_mwh": 0.0,
+          "missed_discharge_ac_mwh": 3.8000000000000007,
+          "conversion_loss_mwh": 3.8000000000000003,
+          "max_balance_residual_mwh": 0.0
+        },
+        "prepared": {
+          "actual_ac_mw": [
+            -20.0,
+            20.0
+          ],
+          "energy_dc_mwh": [
+            22.0,
+            40.0,
+            17.77777777777778
+          ],
+          "missed_absorption_ac_mwh": 0.0,
+          "missed_discharge_ac_mwh": 0.0,
+          "conversion_loss_mwh": 4.222222222222223,
+          "max_balance_residual_mwh": 0.0
+        }
+      },
+      "preparation": {
+        "status": "feasible",
+        "target_dc_mwh": 22.0,
+        "minimum_hours": 0.5399999999999999,
+        "import_ac_mwh": 0.0,
+        "export_ac_mwh": 16.2
+      },
+      "preparation_fee_eur": 81.0
+    },
+    "assess_sensitivity": {
+      "capacity": {
+        "20": {
+          "status": "infeasible",
+          "initial_lower_dc_mwh": null,
+          "initial_upper_dc_mwh": null,
+          "energy_interval_width_mwh": -11.222222222222221,
+          "required_capacity_dc_mwh": 31.22222222222222,
+          "lower_binding_boundary": 2,
+          "upper_binding_boundary": 1,
+          "power_feasible": true,
+          "runtime_s": 5.558400880545378e-05
+        },
+        "30": {
+          "status": "infeasible",
+          "initial_lower_dc_mwh": null,
+          "initial_upper_dc_mwh": null,
+          "energy_interval_width_mwh": -1.2222222222222214,
+          "required_capacity_dc_mwh": 31.22222222222222,
+          "lower_binding_boundary": 2,
+          "upper_binding_boundary": 1,
+          "power_feasible": true,
+          "runtime_s": 7.457300671376288e-05
+        },
+        "40": {
+          "status": "feasible",
+          "initial_lower_dc_mwh": 13.222222222222221,
+          "initial_upper_dc_mwh": 22.0,
+          "energy_interval_width_mwh": 8.777777777777779,
+          "required_capacity_dc_mwh": 31.22222222222222,
+          "lower_binding_boundary": 2,
+          "upper_binding_boundary": 1,
+          "power_feasible": true,
+          "runtime_s": 3.385099989827722e-05
+        },
+        "60": {
+          "status": "feasible",
+          "initial_lower_dc_mwh": 13.222222222222221,
+          "initial_upper_dc_mwh": 42.0,
+          "energy_interval_width_mwh": 28.77777777777778,
+          "required_capacity_dc_mwh": 31.22222222222222,
+          "lower_binding_boundary": 2,
+          "upper_binding_boundary": 1,
+          "power_feasible": true,
+          "runtime_s": 3.1107003451325e-05
+        }
+      },
+      "efficiency": {
+        "0.8": {
+          "status": "feasible",
+          "initial_lower_dc_mwh": 17.0,
+          "initial_upper_dc_mwh": 24.0,
+          "energy_interval_width_mwh": 7.0,
+          "required_capacity_dc_mwh": 33.0,
+          "lower_binding_boundary": 2,
+          "upper_binding_boundary": 1,
+          "power_feasible": true,
+          "runtime_s": 3.082701005041599e-05
+        },
+        "0.9": {
+          "status": "feasible",
+          "initial_lower_dc_mwh": 13.222222222222221,
+          "initial_upper_dc_mwh": 22.0,
+          "energy_interval_width_mwh": 8.777777777777779,
+          "required_capacity_dc_mwh": 31.22222222222222,
+          "lower_binding_boundary": 2,
+          "upper_binding_boundary": 1,
+          "power_feasible": true,
+          "runtime_s": 2.9414994060061872e-05
+        },
+        "1": {
+          "status": "feasible",
+          "initial_lower_dc_mwh": 10.0,
+          "initial_upper_dc_mwh": 20.0,
+          "energy_interval_width_mwh": 10.0,
+          "required_capacity_dc_mwh": 30.0,
+          "lower_binding_boundary": 2,
+          "upper_binding_boundary": 1,
+          "power_feasible": true,
+          "runtime_s": 3.0816998332738876e-05
+        }
+      },
+      "uncertainty_radius_mw": {
+        "0": {
+          "status": "feasible",
+          "initial_lower_dc_mwh": 3.166666666666668,
+          "initial_upper_dc_mwh": 26.5,
+          "energy_interval_width_mwh": 23.333333333333332,
+          "required_capacity_dc_mwh": 16.666666666666668,
+          "lower_binding_boundary": 2,
+          "upper_binding_boundary": 1,
+          "power_feasible": true,
+          "runtime_s": 2.9835005989298224e-05
+        },
+        "2.5": {
+          "status": "feasible",
+          "initial_lower_dc_mwh": 8.194444444444443,
+          "initial_upper_dc_mwh": 24.25,
+          "energy_interval_width_mwh": 16.055555555555557,
+          "required_capacity_dc_mwh": 23.944444444444443,
+          "lower_binding_boundary": 2,
+          "upper_binding_boundary": 1,
+          "power_feasible": true,
+          "runtime_s": 2.920400584116578e-05
+        },
+        "5": {
+          "status": "feasible",
+          "initial_lower_dc_mwh": 13.222222222222221,
+          "initial_upper_dc_mwh": 22.0,
+          "energy_interval_width_mwh": 8.777777777777779,
+          "required_capacity_dc_mwh": 31.22222222222222,
+          "lower_binding_boundary": 2,
+          "upper_binding_boundary": 1,
+          "power_feasible": true,
+          "runtime_s": 2.8873997507616878e-05
+        },
+        "10": {
+          "status": "infeasible",
+          "initial_lower_dc_mwh": null,
+          "initial_upper_dc_mwh": null,
+          "energy_interval_width_mwh": -5.777777777777779,
+          "required_capacity_dc_mwh": 45.77777777777778,
+          "lower_binding_boundary": 2,
+          "upper_binding_boundary": 1,
+          "power_feasible": true,
+          "runtime_s": 3.0365990824066103e-05
+        }
+      },
+      "preparation_hours": {
+        "0": {
+          "status": "preparation_infeasible",
+          "target_dc_mwh": 22.0,
+          "minimum_hours": 0.5399999999999999,
+          "import_ac_mwh": 0.0,
+          "export_ac_mwh": 16.2
+        },
+        "0.5": {
+          "status": "preparation_infeasible",
+          "target_dc_mwh": 22.0,
+          "minimum_hours": 0.5399999999999999,
+          "import_ac_mwh": 0.0,
+          "export_ac_mwh": 16.2
+        },
+        "1": {
+          "status": "feasible",
+          "target_dc_mwh": 22.0,
+          "minimum_hours": 0.5399999999999999,
+          "import_ac_mwh": 0.0,
+          "export_ac_mwh": 16.2
+        }
+      },
+      "scaling": {
+        "2": {
+          "status": "feasible",
+          "initial_lower_dc_mwh": 0.18518518518518517,
+          "initial_upper_dc_mwh": 39.85,
+          "energy_interval_width_mwh": 39.66481481481482,
+          "required_capacity_dc_mwh": 0.33518518518518514,
+          "lower_binding_boundary": 2,
+          "upper_binding_boundary": 2,
+          "power_feasible": true,
+          "runtime_s": 3.015599213540554e-05
+        },
+        "24": {
+          "status": "feasible",
+          "initial_lower_dc_mwh": 2.222222222222222,
+          "initial_upper_dc_mwh": 38.2,
+          "energy_interval_width_mwh": 35.97777777777778,
+          "required_capacity_dc_mwh": 4.022222222222221,
+          "lower_binding_boundary": 24,
+          "upper_binding_boundary": 24,
+          "power_feasible": true,
+          "runtime_s": 4.240400448907167e-05
+        },
+        "288": {
+          "status": "infeasible",
+          "initial_lower_dc_mwh": null,
+          "initial_upper_dc_mwh": null,
+          "energy_interval_width_mwh": -8.266666666666517,
+          "required_capacity_dc_mwh": 48.26666666666652,
+          "lower_binding_boundary": 288,
+          "upper_binding_boundary": 288,
+          "power_feasible": true,
+          "runtime_s": 0.00010179399396292865
+        },
+        "8760": {
+          "status": "infeasible",
+          "initial_lower_dc_mwh": null,
+          "initial_upper_dc_mwh": null,
+          "energy_interval_width_mwh": -1428.1111111112318,
+          "required_capacity_dc_mwh": 1468.1111111112318,
+          "lower_binding_boundary": 8760,
+          "upper_binding_boundary": 8760,
+          "power_feasible": true,
+          "runtime_s": 0.0010603000118862838
+        },
+        "100000": {
+          "status": "infeasible",
+          "initial_lower_dc_mwh": null,
+          "initial_upper_dc_mwh": null,
+          "energy_interval_width_mwh": -16719.259259233662,
+          "required_capacity_dc_mwh": 16759.259259233662,
+          "lower_binding_boundary": 100000,
+          "upper_binding_boundary": 100000,
+          "power_feasible": true,
+          "runtime_s": 0.012154706011642702
+        }
+      }
+    },
+    "prepare_handoff": {
+      "quantum_used": false,
+      "algorithm": "Exact classical monotone cumulative bounds; classical LP reference",
+      "limits": "Box guarantee only; no probability, correlated-path inference, grid dynamics or dispatch permission",
+      "next_action": "Validate SOC/efficiencies, activation bounds, charging permission and preparation opportunity cost with independent asset/operator reviewers"
+    }
+  },
+  "trace": [
+    {
+      "step": 0,
+      "tool": "inspect_evidence",
+      "status": "completed"
+    },
+    {
+      "step": 1,
+      "tool": "benchmark_methods",
+      "status": "completed"
+    },
+    {
+      "step": 2,
+      "tool": "assess_sensitivity",
+      "status": "completed"
+    },
+    {
+      "step": 3,
+      "tool": "prepare_handoff",
+      "status": "completed"
+    },
+    {
+      "step": 4,
+      "tool": "finish",
+      "status": "completed"
+    }
+  ],
+  "human_review_required": true,
+  "execution_authorized": false,
+  "validation": "registered_tool_execution_and_protocol_only",
+  "fixture_sha256": "ceeef750f4c78e9e3b4920044b5282a4bbb798aa00126c670e52fdb6655a3a96",
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Linux",
+    "machine": "x86_64",
+    "versions": {
+      "numpy": "2.3.5",
+      "scipy": "1.17.0",
+      "pandas": "2.2.3",
+      "pvlib": "0.16.1",
+      "enerqit": "0.1.0"
+    }
+  },
+  "seeds": {
+    "study": null,
+    "independent_test_instances": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ]
+  },
+  "timing_scope": "Envelope function including array conversion; dataclass construction excluded. Single-run diagnostics, not a speedup claim.",
+  "agent_install": {
+    "url": "https://github.com/julianascencio/energy-agents.git",
+    "vcs_info": {
+      "commit_id": "f8150df9a4272bf2b97042a61b3b785a92450057",
+      "requested_revision": "f8150df9a4272bf2b97042a61b3b785a92450057",
+      "vcs": "git"
+    }
+  }
+}

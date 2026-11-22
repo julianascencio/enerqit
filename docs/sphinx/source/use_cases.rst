@@ -140,5 +140,13 @@ clipping and coordinated discharge under one connection.
 
 :doc:`/curtailment_recovery` screens surplus-only battery recovery under a net-export ceiling.
 
+:doc:`/ramp_deliverability`: distinguish capacity from timely output and pre-positioning cost.
+
+:doc:`/hourly_matching`: compare total-energy purchases with simultaneous coverage.
+
+Bidirectional activation readiness: :doc:`/storage_headroom` adds an exact
+classical initial-SOC certificate, independent small path-state LP reference,
+and minimum-movement preparation. Synthetic uncertainty boxes, no quantum use.
+
 :doc:`/hydro_water`: classical sparse reservoir LP, synthetic water balance,
 minimum releases and terminal floor. No quantum method or field validation.

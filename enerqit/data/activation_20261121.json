@@ -1,0 +1,25 @@
+{
+  "classification": "synthetic",
+  "license": "MIT; authored numerical fixture, no provider data redistributed",
+  "reviewed_on": "2026-11-21",
+  "time_semantics": "Two consecutive one-hour UTC intervals starting 2026-11-21T12:00:00Z; hypothetical timing, not Australian system measurements. Preparation immediately precedes the window.",
+  "source": "https://www.aemo.com.au/newsroom/media-release/aemo-prepares-for-summer-as-energy-supplies-forecast-to-remain-sufficient",
+  "publication_date": "2026-11-20",
+  "event_horizon": "Australian summer 2026-27 forecast, not a realized shortage",
+  "source_role": "Motivation only: high and low operational demand create different storage readiness needs. No battery parameters inferred from news.",
+  "source_response_sha256": null,
+  "source_hash_note": "Web retrieval verified; no raw provider response archived or hash claimed.",
+  "agent_commit": "f8150df9a4272bf2b97042a61b3b785a92450057",
+  "edi_commit": "e72d9d822b442f6392c80ce12dfc62f738f51ddd",
+  "edi_inspection": "docs/generation-connectors.md: AEMO five-minute instantaneous SCADA MW cannot identify usable SOC, efficiencies or activation bounds. No connector/code/data reused.",
+  "inputs": {
+    "lower_mw": [-20, 10], "upper_mw": [-10, 20], "hours": [1, 1],
+    "charge_mw": 30, "discharge_mw": 30, "capacity_dc_mwh": 40,
+    "charge_efficiency": 0.9, "discharge_efficiency": 0.9
+  },
+  "probe_ac_mw": [-20, 20],
+  "initial_dc_mwh": 40,
+  "preparation_hours": 1,
+  "assumed_preparation_throughput_eur_per_ac_mwh": 5,
+  "economic_limits": "Preparation fee is an engineered assumption on AC throughput only, not a tariff or net cost. Energy sale/purchase, inventory opportunity value, taxes, degradation and service payments need separate calibration. No realized savings."
+}

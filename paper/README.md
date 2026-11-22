@@ -126,6 +126,20 @@ Shared export (17 November 2026): sparse finite-energy dispatch LP, independentl
 
 Curtailment recovery (18 November 2026): causal surplus charging, explicit AC/DC ledger and independent inventory LP references. See curtailment_recovery guide.
 
+Ramp deliverability adds a sparse classical LP with independent tiny-path enumeration. See the ramp guide for synthetic assumptions and transition-energy limitations.
+
+Temporal matching uses a sparse classical LP and independent analytic/grid references. See the hourly-matching guide for synthetic assumptions and accounting boundaries.
+
+## Bidirectional storage readiness (21 November 2026)
+
+The AEMO summer outlook release of 20 November motivates charging-headroom and
+discharge-readiness screening. Standard constant-efficiency storage balances
+(https://docs.pypsa.org/latest/user-guide/optimization/storage/) yield an exact
+monotone cumulative bound for an independent interval box. See the
+[derivation and limitations](../docs/sphinx/source/storage_headroom.rst).
+Independent path-state LP references validate small synthetic cases.
+No algorithmic novelty, field calibration or quantum advantage is claimed.
+
 ## Reservoir water allocation, 22 November 2026
 
 See [model and sources](../docs/sphinx/source/hydro_water.rst). NVE supplies

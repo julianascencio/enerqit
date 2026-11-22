@@ -171,5 +171,16 @@ and independent enumeration of the finite-energy export LP.
 
 :doc:`/curtailment_recovery` separates captured energy, losses, remaining SOC and recovered export, with independent LP tests.
 
+See :doc:`/ramp_deliverability` for dated operator context and independent dispatch checks.
+
+See :doc:`/hourly_matching` for temporal procurement evidence and independent tests.
+
+:doc:`/storage_headroom` connects the AEMO summer outlook (20 November 2026) to
+synthetic bidirectional readiness. `PyPSA storage documentation
+<https://docs.pypsa.org/latest/user-guide/optimization/storage/>`_ supplies
+standard storage balance context; no PyPSA implementation or validation is claimed.
+The exact monotonic-envelope derivation and independent path-state LP checks
+are documented in the guide. No article or dataset is redistributed.
+
 :doc:`/hydro_water` advances the reservoir backlog with NVE week-46 context,
 standard constant-head water balances and independent exhaustive references.

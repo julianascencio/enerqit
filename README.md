@@ -342,5 +342,12 @@ Probability-robust reserve procurement: [method](docs/sphinx/source/probability_
 
 [Curtailment recovery ledger](docs/examples/plot_curtailment_recovery.py): runnable agent-led battery accounting example.
 
+[Ramp deliverability](docs/sphinx/source/ramp_deliverability.rst): [offline agent example](docs/examples/plot_ramp_deliverability.py).
+
+[Temporal renewable procurement](docs/sphinx/source/hourly_matching.rst): [runnable agent example](docs/examples/plot_hourly_matching.py).
+
+Battery charging headroom and discharge readiness: [guide](docs/sphinx/source/storage_headroom.rst),
+[offline agent example](docs/examples/plot_storage_headroom.py).
+
 [Reservoir water allocation example](docs/examples/plot_reservoir_water_budget.py)
 uses the existing engineer and a physically audited constant-head LP.
