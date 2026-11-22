@@ -221,3 +221,9 @@ Temporal procurement
 
 .. automodule:: enerqit.matching
    :members:
+
+Storage activation envelope
+--------------------------------
+
+.. automodule:: enerqit.storage_envelope
+   :members:

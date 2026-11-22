@@ -1,0 +1,144 @@
+{
+  "as_of": "2026-11-21",
+  "timezone": "Atlantic/Canary",
+  "window": "72 hours ending 2026-11-21; hydro backlog explicitly older",
+  "score_order": [
+    "business_impact",
+    "technical_importance",
+    "evidence",
+    "tractability",
+    "repository_novelty",
+    "optimization_relevance"
+  ],
+  "score_scale": "1 low to 5 high; editorial screening judgments, not measured economic forecasts",
+  "candidates": [
+    {
+      "id": "aemo-bidirectional-readiness",
+      "selected": true,
+      "url": "https://www.aemo.com.au/newsroom/media-release/aemo-prepares-for-summer-as-energy-supplies-forecast-to-remain-sufficient",
+      "published": "2026-11-20",
+      "event": "summer 2026-27 outlook",
+      "coverage": [
+        "PV",
+        "wind",
+        "storage",
+        "grids",
+        "flexibility"
+      ],
+      "scores": [
+        4,
+        5,
+        4,
+        5,
+        5,
+        5
+      ],
+      "rationale": "Primary operator identifies both high and low operational demand; choose an exact robust initial-SOC certificate, absent from main and open PRs. No shortage implied; no observed calibration dataset."
+    },
+    {
+      "id": "neso-wind-ramp",
+      "selected": false,
+      "url": "https://www.neso.energy/document/390491/download",
+      "published": "2026-11-19",
+      "event": "forecast window 18-22 November 2026",
+      "coverage": [
+        "wind",
+        "PV",
+        "grids",
+        "electricity balancing"
+      ],
+      "scores": [
+        4,
+        5,
+        5,
+        4,
+        1,
+        5
+      ],
+      "rationale": "Primary forecasts but ramp timing already covered by open PR14. Do not digitize approximate chart values into calibrated dispatch data."
+    },
+    {
+      "id": "ieefa-industrial-ppa",
+      "selected": false,
+      "url": "https://ieefa.org/articles/wind-and-battery-projects-catapult-australian-states-towards-2030-renewable-target",
+      "published": "2026-11-19",
+      "event": "Q3 July-September 2026 construction commitments",
+      "coverage": [
+        "wind",
+        "storage",
+        "industrial demand",
+        "PPAs"
+      ],
+      "scores": [
+        4,
+        4,
+        4,
+        3,
+        2,
+        4
+      ],
+      "rationale": "Original scorecard supports investment context, not operating generation or PPA economics. Procurement overlaps PR15; backlog needs licensed contract profiles."
+    },
+    {
+      "id": "climate-council-data-centres",
+      "selected": false,
+      "url": "https://www.climatecouncil.org.au/resources/data-centres-that-could-rival-our-dirtiest-coal-power-stations/",
+      "published": "2026-11-19",
+      "event": "conditional proposals and projections through 2035",
+      "coverage": [
+        "data-center power",
+        "electricity markets",
+        "gas",
+        "industrial demand"
+      ],
+      "scores": [
+        5,
+        4,
+        4,
+        4,
+        1,
+        5
+      ],
+      "rationale": "Already selected in open PR15. Conditional modeled outcomes and advocacy are not observations or enacted rules."
+    },
+    {
+      "id": "ember-hydro-hybridization-backlog",
+      "selected": false,
+      "url": "https://ember-energy.org/latest-insights/power-on-tap-eu-hydro-giants-can-add-25-gw-renewables-without-new-grids/",
+      "published": "2026-07-21",
+      "event": "European hydro co-location study",
+      "coverage": [
+        "hydro",
+        "PV",
+        "wind",
+        "grid connections"
+      ],
+      "scores": [
+        4,
+        4,
+        4,
+        3,
+        2,
+        4
+      ],
+      "rationale": "123-day-old primary study, not fresh news despite search surfacing it. Shared-export capability already exists; reservoir/inflow/head and ecological constraints remain a substantive backlog, needing data."
+    }
+  ],
+  "repository_inspection": {
+    "enerqit_main": "f8ab496eb9c53c048d541b95ef5b9c7685df97a2",
+    "energy_agents_main": "f8150df9a4272bf2b97042a61b3b785a92450057",
+    "edi_main": "e72d9d822b442f6392c80ce12dfc62f738f51ddd",
+    "open_prs": [
+      14,
+      15
+    ],
+    "novelty": "New relative to this repository only: robust two-sided initial-state certification; not a new scientific algorithm.",
+    "reuse": "Existing bounded four-stage role integration and benchmark provenance. Existing reserve replay is no-recharge; curtailment recovery starts empty; cyclic firming optimizes periodic capacity. None provides this uncertainty-box initial-SOC certificate. Numerical implementation remains EnerQit."
+  },
+  "data": "All numerical inputs synthetic, MIT. News and PyPSA documentation supply context only. No observations, forecasts or provider datasets copied.",
+  "backlog_next": [
+    "Calibrate signed activation bounds and their temporal correlation",
+    "Account for terminal inventory opportunity cost and preparation import/export rights",
+    "Hydro reservoir model with licensed inflows, head and ecological constraints"
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_on": "2026-11-15",
+  "updated_on": "2026-11-21",
   "implemented": [
     {
       "id": "gb-duration-aware-battery-portfolio-2026-11-10",
@@ -611,5 +611,15 @@
     ],
     "fixture": "enerqit/data/matching_20261120.json",
     "status": "proposed"
+  },
+  "activation_20261121": {
+    "selection_record": "research/activation-selection-20261121.json",
+    "selected": "aemo-bidirectional-readiness",
+    "status": "proposed; not merged or deployed",
+    "fixture": "enerqit/data/activation_20261121.json",
+    "pending_work_preserved": [
+      14,
+      15
+    ]
   }
 }
