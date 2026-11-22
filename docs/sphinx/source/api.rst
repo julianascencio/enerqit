@@ -210,6 +210,12 @@ Curtailment recovery
 .. automodule:: enerqit.curtailment
    :members:
 
+Ramp deliverability
+-------------------
+
+.. automodule:: enerqit.ramping
+   :members:
+
 Temporal procurement
 -------------------------
 

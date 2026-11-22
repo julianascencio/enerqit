@@ -140,4 +140,6 @@ clipping and coordinated discharge under one connection.
 
 :doc:`/curtailment_recovery` screens surplus-only battery recovery under a net-export ceiling.
 
+:doc:`/ramp_deliverability`: distinguish capacity from timely output and pre-positioning cost.
+
 :doc:`/hourly_matching`: compare total-energy purchases with simultaneous coverage.

@@ -72,4 +72,5 @@ papers and technical sources behind the implementation, see the
 .. toctree::
    :maxdepth: 1
 
+   /ramp_deliverability
    /hourly_matching
