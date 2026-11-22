@@ -70,4 +70,8 @@ Implemented shared export allocation for initial AC energy budgets. Site-specifi
 
 Implemented export-ceiling curtailment recovery ledger; site charging permissions, degradation and settlement validation remain open.
 
+Implemented discrete ramp deliverability screening; continuous ramp energy, forecast uncertainty and operator calibration remain open.
+
+Implemented temporal renewable capacity procurement. Forecast uncertainty, network deliverability and attribute ownership remain open.
+
 Implemented bidirectional activation initial-energy envelopes and preparation screening; correlated activation calibration, thermal/ramp limits and opportunity-cost validation remain open.

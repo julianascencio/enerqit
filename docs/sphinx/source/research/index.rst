@@ -171,6 +171,10 @@ and independent enumeration of the finite-energy export LP.
 
 :doc:`/curtailment_recovery` separates captured energy, losses, remaining SOC and recovered export, with independent LP tests.
 
+See :doc:`/ramp_deliverability` for dated operator context and independent dispatch checks.
+
+See :doc:`/hourly_matching` for temporal procurement evidence and independent tests.
+
 :doc:`/storage_headroom` connects the AEMO summer outlook (20 November 2026) to
 synthetic bidirectional readiness. `PyPSA storage documentation
 <https://docs.pypsa.org/latest/user-guide/optimization/storage/>`_ supplies

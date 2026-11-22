@@ -1,0 +1,81 @@
+{
+  "as_of_utc": "2026-11-19",
+  "agent_commit": "f8150df9a4272bf2b97042a61b3b785a92450057",
+  "base_commit": "f8ab496eb9c53c048d541b95ef5b9c7685df97a2",
+  "classification": "Authored synthetic MIT numerical inputs; report is context only",
+  "inputs": {
+    "demand_mw": [
+      0,
+      40,
+      40
+    ],
+    "hours": [
+      1,
+      1,
+      1
+    ],
+    "ramp_window_hours": [
+      1,
+      1,
+      1
+    ],
+    "capacity_mw": 40,
+    "initial_mw": 0,
+    "ramp_mw_per_hour": 20
+  },
+  "source": {
+    "url": "https://www.neso.energy/document/390381/download",
+    "publication_date": "2026-11-18",
+    "event_period": "Next-day risk and multi-day forecasts, not realized shortage",
+    "license": "Report states Open Government Licence v1.0; body not redistributed",
+    "hash_status": "Raw retrieval failed: HTTPError"
+  },
+  "seed": null,
+  "seed_reason": "Deterministic LP; independent tests use seeds 0..4",
+  "candidates": [
+    {
+      "case": "NESO forecast/ramp deliverability",
+      "date": "2026-11-18",
+      "url": "https://www.neso.energy/document/390381/download",
+      "impact": "Avoid confusing capacity with timely delivery",
+      "evidence": "Primary operator forecast",
+      "tractability": "Bounded LP; no calibrated resource data",
+      "novelty": "Existing reserve energy and capacity models lack ramp constraints",
+      "fit": "Optimization",
+      "decision": "selected"
+    },
+    {
+      "case": "Spain curtailment",
+      "date": "2026-11-16",
+      "url": "https://www.woodmac.com/press-releases/spains-renewable-sector-has-lost-140-million-to-grid-constraints-as-curtailment-remains-elevated-since-april-2025-blackout/",
+      "impact": "Renewable export value",
+      "evidence": "Original analyst release",
+      "tractability": "Site limits unavailable",
+      "novelty": "Already covered by merged PR13",
+      "fit": "Recovery inference",
+      "decision": "defer"
+    },
+    {
+      "case": "US storage deployment",
+      "date": "2026-11-17",
+      "url": "https://seia.org/research-resources/energy-storage-market-outlook-q4-2026/",
+      "impact": "Storage sizing",
+      "evidence": "Primary industry report",
+      "tractability": "No interval resource evidence",
+      "novelty": "Existing sizing studies",
+      "fit": "Optimization",
+      "decision": "defer"
+    },
+    {
+      "case": "800 VDC data-centre conversion",
+      "date": "2026-11-17",
+      "url": "https://www.vertiv.com/en-us/about/news-and-events/corporate-news/2026/vertiv-advances-800-vdc-power-architectures-to-support-growing-ai-data-center-demands/",
+      "impact": "AI power losses",
+      "evidence": "Manufacturer announcement",
+      "tractability": "Missing operating curves",
+      "novelty": "New domain but missing calibration",
+      "fit": "Inference",
+      "decision": "backlog"
+    }
+  ]
+}

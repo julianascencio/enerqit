@@ -126,6 +126,10 @@ Shared export (17 November 2026): sparse finite-energy dispatch LP, independentl
 
 Curtailment recovery (18 November 2026): causal surplus charging, explicit AC/DC ledger and independent inventory LP references. See curtailment_recovery guide.
 
+Ramp deliverability adds a sparse classical LP with independent tiny-path enumeration. See the ramp guide for synthetic assumptions and transition-energy limitations.
+
+Temporal matching uses a sparse classical LP and independent analytic/grid references. See the hourly-matching guide for synthetic assumptions and accounting boundaries.
+
 ## Bidirectional storage readiness (21 November 2026)
 
 The AEMO summer outlook release of 20 November motivates charging-headroom and
