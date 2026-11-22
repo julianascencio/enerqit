@@ -75,3 +75,4 @@ papers and technical sources behind the implementation, see the
    /ramp_deliverability
    /hourly_matching
    /storage_headroom
+   /hydro_water

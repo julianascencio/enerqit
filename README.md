@@ -348,3 +348,6 @@ Probability-robust reserve procurement: [method](docs/sphinx/source/probability_
 
 Battery charging headroom and discharge readiness: [guide](docs/sphinx/source/storage_headroom.rst),
 [offline agent example](docs/examples/plot_storage_headroom.py).
+
+[Reservoir water allocation example](docs/examples/plot_reservoir_water_budget.py)
+uses the existing engineer and a physically audited constant-head LP.

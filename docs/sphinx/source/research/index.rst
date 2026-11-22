@@ -181,3 +181,6 @@ synthetic bidirectional readiness. `PyPSA storage documentation
 standard storage balance context; no PyPSA implementation or validation is claimed.
 The exact monotonic-envelope derivation and independent path-state LP checks
 are documented in the guide. No article or dataset is redistributed.
+
+:doc:`/hydro_water` advances the reservoir backlog with NVE week-46 context,
+standard constant-head water balances and independent exhaustive references.

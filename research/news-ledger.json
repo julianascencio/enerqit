@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_on": "2026-11-21",
+  "updated_on": "2026-11-22",
   "implemented": [
     {
       "id": "gb-duration-aware-battery-portfolio-2026-11-10",
@@ -620,6 +620,16 @@
     "pending_work_preserved": [
       14,
       15
+    ]
+  },
+  "hydro_20261122": {
+    "selection": "research/hydro-selection-20261122.md",
+    "fixture": "enerqit/data/hydro_20261122.json",
+    "status": "proposed",
+    "pending_prs_preserved": [
+      14,
+      15,
+      16
     ]
   }
 }

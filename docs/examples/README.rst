@@ -23,3 +23,6 @@ and notebook versions. Read the :doc:`input requirements </data_contract>` and
 
 :doc:`Bidirectional battery readiness <plot_storage_headroom>` demonstrates
 charging headroom, an exact initial-energy envelope and actual engineer tools.
+
+:doc:`Reservoir water allocation <plot_reservoir_water_budget>` adds a physical
+water budget and actual registered engineer execution.

@@ -1,0 +1,383 @@
+{
+  "success": true,
+  "role": {
+    "id": "career_quantum_ml_engineer",
+    "title": "Quantum Machine Learning Engineer",
+    "mandate": "Design and evaluate classical, quantum-inspired and hybrid energy research workflows.",
+    "inputs": [
+      "load_case",
+      "experiment_budget",
+      "research_context"
+    ],
+    "tool": "prepare_data",
+    "output": "quantum_ml_research_handoff",
+    "acceptance": "Chronological held-out benchmarks, feasible schedules, provenance and limitations.",
+    "technology": "cross_technology",
+    "authority": "local_bounded_research_only"
+  },
+  "mode": "scripted_tool_workflow",
+  "classification": "synthetic",
+  "reports": {
+    "inspect_evidence": {
+      "classification": "synthetic",
+      "license": "MIT authored inputs; no provider dataset redistributed",
+      "source": "https://www.nve.no/media/20550/2026_46_kraftsituasjonen.pdf",
+      "published": "2026-11-18",
+      "event": "ISO week 46, 9-15 November 2026",
+      "reviewed": "2026-11-22",
+      "source_role": "National context only, not plant calibration",
+      "source_response_sha256": null,
+      "time_semantics": "Three consecutive one-hour intervals starting 2026-11-22T00:00:00Z; illustrative UTC timeline",
+      "agent_commit": "f8150df9a4272bf2b97042a61b3b785a92450057",
+      "edi_commit": "e72d9d822b442f6392c80ce12dfc62f738f51ddd",
+      "edi_scope": "Generation connectors inspected; generation MW cannot infer plant inflows, head, release rights or terminal water targets. No connector reused.",
+      "inputs": {
+        "inflow_m3_s": [
+          0,
+          0,
+          0
+        ],
+        "prices_eur_mwh": [
+          20,
+          100,
+          30
+        ],
+        "hours": [
+          1,
+          1,
+          1
+        ],
+        "minimum_release_m3_s": [
+          5.555555555555555,
+          5.555555555555555,
+          5.555555555555555
+        ],
+        "initial_m3": 100000,
+        "capacity_m3": 100000,
+        "terminal_min_m3": 20000,
+        "turbine_m3_s": 11.11111111111111,
+        "head_m": 100,
+        "efficiency": 0.9
+      },
+      "baseline_turbine_m3": [
+        40000,
+        20000,
+        20000
+      ],
+      "baseline_scope": "Feasible early-release schedule with same total release and terminal inventory, deliberately not price optimized"
+    },
+    "benchmark_methods": {
+      "optimized": {
+        "status": "optimal",
+        "turbine_m3": [
+          20000.0,
+          40000.0,
+          20000.0
+        ],
+        "bypass_m3": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reservoir_m3": [
+          100000.0,
+          80000.0,
+          40000.0,
+          20000.0
+        ],
+        "generation_mwh": [
+          4.905,
+          9.81,
+          4.905
+        ],
+        "gross_value_eur": 1226.2500000000002,
+        "feasible": true,
+        "max_water_residual_m3": 0.0,
+        "runtime_s": 0.003691614998388104,
+        "variables": 10,
+        "constraint_nnz": 18,
+        "mwh_per_m3": 0.00024525
+      },
+      "baseline_reservoir_m3": [
+        100000,
+        60000,
+        40000,
+        20000
+      ],
+      "baseline_gross_eur": 833.8500000000001
+    },
+    "assess_sensitivity": {
+      "terminal": {
+        "0": {
+          "status": "optimal",
+          "turbine_m3": [
+            20000.0,
+            40000.0,
+            40000.0
+          ],
+          "bypass_m3": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reservoir_m3": [
+            100000.0,
+            80000.0,
+            40000.0,
+            0.0
+          ],
+          "generation_mwh": [
+            4.905,
+            9.81,
+            9.81
+          ],
+          "gross_value_eur": 1373.4,
+          "feasible": true,
+          "max_water_residual_m3": 0.0,
+          "runtime_s": 0.0016746809997130185,
+          "variables": 10,
+          "constraint_nnz": 18,
+          "mwh_per_m3": 0.00024525
+        },
+        "20000": {
+          "status": "optimal",
+          "turbine_m3": [
+            20000.0,
+            40000.0,
+            20000.0
+          ],
+          "bypass_m3": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reservoir_m3": [
+            100000.0,
+            80000.0,
+            40000.0,
+            20000.0
+          ],
+          "generation_mwh": [
+            4.905,
+            9.81,
+            4.905
+          ],
+          "gross_value_eur": 1226.2500000000002,
+          "feasible": true,
+          "max_water_residual_m3": 0.0,
+          "runtime_s": 0.001405286995577626,
+          "variables": 10,
+          "constraint_nnz": 18,
+          "mwh_per_m3": 0.00024525
+        },
+        "40000": {
+          "status": "optimal",
+          "turbine_m3": [
+            20000.0,
+            20000.0,
+            20000.0
+          ],
+          "bypass_m3": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reservoir_m3": [
+            100000.0,
+            80000.0,
+            60000.0,
+            40000.0
+          ],
+          "generation_mwh": [
+            4.905,
+            4.905,
+            4.905
+          ],
+          "gross_value_eur": 735.75,
+          "feasible": true,
+          "max_water_residual_m3": 0.0,
+          "runtime_s": 0.0014618919958593324,
+          "variables": 10,
+          "constraint_nnz": 18,
+          "mwh_per_m3": 0.00024525
+        },
+        "60000": {
+          "status": "infeasible",
+          "runtime_s": 0.00125401999684982,
+          "variables": 10,
+          "constraint_nnz": 18,
+          "mwh_per_m3": 0.00024525
+        }
+      },
+      "release": {
+        "0": {
+          "status": "optimal",
+          "turbine_m3": [
+            -0.0,
+            40000.0,
+            40000.0
+          ],
+          "bypass_m3": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reservoir_m3": [
+            100000.0,
+            100000.0,
+            60000.0,
+            20000.0
+          ],
+          "generation_mwh": [
+            -0.0,
+            9.81,
+            9.81
+          ],
+          "gross_value_eur": 1275.3,
+          "feasible": true,
+          "max_water_residual_m3": 0.0,
+          "runtime_s": 0.0013698940019821748,
+          "variables": 10,
+          "constraint_nnz": 18,
+          "mwh_per_m3": 0.00024525
+        },
+        "10000": {
+          "status": "optimal",
+          "turbine_m3": [
+            10000.0,
+            40000.0,
+            30000.0
+          ],
+          "bypass_m3": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reservoir_m3": [
+            100000.0,
+            90000.0,
+            50000.0,
+            20000.0
+          ],
+          "generation_mwh": [
+            2.4525,
+            9.81,
+            7.357500000000001
+          ],
+          "gross_value_eur": 1250.775,
+          "feasible": true,
+          "max_water_residual_m3": 0.0,
+          "runtime_s": 0.0014092530036577955,
+          "variables": 10,
+          "constraint_nnz": 18,
+          "mwh_per_m3": 0.00024525
+        },
+        "20000": {
+          "status": "optimal",
+          "turbine_m3": [
+            20000.0,
+            40000.0,
+            20000.0
+          ],
+          "bypass_m3": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reservoir_m3": [
+            100000.0,
+            80000.0,
+            40000.0,
+            20000.0
+          ],
+          "generation_mwh": [
+            4.905,
+            9.81,
+            4.905
+          ],
+          "gross_value_eur": 1226.2500000000002,
+          "feasible": true,
+          "max_water_residual_m3": 0.0,
+          "runtime_s": 0.0015474200044991449,
+          "variables": 10,
+          "constraint_nnz": 18,
+          "mwh_per_m3": 0.00024525
+        },
+        "30000": {
+          "status": "infeasible",
+          "runtime_s": 0.001218596997205168,
+          "variables": 10,
+          "constraint_nnz": 18,
+          "mwh_per_m3": 0.00024525
+        }
+      },
+      "head": {
+        "50": 613.1250000000001,
+        "100": 1226.2500000000002,
+        "150": 1839.375
+      },
+      "scaling": {
+        "3": 0.0014426130073843524,
+        "24": 0.0018670790013857186,
+        "168": 0.005551492999074981,
+        "8760": 1.282932628004346
+      }
+    },
+    "prepare_handoff": {
+      "quantum_used": false,
+      "limits": "Constant head, perfect foresight, unlimited bypass; no legal compliance or realized revenue",
+      "next_action": "Obtain licensed inflow, stage-volume/head and release constraints; review terminal water value and spillway capacity"
+    }
+  },
+  "trace": [
+    {
+      "step": 0,
+      "tool": "inspect_evidence",
+      "status": "completed"
+    },
+    {
+      "step": 1,
+      "tool": "benchmark_methods",
+      "status": "completed"
+    },
+    {
+      "step": 2,
+      "tool": "assess_sensitivity",
+      "status": "completed"
+    },
+    {
+      "step": 3,
+      "tool": "prepare_handoff",
+      "status": "completed"
+    },
+    {
+      "step": 4,
+      "tool": "finish",
+      "status": "completed"
+    }
+  ],
+  "human_review_required": true,
+  "execution_authorized": false,
+  "validation": "registered_tool_execution_and_protocol_only",
+  "fixture_sha256": "e77b6f48528f4cfd633ba7fdcfeaa94bee8034bdd71ca166214c29f950c6758f",
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Linux",
+    "machine": "x86_64",
+    "versions": {
+      "numpy": "2.3.5",
+      "scipy": "1.17.0",
+      "pandas": "2.2.3",
+      "pvlib": "0.16.1",
+      "enerqit": "0.1.0"
+    }
+  },
+  "agent_install": {
+    "url": "https://github.com/julianascencio/energy-agents.git",
+    "vcs_info": {
+      "commit_id": "f8150df9a4272bf2b97042a61b3b785a92450057",
+      "requested_revision": "f8150df9a4272bf2b97042a61b3b785a92450057",
+      "vcs": "git"
+    }
+  }
+}

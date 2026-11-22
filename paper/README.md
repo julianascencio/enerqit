@@ -139,3 +139,9 @@ monotone cumulative bound for an independent interval box. See the
 [derivation and limitations](../docs/sphinx/source/storage_headroom.rst).
 Independent path-state LP references validate small synthetic cases.
 No algorithmic novelty, field calibration or quantum advantage is claimed.
+
+## Reservoir water allocation, 22 November 2026
+
+See [model and sources](../docs/sphinx/source/hydro_water.rst). NVE supplies
+context only. Standard constant-head water balance and sparse LP, independently
+checked against tiny physical enumeration; no research novelty claimed.

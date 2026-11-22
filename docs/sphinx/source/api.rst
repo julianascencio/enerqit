@@ -227,3 +227,9 @@ Storage activation envelope
 
 .. automodule:: enerqit.storage_envelope
    :members:
+
+Reservoir dispatch
+------------------------
+
+.. automodule:: enerqit.hydro
+   :members:
