@@ -215,3 +215,9 @@ Ramp deliverability
 
 .. automodule:: enerqit.ramping
    :members:
+
+Temporal procurement
+-------------------------
+
+.. automodule:: enerqit.matching
+   :members:

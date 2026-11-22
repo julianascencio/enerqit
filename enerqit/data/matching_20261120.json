@@ -1,0 +1,96 @@
+{
+  "as_of_utc": "2026-11-20",
+  "agent_commit": "f8150df9a4272bf2b97042a61b3b785a92450057",
+  "base_commit": "f8ab496eb9c53c048d541b95ef5b9c7685df97a2",
+  "classification": "Authored synthetic MIT inputs; news context only",
+  "inputs": {
+    "profiles": [
+      [
+        1,
+        0
+      ],
+      [
+        0.5,
+        0.5
+      ]
+    ],
+    "demand_mw": [
+      1,
+      1
+    ],
+    "hours": [
+      1,
+      1
+    ],
+    "costs_eur_per_mw": [
+      500,
+      1500
+    ],
+    "capacity_limits_mw": [
+      4,
+      4
+    ]
+  },
+  "source": {
+    "url": "https://www.climatecouncil.org.au/resources/data-centres-that-could-rival-our-dirtiest-coal-power-stations/",
+    "publication_date": "2026-11-19",
+    "event_period": "Conditional projections to 2035; policy proposals not enacted rules",
+    "license": "No article body or third-party numerical data redistributed",
+    "hash_status": "Raw retrieval unavailable: HTTPError"
+  },
+  "seed": null,
+  "test_seeds": [
+    0,
+    1,
+    2
+  ],
+  "candidates": [
+    {
+      "case": "Data-centre renewable matching",
+      "url": "https://www.climatecouncil.org.au/resources/data-centres-that-could-rival-our-dirtiest-coal-power-stations/",
+      "date": "2026-11-19",
+      "impact": "Avoid confusing total procurement with temporal coverage",
+      "evidence": "Primary research organisation release",
+      "tractability": "Small exact LP; missing site calibration",
+      "novelty": "No capacity-contract temporal matching optimizer in main; distinct from PR14 ramps",
+      "fit": "Optimization",
+      "decision": "selected"
+    },
+    {
+      "case": "Australia wind/battery construction",
+      "url": "https://ieefa.org/articles/wind-and-battery-projects-catapult-australian-states-towards-2030-renewable-target",
+      "date": "2026-11-19",
+      "event": "Q3 construction commitments",
+      "impact": "Industrial renewable procurement",
+      "evidence": "Original IEEFA scorecard",
+      "tractability": "Aggregate project pipeline only",
+      "novelty": "Existing storage-sizing studies",
+      "fit": "Investment optimization",
+      "decision": "defer"
+    },
+    {
+      "case": "Holloway four-hour battery",
+      "url": "https://www.renewableenergymagazine.com/storage/edf-power-solutions-acquires-a-1-gwh-20261119",
+      "date": "2026-11-19",
+      "event": "Development acquisition; planned 2029 operation",
+      "impact": "Storage time shifting",
+      "evidence": "Secondary developer coverage",
+      "tractability": "No operational observations",
+      "novelty": "Existing curtailment and sizing methods",
+      "fit": "Dispatch optimization",
+      "decision": "defer"
+    },
+    {
+      "case": "Norwegian hydro surplus narrowing",
+      "url": "https://cyprusshippingnews.com/2026/11/19/norways-green-battery-needs-faster-wind-and-grid-build-out-as-power-surplus-narrows-says-globaldata/",
+      "date": "2026-11-19",
+      "event": "Structural outlook; previously covered 17 November",
+      "impact": "Hydro, industrial and data-centre demand",
+      "evidence": "Secondary GlobalData coverage",
+      "tractability": "Missing basin inflows and water values",
+      "novelty": "Hydro calibration backlog",
+      "fit": "Forecasting/optimization",
+      "decision": "backlog"
+    }
+  ]
+}
