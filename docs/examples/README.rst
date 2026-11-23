@@ -26,3 +26,6 @@ charging headroom, an exact initial-energy envelope and actual engineer tools.
 
 :doc:`Reservoir water allocation <plot_reservoir_water_budget>` adds a physical
 water budget and actual registered engineer execution.
+
+:doc:`Terminal water value <plot_terminal_water_value>` examines reservoir
+depletion bias and common policy accounting through actual engineer tools.

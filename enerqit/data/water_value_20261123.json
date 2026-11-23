@@ -1,0 +1,55 @@
+{
+  "classification": "synthetic",
+  "license": "MIT authored inputs; no provider dataset redistributed",
+  "source": "https://www.nve.no/media/20550/2026_46_kraftsituasjonen.pdf",
+  "published": "2026-11-18",
+  "event": "ISO week 46, 9-15 November 2026",
+  "reviewed": "2026-11-23",
+  "source_role": "National context only, not plant calibration",
+  "source_response_sha256": null,
+  "time_semantics": "Three contiguous one-hour UTC intervals starting 2026-11-23T00:00:00Z; synthetic",
+  "agent_commit": "9a8a56b3be12e734183a0350600bf874bdee8ff0",
+  "edi_commit": "e72d9d822b442f6392c80ce12dfc62f738f51ddd",
+  "edi_scope": "Generation connectors inspected; generation MW cannot infer plant inflows, head, release rights or terminal water targets. No connector reused.",
+  "inputs": {
+    "inflow_m3_s": [
+      0,
+      0,
+      0
+    ],
+    "prices_eur_mwh": [
+      20,
+      100,
+      30
+    ],
+    "hours": [
+      1,
+      1,
+      1
+    ],
+    "minimum_release_m3_s": [
+      2.7777777777777777,
+      2.7777777777777777,
+      2.7777777777777777
+    ],
+    "initial_m3": 100000,
+    "capacity_m3": 100000,
+    "terminal_min_m3": 0,
+    "turbine_m3_s": 11.11111111111111,
+    "head_m": 100,
+    "efficiency": 0.9
+  },
+  "terminal_curve": {
+    "volumes_m3": [
+      0,
+      40000,
+      100000
+    ],
+    "values_eur": [
+      0,
+      1200,
+      1500
+    ]
+  },
+  "valuation_scope": "Uncalibrated concave scenario EUR, zero at zero inventory; not cash, forecast, or fair-value estimate."
+}
