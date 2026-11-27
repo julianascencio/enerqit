@@ -76,3 +76,8 @@ papers and technical sources behind the implementation, see the
    /hourly_matching
    /storage_headroom
    /hydro_water
+
+.. toctree::
+   :maxdepth: 1
+
+   /ramp_energy

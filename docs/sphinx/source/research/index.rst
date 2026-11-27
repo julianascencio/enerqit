@@ -184,3 +184,9 @@ are documented in the guide. No article or dataset is redistributed.
 
 :doc:`/hydro_water` advances the reservoir backlog with NVE week-46 context,
 standard constant-head water balances and independent exhaustive references.
+
+Continuous ramp accounting
+---------------------------
+
+See :doc:`/ramp_energy` for the 26 November NESO context, analytical integration,
+synthetic evidence and independent quadrature validation.

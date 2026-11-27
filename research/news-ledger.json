@@ -631,5 +631,11 @@
       15,
       16
     ]
+  },
+  "ramp_energy_20261127": {
+    "selection": "research/ramp-energy-selection-20261127.md",
+    "fixture": "enerqit/data/ramp_energy_20261127.json",
+    "classification": "synthetic",
+    "status": "proposed"
   }
 }

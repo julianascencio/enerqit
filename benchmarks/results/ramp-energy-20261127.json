@@ -1,0 +1,283 @@
+{
+  "success": true,
+  "role": {
+    "id": "career_quantum_ml_engineer",
+    "title": "Quantum Machine Learning Engineer",
+    "mandate": "Design and evaluate classical, quantum-inspired and hybrid energy research workflows.",
+    "inputs": [
+      "load_case",
+      "experiment_budget",
+      "research_context"
+    ],
+    "tool": "prepare_data",
+    "output": "quantum_ml_research_handoff",
+    "acceptance": "Chronological held-out benchmarks, feasible schedules, provenance and limitations.",
+    "technology": "cross_technology",
+    "authority": "local_bounded_research_only"
+  },
+  "mode": "scripted_tool_workflow",
+  "classification": "synthetic",
+  "reports": {
+    "inspect_evidence": {
+      "classification": "synthetic",
+      "license": "MIT authored inputs; no provider observations redistributed",
+      "source": "https://www.neso.energy/document/390646/download",
+      "source_date": "2026-11-26",
+      "event_window": "26 November status; forecast extends to 29 November",
+      "source_role": "Context only; no chart digitization or plant calibration",
+      "source_response_sha256": null,
+      "agent_commit": "9a8a56b3be12e734183a0350600bf874bdee8ff0",
+      "edi_commit": "0f3c90cbb13b8ecc72f5d6c6b44beb319a7d4aaf",
+      "utc_start": "2026-11-27T00:00:00Z",
+      "generation_mw": [
+        0,
+        40
+      ],
+      "demand_mw": [
+        40,
+        40
+      ],
+      "hours": [
+        1
+      ],
+      "capacity_mw": 40,
+      "ramp_mw_per_hour": 40,
+      "generation_eur_mwh": 50,
+      "shortage_eur_mwh": 1000
+    },
+    "benchmark_methods": {
+      "discrete": {
+        "optimized": {
+          "dispatch_mw": [
+            40.0
+          ],
+          "unserved_mwh": 0.0,
+          "spill_mwh": 0.0,
+          "generation_mwh": 40.0,
+          "objective_eur": 2000.0
+        },
+        "causal": {
+          "dispatch_mw": [
+            40.0
+          ],
+          "unserved_mwh": 0.0,
+          "spill_mwh": 0.0,
+          "generation_mwh": 40.0,
+          "objective_eur": 2000.0
+        },
+        "capacity_only": {
+          "dispatch_mw": [
+            40.0
+          ],
+          "unserved_mwh": 0.0,
+          "spill_mwh": 0.0,
+          "generation_mwh": 40.0,
+          "objective_eur": 2000.0
+        },
+        "max_constraint_violation_mw": 0.0,
+        "runtime_s": 0.00396967000051518,
+        "solver": "classical sparse HiGHS LP",
+        "variables": 2
+      },
+      "continuous": {
+        "generation_mwh": [
+          20.0
+        ],
+        "demand_mwh": [
+          40.0
+        ],
+        "shortage_mwh": [
+          20.0
+        ],
+        "spill_mwh": [
+          0.0
+        ],
+        "total_shortage_mwh": 20.0,
+        "total_spill_mwh": 0.0,
+        "total_generation_mwh": 20.0,
+        "objective_eur": 21000.0,
+        "feasible": true,
+        "capacity_violation_mw": 0.0,
+        "ramp_violation_mw_per_hour": 0.0,
+        "runtime_s": 0.00010282099901814945
+      },
+      "interpretation": "Endpoint schedule reinterpreted as linear ramp, not an optimizer bug or continuous optimum"
+    },
+    "assess_sensitivity": {
+      "duration": {
+        "0.5": {
+          "generation_mwh": [
+            10.0
+          ],
+          "demand_mwh": [
+            20.0
+          ],
+          "shortage_mwh": [
+            10.0
+          ],
+          "spill_mwh": [
+            0.0
+          ],
+          "total_shortage_mwh": 10.0,
+          "total_spill_mwh": 0.0,
+          "total_generation_mwh": 10.0,
+          "objective_eur": 10500.0,
+          "feasible": false,
+          "capacity_violation_mw": 0.0,
+          "ramp_violation_mw_per_hour": 40.0,
+          "runtime_s": 9.074400077224709e-05
+        },
+        "1": {
+          "generation_mwh": [
+            20.0
+          ],
+          "demand_mwh": [
+            40.0
+          ],
+          "shortage_mwh": [
+            20.0
+          ],
+          "spill_mwh": [
+            0.0
+          ],
+          "total_shortage_mwh": 20.0,
+          "total_spill_mwh": 0.0,
+          "total_generation_mwh": 20.0,
+          "objective_eur": 21000.0,
+          "feasible": true,
+          "capacity_violation_mw": 0.0,
+          "ramp_violation_mw_per_hour": 0.0,
+          "runtime_s": 6.711700189043768e-05
+        },
+        "2": {
+          "generation_mwh": [
+            40.0
+          ],
+          "demand_mwh": [
+            80.0
+          ],
+          "shortage_mwh": [
+            40.0
+          ],
+          "spill_mwh": [
+            0.0
+          ],
+          "total_shortage_mwh": 40.0,
+          "total_spill_mwh": 0.0,
+          "total_generation_mwh": 40.0,
+          "objective_eur": 42000.0,
+          "feasible": true,
+          "capacity_violation_mw": 0.0,
+          "ramp_violation_mw_per_hour": 0.0,
+          "runtime_s": 6.139499964774586e-05
+        }
+      },
+      "subdivision": {
+        "1": {
+          "total_shortage_mwh": 20.0,
+          "total_spill_mwh": 0.0,
+          "total_generation_mwh": 20.0,
+          "objective_eur": 21000.0,
+          "feasible": true,
+          "capacity_violation_mw": 0.0,
+          "ramp_violation_mw_per_hour": 0.0,
+          "runtime_s": 6.154299990157597e-05
+        },
+        "12": {
+          "total_shortage_mwh": 20.0,
+          "total_spill_mwh": 4.440892098500626e-16,
+          "total_generation_mwh": 20.0,
+          "objective_eur": 21000.0,
+          "feasible": true,
+          "capacity_violation_mw": 0.0,
+          "ramp_violation_mw_per_hour": 2.842170943040401e-14,
+          "runtime_s": 0.00013016699813306332
+        },
+        "60": {
+          "total_shortage_mwh": 20.0,
+          "total_spill_mwh": 3.1086244689504383e-15,
+          "total_generation_mwh": 19.999999999999996,
+          "objective_eur": 21000.0,
+          "feasible": true,
+          "capacity_violation_mw": 0.0,
+          "ramp_violation_mw_per_hour": 2.8421709430404007e-13,
+          "runtime_s": 0.00012122200132580474
+        },
+        "8760": {
+          "total_shortage_mwh": 20.0,
+          "total_spill_mwh": 6.106226635438361e-16,
+          "total_generation_mwh": 20.0,
+          "objective_eur": 21000.0,
+          "feasible": true,
+          "capacity_violation_mw": 0.0,
+          "ramp_violation_mw_per_hour": 4.035882739117369e-11,
+          "runtime_s": 0.0019149790023220703
+        }
+      }
+    },
+    "prepare_handoff": {
+      "quantum_used": false,
+      "next_action": "Validate instantaneous telemetry and trajectory shape with operator; do not relabel interval averages as endpoints",
+      "limits": "Linear interpolation assumption; scenario shortage penalty not realized loss; audit is not a continuous dispatch optimizer"
+    }
+  },
+  "trace": [
+    {
+      "step": 0,
+      "tool": "inspect_evidence",
+      "status": "completed"
+    },
+    {
+      "step": 1,
+      "tool": "benchmark_methods",
+      "status": "completed"
+    },
+    {
+      "step": 2,
+      "tool": "assess_sensitivity",
+      "status": "completed"
+    },
+    {
+      "step": 3,
+      "tool": "prepare_handoff",
+      "status": "completed"
+    },
+    {
+      "step": 4,
+      "tool": "finish",
+      "status": "completed"
+    }
+  ],
+  "human_review_required": true,
+  "execution_authorized": false,
+  "validation": "registered_tool_execution_and_protocol_only",
+  "fixture_sha256": "da590c19dfc456f4711d840c868bf7c30e920b90db70ac0cb7a8f2bd6e791821",
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Linux",
+    "machine": "x86_64",
+    "versions": {
+      "numpy": "2.3.5",
+      "scipy": "1.17.0",
+      "pandas": "2.2.3",
+      "pvlib": "0.16.1",
+      "enerqit": "0.1.0"
+    }
+  },
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "agent_install": {
+    "url": "https://github.com/julianascencio/energy-agents.git",
+    "vcs_info": {
+      "commit_id": "9a8a56b3be12e734183a0350600bf874bdee8ff0",
+      "requested_revision": "9a8a56b3be12e734183a0350600bf874bdee8ff0",
+      "vcs": "git"
+    }
+  }
+}

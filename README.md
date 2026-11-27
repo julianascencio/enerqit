@@ -351,3 +351,5 @@ Battery charging headroom and discharge readiness: [guide](docs/sphinx/source/st
 
 [Reservoir water allocation example](docs/examples/plot_reservoir_water_budget.py)
 uses the existing engineer and a physically audited constant-head LP.
+
+[Continuous-ramp energy audit](docs/examples/plot_continuous_ramp_energy.py): exact shortage accounting between instantaneous boundaries.

@@ -145,3 +145,5 @@ No algorithmic novelty, field calibration or quantum advantage is claimed.
 See [model and sources](../docs/sphinx/source/hydro_water.rst). NVE supplies
 context only. Standard constant-head water balance and sparse LP, independently
 checked against tiny physical enumeration; no research novelty claimed.
+
+Continuous ramp energy uses trapezoid/triangle integration with explicit zero crossings, independently checked by adaptive quadrature. See `enerqit/ramp_energy.py`; no algorithmic novelty or quantum claim.

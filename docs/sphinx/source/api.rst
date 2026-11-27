@@ -233,3 +233,9 @@ Reservoir dispatch
 
 .. automodule:: enerqit.hydro
    :members:
+
+Continuous-ramp accounting
+---------------------------
+
+.. automodule:: enerqit.ramp_energy
+   :members:

@@ -150,3 +150,8 @@ and minimum-movement preparation. Synthetic uncertainty boxes, no quantum use.
 
 :doc:`/hydro_water`: classical sparse reservoir LP, synthetic water balance,
 minimum releases and terminal floor. No quantum method or field validation.
+
+Continuous ramp energy reconciliation
+--------------------------------------
+
+See :doc:`/ramp_energy`: exact shortage/spill integration and feasibility auditing.

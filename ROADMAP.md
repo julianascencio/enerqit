@@ -77,3 +77,5 @@ Implemented temporal renewable capacity procurement. Forecast uncertainty, netwo
 Implemented bidirectional activation initial-energy envelopes and preparation screening; correlated activation calibration, thermal/ramp limits and opportunity-cost validation remain open.
 
 Implemented single-reservoir constant-head allocation with minimum releases and terminal inventory. Plant calibration, variable head and water-value uncertainty remain open.
+
+Implemented exact continuous piecewise-linear ramp energy audit; continuous optimization and telemetry calibration remain open.
