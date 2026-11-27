@@ -40,3 +40,7 @@ optimizing or accepting an operator schedule. No dispatch or deployment occurred
 
 Final local completion: all 26 offline examples passed; strict Sphinx build
 succeeded; wheel and sdist built successfully.
+
+First GitHub head passed scientific jobs but failed strict docs on two generated
+heading underlines. Lengthened gallery headings and reran a clean `sphinx -E -a
+-W` build; this corrects markup without weakening warnings-as-errors.
