@@ -158,3 +158,8 @@ Continuous ramp energy reconciliation
 --------------------------------------
 
 See :doc:`/ramp_energy`: exact shortage/spill integration and feasibility auditing.
+
+Recharge recovery
+---------------------
+
+See :doc:`/recharge` for minimum-cost recovery between reserve services.

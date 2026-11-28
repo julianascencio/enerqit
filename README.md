@@ -356,3 +356,5 @@ uses the existing engineer and a physically audited constant-head LP.
 extends reservoir dispatch with explicit continuation-value accounting.
 
 [Continuous-ramp energy audit](docs/examples/plot_continuous_ramp_energy.py): exact shortage accounting between instantaneous boundaries.
+
+[Reserve recharge planning](docs/examples/plot_reserve_recharge.py): constrained recovery between service windows.

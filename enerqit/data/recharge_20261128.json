@@ -1,0 +1,42 @@
+{
+  "classification": "synthetic",
+  "license": "MIT authored scenario; no provider data redistributed",
+  "source": "https://www.neso.energy/document/390771/download",
+  "published": "2026-11-27",
+  "source_role": "Context only, not activation or price calibration",
+  "source_response_sha256": null,
+  "utc_start": "2026-11-28T00:00:00Z",
+  "agent_commit": "142e941b879f746a3187fadb040640e1cd5f5726",
+  "edi_commit": "0f3c90cbb13b8ecc72f5d6c6b44beb319a7d4aaf",
+  "inputs": {
+    "discharge_mw": [
+      1,
+      0,
+      0,
+      1
+    ],
+    "charge_limit_mw": [
+      0,
+      2,
+      2,
+      0
+    ],
+    "hours": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "price_eur_mwh": [
+      50,
+      100,
+      20,
+      50
+    ],
+    "capacity_dc_mwh": 1.1111111111111112,
+    "initial_dc_mwh": 1.1111111111111112,
+    "discharge_limit_mw": 1,
+    "charge_efficiency": 0.9,
+    "discharge_efficiency": 0.9
+  }
+}
