@@ -185,6 +185,9 @@ are documented in the guide. No article or dataset is redistributed.
 :doc:`/hydro_water` advances the reservoir backlog with NVE week-46 context,
 standard constant-head water balances and independent exhaustive references.
 
+:doc:`/water_value` adds concave continuation values to the existing reservoir
+LP, with NVE context, PyPSA technical references and independent enumeration.
+
 Continuous ramp accounting
 ---------------------------
 

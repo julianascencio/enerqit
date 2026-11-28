@@ -69,5 +69,8 @@ jobs:
       - run: python -m pytest tests/test_hydro.py
       - run: python -m enerqit.hydro_study
 
+      - run: python -m pytest tests/test_water_value.py
+      - run: python -m enerqit.water_value_study
+
       - run: python -m pytest tests/test_ramp_energy.py
       - run: python -m enerqit.ramp_energy_study

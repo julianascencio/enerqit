@@ -78,4 +78,6 @@ Implemented bidirectional activation initial-energy envelopes and preparation sc
 
 Implemented single-reservoir constant-head allocation with minimum releases and terminal inventory. Plant calibration, variable head and water-value uncertainty remain open.
 
+Implemented optional concave terminal-water valuation. Estimation using pre-decision data and untouched rolling-horizon field validation remain open.
+
 Implemented exact continuous piecewise-linear ramp energy audit; continuous optimization and telemetry calibration remain open.

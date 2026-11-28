@@ -80,4 +80,9 @@ papers and technical sources behind the implementation, see the
 .. toctree::
    :maxdepth: 1
 
+   /water_value
+
+.. toctree::
+   :maxdepth: 1
+
    /ramp_energy
