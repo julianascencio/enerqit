@@ -86,3 +86,8 @@ papers and technical sources behind the implementation, see the
    :maxdepth: 1
 
    /ramp_energy
+
+.. toctree::
+   :maxdepth: 1
+
+   /recharge

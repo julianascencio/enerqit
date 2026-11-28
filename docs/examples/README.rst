@@ -31,3 +31,5 @@ water budget and actual registered engineer execution.
 depletion bias and common policy accounting through actual engineer tools.
 
 The continuous ramp energy example audits energy hidden between setpoints.
+
+Reserve recharge planning compares feasible recovery costs and no-recharge failure.

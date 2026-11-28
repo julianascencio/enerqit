@@ -74,3 +74,6 @@ jobs:
 
       - run: python -m pytest tests/test_ramp_energy.py
       - run: python -m enerqit.ramp_energy_study
+
+      - run: python -m pytest tests/test_recharge.py
+      - run: python -m enerqit.recharge_study

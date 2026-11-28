@@ -81,3 +81,5 @@ Implemented single-reservoir constant-head allocation with minimum releases and 
 Implemented optional concave terminal-water valuation. Estimation using pre-decision data and untouched rolling-horizon field validation remain open.
 
 Implemented exact continuous piecewise-linear ramp energy audit; continuous optimization and telemetry calibration remain open.
+
+Implemented least-cost inter-window recharge with import caps and terminal inventory; forecast uncertainty, degradation and connection calibration remain open.

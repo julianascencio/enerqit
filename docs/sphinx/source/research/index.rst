@@ -193,3 +193,8 @@ Continuous ramp accounting
 
 See :doc:`/ramp_energy` for the 26 November NESO context, analytical integration,
 synthetic evidence and independent quadrature validation.
+
+Recharge between services
+----------------------------
+
+See :doc:`/recharge` for dated sources, classical LP and synthetic validation.

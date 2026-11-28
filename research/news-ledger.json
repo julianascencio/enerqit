@@ -216,7 +216,7 @@
       "as_of": "2026-11-11",
       "candidates": [
         {
-          "case": "Türkiye interconnection report",
+          "case": "T\u00fcrkiye interconnection report",
           "date": "2026-11-10",
           "impact": "Secure transfer and regional electricity value",
           "evidence": "Primary analysis, historical trade totals not topology",
@@ -642,5 +642,11 @@
     "fixture": "enerqit/data/ramp_energy_20261127.json",
     "classification": "synthetic",
     "status": "proposed"
+  },
+  "recharge_20261128": {
+    "selection": "research/recharge-selection-20261128.md",
+    "fixture": "enerqit/data/recharge_20261128.json",
+    "classification": "synthetic",
+    "status": "proposed_contribution"
   }
 }

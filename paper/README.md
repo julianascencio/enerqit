@@ -153,3 +153,5 @@ concave hypograph LP and common policy accounting. Independent tiny enumeration
 and default-API regression tests; no algorithmic novelty or field valuation claim.
 
 Continuous ramp energy uses trapezoid/triangle integration with explicit zero crossings, independently checked by adaptive quadrature. See `enerqit/ramp_energy.py`; no algorithmic novelty or quantum claim.
+
+Reserve recharge extends chronological energy balance with nonnegative purchase costs, import caps and terminal inventory; independent enumeration and activation replay audit the LP. See the recharge guide.

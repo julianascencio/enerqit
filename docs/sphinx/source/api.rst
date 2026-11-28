@@ -239,3 +239,8 @@ Continuous-ramp accounting
 
 .. automodule:: enerqit.ramp_energy
    :members:
+
+Recharge planning
+--------------------
+
+See :doc:`recharge` for the reusable planning API.

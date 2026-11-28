@@ -1,0 +1,396 @@
+{
+  "success": true,
+  "role": {
+    "id": "career_quantum_ml_engineer",
+    "title": "Quantum Machine Learning Engineer",
+    "mandate": "Design and evaluate classical, quantum-inspired and hybrid energy research workflows.",
+    "inputs": [
+      "load_case",
+      "experiment_budget",
+      "research_context"
+    ],
+    "tool": "prepare_data",
+    "output": "quantum_ml_research_handoff",
+    "acceptance": "Chronological held-out benchmarks, feasible schedules, provenance and limitations.",
+    "technology": "cross_technology",
+    "authority": "local_bounded_research_only"
+  },
+  "mode": "scripted_tool_workflow",
+  "classification": "synthetic",
+  "reports": {
+    "inspect_evidence": {
+      "classification": "synthetic",
+      "license": "MIT authored scenario; no provider data redistributed",
+      "source": "https://www.neso.energy/document/390771/download",
+      "published": "2026-11-27",
+      "source_role": "Context only, not activation or price calibration",
+      "source_response_sha256": null,
+      "utc_start": "2026-11-28T00:00:00Z",
+      "agent_commit": "142e941b879f746a3187fadb040640e1cd5f5726",
+      "edi_commit": "0f3c90cbb13b8ecc72f5d6c6b44beb319a7d4aaf",
+      "inputs": {
+        "discharge_mw": [
+          1,
+          0,
+          0,
+          1
+        ],
+        "charge_limit_mw": [
+          0,
+          2,
+          2,
+          0
+        ],
+        "hours": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "price_eur_mwh": [
+          50,
+          100,
+          20,
+          50
+        ],
+        "capacity_dc_mwh": 1.1111111111111112,
+        "initial_dc_mwh": 1.1111111111111112,
+        "discharge_limit_mw": 1,
+        "charge_efficiency": 0.9,
+        "discharge_efficiency": 0.9
+      }
+    },
+    "benchmark_methods": {
+      "optimized": {
+        "status": "optimal",
+        "charge_mw": [
+          0.0,
+          -0.0,
+          1.2345679012345678,
+          -0.0
+        ],
+        "energy_dc_mwh": [
+          1.1111111111111112,
+          0.0,
+          0.0,
+          1.1111111111111112,
+          0.0
+        ],
+        "purchase_ac_mwh": 1.2345679012345678,
+        "cost_eur": 24.691358024691358,
+        "audit": {
+          "actual_ac_mw": [
+            1.0,
+            0.0,
+            -1.2345679012345678,
+            1.0
+          ],
+          "energy_dc_mwh": [
+            1.1111111111111112,
+            0.0,
+            0.0,
+            1.1111111111111112,
+            0.0
+          ],
+          "missed_absorption_ac_mwh": 0.0,
+          "missed_discharge_ac_mwh": 0.0,
+          "conversion_loss_mwh": 0.3456790123456791,
+          "max_balance_residual_mwh": 0.0
+        },
+        "variables": 9,
+        "runtime_s": 0.00441902999591548
+      },
+      "early_only": {
+        "status": "optimal",
+        "charge_mw": [
+          0.0,
+          1.2345679012345678,
+          0.0,
+          0.0
+        ],
+        "energy_dc_mwh": [
+          1.1111111111111112,
+          0.0,
+          1.1111111111111112,
+          1.1111111111111112,
+          0.0
+        ],
+        "purchase_ac_mwh": 1.2345679012345678,
+        "cost_eur": 123.45679012345678,
+        "audit": {
+          "actual_ac_mw": [
+            1.0,
+            -1.2345679012345678,
+            0.0,
+            1.0
+          ],
+          "energy_dc_mwh": [
+            1.1111111111111112,
+            0.0,
+            1.1111111111111112,
+            1.1111111111111112,
+            0.0
+          ],
+          "missed_absorption_ac_mwh": 0.0,
+          "missed_discharge_ac_mwh": 0.0,
+          "conversion_loss_mwh": 0.3456790123456791,
+          "max_balance_residual_mwh": 0.0
+        },
+        "variables": 9,
+        "runtime_s": 0.0024594709975644946
+      },
+      "no_recharge": {
+        "status": "infeasible",
+        "reason": "energy_or_recharge",
+        "runtime_s": 0.0017192079976666719
+      },
+      "no_recharge_replay": {
+        "actual_ac_mw": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "energy_dc_mwh": [
+          1.1111111111111112,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "missed_absorption_ac_mwh": 0.0,
+        "missed_discharge_ac_mwh": 1.0,
+        "conversion_loss_mwh": 0.11111111111111116,
+        "max_balance_residual_mwh": 0.0
+      }
+    },
+    "assess_sensitivity": {
+      "import_limit": {
+        "0.5": {
+          "status": "infeasible",
+          "reason": "energy_or_recharge",
+          "runtime_s": 0.0015347320004366338
+        },
+        "1": {
+          "status": "optimal",
+          "charge_mw": [
+            0.0,
+            0.23456790123456792,
+            1.0,
+            0.0
+          ],
+          "energy_dc_mwh": [
+            1.1111111111111112,
+            0.0,
+            0.21111111111111114,
+            1.1111111111111112,
+            0.0
+          ],
+          "purchase_ac_mwh": 1.2345679012345678,
+          "cost_eur": 43.45679012345679,
+          "audit": {
+            "actual_ac_mw": [
+              1.0,
+              -0.23456790123456792,
+              -1.0,
+              1.0
+            ],
+            "energy_dc_mwh": [
+              1.1111111111111112,
+              0.0,
+              0.21111111111111114,
+              1.1111111111111112,
+              0.0
+            ],
+            "missed_absorption_ac_mwh": 0.0,
+            "missed_discharge_ac_mwh": 0.0,
+            "conversion_loss_mwh": 0.3456790123456791,
+            "max_balance_residual_mwh": 0.0
+          },
+          "variables": 9,
+          "runtime_s": 0.0021037539991084486
+        },
+        "2": {
+          "status": "optimal",
+          "charge_mw": [
+            0.0,
+            -0.0,
+            1.2345679012345678,
+            -0.0
+          ],
+          "energy_dc_mwh": [
+            1.1111111111111112,
+            0.0,
+            0.0,
+            1.1111111111111112,
+            0.0
+          ],
+          "purchase_ac_mwh": 1.2345679012345678,
+          "cost_eur": 24.691358024691358,
+          "audit": {
+            "actual_ac_mw": [
+              1.0,
+              0.0,
+              -1.2345679012345678,
+              1.0
+            ],
+            "energy_dc_mwh": [
+              1.1111111111111112,
+              0.0,
+              0.0,
+              1.1111111111111112,
+              0.0
+            ],
+            "missed_absorption_ac_mwh": 0.0,
+            "missed_discharge_ac_mwh": 0.0,
+            "conversion_loss_mwh": 0.3456790123456791,
+            "max_balance_residual_mwh": 0.0
+          },
+          "variables": 9,
+          "runtime_s": 0.0021142460027476773
+        }
+      },
+      "terminal": {
+        "0": {
+          "status": "optimal",
+          "charge_mw": [
+            0.0,
+            -0.0,
+            1.2345679012345678,
+            -0.0
+          ],
+          "energy_dc_mwh": [
+            1.1111111111111112,
+            0.0,
+            0.0,
+            1.1111111111111112,
+            0.0
+          ],
+          "purchase_ac_mwh": 1.2345679012345678,
+          "cost_eur": 24.691358024691358,
+          "audit": {
+            "actual_ac_mw": [
+              1.0,
+              0.0,
+              -1.2345679012345678,
+              1.0
+            ],
+            "energy_dc_mwh": [
+              1.1111111111111112,
+              0.0,
+              0.0,
+              1.1111111111111112,
+              0.0
+            ],
+            "missed_absorption_ac_mwh": 0.0,
+            "missed_discharge_ac_mwh": 0.0,
+            "conversion_loss_mwh": 0.3456790123456791,
+            "max_balance_residual_mwh": 0.0
+          },
+          "variables": 9,
+          "runtime_s": 0.002079710000543855
+        },
+        "0.5": {
+          "status": "infeasible",
+          "reason": "energy_or_recharge",
+          "runtime_s": 0.0015135119901970029
+        },
+        "1": {
+          "status": "infeasible",
+          "reason": "energy_or_recharge",
+          "runtime_s": 0.0015544779889751226
+        }
+      },
+      "scaling": {
+        "4": {
+          "status": "optimal",
+          "cost_eur": 24.691358024691358,
+          "variables": 9,
+          "runtime_s": 0.002331066003534943
+        },
+        "24": {
+          "status": "optimal",
+          "cost_eur": 459.2592592592593,
+          "variables": 49,
+          "runtime_s": 0.0027694260061252862
+        },
+        "168": {
+          "status": "optimal",
+          "cost_eur": 3588.1481481481487,
+          "variables": 337,
+          "runtime_s": 0.005186947004403919
+        },
+        "8760": {
+          "status": "optimal",
+          "cost_eur": 190278.51851851857,
+          "variables": 17521,
+          "runtime_s": 0.18043446200317703
+        }
+      }
+    },
+    "prepare_handoff": {
+      "quantum_used": false,
+      "limits": "Known future services, nonnegative prices, explicit import permission, no degradation or network model",
+      "next_action": "Validate service obligations and recharge connection permission before field trial"
+    }
+  },
+  "trace": [
+    {
+      "step": 0,
+      "tool": "inspect_evidence",
+      "status": "completed"
+    },
+    {
+      "step": 1,
+      "tool": "benchmark_methods",
+      "status": "completed"
+    },
+    {
+      "step": 2,
+      "tool": "assess_sensitivity",
+      "status": "completed"
+    },
+    {
+      "step": 3,
+      "tool": "prepare_handoff",
+      "status": "completed"
+    },
+    {
+      "step": 4,
+      "tool": "finish",
+      "status": "completed"
+    }
+  ],
+  "human_review_required": true,
+  "execution_authorized": false,
+  "validation": "registered_tool_execution_and_protocol_only",
+  "fixture_sha256": "199ca26aad77833b458ace4badf584656cff1c820cd62d64df554178832e8938",
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Linux",
+    "machine": "x86_64",
+    "versions": {
+      "numpy": "2.3.5",
+      "scipy": "1.17.0",
+      "pandas": "2.2.3",
+      "pvlib": "0.16.1",
+      "enerqit": "0.1.0"
+    }
+  },
+  "test_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "agent_install": {
+    "url": "https://github.com/julianascencio/energy-agents.git",
+    "vcs_info": {
+      "commit_id": "142e941b879f746a3187fadb040640e1cd5f5726",
+      "requested_revision": "142e941b879f746a3187fadb040640e1cd5f5726",
+      "vcs": "git"
+    }
+  }
+}
