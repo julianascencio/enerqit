@@ -187,3 +187,9 @@ standard constant-head water balances and independent exhaustive references.
 
 :doc:`/water_value` adds concave continuation values to the existing reservoir
 LP, with NVE context, PyPSA technical references and independent enumeration.
+
+Continuous ramp accounting
+---------------------------
+
+See :doc:`/ramp_energy` for the 26 November NESO context, analytical integration,
+synthetic evidence and independent quadrature validation.

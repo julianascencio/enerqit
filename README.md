@@ -354,3 +354,5 @@ uses the existing engineer and a physically audited constant-head LP.
 
 [Terminal water-value example](docs/examples/plot_terminal_water_value.py)
 extends reservoir dispatch with explicit continuation-value accounting.
+
+[Continuous-ramp energy audit](docs/examples/plot_continuous_ramp_energy.py): exact shortage accounting between instantaneous boundaries.

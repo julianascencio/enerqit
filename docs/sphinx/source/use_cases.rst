@@ -153,3 +153,8 @@ minimum releases and terminal floor. No quantum method or field validation.
 
 :doc:`/water_value`: optional concave terminal-inventory valuation, common
 policy accounting and classical LP; synthetic, no field valuation claim.
+
+Continuous ramp energy reconciliation
+--------------------------------------
+
+See :doc:`/ramp_energy`: exact shortage/spill integration and feasibility auditing.

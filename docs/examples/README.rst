@@ -29,3 +29,5 @@ water budget and actual registered engineer execution.
 
 :doc:`Terminal water value <plot_terminal_water_value>` examines reservoir
 depletion bias and common policy accounting through actual engineer tools.
+
+The continuous ramp energy example audits energy hidden between setpoints.

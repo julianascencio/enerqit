@@ -636,5 +636,11 @@
     "selection": "research/water-value-selection-20261123.md",
     "fixture": "enerqit/data/water_value_20261123.json",
     "status": "proposed; extends merged hydro backlog"
+  },
+  "ramp_energy_20261127": {
+    "selection": "research/ramp-energy-selection-20261127.md",
+    "fixture": "enerqit/data/ramp_energy_20261127.json",
+    "classification": "synthetic",
+    "status": "proposed"
   }
 }

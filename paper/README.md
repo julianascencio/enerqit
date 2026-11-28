@@ -151,3 +151,5 @@ checked against tiny physical enumeration; no research novelty claimed.
 [Derivation and sources](../docs/sphinx/source/water_value.rst) document the
 concave hypograph LP and common policy accounting. Independent tiny enumeration
 and default-API regression tests; no algorithmic novelty or field valuation claim.
+
+Continuous ramp energy uses trapezoid/triangle integration with explicit zero crossings, independently checked by adaptive quadrature. See `enerqit/ramp_energy.py`; no algorithmic novelty or quantum claim.
